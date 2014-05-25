@@ -4,6 +4,8 @@
 \pdfoutput=1
 
 \input{tex/preamble}
+
+\includeonly{tex/experiment}
  
 \begin{document} 
 
@@ -20,12 +22,12 @@
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-\input{tex/introduction}
-\input{tex/theory}
-\input{tex/experiment}
-\input{tex/simulation}
-\input{tex/objects}
-\input{tex/selection}
+\include{tex/introduction}
+\include{tex/theory}
+\include{tex/experiment}
+\include{tex/simulation}
+\include{tex/objects}
+\include{tex/selection}
 
 \appendix
 
