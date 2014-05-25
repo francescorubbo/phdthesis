@@ -1,0 +1,469 @@
+\chapter{The ATLAS experiment at the LHC}
+\label{sec:experiment}
+
+The ATLAS detector is one of the two general-purpose experiments 
+at the Large Hadron Collider (LHC) at CERN.
+It has been built to pursue a broad particle physics program. 
+
+The LHC is described in Sec.~\ref{sec:LHC}, while the design and operation of the 
+ATLAS detector are discussed in Sec.~\ref{sec:ATLAS}.
+
+\section{The Large Hadron Collider}
+\label{sec:LHC}
+
+The LHC~\cite{LHCreport12, *LHCreport3} is a circular $pp$ collider at CERN near Geneva, Switzerland.
+In addition to protons, also heavy ions can be brought to collision.
+The accelerator is located in the tunnel of the dismounted Large Electron-Positron Collider, which has a circumference of 27~km.
+Fig.~\ref{fig:lhc} shows a sketch of the LHC and its preaccelerators.
+Protons from the ionisation of hydrogen atoms are accelerated to \mbox{$50 \MeV$} in a linear collider~(LINAC2) before entering the Proton Synchrotron
+Booster~(BOOSTER).
+In the Proton Synchrotron~(PS), the protons gain a total energy of \mbox{$25 \GeV$}.
+Finally, they enter the Super Proton Synchrotron~(SPS), in which they gain an energy of \mbox{$450 \GeV$}, which is the nominal injection energy for the LHC.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{figures/experiment/accelerator_chain}
+\caption[Sketch of the Large Hadron Collider]{
+  Sketch of the Large Hadron Collider, its preaccelerators and the four main experiments at the interaction points (not to scale)~\cite{anna}.}
+\label{fig:lhc}
+\end{center}
+\end{figure}
+
+Bunches of protons are injected into separate beam pipes in both directions around the LHC ring and are accelerated
+with a system of radio cavities to an energy of \mbox{$3.5 \TeV$}, corresponding to \mbox{$\sqrt{s} = 7 \TeV$} (2010~--~2011).
+This is roughly 3.5 times more than the highest energies achieved at any other particle collider before.
+Superconducting NbTi magnets with a field of up to \mbox{$8.33 \T$} keep the protons on their circular track.
+In 2012, the proton energy has been increased to \mbox{$4 \TeV$}, corresponding to \mbox{$\sqrt{s} = 8 \TeV$}.
+In the following years, the design centre-of-mass energy of \mbox{$\sqrt{s} = 14 \TeV$} is aimed for.
+
+Each proton bunch consists of about $10^{11}$ particles.
+With a minimal bunch spacing of \mbox{$25 \ns$} and a maximum of 2808 bunches, a $pp$ design luminosity of \mbox{$10^{34}\invcms$} can be achieved, 
+which results in an average number of more than 20 inelastic collisions per bunch crossing depending on the beam focusing.
+
+In 2011, the largest part of the data was taken with a bunch spacing of \mbox{$50 \ns$}~\cite{fournier}.
+With this setting, up to 1380 bunches were circulated.
+Luminosities of up to \mbox{$3.65 \cdot 10^{33} \invcms$} were achieved with up to $1.5 \cdot 10^{11}$ protons per bunch.
+
+There are four main experiments at the LHC, which are also depicted in Fig.~\ref{fig:lhc}:
+ATLAS, which is discussed in more detail in Sec.~\ref{sec:ATLAS}, CMS~\cite{cms}, ALICE~\cite{alice} and LHCb~\cite{lhcb} 
+are located at the four interaction points of the two beams.
+ATLAS and CMS have been designed to cover a wide variety of physics in $pp$ collisions, ranging from precision tests of the SM to
+searches for the Higgs boson and searches for new phenomena.
+The design choices for the ALICE detector were guided by the needs of a detector for ion-ion collisions with strong emphasis on the tracking
+detectors rather than on calorimetry.
+LHCb is a detector optimised for the study of $b$-physics, in particular measurements of CP violation in the $b$-sector.
+Since $b\bar{b}$ systems are highly boosted at the LHC, LHCb has an asymmetric design to focus
+on the forward region on one side of the $pp$ interaction point.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.58\textwidth, angle=270]{figures/experiment/ATLASOverview}
+\caption[Drawing of the ATLAS detector]{
+  Drawing of the ATLAS detector showing the different detectors and magnet systems~\cite{detectorpaper}.}
+\label{fig:ATLAS}
+\end{center}
+\end{figure}
+
+\section{The ATLAS experiment}
+\label{sec:ATLAS}
+
+Fig.~\ref{fig:ATLAS} shows a drawing of the ATLAS detector~\cite{detectorpaper, ATLASTDR} with its solenoid and toroid magnets and the different
+subdetector systems.
+The subdetectors~--~inner tracking detector, calorimeters and muon spectrometer~--~are briefly described in
+Sec.~\ref{sec:ID}~--~\ref{sec:muonspectrometer}.
+The magnet, trigger and data acquisition systems are introduced in Sec.~\ref{sec:magnets} and~\ref{sec:triggerDAQ}, respectively.
+
+All detector systems have been designed to cope with two main challenges set by the LHC:
+on the one hand, the high event rate puts special requirements to the detector.
+Fast and radiation-hard electronics and sensor elements are necessary as well as an efficient trigger and data acquisition system.
+On the other hand, very good particle identification is the key to an efficient suppression of the large background contribution from multijet
+production at a hadron collider, as well as from additional inelastic interactions from the same bunch crossing~(pile-up).
+
+The design of the ATLAS detector follows the structure illustrated in Fig.~\ref{fig:particlesInDet}, which shows schematically
+the interactions of different types of particles with the detector material:
+the innermost detector layer is a tracking detector, in which electrically charged particles are traced for example by creating electron-hole pairs
+in semiconductors or by ionising gas.
+Typically, the tracking detector is embedded in a magnetic field so that the momenta of the particles can be measured from the curvature
+of the tracks.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{figures/experiment/particlesInDetector}
+\caption[Schematic view of the interactions of particles in a general purpose detector]{
+  Schematic view of the interactions of different types of particles in a general purpose detector at a modern high energy particle collider.}
+\label{fig:particlesInDet}
+\end{center}
+\end{figure}
+
+The next detector layers consist of electromagnetic~(EM) and hadronic calorimeters.
+The calorimeters are massive and therefore induce electromagnetic showers
+from electrons and photons by pair production and bremsstrahlung, and hadronic showers by various processes between hadrons and matter.
+Electron and photon showers are typically contained
+in the electromagnetic calorimeter while hadronic showers range into the hadronic calorimeter.
+
+Since almost all muons produced at the LHC are minimum ionising particles, they are the only electrically charged particles which may pass the
+calorimeters and reach the outermost layer, which is made of tracking chambers.
+Hence, these detectors are called muon chambers.
+
+In principle, it is desirable to cover the full solid angle with sensitive detector material.
+However, in the very forward region some space must be kept open for the beam pipes.
+Moreover, support structures, cables, cooling systems etc. need to be included in the detector design and reduce the sensitive volume.
+
+\subsection{Inner detectors}
+\label{sec:ID}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.36\textwidth, angle=270]{figures/experiment/InnerDetector}
+\includegraphics[width=0.34\textwidth, angle=270]{figures/experiment/InnerDetectorCut}
+\caption[Overview of the Inner Detector]{
+  Overview of the Inner Detector~\cite{detectorpaper}:
+  the left figure shows a longitudinal section of the Inner Detector with the different subdetectors.
+  The right figure shows a transverse section and illustrates the distances of the different detector layers from the beam line.}
+\label{fig:ID}
+\end{figure}
+
+The ATLAS Inner Detector (ID) consists of three subdetector systems:
+the Pixel detector and the Semiconductor Tracker~(SCT), which use silicon semiconductor
+technology, and the Transition Radiation Tracker~(TRT), which exploits the transition radiation produced in a gas mixture of Xe, CO$_2$ and O$_2$.
+Fig.~\ref{fig:ID} shows a longitudinal and a transverse section of the ID.
+In particular, the distances of the different subdetector layers from the beam line are illustrated.
+The whole ID is embedded in a \mbox{$2 \T$} solenoidal field (Sec.~\ref{sec:magnets}).
+
+With three concentric cylinders~(barrel part) and  three endcap disks, perpendicular to the beam axis, the Pixel detector
+covers a range\footnote{ATLAS uses a right-handed coordinate system with its origin at the nominal interaction point (IP) in the centre
+  of the detector and the $z$-axis along the beam pipe. The $x$-axis points from the IP to the centre of the LHC ring, and the $y$-axis points
+  upwards. Cylindrical coordinates ($r$, $\phi$) are used in the transverse plane, where $\phi$ is the azimuthal angle around the beam pipe. The
+  pseudorapidity is defined in terms of the polar angle $\theta$ as \mbox{$\eta = - \ln \left[ \tan \left( \frac{\theta}{2} \right) \right]$}.} of
+\mbox{$|\eta| < 2.5$}.
+Each of the 1744 sensors consists of a segmented silicon wafer with pixels of minimum area \mbox{$50 \times 400 \mum^2$} and 46080 readout channels.
+The innermost pixel layer, the so-called $b$-layer, is as close to the beam line as \mbox{$50.5 \mm$} and allows for a precise extrapolation of tracks
+to the vertices.
+This is crucial for any $b$-tagging strategy based on impact parameters and the identification of secondary vertices.
+
+The SCT consists of four layers in the barrel and nine endcap disks.
+It covers the range \mbox{$|\eta| < 2.5$}.
+The sensors use silicon microstrip technology with a strip pitch of \mbox{$80 \mum$}.
+In the barrel, the strips are arranged parallel to the beam line, while in the disks, the strips are oriented radially.
+Modules are arranged back-to-back with a small stereo angle of \mbox{$40 \mrad$} to allow for a measurement of the azimuth angle in each layer.
+A typical track yields three space-points in the Pixel detector and eight in the SCT.
+Together, the silicon trackers ensure the measurement of the track momenta and the identification of primary and secondary vertices.
+
+In the barrel part of the TRT, there are 73 planes of straw tubes filled with gas, which are arranged parallel to the beam axis.
+In the endcap, there are 160 straw planes, oriented radially.
+The TRT covers a range of \mbox{$|\eta| < 2.0$}, in which the separation of electrons from charged pions is improved by exploiting transition radiation.
+Although the TRT does not provide track information in the direction along the beam line, pattern recognition and the measurement of the track momenta
+become more robust by using the signals from the TRT.
+
+The total amount of material of the ID is as large as roughly 0.5 electromagnetic radiation
+lengths\footnote{The radiation length is defined as the typical amount of material traversed by an electron after which it has lost
+$\frac{1}{e}$ of its original energy by bremsstrahlung.}
+$X_0$ for \mbox{$|\eta| < 0.6$}.
+For \mbox{$0.6 < |\eta| < 1.37$} and \mbox{$1.52 < |\eta| < 2.5$}, the amount of material reaches up to \mbox{$1.5 X_0$}.
+In the barrel-to-endcap transition region at \mbox{$1.37 < |\eta| < 1.52$}, the amount of material is even larger.
+Electrons and photons in this region were not taken into account in this analysis.
+A particular consequence of the sizable amount of material in front of the calorimeters is that a large fraction of photons convert into \mbox{$e^+e^-$}
+pairs in the ID volume.
+
+\subsection{Calorimeters}
+\label{sec:calorimeter}
+
+Fig.~\ref{fig:calorimeters} shows an overview of the different electromagnetic and hadronic calorimeters of the ATLAS detector.
+All calorimeters are sampling calorimeters consisting of alternating layers of dense absorber material and active material, where only the active
+material is used for the energy measurement.
+This design allows for a compact size of the calorimeter system.
+
+The hadronic calorimeter in the barrel~(Tile) uses steel as absorber and scintillators as active material.
+All other calorimeters use liquid argon~(LAr) technology with different types of absorbers:
+lead in the electromagnetic barrel~(EMB) and the electromagnetic endcap calorimeter (EMEC),
+copper in the hadronic endcap calorimeter~(HEC) and the electromagnetic part of the Forward Calorimeter~(FCal),
+and tungsten in the hadronic part of the FCal.
+The LAr calorimeters are placed in three cryostats: one for the barrel and one for each endcap.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.4\textwidth, angle=270]{figures/experiment/Calorimeters}
+\caption[Overview of the calorimeter system]{
+  Overview of the calorimeter system~\cite{detectorpaper}:
+  the different subdetectors of the electromagnetic and hadronic calorimeter are shown.}
+\label{fig:calorimeters}
+\end{center}
+\end{figure}
+
+The technologies have been chosen to provide fast readout, radiation hardness and high containment of electromagnetic and hadronic showers to ensure
+a precise measurement of their energies.
+The energy flux is varying in the different detector regions.
+Especially in the very forward region, which is covered by the FCal (\mbox{$3.1 < |\eta| < 4.9$}), extremely high fluxes from minimum bias events
+drove the design towards dense absorber material and small LAr gaps.
+
+All calorimeters are finely granulated and also segmented longitudinally to allow for a precise determination of the position of the showers and to
+distinguish different shower types by the use of shower shapes.
+This is particularly important for the central region, which is devoted to precision measurements of electrons and photons:
+the EMB (\mbox{$|\eta| < 1.475$}) is segmented into three longitudinal layers, where the first layer, the so-called LAr strips, provide
+a very fine granularity in $\eta$ of 0.0031.
+To ensure continuous coverage in azimuth and to enable fast readout, the lead absorbers are folded into an accordion shaped structure.
+
+A similar design as for the EMB has been used for the EMEC, which is divided into two wheels covering the ranges \mbox{$1.375 < |\eta| < 2.5$}
+and \mbox{$2.5 < |\eta| < 3.2$}.
+The inner wheel has a coarser granularity in $\eta$ and $\phi$, limiting the region devoted to precision physics to \mbox{$|\eta| < 2.5$}.
+A thin LAr layer (presampler) is placed in front of the EMB and the EMEC for \mbox{$|\eta| < 1.8$} to correct for energy lost in front of the calorimeter.
+
+The Tile calorimeter is located behind the EMB and the EMEC and is divided into three longitudinal layers.
+It consists of a central barrel (\mbox{$|\eta| < 1.0$}) and an extended-barrel part (\mbox{$0.8 < |\eta| < 1.7$}).
+The radial depth is about 7.4 nuclear interaction
+lengths\footnote{The nuclear interaction length $\lambda_I$ for hadrons is defined in analogy to the electromagnetic radiation length $X_0$
+for electrons and photons.} ($\lambda_I$).
+
+The HEC is a traditional LAr sampling calorimeter covering the region (\mbox{$1.5 < |\eta| < 3.2$}), which is placed behind the EMEC in the same
+cryostat.
+It consists of two independent wheels, each of which is divided longitudinally into two parts.
+
+%The design energy resolution for electrons and jets are summarised in Tab.~\ref{tab:designresolution}.
+Altogether, the calorimeters cover the range \mbox{$|\eta| < 4.9$} and, thus, provide good hermiticity to ensure also a precise measurement
+of the imbalance of the transverse momentum.
+Over the whole range in $\eta$, the total thickness of the calorimeter system is approximately \mbox{$10 \lambda_I$}, ensuring good containment of
+electromagnetic and hadronic showers and limiting punch-through effects to the muon spectrometer.
+
+\subsection{Muon detectors}
+\label{sec:muonspectrometer}
+
+The ATLAS muon system covers the range \mbox{$|\eta| < 2.7$} and is designed to measure the momenta of muons exiting the calorimeter system starting
+at energies above \mbox{$\sim 3 \GeV$}.
+The tracks of the muons are bent by the magnetic field of the air-core toroid system in the barrel and in the endcaps (Sec.~\ref{sec:magnets}).
+The fields in the barrel and in the endcaps are oriented such that muon tracks in both regions are mostly orthogonal to the field lines.
+
+An overview of the different subsystems is shown in Fig.~\ref{fig:muons}:
+the muon system consists of high-precision tracking chambers as well as trigger systems.
+In the barrel part, Monitored Drift Tubes~(MDTs) are used for tracking and Resistive Plate Chambers~(RPCs) for triggering (Sec.~\ref{sec:triggerDAQ}).
+In the endcaps, tracking information is provided by Cathode Strip Chambers~(CSCs) and Thin Gap Chambers~(TGCs) are used for triggering.
+In the barrel as well as in the endcaps, muons typically cross three longitudinal layers of the muon spectrometer.
+The muon system is divided into eight octants with overlaps in $\phi$ to avoid gaps in the detector coverage.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.4\textwidth, angle=270]{figures/experiment/MuonChambers}
+\caption[Overview of the muon system]{
+  Overview of the muon system~\cite{detectorpaper}:
+  the different types of tracking and trigger chambers are shown.}
+\label{fig:muons}
+\end{center}
+\end{figure}
+
+The technologies for the tracking systems have been chosen such that high precision can be achieved given the level of the particle flux.
+The MDTs in the barrel part follow a robust and reliable detector design.
+Since each tube contains only one sense wire, the simple geometry allows for the prediction of deformations as well as for a precise reconstruction.
+As the particle flux is increasing with $|\eta|$, the CSCs are more suited for the endcap region:
+the higher granularity of the multiwire proportional chambers facilitates to cope with the increasing rates.
+
+The choice of the technologies for the trigger chambers was driven by the requirement for fast and highly efficient trigger capabilities
+given the different conditions present in the barrel and endcap regions during data taking.
+Additionally, an adequate resolution of the transverse momentum of the tracks was required.
+In the barrel, RPCs provide good spatial and time resolution.
+In the endcap regions, however, higher particle fluxes as well as the need for a higher granularity required a different
+technology: TGCs are used for the region \mbox{$1.05 < |\eta| < 2.4$}.
+They are based on the same principle as multiwire proportional chambers and fulfil the needs in terms of rate capability and granularity.
+With RPCs and TGCs, a time resolution of \mbox{$15 - 25 \ns$} can be achieved, which is sufficient for fast trigger decisions and a good association of
+tracks to bunch crossings.
+
+The benchmark for the tracking performance of the muon spectrometer is set by a 10\% resolution on the transverse momentum of \mbox{$1 \TeV$}
+muons~\cite{detectorpaper}.
+To achieve this goal, the position of the MDT wires and the CSC strips must be known with a precision better than \mbox{$30 \mum$}.
+Therefore, a high-precision optical alignment system was set up to monitor the relative position of the MDT chambers and their internal deformations.
+
+\subsection{Magnet system}
+\label{sec:magnets}
+
+The ATLAS magnetic system consists of four large superconducting magnets: a central solenoid and three toroid magnets in the barrel and the
+two endcaps.
+A sketch of the magnet system is shown in Fig.~\ref{fig:magnets}.
+The solenoid and the toroids are shown, as well as the tile calorimeter.
+
+The central solenoid provides an axial field with a strength of \mbox{$2 \T$}.
+The magnetic flux is returned by the tile calorimeter and its girder structure.
+The solenoid was designed to be particularly lightweight and to minimise the amount of material in front of the calorimeter system
+to which it contributes only a total of 0.66 electromagnetic radiation lengths.
+
+\begin{figure}[h]
+\centering
+  \begin{minipage}[t][0.55\textwidth][b]{0.45\textwidth}
+  \includegraphics[width=0.9\textwidth, angle=270]{figures/experiment/Magnets}
+  \caption[Sketch of the magnet system]{
+    Sketch of the magnet system~\cite{detectorpaper}:
+    the solenoid and the toroids are shown, as well as the tile calorimeter.}
+  \label{fig:magnets}
+  \end{minipage}
+  \hspace{1cm}
+  \begin{minipage}[t][0.55\textwidth][b]{0.45\textwidth}
+  \includegraphics[width=0.9\textwidth]{figures/experiment/TrigLevels}
+  \caption[Sketch of the trigger chain]{
+    Sketch of the trigger chain and the different trigger levels~\cite{ATLASTDR}.
+    The indicated rates are orders of magnitude only.
+  }
+  \label{fig:triggerdaq}
+  \end{minipage}
+\end{figure}
+
+The toroid systems provide magnetic fields with a bending power of \mbox{$1.5 - 5.5 \Tm$} in the barrel and \mbox{$1 - 7.5 \Tm$} in the endcap regions.
+Each system consists of eight air-core coils placed in aluminium housings.
+The toroidal fields contain non-uniformities which need to be known to high precision to allow for an accurate measurement of muon momenta.
+Hence, 1800 Hall sensors were installed in the muon spectrometer volume to enable the monitoring of the magnetic field.
+
+
+\subsection{Trigger and data acquisition}
+\label{sec:triggerDAQ}
+
+Assuming a bunch spacing of \mbox{$25 \ns$} and approximately 20 inelastic interactions per bunch crossing\footnote{As mentioned in Sec.~\ref{sec:LHC}, in 2011 most of the data was taken with a bunch-spacing of \mbox{$50 \ns$}.}, the event rate at the ATLAS detector is
+of the order of 1~GHz.
+A three-level trigger system was set up to reduce this rate to about 200~Hz.
+In 2011 data taking, the real trigger rate was indeed of the order of 300~Hz~\cite{fournier}.
+The triggers need to suppress minimum bias events very strongly while efficiently selecting rare physics events.
+The data acquisition system~(DAQ) gathers the data from the different detector subsystems and buffers them until a trigger decision is received.
+When the event is not rejected by one of the trigger levels, the data are recorded permanently.
+Fig.~\ref{fig:triggerdaq} shows a sketch of the ATLAS trigger chain indicating the order of magnitude of the trigger rates at the different trigger
+levels.
+
+The first trigger level~(L1) is a hardware-based trigger, which reduces the event rate to approximately 75~kHz.
+Muons, electrons, photons, jets and hadronically decaying $\tau$-leptons with high transverse momenta are searched for as well as a large momentum
+imbalance in the transverse plane and a large total transverse energy.
+The muon trigger chambers are used as well as the calorimeter system with reduced granularity.
+Within less than \mbox{$2.5 \mus$}, Regions-of-Interest~(RoI) are identified in $\eta$-$\phi$-space, which serve as seeds for the decision at the second
+trigger level~(L2).
+
+The high level trigger is composed of the L2 and the Event Filter (EF), both of which are software-based trigger systems.
+At L2, the energy and direction of the RoIs are further investigated and also the types of the trigger objects are analysed.
+Within \mbox{$40 \ms$} a decision is made, and the event rate is reduced to below 3.5~kHz.
+The EF further decreases the rate down to roughly 200~Hz.
+Events passing the EF are stored permanently.
+The full event information is available at the EF level and, hence, energies and directions of the trigger objects are estimated with higher precision
+than at L1 and L2.
+In particular, the discrimination between the different particle types is enhanced by the use of the ID tracking system and calorimeter
+shower shapes.
+
+Selections of different trigger signatures are collected in so-called trigger menus.
+For triggers with very high rates, only a fraction of the triggered events can be selected on a random basis
+in order to perform cross-checks and studies of less rare physics processes.
+The trigger menus are adjusted to the data taking conditions, in particular to the instantaneous luminosity, in order to make optimal use of the
+band width available for storage.
+
+\subsection[Performance in $pp$ collisions]{Performance in \boldmath$pp$ collisions\unboldmath}
+\label{sec:performance}
+
+The performance of the different subsystems of the ATLAS detector was studied with the data taken in 2010 and 2011.
+Of particular importance is the agreement with Monte Carlo~(MC) simulations (Ch.~\ref{sec:modelling}).
+
+The left plot of Fig.~\ref{fig:IDperformance} shows the invariant mass of $\mu^+\mu^-$ pairs around the mass of the $Z$ boson in \mbox{$0.70 \ifb$} of data,
+where the muon momentum was measured using ID tracks only.
+An early and an improved version of the alignment of the ID subdetectors were used to measure the distribution (full and open circles,
+respectively).
+In shaded grey, the expectation from MC simulations is shown.
+The width of the reconstructed $Z$ mass distribution is a measure for the ID track momentum resolution.
+The resolution in data with improved alignment is generally well reproduced by the MC simulations.
+However, the resolution is slightly worse in data, so that the distribution in the MC simulations needs to be broadened to match the
+data distribution.
+
+The right plot of Fig.~\ref{fig:IDperformance} shows the estimated resolution of the vertex position in $x$-direction as a function of the squared sum
+of the transverse momentum\footnote{The transverse momentum is defined as \mbox{$\pt = p \sin \theta = p / \cosh \eta$}.}
+$\pt$ of the tracks associated to the vertex $\sqrt{\sum \pt^2}$ in 1.5 million minimum bias events~\cite{ATLASminbias}.
+As expected, the vertex resolution improves with increasing $\sqrt{\sum \pt^2}$.
+The general trend of the data is well described by the MC simulations although there are discrepancies in particular for low $\sqrt{\sum \pt^2}$.
+The distributions for the resolution in $y$- and $z$-direction show a similar behaviour~\cite{idperformance}.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[height=0.325\textwidth]{figures/experiment/Z_M_ID}
+\includegraphics[height=0.325\textwidth]{figures/experiment/PV_resolution_X_SumPt2}
+\caption[Performance of the Inner Detector]{
+  Performance of the Inner Detector in $pp$ collisions~\cite{idperformance}:
+  the left plot shows the invariant mass of $\mu^+\mu^-$ pairs around the mass of the $Z$ boson from ID tracks only in \mbox{$0.70 \ifb$} of data.
+  In shaded grey, the expectation from MC simulations is shown. The full and open circles show different versions of the relative alignment
+  of the ID subsystems.
+  The right plot shows the estimated resolution of the vertex position in $x$-direction as a function of the squared sum of the $\pt$ of the tracks
+  associated to the vertex in 1.5 million minimum bias events.
+  Below the plot, the ratio of data and MC simulations is shown.
+}
+\label{fig:IDperformance}
+\end{center}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+%\vspace{0.025\textwidth}
+\includegraphics[height=0.35\textwidth]{figures/experiment/electron_scale}
+\includegraphics[height=0.35\textwidth]{figures/experiment/electron_zmass}
+\caption[Electron energy performance]{
+  Performance of the electron energy measurement in $pp$ collisions~\cite{electronperformance}:
+  the left plot shows the correction to the electron energy scale derived from \Zee, \mbox{$J/\psi \to ee$} and \mbox{$W \to e\nu$}
+  events with the associated uncertainties for \mbox{$0 < |\eta| < 0.6$}.
+  The right plot shows the di-electron invariant mass distribution around the mass of the $Z$ boson for data and MC simulations.
+  For both plots, \mbox{$40 \ipb$} of data were used.
+}
+\label{fig:electronperformance}
+\end{center}
+\end{figure}
+
+The left plot of Fig.~\ref{fig:electronperformance} shows the correction to the electron energy scale derived from \mbox{$Z \to ee$},
+\mbox{$J/\psi \to ee$} and \mbox{$W \to e\nu$} events with the associated uncertainties for \mbox{$0 < |\eta| < 0.6$} in \mbox{$40 \ipb$} of data.
+The measurements for the different processes are consistent within uncertainties and the electron energy scale is known to a level better than 1\%.
+For higher $|\eta|$, the uncertainties are slightly larger~\cite{electronperformance}.
+
+The right plot of Fig.~\ref{fig:electronperformance} shows the di-electron invariant mass distribution around the mass of the $Z$ boson in \mbox{$40 \ipb$}
+of data and in MC simulations.
+The width of the distribution is a measure of the electron resolution.
+The MC simulations describe the data well, although the $Z$ mass resolution is slightly narrower in data, which can be corrected for by enlarging
+the electron resolution in the simulations.
+
+Fig.~\ref{fig:jetperformance} shows the total uncertainty on the jet energy scale~(JES) as well as different contributions to the uncertainty as a
+function of the $\pt$ of the jet.
+The left plot shows jets in the region \mbox{$0.3 \leq |\eta| < 0.8$}, the right plot shows jets in the region \mbox{$2.1 \leq |\eta| < 2.8$}.
+For the derivation of the uncertainties the data taken in 2010 as well as MC simulations were used.
+
+Contributions to the total JES uncertainty are shown for
+the underlying MC model (up-pointing triangles and solid circles),
+the noise threshold of the clustering algorithm (down-pointing triangles),
+the in-situ calibration using the balance in $\pt$ of dijet events, called $\eta$-intercalibration (crosses and open circles),
+the response to single hadrons (open squares), 
+and the knowledge of the detector material (full squares).
+
+The total JES uncertainty is of the order of 4\% (6\%) for low-$\pt$ jets in the range \mbox{$0.3 \leq |\eta| < 0.8$} (\mbox{$2.1 \leq |\eta| < 2.8$}) and
+decreases to roughly 2\% (2.5\%) for jets with \mbox{$60 \GeV < \pt < 800 \GeV$}.
+The uncertainty in the low-$\pt$-region is dominated by MC modelling uncertainties and uncertainties due to the $\eta$-intercalibration.
+For higher $\pt$, the JES uncertainty increases again to 4\% (3\%) due to the limited knowledge of the response to high-energetic single
+hadrons.
+
+The left plot in Fig.~\ref{fig:muonperformance} shows the invariant di-muon mass around the mass of the $Z$ boson in \mbox{$205 \ipb$} of data.
+The expectation from MC simulations is also depicted and shows a slightly narrower distribution than observed in data.
+
+The right plot in Fig.~\ref{fig:muonperformance} shows the width of the distribution around an invariant mass of \mbox{$90 \GeV$} for different regions of
+the muon $\eta$.
+The resolution is similar for all $\eta$-regions.
+Only in the barrel-to-endcap transition regions at \mbox{$1.05 < |\eta| < 1.7$}, the resolution is slightly worse.
+The resolution is broader in data than in MC simulations consistently for all $\eta$-regions, which is taken into account by
+correcting the muon momentum resolution in the simulations.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.325\textwidth, angle=270]{figures/experiment/jes1}
+\includegraphics[width=0.325\textwidth, angle=270]{figures/experiment/jes2}
+\caption[Jet energy performance]{
+  Performance of the jet energy measurement in $pp$ collisions~\cite{jetperf}:
+  the total uncertainty on the jet energy scale as well as different contributions to the uncertainty are shown as a function of the $\pt$ of the jet.
+  The left plot shows jets in the region \mbox{$0.3 \leq |\eta| < 0.8$}, the right plot shows jets in the region \mbox{$2.1 \leq |\eta| < 2.8$}.
+  For the derivation of the uncertainties the data taken in 2010 as well as MC simulations were used.
+}
+\label{fig:jetperformance}
+\vspace{0.025\textwidth}
+%\includegraphics[height=0.4\textwidth]{figures/experiment/muon_resolution}
+\includegraphics[height=0.35\textwidth]{figures/experiment/muon_zmass}
+\quad
+%\includegraphics[height=0.4\textwidth]{figures/experiment/res_SA_vs_eta}
+\includegraphics[height=0.35\textwidth]{figures/experiment/res_SA_vs_eta}
+\caption[Muon momentum performance]{
+  Performance of the muon momentum measurement in $pp$ collisions~\cite{muonperformanceplots}:
+  the left plot shows the invariant di-muon mass around the mass of the $Z$ boson in \mbox{$205 \ipb$} of data together with the expectation
+  from MC simulations.
+  The right plot shows the width of the distribution around an invariant mass of \mbox{$90 \GeV$} for different regions of the muon pseudorapidity.
+  The resolutions measured in data are compared to the resolutions from MC simulations.
+}
+\label{fig:muonperformance}
+\end{center}
+\end{figure}
