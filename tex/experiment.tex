@@ -2,7 +2,7 @@
 \label{sec:experiment}
 
 The ATLAS detector is one of the two general-purpose experiments 
-at the Large Hadron Collider (LHC) at CERN.
+at the Large Hadron Collider (LHC) at CERN, Switzerland.
 It has been built to pursue a broad particle physics program. 
 
 The LHC is described in Sec.~\ref{sec:LHC}, while the design and operation of the 
@@ -11,111 +11,94 @@ ATLAS detector are discussed in Sec.~\ref{sec:ATLAS}.
 \section{The Large Hadron Collider}
 \label{sec:LHC}
 
-The LHC~\cite{LHCreport12, *LHCreport3} is a circular $pp$ collider at CERN near Geneva, Switzerland.
-In addition to protons, also heavy ions can be brought to collision.
-The accelerator is located in the tunnel of the dismounted Large Electron-Positron Collider, which has a circumference of 27~km.
-Fig.~\ref{fig:lhc} shows a sketch of the LHC and its preaccelerators.
-Protons from the ionisation of hydrogen atoms are accelerated to \mbox{$50 \MeV$} in a linear collider~(LINAC2) before entering the Proton Synchrotron
-Booster~(BOOSTER).
-In the Proton Synchrotron~(PS), the protons gain a total energy of \mbox{$25 \GeV$}.
-Finally, they enter the Super Proton Synchrotron~(SPS), in which they gain an energy of \mbox{$450 \GeV$}, which is the nominal injection energy for the LHC.
+The Large Hadron Collider (LHC)~\cite{LHCreport12, *LHCreport3} 
+is a circular proton-proton ($pp$) collider.
+It consists of a 27~km ring of superconducting magnets and
+accelerating cavities, where two beams of protons circulate in
+opposite directions.
+The magnets maintain the protons into a focused circular trajectory while radio-frequency
+cavities boost their energy.
+The beam undergo several acceleration steps, in the pre-accelerators chain
+and in the LHC, which are part of the CERN accelerator complex, shown in fig.~\ref{fig:lhc}.
+Protons from the ionization of hydrogen atoms are first accelerated to \mbox{$50 \MeV$}
+in a linear collider~(LINAC2), then the energy is increased up to
+\mbox{$450 \GeV$} through three stages of synchrotrons: the Proton
+Synchrotron Booster~(BOOSTER), the Proton Synchrotron~(PS) and the Super Proton Synchrotron~(SPS)
+Finally the protons are injected into the LHC.
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{figures/experiment/accelerator_chain}
-\caption[Sketch of the Large Hadron Collider]{
-  Sketch of the Large Hadron Collider, its preaccelerators and the four main experiments at the interaction points (not to scale)~\cite{anna}.}
+\caption[CERN Accelerator complex]{
+  The CERN accelerator complex. The four main LHC experiments are
+  shown at the four interaction points.}
 \label{fig:lhc}
 \end{center}
 \end{figure}
+ 
+In 2011 each beam was accelerated to an energy of \mbox{$3.5 \TeV$}, 
+resulting into a center-of-mass energy \mbox{$\sqrt{s} = 7 \TeV$}.
+In 2012, the beam energy has been increased to \mbox{$4 \TeV$}, 
+corresponding to \mbox{$\sqrt{s} = 8 \TeV$}.
+The LHC was designed to collide protons up to \mbox{$\sqrt{s} = 14 \TeV$},
+which is expected for future operation.
 
-Bunches of protons are injected into separate beam pipes in both directions around the LHC ring and are accelerated
-with a system of radio cavities to an energy of \mbox{$3.5 \TeV$}, corresponding to \mbox{$\sqrt{s} = 7 \TeV$} (2010~--~2011).
-This is roughly 3.5 times more than the highest energies achieved at any other particle collider before.
-Superconducting NbTi magnets with a field of up to \mbox{$8.33 \T$} keep the protons on their circular track.
-In 2012, the proton energy has been increased to \mbox{$4 \TeV$}, corresponding to \mbox{$\sqrt{s} = 8 \TeV$}.
-In the following years, the design centre-of-mass energy of \mbox{$\sqrt{s} = 14 \TeV$} is aimed for.
-
-Each proton bunch consists of about $10^{11}$ particles.
-With a minimal bunch spacing of \mbox{$25 \ns$} and a maximum of 2808 bunches, a $pp$ design luminosity of \mbox{$10^{34}\invcms$} can be achieved, 
-which results in an average number of more than 20 inelastic collisions per bunch crossing depending on the beam focusing.
-
-In 2011, the largest part of the data was taken with a bunch spacing of \mbox{$50 \ns$}~\cite{fournier}.
-With this setting, up to 1380 bunches were circulated.
-Luminosities of up to \mbox{$3.65 \cdot 10^{33} \invcms$} were achieved with up to $1.5 \cdot 10^{11}$ protons per bunch.
-
-There are four main experiments at the LHC, which are also depicted in Fig.~\ref{fig:lhc}:
-ATLAS, which is discussed in more detail in Sec.~\ref{sec:ATLAS}, CMS~\cite{cms}, ALICE~\cite{alice} and LHCb~\cite{lhcb} 
-are located at the four interaction points of the two beams.
-ATLAS and CMS have been designed to cover a wide variety of physics in $pp$ collisions, ranging from precision tests of the SM to
-searches for the Higgs boson and searches for new phenomena.
-The design choices for the ALICE detector were guided by the needs of a detector for ion-ion collisions with strong emphasis on the tracking
-detectors rather than on calorimetry.
-LHCb is a detector optimised for the study of $b$-physics, in particular measurements of CP violation in the $b$-sector.
-Since $b\bar{b}$ systems are highly boosted at the LHC, LHCb has an asymmetric design to focus
-on the forward region on one side of the $pp$ interaction point.
-
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=0.58\textwidth, angle=270]{figures/experiment/ATLASOverview}
-\caption[Drawing of the ATLAS detector]{
-  Drawing of the ATLAS detector showing the different detectors and magnet systems~\cite{detectorpaper}.}
-\label{fig:ATLAS}
-\end{center}
-\end{figure}
+The beams are brought to collision in four interaction points along
+the ring, where four experiments are situated: 
+ATLAS, described in Sec.~\ref{sec:ATLAS}, CMS~\cite{cms}, ALICE~\cite{alice} and LHCb~\cite{lhcb} .
 
 \section{The ATLAS experiment}
 \label{sec:ATLAS}
 
-Fig.~\ref{fig:ATLAS} shows a drawing of the ATLAS detector~\cite{detectorpaper, ATLASTDR} with its solenoid and toroid magnets and the different
-subdetector systems.
-The subdetectors~--~inner tracking detector, calorimeters and muon spectrometer~--~are briefly described in
-Sec.~\ref{sec:ID}~--~\ref{sec:muonspectrometer}.
-The magnet, trigger and data acquisition systems are introduced in Sec.~\ref{sec:magnets} and~\ref{sec:triggerDAQ}, respectively.
-
-All detector systems have been designed to cope with two main challenges set by the LHC:
-on the one hand, the high event rate puts special requirements to the detector.
-Fast and radiation-hard electronics and sensor elements are necessary as well as an efficient trigger and data acquisition system.
-On the other hand, very good particle identification is the key to an efficient suppression of the large background contribution from multijet
-production at a hadron collider, as well as from additional inelastic interactions from the same bunch crossing~(pile-up).
-
-The design of the ATLAS detector follows the structure illustrated in Fig.~\ref{fig:particlesInDet}, which shows schematically
-the interactions of different types of particles with the detector material:
-the innermost detector layer is a tracking detector, in which electrically charged particles are traced for example by creating electron-hole pairs
-in semiconductors or by ionising gas.
-Typically, the tracking detector is embedded in a magnetic field so that the momenta of the particles can be measured from the curvature
-of the tracks.
-
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=0.6\textwidth]{figures/experiment/particlesInDetector}
-\caption[Schematic view of the interactions of particles in a general purpose detector]{
-  Schematic view of the interactions of different types of particles in a general purpose detector at a modern high energy particle collider.}
-\label{fig:particlesInDet}
+\includegraphics[width=0.58\textwidth, angle=270]{figures/experiment/atlas_overview}
+\caption[Drawing of the ATLAS detector]{
+  Drawing of the ATLAS detector showing the different detectors and magnet systems.}
+\label{fig:ATLAS}
 \end{center}
 \end{figure}
 
-The next detector layers consist of electromagnetic~(EM) and hadronic calorimeters.
-The calorimeters are massive and therefore induce electromagnetic showers
-from electrons and photons by pair production and bremsstrahlung, and hadronic showers by various processes between hadrons and matter.
-Electron and photon showers are typically contained
-in the electromagnetic calorimeter while hadronic showers range into the hadronic calorimeter.
+ATLAS (A Toroidal LHC ApparatuS) is a particle detector
+experiment~\cite{detectorpaper} designed to observe highly massive
+particles and to measure the properties of known particles produced at
+unprecedented energies and high rates. 
 
-Since almost all muons produced at the LHC are minimum ionising particles, they are the only electrically charged particles which may pass the
-calorimeters and reach the outermost layer, which is made of tracking chambers.
-Hence, these detectors are called muon chambers.
+As shown in Fig.~\ref{fig:ATLAS}, the interaction point is surrounded
+by several layers of sub-detectors, each devoted to the measurement of
+different properties for different types of particles.
+The sub-detectors are grouped into three main systems:
 
-In principle, it is desirable to cover the full solid angle with sensitive detector material.
-However, in the very forward region some space must be kept open for the beam pipes.
-Moreover, support structures, cables, cooling systems etc. need to be included in the detector design and reduce the sensitive volume.
+\begin{itemize}
+\item The Inner Detectors, described in Sec.~\ref{sec:ID}, immersed in
+  the solenoidal magnetic field, constitute a tracking system used to
+  identify and measure the momenta of charged particles, and to identify
+  the interaction vertices and displaced vertices. 
+\item The Calorimeters are used to identify and measure the energy of
+  neutral and charged particles. They are designed to stop most types
+  of particles, except for muons and
+  neutrinos. Sec.~\ref{sec:calorimeter} illustrates the design and
+  operation of the calorimetry system.
+\item The Muon system is described in
+  Sec~\ref{sec:muonspectrometer}. Because muons minimally interact
+  with the other parts of the detector and have long lifetimes, they
+  are detected with a muon spectrometer on the outermost detector
+  layer, immersed in the toroidal magnetic field. 
+\end{itemize}
+
+In events with a Top quark pair decaying semileptonically, electrons
+and jets are identified by the tracking and calorimetry systems, muons
+are identified by the tracking and muon systems, and the transverse
+components of the neutrino momenta are inferred from the imbalance in
+the total momenta measured in the detector.
 
 \subsection{Inner detectors}
 \label{sec:ID}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.36\textwidth, angle=270]{figures/experiment/InnerDetector}
-\includegraphics[width=0.34\textwidth, angle=270]{figures/experiment/InnerDetectorCut}
+%\includegraphics[width=0.36\textwidth, angle=270]{figures/experiment/InnerDetector}
+%\includegraphics[width=0.34\textwidth, angle=270]{figures/experiment/InnerDetectorCut}
 \caption[Overview of the Inner Detector]{
   Overview of the Inner Detector~\cite{detectorpaper}:
   the left figure shows a longitudinal section of the Inner Detector with the different subdetectors.
@@ -130,7 +113,7 @@ Fig.~\ref{fig:ID} shows a longitudinal and a transverse section of the ID.
 In particular, the distances of the different subdetector layers from the beam line are illustrated.
 The whole ID is embedded in a \mbox{$2 \T$} solenoidal field (Sec.~\ref{sec:magnets}).
 
-With three concentric cylinders~(barrel part) and  three endcap disks, perpendicular to the beam axis, the Pixel detector
+With three concentric cylinders~(barrel part) and three endcap disks, perpendicular to the beam axis, the Pixel detector
 covers a range\footnote{ATLAS uses a right-handed coordinate system with its origin at the nominal interaction point (IP) in the centre
   of the detector and the $z$-axis along the beam pipe. The $x$-axis points from the IP to the centre of the LHC ring, and the $y$-axis points
   upwards. Cylindrical coordinates ($r$, $\phi$) are used in the transverse plane, where $\phi$ is the azimuthal angle around the beam pipe. The
@@ -182,7 +165,7 @@ The LAr calorimeters are placed in three cryostats: one for the barrel and one f
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=0.4\textwidth, angle=270]{figures/experiment/Calorimeters}
+%\includegraphics[width=0.4\textwidth, angle=270]{figures/experiment/Calorimeters}
 \caption[Overview of the calorimeter system]{
   Overview of the calorimeter system~\cite{detectorpaper}:
   the different subdetectors of the electromagnetic and hadronic calorimeter are shown.}
@@ -241,7 +224,7 @@ The muon system is divided into eight octants with overlaps in $\phi$ to avoid g
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=0.4\textwidth, angle=270]{figures/experiment/MuonChambers}
+%\includegraphics[width=0.4\textwidth, angle=270]{figures/experiment/MuonChambers}
 \caption[Overview of the muon system]{
   Overview of the muon system~\cite{detectorpaper}:
   the different types of tracking and trigger chambers are shown.}
@@ -286,7 +269,7 @@ to which it contributes only a total of 0.66 electromagnetic radiation lengths.
 \begin{figure}[h]
 \centering
   \begin{minipage}[t][0.55\textwidth][b]{0.45\textwidth}
-  \includegraphics[width=0.9\textwidth, angle=270]{figures/experiment/Magnets}
+  %\includegraphics[width=0.9\textwidth, angle=270]{figures/experiment/Magnets}
   \caption[Sketch of the magnet system]{
     Sketch of the magnet system~\cite{detectorpaper}:
     the solenoid and the toroids are shown, as well as the tile calorimeter.}
@@ -294,7 +277,7 @@ to which it contributes only a total of 0.66 electromagnetic radiation lengths.
   \end{minipage}
   \hspace{1cm}
   \begin{minipage}[t][0.55\textwidth][b]{0.45\textwidth}
-  \includegraphics[width=0.9\textwidth]{figures/experiment/TrigLevels}
+  %\includegraphics[width=0.9\textwidth]{figures/experiment/TrigLevels}
   \caption[Sketch of the trigger chain]{
     Sketch of the trigger chain and the different trigger levels~\cite{ATLASTDR}.
     The indicated rates are orders of magnitude only.
@@ -345,125 +328,3 @@ in order to perform cross-checks and studies of less rare physics processes.
 The trigger menus are adjusted to the data taking conditions, in particular to the instantaneous luminosity, in order to make optimal use of the
 band width available for storage.
 
-\subsection[Performance in $pp$ collisions]{Performance in \boldmath$pp$ collisions\unboldmath}
-\label{sec:performance}
-
-The performance of the different subsystems of the ATLAS detector was studied with the data taken in 2010 and 2011.
-Of particular importance is the agreement with Monte Carlo~(MC) simulations (Ch.~\ref{sec:modelling}).
-
-The left plot of Fig.~\ref{fig:IDperformance} shows the invariant mass of $\mu^+\mu^-$ pairs around the mass of the $Z$ boson in \mbox{$0.70 \ifb$} of data,
-where the muon momentum was measured using ID tracks only.
-An early and an improved version of the alignment of the ID subdetectors were used to measure the distribution (full and open circles,
-respectively).
-In shaded grey, the expectation from MC simulations is shown.
-The width of the reconstructed $Z$ mass distribution is a measure for the ID track momentum resolution.
-The resolution in data with improved alignment is generally well reproduced by the MC simulations.
-However, the resolution is slightly worse in data, so that the distribution in the MC simulations needs to be broadened to match the
-data distribution.
-
-The right plot of Fig.~\ref{fig:IDperformance} shows the estimated resolution of the vertex position in $x$-direction as a function of the squared sum
-of the transverse momentum\footnote{The transverse momentum is defined as \mbox{$\pt = p \sin \theta = p / \cosh \eta$}.}
-$\pt$ of the tracks associated to the vertex $\sqrt{\sum \pt^2}$ in 1.5 million minimum bias events~\cite{ATLASminbias}.
-As expected, the vertex resolution improves with increasing $\sqrt{\sum \pt^2}$.
-The general trend of the data is well described by the MC simulations although there are discrepancies in particular for low $\sqrt{\sum \pt^2}$.
-The distributions for the resolution in $y$- and $z$-direction show a similar behaviour~\cite{idperformance}.
-
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[height=0.325\textwidth]{figures/experiment/Z_M_ID}
-\includegraphics[height=0.325\textwidth]{figures/experiment/PV_resolution_X_SumPt2}
-\caption[Performance of the Inner Detector]{
-  Performance of the Inner Detector in $pp$ collisions~\cite{idperformance}:
-  the left plot shows the invariant mass of $\mu^+\mu^-$ pairs around the mass of the $Z$ boson from ID tracks only in \mbox{$0.70 \ifb$} of data.
-  In shaded grey, the expectation from MC simulations is shown. The full and open circles show different versions of the relative alignment
-  of the ID subsystems.
-  The right plot shows the estimated resolution of the vertex position in $x$-direction as a function of the squared sum of the $\pt$ of the tracks
-  associated to the vertex in 1.5 million minimum bias events.
-  Below the plot, the ratio of data and MC simulations is shown.
-}
-\label{fig:IDperformance}
-\end{center}
-\end{figure}
-
-\begin{figure}[h!]
-\begin{center}
-%\vspace{0.025\textwidth}
-\includegraphics[height=0.35\textwidth]{figures/experiment/electron_scale}
-\includegraphics[height=0.35\textwidth]{figures/experiment/electron_zmass}
-\caption[Electron energy performance]{
-  Performance of the electron energy measurement in $pp$ collisions~\cite{electronperformance}:
-  the left plot shows the correction to the electron energy scale derived from \Zee, \mbox{$J/\psi \to ee$} and \mbox{$W \to e\nu$}
-  events with the associated uncertainties for \mbox{$0 < |\eta| < 0.6$}.
-  The right plot shows the di-electron invariant mass distribution around the mass of the $Z$ boson for data and MC simulations.
-  For both plots, \mbox{$40 \ipb$} of data were used.
-}
-\label{fig:electronperformance}
-\end{center}
-\end{figure}
-
-The left plot of Fig.~\ref{fig:electronperformance} shows the correction to the electron energy scale derived from \mbox{$Z \to ee$},
-\mbox{$J/\psi \to ee$} and \mbox{$W \to e\nu$} events with the associated uncertainties for \mbox{$0 < |\eta| < 0.6$} in \mbox{$40 \ipb$} of data.
-The measurements for the different processes are consistent within uncertainties and the electron energy scale is known to a level better than 1\%.
-For higher $|\eta|$, the uncertainties are slightly larger~\cite{electronperformance}.
-
-The right plot of Fig.~\ref{fig:electronperformance} shows the di-electron invariant mass distribution around the mass of the $Z$ boson in \mbox{$40 \ipb$}
-of data and in MC simulations.
-The width of the distribution is a measure of the electron resolution.
-The MC simulations describe the data well, although the $Z$ mass resolution is slightly narrower in data, which can be corrected for by enlarging
-the electron resolution in the simulations.
-
-Fig.~\ref{fig:jetperformance} shows the total uncertainty on the jet energy scale~(JES) as well as different contributions to the uncertainty as a
-function of the $\pt$ of the jet.
-The left plot shows jets in the region \mbox{$0.3 \leq |\eta| < 0.8$}, the right plot shows jets in the region \mbox{$2.1 \leq |\eta| < 2.8$}.
-For the derivation of the uncertainties the data taken in 2010 as well as MC simulations were used.
-
-Contributions to the total JES uncertainty are shown for
-the underlying MC model (up-pointing triangles and solid circles),
-the noise threshold of the clustering algorithm (down-pointing triangles),
-the in-situ calibration using the balance in $\pt$ of dijet events, called $\eta$-intercalibration (crosses and open circles),
-the response to single hadrons (open squares), 
-and the knowledge of the detector material (full squares).
-
-The total JES uncertainty is of the order of 4\% (6\%) for low-$\pt$ jets in the range \mbox{$0.3 \leq |\eta| < 0.8$} (\mbox{$2.1 \leq |\eta| < 2.8$}) and
-decreases to roughly 2\% (2.5\%) for jets with \mbox{$60 \GeV < \pt < 800 \GeV$}.
-The uncertainty in the low-$\pt$-region is dominated by MC modelling uncertainties and uncertainties due to the $\eta$-intercalibration.
-For higher $\pt$, the JES uncertainty increases again to 4\% (3\%) due to the limited knowledge of the response to high-energetic single
-hadrons.
-
-The left plot in Fig.~\ref{fig:muonperformance} shows the invariant di-muon mass around the mass of the $Z$ boson in \mbox{$205 \ipb$} of data.
-The expectation from MC simulations is also depicted and shows a slightly narrower distribution than observed in data.
-
-The right plot in Fig.~\ref{fig:muonperformance} shows the width of the distribution around an invariant mass of \mbox{$90 \GeV$} for different regions of
-the muon $\eta$.
-The resolution is similar for all $\eta$-regions.
-Only in the barrel-to-endcap transition regions at \mbox{$1.05 < |\eta| < 1.7$}, the resolution is slightly worse.
-The resolution is broader in data than in MC simulations consistently for all $\eta$-regions, which is taken into account by
-correcting the muon momentum resolution in the simulations.
-
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.325\textwidth, angle=270]{figures/experiment/jes1}
-\includegraphics[width=0.325\textwidth, angle=270]{figures/experiment/jes2}
-\caption[Jet energy performance]{
-  Performance of the jet energy measurement in $pp$ collisions~\cite{jetperf}:
-  the total uncertainty on the jet energy scale as well as different contributions to the uncertainty are shown as a function of the $\pt$ of the jet.
-  The left plot shows jets in the region \mbox{$0.3 \leq |\eta| < 0.8$}, the right plot shows jets in the region \mbox{$2.1 \leq |\eta| < 2.8$}.
-  For the derivation of the uncertainties the data taken in 2010 as well as MC simulations were used.
-}
-\label{fig:jetperformance}
-\vspace{0.025\textwidth}
-%\includegraphics[height=0.4\textwidth]{figures/experiment/muon_resolution}
-\includegraphics[height=0.35\textwidth]{figures/experiment/muon_zmass}
-\quad
-%\includegraphics[height=0.4\textwidth]{figures/experiment/res_SA_vs_eta}
-\includegraphics[height=0.35\textwidth]{figures/experiment/res_SA_vs_eta}
-\caption[Muon momentum performance]{
-  Performance of the muon momentum measurement in $pp$ collisions~\cite{muonperformanceplots}:
-  the left plot shows the invariant di-muon mass around the mass of the $Z$ boson in \mbox{$205 \ipb$} of data together with the expectation
-  from MC simulations.
-  The right plot shows the width of the distribution around an invariant mass of \mbox{$90 \GeV$} for different regions of the muon pseudorapidity.
-  The resolutions measured in data are compared to the resolutions from MC simulations.
-}
-\label{fig:muonperformance}
-\end{center}
-\end{figure}
