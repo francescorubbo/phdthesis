@@ -344,6 +344,8 @@ reconstruction. The EF reduces the output rate to $\approx{}200~Hz$,
 with a latency of $\approx{}4~s$. Once accepted by an EF trigger an
 event is written to mass storage.
 
+The combination of the two software steps L2 and EF is referred to as High Level Trigger (HLT).
+
 During 2011 the RoI seeded approach at EF was replaced by a
 $full-scan$ strategy. It was found that sufficient time was available
 to read the entire ATLAS calorimeter information, which allows to
@@ -351,38 +353,17 @@ improve the on-line selection efficiency.
 
 \subsubsection{The trigger menu}
 
+The trigger system is configured via a trigger \textit{menu} which defines trigger \textit{chains}.
+Each \textit{chain} is defined by a sequence of steps at each trigger level.
+Thresholds are increasingly tightened at each level in order to maximise selection efficiencies.
+For each HLT level a sequence of read-out, reconstruction and selection steps is specified.
+A trigger is defined as the combination of the L1 seeding item and the two HLT (L2 and EF) chains.
 
+Triggers are categorised based on the object reconstructed (jets, muons, etc..), 
+and the selection requirements, such as energy thresholds, multiplicity, isolation.
+This categorization, together with other distinctions, depending on the reconstruction algorithm
+and its configuration, are encoded in the trigger name.
 
-%Assuming a bunch spacing of \mbox{$25 \ns$} and approximately 20 inelastic interactions per bunch crossing\footnote{As mentioned in Sec.~\ref{sec:LHC}, in 2011 most of the data was taken with a bunch-spacing of \mbox{$50 \ns$}.}, the event rate at the ATLAS detector is
-%of the order of 1~GHz.
-%A three-level trigger system was set up to reduce this rate to about 200~Hz.
-%In 2011 data taking, the real trigger rate was indeed of the order of 300~Hz~\cite{fournier}.
-%The triggers need to suppress minimum bias events very strongly while efficiently selecting rare physics events.
-%The data acquisition system~(DAQ) gathers the data from the different detector subsystems and buffers them until a trigger decision is received.
-%When the event is not rejected by one of the trigger levels, the data are recorded permanently.
-%Fig.~\ref{fig:triggerdaq} shows a sketch of the ATLAS trigger chain indicating the order of magnitude of the trigger rates at the different trigger
-%levels.
-%
-%The first trigger level~(L1) is a hardware-based trigger, which reduces the event rate to approximately 75~kHz.
-%Muons, electrons, photons, jets and hadronically decaying $\tau$-leptons with high transverse momenta are searched for as well as a large momentum
-%imbalance in the transverse plane and a large total transverse energy.
-%The muon trigger chambers are used as well as the calorimeter system with reduced granularity.
-%Within less than \mbox{$2.5 \mus$}, Regions-of-Interest~(RoI) are identified in $\eta$-$\phi$-space, which serve as seeds for the decision at the second
-%trigger level~(L2).
-%
-%The high level trigger is composed of the L2 and the Event Filter (EF), both of which are software-based trigger systems.
-%At L2, the energy and direction of the RoIs are further investigated and also the types of the trigger objects are analysed.
-%Within \mbox{$40 \ms$} a decision is made, and the event rate is reduced to below 3.5~kHz.
-%The EF further decreases the rate down to roughly 200~Hz.
-%Events passing the EF are stored permanently.
-%The full event information is available at the EF level and, hence, energies and directions of the trigger objects are estimated with higher precision
-%than at L1 and L2.
-%In particular, the discrimination between the different particle types is enhanced by the use of the ID tracking system and calorimeter
-%shower shapes.
-%
-%Selections of different trigger signatures are collected in so-called trigger menus.
-%For triggers with very high rates, only a fraction of the triggered events can be selected on a random basis
-%in order to perform cross-checks and studies of less rare physics processes.
-%The trigger menus are adjusted to the data taking conditions, in particular to the instantaneous luminosity, in order to make optimal use of the
-%band width available for storage.
-
+In order to keep the rate within the available bandwidth ($\approx{}200~Hz$), 
+prescales are applied to the triggers with loose requirements so that
+only a fraction of the events passing the sekection are actually recorded.
