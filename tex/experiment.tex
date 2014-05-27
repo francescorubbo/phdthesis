@@ -328,23 +328,24 @@ At the first stage, Level 1 (L1), hardware triggers use coarse
 calorimeter and muon information for the trigger decision. At this
 level the event accept rate is reduced to a maximum of 75 kHz with a
 latency on decision of $\approx{}25~\mus{}$. In the case where the
-trigger is passed, the raw event data is sent to the readout stream
+trigger is passed, the raw event data are sent to the readout stream
 for the next trigger level. The L1 trigger defines one or more
 \emph{regions-of-interest} (RoIs) in $\eta{}$ and $\phi{}$ where the
 L1 trigger has identified interesting features. 
 
 The Level 2 (L2) trigger is software based. At this level the full detector
 granularity is used for the trigger decision but only within the RoIs
-identified at L1. This allows to reduce the throughput to
+identified at L1. Thus the throughput is reduced to
 $\approx{}2~kHz$ within the allowed latency of $\approx{}40~ms$.
 
 The final trigger level is the Event Filter (EF). At this stage the RoIs
 information is treated using the same algorithms as the off-line
 reconstruction. The EF reduces the output rate to $\approx{}200~Hz$, 
-with a latency of $\approx{}4~s$. Once accepted by an EF trigger an
+with a latency of $\approx{}4~s$. Once accepted by an EF trigger, an
 event is written to mass storage.
 
-The combination of the two software steps L2 and EF is referred to as High Level Trigger (HLT).
+The combination of the two software steps L2 and EF is referred to 
+as High Level Trigger (HLT).
 
 During 2011 the RoI seeded approach at EF was replaced by a
 $full-scan$ strategy. It was found that sufficient time was available
