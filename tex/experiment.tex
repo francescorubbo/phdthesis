@@ -26,7 +26,7 @@ in a linear collider~(LINAC2), then the energy is increased up to
 Synchrotron Booster~(BOOSTER), the Proton Synchrotron~(PS) and the Super Proton Synchrotron~(SPS).
 Finally the protons are injected into the LHC.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{figures/experiment/accelerator_chain}
 \caption[CERN Accelerator complex]{
@@ -50,7 +50,7 @@ ATLAS, described in Sec.~\ref{sec:ATLAS}, CMS~\cite{cms}, ALICE~\cite{alice} and
 \section{The ATLAS experiment}
 \label{sec:ATLAS}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \begin{center}
 \includegraphics[width=0.58\textwidth]{figures/experiment/atlas_overview}
 \caption[Drawing of the ATLAS detector]{
@@ -86,17 +86,16 @@ The sub-detectors are grouped into three main systems:
   layer, which consists of muon spectrometers immersed in a toroidal magnetic field. 
 \end{itemize}
 
-In events with a Top quark pair decaying semileptonically, electrons
+In \ttbar{} events with $\ell{}$+jets final state, electrons
 and jets are identified by the tracking and calorimetry systems, muons
 are identified by the tracking and muon systems, and the transverse
 components of the neutrino momenta are inferred from the imbalance in
 the total momenta measured in the detector.
 
-
 \subsection{Inner detectors}
 \label{sec:ID}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.4\textwidth]{figures/experiment/in_det}
 \includegraphics[width=0.3\textwidth]{figures/experiment/in_det_dist}
@@ -176,7 +175,7 @@ Calorimeter~(HEC) and the electromagnetic part of the Forward Calorimeter~(FCal)
 and tungsten in the hadronic part of the FCal.
 The LAr calorimeters are placed in three cryostats: one for the barrel and one for each endcap.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \begin{center}
 \includegraphics[width=0.4\textwidth]{figures/experiment/calorimeters}
 \caption[Overview of the calorimeter system]{
@@ -239,7 +238,7 @@ In the endcaps, tracking information is provided by Cathode Strip Chambers~(CSCs
 In the barrel as well as in the endcaps, muons typically cross three longitudinal layers of the muon spectrometer.
 The muon system is divided into eight octants with overlaps in $\phi$ to avoid gaps in the detector coverage.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \begin{center}
 \includegraphics[width=0.4\textwidth]{figures/experiment/muonchambers}
 \caption[Overview of the muon system]{
@@ -282,7 +281,7 @@ The central solenoid provides an axial field with a strength of \mbox{$2 \T$}.
 The solenoid was designed to be particularly lightweight and to
 minimise the amount of material in front of the calorimeter system.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \begin{center}
 \includegraphics[width=0.4\textwidth]{figures/experiment/magnets}
 \caption[Overview of the magnet system]{
@@ -303,6 +302,56 @@ volume to enable the monitoring of the magnetic field.
 
 \subsection{Trigger and data acquisition}
 \label{sec:triggerDAQ}
+
+With a nominal bunch spacing of \mbox{$50 \ns$} and
+\mbox{$\approx{}1~MB$} event size, ATLAS generates more
+information than can be recorded to disk. In 20 million 
+interactions per second, approximately one \ttbar{} event 
+is produced. It is therefore crucial to have an efficient trigger
+system for selecting events of interest.
+
+The ATLAS trigger system, shown schematically in
+Fig.~\ref{fig:trigger}, has a three tier structure with increasing
+levels of information used in reconstruction, and hence refinement of
+the selection criteria, at each stage.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=0.4\textwidth]{figures/experiment/trigger}
+\caption[ATLAS trigger system]{
+  Schematic diagram of the ATLAS trigger system~\cite{trigger}. }
+\label{fig:trigger}
+\end{center}
+\end{figure}
+
+At the first stage, Level 1 (L1), hardware triggers use coarse
+calorimeter and muon information for the trigger decision. At this
+level the event accept rate is reduced to a maximum of 75 kHz with a
+latency on decision of $\approx{}25~\mus{}$. In the case where the
+trigger is passed, the raw event data is sent to the readout stream
+for the next trigger level. The L1 trigger defines one or more
+\emph{regions-of-interest} (RoIs) in $\eta{}$ and $\phi{}$ where the
+L1 trigger has identified interesting features. 
+
+The Level 2 (L2) trigger is software based. At this level the full detector
+granularity is used for the trigger decision but only within the RoIs
+identified at L1. This allows to reduce the throughput to
+$\approx{}2~kHz$ within the allowed latency of $\approx{}40~ms$.
+
+The final trigger level is the Event Filter (EF). At this stage the RoIs
+information is treated using the same algorithms as the off-line
+reconstruction. The EF reduces the output rate to $\approx{}200~Hz$, 
+with a latency of $\approx{}4~s$. Once accepted by an EF trigger an
+event is written to mass storage.
+
+During 2011 the RoI seeded approach at EF was replaced by a
+$full-scan$ strategy. It was found that sufficient time was available
+to read the entire ATLAS calorimeter information, which allows to
+improve the on-line selection efficiency.
+
+\subsubsection{The trigger menu}
+
+
 
 %Assuming a bunch spacing of \mbox{$25 \ns$} and approximately 20 inelastic interactions per bunch crossing\footnote{As mentioned in Sec.~\ref{sec:LHC}, in 2011 most of the data was taken with a bunch-spacing of \mbox{$50 \ns$}.}, the event rate at the ATLAS detector is
 %of the order of 1~GHz.
