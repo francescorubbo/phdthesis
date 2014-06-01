@@ -2,7 +2,7 @@
 \label{sec:experiment}
 
 The ATLAS detector is one of the two general-purpose experiments 
-at the Large Hadron Collider (LHC) at CERN, Switzerland.
+at the Large Hadron Collider (LHC), CERN, Switzerland.
 It has been built to pursue a broad particle physics program. 
 
 The LHC is described in Sec.~\ref{sec:LHC}, while the design and operation of the 
@@ -35,7 +35,20 @@ Finally the protons are injected into the LHC.
 \label{fig:lhc}
 \end{center}
 \end{figure}
- 
+
+In the LHC the protons are bunched together into up to 2808 bunches with a minimum spacing of
+\mbox{$25 \ns$}. Each bunch consists of about $10^{11}$ particles. 
+These parameters would allow to reach the design peak luminosity of \mbox{$10^{34} cm^{-2}s^{-1}$}.
+However, most of the data collected so far were taken with a bunch spacing of \mbox{$50 \ns$} and up to 1308 bunches, yielding a maximum peak luminosity of \mbox{$3.65\cdots{}10^{33} cm^{-2}s^{-1}$}.
+
+Due to the high frequency of collisions and charge density of the bunches necessary 
+to achieve such high luminosities, there is a non-zero probability that several events, 
+originating from different $pp$ collisions, may occur simultaneously. 
+These pile-up events are categorized as $in-time$ or $out-of-time$ pile-up. 
+The first are caused by  multiple inelastic interactions of protons in the same bunch collision. 
+The $out-of-time$ pile-up occurs when the detector records events originated in different 
+bunch-crossings.
+
 In 2011 each beam was accelerated to an energy of \mbox{$3.5 \TeV$}, 
 resulting into a center-of-mass energy \mbox{$\sqrt{s} = 7 \TeV$}.
 In 2012, the beam energy was increased to \mbox{$4 \TeV$}, 
@@ -45,35 +58,35 @@ which is expected for future operation.
 
 The beams are brought to collision in four interaction points along
 the ring, where four experiments are situated: 
-ATLAS, described in Sec.~\ref{sec:ATLAS}, CMS~\cite{cms}, ALICE~\cite{alice} and LHCb~\cite{lhcb} .
+ATLAS, described in Sec.~\ref{sec:ATLAS}, CMS~\cite{cms}, ALICE~\cite{alice} and LHCb~\cite{lhcb}.
 
 \section{The ATLAS experiment}
 \label{sec:ATLAS}
 
 \begin{figure}[ht]
 \begin{center}
-\includegraphics[width=0.58\textwidth]{figures/experiment/atlas_overview}
+\includegraphics[width=0.9\textwidth]{figures/experiment/atlas_overview}
 \caption[Drawing of the ATLAS detector]{
-  Drawing of the ATLAS detector showing the different detectors and magnet systems.}
+  Drawing of the ATLAS detector showing the different detectors and the magnet systems.}
 \label{fig:ATLAS}
 \end{center}
 \end{figure}
 
-ATLAS (A Toroidal LHC ApparatuS) is a particle detector
-experiment~\cite{detectorpaper} designed to observe highly massive
+The ATLAS (A Toroidal LHC ApparatuS) detector
+is an experiment~\cite{detectorpaper} designed to observe highly massive
 particles and to measure the properties of known particles produced at
 unprecedented energies and high rates. 
 
-As shown in Fig.~\ref{fig:ATLAS}, the interaction point is surrounded
-by several layers of sub-detectors, each devoted to the measurement of
+As shown in Fig.~\ref{fig:ATLAS}, the detector is built in
+several layers of sub-detectors, each devoted to the measurement of
 different properties for different types of particles.
 The sub-detectors are grouped into three main systems:
 
 \begin{itemize}
-\item The Inner Detectors, described in Sec.~\ref{sec:ID}, immersed in
-  a solenoidal magnetic field, constitute a tracking system used to
+\item The Inner Detector, described in Sec.~\ref{sec:ID}, immersed in
+  a solenoidal magnetic field, constitutes a tracking system used to
   identify and measure the momenta of charged particles, and to identify
-  the interaction vertices and displaced vertices. 
+  the interaction vertices and the displaced vertices. 
 \item The Calorimeters are used to identify and measure the energy of
   neutral and charged particles. They are designed to stop most types
   of particles, except for muons and
@@ -97,14 +110,12 @@ the total momenta measured in the detector.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.4\textwidth]{figures/experiment/in_det}
-\includegraphics[width=0.3\textwidth]{figures/experiment/in_det_dist}
+\includegraphics[width=0.9\textwidth]{figures/experiment/innerdet}
 \caption[Overview of the Inner Detector]{
   Overview of the Inner Detector: 
   the left figure shows a longitudinal section of the Inner Detector
   with the different sub-detectors.
-  The right figure shows a transverse section and illustrates the
-  distances of the different detector layers from the beam line.}
+  The right figure displays a cosmic ray event as recorded by the pixel detector.}
 \label{fig:ID}
 \end{figure}
 
@@ -113,82 +124,94 @@ the Pixel detector and the SemiConductor Tracker~(SCT), which use silicon semico
 technology, and the Transition Radiation Tracker~(TRT), 
 which exploits the transition radiation produced in a gas mixture of Xe, CO$_2$ and O$_2$.
 Fig.~\ref{fig:ID} shows a longitudinal and a transverse section of the ID.
-The whole ID is immersed in a \mbox{$2 \T$} solenoidal field (Sec.~\ref{sec:magnets}).
+The whole ID is immersed in a \mbox{$2 \T$} solenoidal field (see Sec.~\ref{sec:magnets}).
 
-With three concentric cylinders~(barrel part), and three endcap disks
+With three concentric cylinders~(barrel part), and three end-cap disks
 perpendicular to the beam axis, the Pixel detector covers a
 range\footnote{ATLAS uses a right-handed coordinate system
-  with its origin at the nominal interaction point (IP) in the centre
+  with its origin at the nominal interaction point (IP) in the center
   of the detector and the $z$-axis along the beam pipe. 
-  The $x$-axis points from the IP to the centre of the LHC ring, and the $y$-axis points
+  The $x$-axis points from the IP to the center of the LHC ring, and the $y$-axis points
   upwards. Cylindrical coordinates ($r$, $\phi$) are used in the
   transverse plane, where $\phi$ is the azimuthal angle around the beam pipe. The
-  pseudorapidity is defined in terms of the polar angle $\theta$ as 
+  pseudo-rapidity is defined in terms of the polar angle $\theta$ as 
   \mbox{$\eta = - \ln \left[ \tan \left( \frac{\theta}{2} \right)
     \right]$}.} of \mbox{$|\eta| < 2.5$}.
 Each of the 1744 sensors consists of a segmented silicon wafer with
 pixels of minimum area \mbox{$50 \times 400 \mum^2$} and 46080 readout channels.
 The innermost pixel layer, called $b$-layer, is as close to the beam
-line as \mbox{$50.5 \mm$} and allows for a precise extrapolation of tracks
-to the vertices.
-This is crucial for the identification of displaced secondary vertices.
+line as and allows for extrapolation of tracks
+to the vertices with precision below \mbox{$100 \mum$}.
+Such precision is crucial for the identification of displaced secondary vertices.
 
-The SCT consists of four layers in the barrel and nine endcap disks.
+The SCT consists of a four layers barrel and two end-caps, each with nine disks.
 It covers the range \mbox{$|\eta| < 2.5$}.
-In the barrel, silicon strips are arranged parallel to the beam line, while in the disks, the strips are oriented radially.
-Modules are arranged back-to-back with a small stereo angle of \mbox{$40 \mrad$} to allow for a measurement of the azimuth angle in each layer.
+In the barrel, silicon strips are arranged parallel to the beam line, 
+while in the disks, the strips are oriented radially.
+Modules are arranged back-to-back with a small stereo angle of \mbox{$40 \mrad$} 
+to allow for a measurement of the azimuth angle in each layer.
+
 A typical track yields three space-points in the Pixel detector and eight in the SCT.
-Together, the silicon trackers ensure the measurement of the track momenta and the identification of primary and secondary vertices.
+Together, the silicon trackers ensure the measurement of the track momenta 
+and the identification of primary and secondary vertices.
 
-In the barrel part of the TRT, there are 73 planes of straw tubes
+The TRT enhances the momentum resolution by providing track measurement points
+up to the solenoid radius.
+The barrel is made of 73 planes of straw tubes
 filled with gas mixture, which are arranged parallel to the beam axis.
-In the endcap, there are 160 straw planes, oriented radially.
-The TRT covers a range of \mbox{$|\eta| < 2.0$}, 
-in which the separation of electrons from charged pions
-is improved by exploiting transition radiation.
+In the end-cap, there are 160 straw planes, oriented radially,
+covering a range of \mbox{$|\eta| < 2.0$}. 
+By integrating the transition-radiation signature, the TRT also provides
+stand-alone electron/pion separation.
 
-The total amount of material of the ID is as large as roughly 0.5 electromagnetic radiation
-lengths\footnote{The radiation length is defined as the typical amount of material traversed by an electron after which it has lost
+In order to limit the degradation of the energy measurement in the calorimeters, 
+the ID is designed to absorb a minimum amount of energy.
+The total amount of material of the ID corresponds to roughly 0.5 electromagnetic radiation
+lengths\footnote{The radiation length is defined as the typical amount of material traversed 
+by an electron after which it has lost
 $\frac{1}{e}$ of its original energy by bremsstrahlung.}
-$X_0$ for \mbox{$|\eta| < 0.6$}.
-For \mbox{$0.6 < |\eta| < 1.37$} and \mbox{$1.52 < |\eta| < 2.5$}, the amount of material reaches up to \mbox{$1.5 X_0$}.
-In the barrel-to-endcap transition region at \mbox{$1.37 < |\eta| < 1.52$}, the amount of material is even larger.
-Electrons in this region were not taken into account in this analysis.
+$X_0$ in the range \mbox{$|\eta| < 0.6$}.
+In the regions \mbox{$0.6 < |\eta| < 1.37$} and \mbox{$1.52 < |\eta| < 2.5$}, 
+the amount of material reaches up to \mbox{$1.5 X_0$}.
+In the barrel-to-end-cap transition regions at \mbox{$1.37 < |\eta| < 1.52$}, 
+the amount of material is even larger, with a significant degradation of the energy measurement. 
+Therefore, electrons in the transition regions were not taken into account in this analysis.
 
 \subsection{Calorimeters}
 \label{sec:calorimeter}
 
-Fig.~\ref{fig:calorimeters} shows an overview of the different electromagnetic and hadronic calorimeters of the ATLAS detector.
+Fig.~\ref{fig:calorimeters} shows an overview of the different electromagnetic 
+and hadronic calorimeters of the ATLAS detector.
 
-The ATLAS electromagnetic and hadronic calorimeters are sampling
-calorimeters consisting of alternating layers of dense absorber
-material and active material, where only the active
-material is used for the energy measurement.
+Both calorimeters are sampling calorimeters consisting of alternating layers
+of dense absorber material and active material.
+Only the active material is used for the energy measurement.
 
 The hadronic calorimeter in the barrel~(Tile) uses steel as absorber
 and scintillators as active material.
 The electromagnetic and the forward hadronic calorimeters use Liquid
 Argon~(LAr) technology with different types of absorbers:
 lead in the ElectroMagnetic Barrel~(EMB) and the ElectroMagnetic
-Endcap Calorimeter (EMEC), copper in the Hadronic Endcap
+End-cap Calorimeter (EMEC), copper in the Hadronic End-cap
 Calorimeter~(HEC) and the electromagnetic part of the Forward Calorimeter~(FCal),
 and tungsten in the hadronic part of the FCal.
-The LAr calorimeters are placed in three cryostats: one for the barrel and one for each endcap.
+The LAr calorimeters are placed in three cryostats: one for the barrel and one for each end-cap.
 
 \begin{figure}[ht]
 \begin{center}
-\includegraphics[width=0.4\textwidth]{figures/experiment/calorimeters}
+\includegraphics[width=0.9\textwidth]{figures/experiment/calorimeters}
 \caption[Overview of the calorimeter system]{
   Overview of the calorimeter system:
-  the different subdetectors of the electromagnetic and hadronic calorimeter are shown.}
+  the different sub-detectors of the electromagnetic and hadronic calorimeter are shown.}
 \label{fig:calorimeters}
 \end{center}
 \end{figure}
 
 The materials have been chosen to provide fast readout, 
 radiation hardness, and high containment of electromagnetic and
-hadronic showers to ensure
-a precise measurement of their energies.
+hadronic showers\footnote{A shower is a cascade of secondary particles produced 
+as the result of a high-energy particle interacting with the dense matter of the calorimeter.} 
+to ensure a precise measurement of their energies.
 
 All calorimeters are finely granulated and also segmented
 longitudinally to allow for a precise determination of the position of the showers and to
@@ -198,7 +221,7 @@ which is devoted to precision measurements of electrons and photons:
 the EMB (\mbox{$|\eta| < 1.475$}) is segmented into three longitudinal
 layers, where the first layer $\eta$ granularity is 0.0031.
 To ensure continuous coverage in azimuth and to enable fast readout, 
-the lead absorbers are folded into an accordion shaped structure.
+the lead absorbers are folded into an accordion-shaped structure.
 
 A similar design as for the EMB has been used for the EMEC, 
 which is divided into two wheels covering the ranges \mbox{$1.375 < |\eta| < 2.5$}
@@ -229,18 +252,18 @@ The ATLAS muon system covers the range \mbox{$|\eta| < 2.7$}
 and is designed to measure the momenta of muons with energy 
 above \mbox{$\sim 3 \GeV$}.
 The tracks of the muons are bent by the toroidal magnetic field,
-whose orientation is such that muon tracks in both barrel and endcaps 
+whose orientation is such that muon tracks in both barrel and end-caps 
 are mostly orthogonal to the field lines.
 
 The muon system, shown in Fig.~\ref{fig:muons}, consists of high-precision tracking chambers as well as trigger systems.
 In the barrel part, Monitored Drift Tubes~(MDTs) are used for tracking and Resistive Plate Chambers~(RPCs) for triggering.
-In the endcaps, tracking information is provided by Cathode Strip Chambers~(CSCs) and Thin Gap Chambers~(TGCs) are used for triggering.
-In the barrel as well as in the endcaps, muons typically cross three longitudinal layers of the muon spectrometer.
+In the end-caps, tracking information is provided by Cathode Strip Chambers~(CSCs) and Thin Gap Chambers~(TGCs) are used for triggering.
+In the barrel as well as in the end-caps, muons typically cross three longitudinal layers of the muon spectrometer.
 The muon system is divided into eight octants with overlaps in $\phi$ to avoid gaps in the detector coverage.
 
 \begin{figure}[ht]
 \begin{center}
-\includegraphics[width=0.4\textwidth]{figures/experiment/muonchambers}
+\includegraphics[width=0.9\textwidth]{figures/experiment/muonchambers}
 \caption[Overview of the muon system]{
   Overview of the muon system:
   the different types of tracking and trigger chambers are shown.}
@@ -253,14 +276,14 @@ level of particle flux.
 The MDTs in the barrel part follow a robust and reliable detector design.
 Since each tube contains only one sense wire, the simple geometry
 allows for the prediction of deformations as well as for a precise reconstruction.
-As the particle flux is increasing with $|\eta|$, 
-the CSCs are more suited for the endcap region:
+As the particle flux increases with $|\eta|$, 
+the CSCs are more suited for the end-cap region:
 the higher granularity of the multi-wire proportional chambers 
 facilitates to cope with the increasing rates.
 
 The choice of the technologies for the trigger chambers was driven 
 by the requirement for fast and highly efficient trigger capabilities
-given the different conditions present in the barrel and endcap regions during data taking.
+given the different conditions present in the barrel and end-cap regions during data taking.
 Additionally, an adequate resolution of the transverse momentum of the tracks was required.
 In the barrel, RPCs provide good spatial and time resolution.
 However, in the region \mbox{$1.05 < |\eta| < 2.4$}  the particle flux
@@ -275,15 +298,15 @@ tracks to bunch crossings.
 
 The ATLAS magnets system consists of four superconducting
 magnets: a central solenoid and three toroid magnets in the barrel and the
-two endcaps (Fig.~\ref{fig:magnets}).
+two end-caps (Fig.~\ref{fig:magnets}).
 
 The central solenoid provides an axial field with a strength of \mbox{$2 \T$}.
 The solenoid was designed to be particularly lightweight and to
-minimise the amount of material in front of the calorimeter system.
+minimize the amount of material in front of the calorimeter system.
 
 \begin{figure}[ht]
 \begin{center}
-\includegraphics[width=0.4\textwidth]{figures/experiment/magnets}
+\includegraphics[width=0.9\textwidth]{figures/experiment/magnets}
 \caption[Overview of the magnet system]{
   Overview of the magnet system:
   the solenoid and the toroids are shown.}
@@ -292,8 +315,8 @@ minimise the amount of material in front of the calorimeter system.
 \end{figure}
 
 The toroid systems provide magnetic fields with a bending power
-of \mbox{$1.5 - 5.5 \Tm$} in the barrel and \mbox{$1 - 7.5 \Tm$} in the endcap regions.
-Each system consists of eight coils placed in aluminium housings.
+of \mbox{$1.5 - 5.5 \Tm$} in the barrel and \mbox{$1 - 7.5 \Tm$} in the end-cap regions.
+Each system consists of eight coils placed in aluminum housings.
 The toroidal fields contain non-uniformities which need to be known to
 high precision to allow for an accurate measurement of muon momenta.
 Hence, 1800 Hall sensors were installed in the muon spectrometer 
@@ -317,7 +340,7 @@ the selection criteria, at each stage.
 
 \begin{figure}[ht]
 \begin{center}
-\includegraphics[width=0.4\textwidth]{figures/experiment/trigger}
+\includegraphics[width=0.9\textwidth]{figures/experiment/trigger}
 \caption[ATLAS trigger system]{
   Schematic diagram of the ATLAS trigger system~\cite{trigger}. }
 \label{fig:trigger}
@@ -356,15 +379,15 @@ improve the on-line selection efficiency.
 
 The trigger system is configured via a trigger \textit{menu} which defines trigger \textit{chains}.
 Each \textit{chain} is defined by a sequence of steps at each trigger level.
-Thresholds are increasingly tightened at each level in order to maximise selection efficiencies.
+Thresholds are increasingly tightened at each level in order to maximize selection efficiencies.
 For each HLT level a sequence of read-out, reconstruction and selection steps is specified.
 A trigger is defined as the combination of the L1 seeding item and the two HLT (L2 and EF) chains.
 
-Triggers are categorised based on the object reconstructed (jets, muons, etc..), 
+Triggers are categorized based on the object reconstructed (jets, muons, etc..), 
 and the selection requirements, such as energy thresholds, multiplicity, isolation.
 This categorization, together with other distinctions, depending on the reconstruction algorithm
 and its configuration, are encoded in the trigger name.
 
 In order to keep the rate within the available bandwidth ($\approx{}200~Hz$), 
 prescales are applied to the triggers with loose requirements so that
-only a fraction of the events passing the sekection are actually recorded.
+only a fraction of the events passing the selection are actually recorded.
