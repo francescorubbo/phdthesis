@@ -35,10 +35,6 @@
 
 \pagestyle{headings}
 
-\renewcommand{\sectfont}{\bfseries\rmfamily}
-\renewcommand{\floatpagefraction}{0.7}
-\renewcommand{\textfraction}{0.1}
-
 \newcommand{\dzero}      {D\O}
 \newcommand{\uubar}      {\mbox{$u\bar{u}$}}
 \newcommand{\ddbar}      {\mbox{$d\bar{d}$}}
@@ -116,6 +112,9 @@
 \usepackage{multirow}
 \hyphenation{Chro-mo-dy-na-mics}
 \usepackage{hyperref}
+\hypersetup{%
+    pdfborder = {0 0 0}
+}
 
 % table: row distance
 \renewcommand\arraystretch{1.25} % default : 1.0
