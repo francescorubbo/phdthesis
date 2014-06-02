@@ -36,18 +36,24 @@ Finally the protons are injected into the LHC.
 \end{center}
 \end{figure}
 
-In the LHC the protons are bunched together into up to 2808 bunches with a minimum spacing of
-\mbox{$25 \ns$}. Each bunch consists of about $10^{11}$ particles. 
-These parameters would allow to reach the design peak luminosity of \mbox{$10^{34} cm^{-2}s^{-1}$}.
-However, most of the data collected so far were taken with a bunch spacing of \mbox{$50 \ns$} and up to 1308 bunches, yielding a maximum peak luminosity of \mbox{$3.65\cdots{}10^{33} cm^{-2}s^{-1}$}.
+In the LHC the protons are bunched together into up to 2808 bunches 
+with a minimum spacing of \mbox{$25 \ns$}. 
+Each bunch consists of about $10^{11}$ particles. 
+These parameters will allow in the future to reach 
+the design peak luminosity of \mbox{$10^{34} cm^{-2}s^{-1}$}.
+However, most of the data collected so far were taken with a bunch 
+spacing of \mbox{$50 \ns$} and up to 1308 bunches, 
+yielding a maximum peak luminosity of \mbox{$3.65\cdot{}10^{33} cm^{-2}s^{-1}$}.
 
 Due to the high frequency of collisions and charge density of the bunches necessary 
-to achieve such high luminosities, there is a non-zero probability that several events, 
-originating from different $pp$ collisions, may occur simultaneously. 
+to achieve such high luminosity, there is a non-zero probability 
+that several events,originating from different $pp$ collisions, 
+may occur simultaneously. 
 These pile-up events are categorized as $in-time$ or $out-of-time$ pile-up. 
-The first are caused by  multiple inelastic interactions of protons in the same bunch collision. 
-The $out-of-time$ pile-up occurs when the detector records events originated in different 
-bunch-crossings.
+$In-time$ pile-up events are caused by  multiple inelastic interactions of protons 
+in the same bunch collision. 
+The $out-of-time$ pile-up occurs when the detector records events originated 
+in different bunch-crossings.
 
 In 2011 each beam was accelerated to an energy of \mbox{$3.5 \TeV$}, 
 resulting into a center-of-mass energy \mbox{$\sqrt{s} = 7 \TeV$}.
@@ -85,7 +91,7 @@ The sub-detectors are grouped into three main systems:
 \begin{itemize}
 \item The Inner Detector, described in Sec.~\ref{sec:ID}, immersed in
   a solenoidal magnetic field, constitutes a tracking system used to
-  identify and measure the momenta of charged particles, and to identify
+  identify and measure the momenta of charged particles and to identify
   the interaction vertices and the displaced vertices. 
 \item The Calorimeters are used to identify and measure the energy of
   neutral and charged particles. They are designed to stop most types
@@ -140,7 +146,7 @@ range\footnote{ATLAS uses a right-handed coordinate system
 Each of the 1744 sensors consists of a segmented silicon wafer with
 pixels of minimum area \mbox{$50 \times 400 \mum^2$} and 46080 readout channels.
 The innermost pixel layer, called $b$-layer, is as close to the beam
-line as and allows for extrapolation of tracks
+line as \mbox{$50.5 \mm$} and allows for extrapolation of tracks
 to the vertices with precision below \mbox{$100 \mum$}.
 Such precision is crucial for the identification of displaced secondary vertices.
 
@@ -155,8 +161,8 @@ A typical track yields three space-points in the Pixel detector and eight in the
 Together, the silicon trackers ensure the measurement of the track momenta 
 and the identification of primary and secondary vertices.
 
-The TRT enhances the momentum resolution by providing track measurement points
-up to the solenoid radius.
+The TRT enhances the momentum resolution by providing additional
+track measurement points.
 The barrel is made of 73 planes of straw tubes
 filled with gas mixture, which are arranged parallel to the beam axis.
 In the end-cap, there are 160 straw planes, oriented radially,
@@ -257,7 +263,7 @@ are mostly orthogonal to the field lines.
 
 The muon system, shown in Fig.~\ref{fig:muons}, consists of high-precision tracking chambers as well as trigger systems.
 In the barrel part, Monitored Drift Tubes~(MDTs) are used for tracking and Resistive Plate Chambers~(RPCs) for triggering.
-In the end-caps, tracking information is provided by Cathode Strip Chambers~(CSCs) and Thin Gap Chambers~(TGCs) are used for triggering.
+In the end-caps, tracking information is provided by Cathode Strip Chambers~(CSCs), and Thin Gap Chambers~(TGCs) are used for triggering.
 In the barrel as well as in the end-caps, muons typically cross three longitudinal layers of the muon spectrometer.
 The muon system is divided into eight octants with overlaps in $\phi$ to avoid gaps in the detector coverage.
 
@@ -297,7 +303,7 @@ tracks to bunch crossings.
 \label{sec:magnets}
 
 The ATLAS magnets system consists of four superconducting
-magnets: a central solenoid and three toroid magnets in the barrel and the
+magnets: a central solenoid and three toroidal magnets in the barrel and the
 two end-caps (Fig.~\ref{fig:magnets}).
 
 The central solenoid provides an axial field with a strength of \mbox{$2 \T$}.
@@ -314,7 +320,7 @@ minimize the amount of material in front of the calorimeter system.
 \end{center}
 \end{figure}
 
-The toroid systems provide magnetic fields with a bending power
+The toroids system provides magnetic fields with a bending power
 of \mbox{$1.5 - 5.5 \Tm$} in the barrel and \mbox{$1 - 7.5 \Tm$} in the end-cap regions.
 Each system consists of eight coils placed in aluminum housings.
 The toroidal fields contain non-uniformities which need to be known to
@@ -323,7 +329,7 @@ Hence, 1800 Hall sensors were installed in the muon spectrometer
 volume to enable the monitoring of the magnetic field.
 
 
-\subsection{Trigger and data acquisition}
+\subsection{Trigger}
 \label{sec:triggerDAQ}
 
 With a nominal bunch spacing of \mbox{$50 \ns$} and
@@ -350,7 +356,7 @@ the selection criteria, at each stage.
 At the first stage, Level 1 (L1), hardware triggers use coarse
 calorimeter and muon information for the trigger decision. At this
 level the event accept rate is reduced to a maximum of 75 kHz with a
-latency on decision of $\approx{}25~\mus{}$. In the case where the
+latency on decision of $\approx{}25~\mus{}$. In the cases where the
 trigger is passed, the raw event data are sent to the readout stream
 for the next trigger level. The L1 trigger defines one or more
 \emph{regions-of-interest} (RoIs) in $\eta{}$ and $\phi{}$ where the
@@ -372,19 +378,19 @@ as High Level Trigger (HLT).
 
 During 2011 the RoI seeded approach at EF was replaced by a
 $full-scan$ strategy. It was found that sufficient time was available
-to read the entire ATLAS calorimeter information, which allows to
-improve the on-line selection efficiency.
+to read the information from the entire ATLAS calorimetry system, 
+which allows to improve the on-line selection efficiency.
 
 \subsubsection{The trigger menu}
 
 The trigger system is configured via a trigger \textit{menu} which defines trigger \textit{chains}.
 Each \textit{chain} is defined by a sequence of steps at each trigger level.
 Thresholds are increasingly tightened at each level in order to maximize selection efficiencies.
-For each HLT level a sequence of read-out, reconstruction and selection steps is specified.
+For each HLT level, a sequence of read-out, reconstruction and selection steps is specified.
 A trigger is defined as the combination of the L1 seeding item and the two HLT (L2 and EF) chains.
 
 Triggers are categorized based on the object reconstructed (jets, muons, etc..), 
-and the selection requirements, such as energy thresholds, multiplicity, isolation.
+and the selection requirements, such as energy thresholds, multiplicity or isolation.
 This categorization, together with other distinctions, depending on the reconstruction algorithm
 and its configuration, are encoded in the trigger name.
 
