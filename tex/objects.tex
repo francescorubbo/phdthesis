@@ -20,13 +20,18 @@ by the passage of a neutrino (Sec.~\ref{sec:met}).
 \section{Electrons}
 \label{sec:electrons}
 
-An electron candidate object is selected by searching for a narrow, 
+An electron candidate object~\cite{elereco} is selected by searching for a narrow, 
 localized cluster of energy deposits in the EM calorimeter, 
-with at least one ID track\footnote{A track is the reconstruction of the trajectory of a charged particle, which leaves $hits$ in the ID layers. The tracking algorithms~\cite{trackalgos} convert the $hits$ into three-dimensional space points and extrapolate the corresponding trajectory.}
+with at least one ID track\footnote{A track is the reconstruction 
+of the trajectory of a charged particle, which leaves $hits$ in the 
+ID layers. The tracking algorithms~\cite{trackalgos} convert the 
+$hits$ into three-dimensional space points and extrapolate the 
+corresponding trajectory.}
 associated to it.
 
-A $sliding-window$ clustering algorithm is used to identify electron clusters.
-The algorithm performs a scan of the calorimeter searching for local maxima of energy
+A $sliding-window$ clustering algorithm is used to identify electron 
+clusters. The algorithm performs a scan of the calorimeter searching 
+for local maxima of energy
 within a $\eta$-$\phi$ window of $0.075\times{}0.125$.
 The scan is performed in the range $|\eta_{\mathrm{cluster}}|<2.47$, 
 which corresponds to the ID coverage for reconstructing tracks. 
@@ -38,11 +43,10 @@ and the direction of the associated ID track.
 When multiple tracks are associated with the cluster, the closest
 to the cluster direction\footnote{The position of a cluster 
 is computed as a weighted average of the $\eta$-$\phi$ positions 
-of the calorimeters cells in the cluster, based on the absolute value cell's energy.} 
-is considered.                        
+of the calorimeters cells in the cluster, based on the absolute 
+value cell's energy.} is considered.                        
 
-The $\et$ of the electron is required to be larger than \mbox{$25 \GeV$} in the analysis, but also electrons with an $\et$ down
-to \mbox{$15 \GeV$} were used for the estimation of the photon isolation properties (Ch.~\ref{sec:photontemplate}).
+The $\et$ of the electron is required to be larger than \mbox{$25 \GeV$}.
 
 In order to suppress backgrounds from other particles misidentified as electrons, cut-based sets of quality criteria (menus)
 provided increasing background rejection: the so-called \texttt{loose}, \texttt{medium} and \texttt{tight} menus.
