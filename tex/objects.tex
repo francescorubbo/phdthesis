@@ -1,6 +1,16 @@
 \chapter{Physics Objects}
 \label{sec:objects}
 
+The ATLAS detector records events as raw data, 
+which correspond to bits of electric signal collected 
+when particles interact with the detectors. 
+The goal of object identification is to reconstruct the particle 4-momenta
+by combining the information from the different sub-detectors.
+This task is performed by algorithms optimized for the reconstruction of
+electrons (Sec.~\ref{sec:electrons}), muons (Sec.~\ref{sec:muons}), 
+jets (Sec.~\ref{sec:jets}) and the energy imbalance left
+by the passage of a neutrino (Sec.~\ref{sec:met}).
+
 \section{Tracks}
 \label{sec:tracks}
 
@@ -9,6 +19,47 @@
 
 \section{Electrons}
 \label{sec:electrons}
+
+An electron candidate object is selected by searching for a narrow, 
+localized cluster of energy deposits in the EM calorimeter, 
+with at least one ID track\footnote{A track is the reconstruction of the trajectory of a charged particle, which leaves $hits$ in the ID layers. The tracking algorithms~\cite{trackalgos} convert the $hits$ into three-dimensional space points and extrapolate the corresponding trajectory.}
+associated to it.
+
+A $sliding-window$ clustering algorithm is used to identify electron clusters.
+The algorithm performs a scan of the calorimeter searching for local maxima of energy
+within a $\eta$-$\phi$ window of $0.075\times{}0.125$.
+The scan is performed in the range $|\eta_{\mathrm{cluster}}|<2.47$, 
+which corresponds to the ID coverage for reconstructing tracks. 
+Tracks within a $\eta$-$\phi$ window of $0.05\times{}0.10$ are 
+associated with the cluster.
+
+The electron four-momentum is built from the cluster energy
+and the direction of the associated ID track.
+When multiple tracks are associated with the cluster, the closest
+to the cluster direction\footnote{The position of a cluster 
+is computed as a weighted average of the $\eta$-$\phi$ positions 
+of the calorimeters cells in the cluster, based on the absolute value cell's energy.} 
+is considered.                        
+
+The $\et$ of the electron is required to be larger than \mbox{$25 \GeV$} in the analysis, but also electrons with an $\et$ down
+to \mbox{$15 \GeV$} were used for the estimation of the photon isolation properties (Ch.~\ref{sec:photontemplate}).
+
+In order to suppress backgrounds from other particles misidentified as electrons, cut-based sets of quality criteria (menus)
+provided increasing background rejection: the so-called \texttt{loose}, \texttt{medium} and \texttt{tight} menus.
+In the following, the \texttt{tight} menu is described, which yields an overall efficiency of roughly 75\%.
+
+Electron clusters tend to be smaller in size than clusters from hadrons within jets.
+Hence, several observables constructed from the geometrical shape of EM clusters (shower shapes), such as their lateral width or
+the energy in the highest-energetic calorimeter cells, were used in the \texttt{tight} menu.
+Also, the fraction of the energy deposited in the hadronic calorimeter, which is typically very small for electrons, was exploited to\
+ suppress
+backgrounds from jets.
+The transition radiation in the TRT was used in addition to discriminate against charged hadrons.
+In order to assure that tracks are not accidentally associated to clusters, quality criteria on the number of hits in the silicon tra\
+ckers,
+a good geometrical matching of the track direction and the cluster position as well as of the track momentum and the cluster energy w\
+ere required.
+
 
 \section{Muons}
 \label{sec:muons}
