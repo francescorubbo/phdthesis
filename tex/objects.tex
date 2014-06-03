@@ -4,7 +4,7 @@
 The ATLAS detector records events as raw data, 
 which correspond to bits of electric signal collected 
 when particles interact with the detectors. 
-The goal of object identification is to reconstruct the particle 4-momenta
+The goal of object identification is to reconstruct the particle four-momenta
 by combining the information from the different sub-detectors.
 This task is performed by algorithms optimized for the reconstruction of
 electrons (Sec.~\ref{sec:electrons}), muons (Sec.~\ref{sec:muons}), 
@@ -44,26 +44,31 @@ When multiple tracks are associated with the cluster, the closest
 to the cluster direction\footnote{The position of a cluster 
 is computed as a weighted average of the $\eta$-$\phi$ positions 
 of the calorimeters cells in the cluster, based on the absolute 
-value cell's energy.} is considered.                        
+value cell's energy.} is considered.
+The track momentum is required to be compatible with the cluster energy,
+which is calibrated to the electromagnetic scale. The calibration is
+derived from simulation, test-beam studies and data $Z\to ee$ events~\cite{elecalib}.
+
+In order to suppress the mis-identification of other particles  
+as electrons, $tight$ selection criteria based on cluster shape, 
+track-cluster matching, track quality, and isolation are applied.
+The shower development is narrower for electrons than for hadrons, and
+the hadronic leakage\footnote{The hadronic leakage is the fraction of 
+energy reconstructed in the first layer of the hadronic calorimeter}
+is smaller. Track quality requirements reduce the impact of accidental 
+track association with photons and energetic $\pi^0$ and $\eta$ mesons
+with electromagnetic decays reconstructed as a single energy cluster.
+Finally, the isolation helps rejecting electrons from heavy hadron 
+semi-leptonic decays.
+
+Overall, electron candidates are identified with \mbox{\approx{}$70\%$} 
+efficiency and a contamination rate of about \mbox{$2\cdot{}10^{-5}$}.
+A $loose$ selection, where some of the requirements are relaxed, 
+is also used, with the purpose of studying and modeling the contamination
+in the $tight$ candidates. The procedure to estimate this background
+contribution is detailed in Sec.~\ref{sec:bckg}[QCD background].
 
 The $\et$ of the electron is required to be larger than \mbox{$25 \GeV$}.
-
-In order to suppress backgrounds from other particles misidentified as electrons, cut-based sets of quality criteria (menus)
-provided increasing background rejection: the so-called \texttt{loose}, \texttt{medium} and \texttt{tight} menus.
-In the following, the \texttt{tight} menu is described, which yields an overall efficiency of roughly 75\%.
-
-Electron clusters tend to be smaller in size than clusters from hadrons within jets.
-Hence, several observables constructed from the geometrical shape of EM clusters (shower shapes), such as their lateral width or
-the energy in the highest-energetic calorimeter cells, were used in the \texttt{tight} menu.
-Also, the fraction of the energy deposited in the hadronic calorimeter, which is typically very small for electrons, was exploited to\
- suppress
-backgrounds from jets.
-The transition radiation in the TRT was used in addition to discriminate against charged hadrons.
-In order to assure that tracks are not accidentally associated to clusters, quality criteria on the number of hits in the silicon tra\
-ckers,
-a good geometrical matching of the track direction and the cluster position as well as of the track momentum and the cluster energy w\
-ere required.
-
 
 \section{Muons}
 \label{sec:muons}
