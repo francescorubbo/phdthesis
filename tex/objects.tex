@@ -77,6 +77,50 @@ are not considered.
 \section{Muons}
 \label{sec:muons}
 
+Muons are reconstructed using tracks measured in the 
+Muon Spectrometer (MS) and in the ID.
+The information from the two systems is $combined$ by matching
+the tracks with the \texttt{MuId} algorithm\footnote{The \texttt{MuId} 
+algorithm is also called ``chain 2'' reconstruction}~\cite{muid}.
+
+
+
+
+
+
+
+
+
+
+
+
+The pattern recognition started from track segments in the MS, which were extrapolated to the ID.
+If a matching ID track for a MS track segment was found, a combined fit to the ID and MS muon hits was performed and a combined muon
+object was built.
+The muon momentum was measured from the combined fit.
+Only muons with a $\pt$ of at least \mbox{$20 \GeV$} fulfilling \mbox{$|\eta| < 2.5$} were considered in this analysis.
+
+Several isolation criteria were applied in order to suppress backgrounds from muons produced in jets, in particular muons from leptonically decaying
+$B$-mesons in $b$-jets.
+The energy deposited in the calorimeter in a cone of \mbox{$\Delta R = 0.3$} around the muon candidate was required to be smaller than \mbox{$4 \GeV$}.
+Also the sum of the transverse momenta of the tracks in the ID in a cone of \mbox{$\Delta R = 0.3$} around the muon track had to be smaller than \mbox{$4 \GeV$}.
+Additionally, if a jet with minimum $\pt$ of \mbox{$20 \GeV$} was closer than 0.4 in $\eta$-$\phi$-space to the muon, the muon was not considered isolated
+and was disregarded.
+
+Muon signatures were used in the trigger menu at L1, L2 and EF (Sec.~\ref{sec:triggerDAQ}).
+The triggers at L1 were based on coincidences in $\eta$ and $\phi$ of hits in the different layers of the RPC and TGC systems requiring a minimum
+$\pt$ of the trigger object candidate.
+At L2 and EF level, track finding algorithms using information from the MS and the ID were used.
+In this analysis, the \texttt{EF\_mu18} trigger chain was used which required a combined muon with \mbox{$\pt > 18 \GeV$} at EF level.
+
+Trigger, reconstruction and identification efficiencies were measured in data using tag-and-probe methods in \mbox{$Z \to \mu^+\mu^-$} events.
+Discrepancies between data and MC were accounted for by SFs~\cite{muonPerf}.
+MC events were weighted with the SFs, so that the efficiencies in the MC simulations yielded those in data.
+Events in which the muon object had a $\pt$ larger than \mbox{$150 \GeV$} were disregarded, because muon trigger SFs were not available for larger
+$\pt$ due to an issue with the trigger modelling in MC simulations in this region.
+
+
+
 \section{Jets}
 \label{sec:jets}
 
