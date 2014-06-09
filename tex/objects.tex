@@ -89,21 +89,21 @@ with electromagnetic decays reconstructed as a single energy cluster.
 Finally, the isolation helps rejecting electrons from heavy hadron 
 semi-leptonic decays.
 
-Overall, electron candidates are identified with \mbox{$\approx{}70\%$} 
+Overall, electron candidates are identified with \mbox{$\approx{}85\%$} 
 efficiency and a contamination rate of about \mbox{$2\cdot{}10^{-5}$}.
 A {\it loose} selection, where some of the requirements are relaxed, 
 is also used, with the purpose of studying and modeling the contamination
 in the {\it tight} candidates. The procedure to estimate this background
 contribution is detailed in Sec.~\ref{sec:bckg}[QCD background].
 
-The $\et$ of the electron is required to be larger than \mbox{$25 \GeV$}
+The $\et$ of the electron is required to be larger than \mbox{$25 \GeV{}$}
 and electrons in the transition region $1.37<|\eta_{\mathrm{cluster}}|<1.52$
 are not considered.
 
 \section{Muons}
 \label{sec:muons}
 
-Muons are reconstructed using tracks measured in the 
+Muons are reconstructed in the region $|\eta|<2.5$ using tracks measured in the 
 Muon Spectrometer (MS) and in the ID.
 The information from the two systems is used by matching
 the tracks with the {\it MuId} algorithm~\cite{muidalgo} to build 
@@ -114,45 +114,25 @@ $\Delta\eta\times\Delta\phi=0.4\times0.4$ regions where the trigger
 fired. A single MS track is built with a least-square fitting method and
 the trajectory is extrapolated back to the interaction point, taking
 into account the energy loss in the calorimeter material. 
+The MS track is combined with the ID track that provides the best
+match, based on a $\chi^2$ test. If no track is found, no combined
+muon candidate is built.
+The momentum of the muon candidate is computed as a weighted average
+of ID and MS measurements and calibrated using $Z\to \mu\mu$ events.
+Muons are reconstructed with \mbox{$\approx{}85\%$} efficiency
 
-
-
-Starting from regions where interesting activity has been triggered,
-track segments are searched for in the RPC and TGC and combined into a single track by means of a
-least-square fitting method. These track candidates are 
-subsequently extrapolated back to the interaction
-point and their momentum corrected for the mip energy loss in the calorimeter material.
-At this point a \chisq\ test (checking the difference between the extrapolated track coordinates weighted with
-combined covariance matrix) on the matching of the candidate MS track and the tracks reconstructed in 
-the ID is performed to obtain the final muon candidate track. Only ID tracks that satisfy some quality 
-requirements are considered for the matching: they need to have at least two pixel hits, of which at least
-one in the first layer; at least two pixel hits plus number of crossed dead pixel sensors; at least six SCT hits
-plus number of  crossed dead SCT sensors; a maximum of two pixel or SCT holes\footnote{A ``hole'' in the silicon
-detectors is a region where the module did not perform as expected even though the surrounding ones did.};
-defining the number of TRT outliers\footnote{``Outlier'' is a hit that is deviated from the track path.} 
-and the number of TRT hits as $N_{\rm TRT_{o}}$ and  $N_{\rm TRT_{h}}$ respectively, 
-$N_{\rm TRT_{h}}>5$ and $N_{\rm TRT_{o}}/N_{\rm TRT_{h}}<0.9$ for $|\eta|<1.9$, 
-$N_{\rm TRT_{o}}/N_{\rm TRT_{h}}<0.9$ if $N_{\rm TRT_{h}}>5$ for  $|\eta|\geq1.9$.
-In case no matching is found, no \texttt{combined} 
-muons are reconstructed, while if more candidates arise, the one giving the best \chisq\ is chosen.
-The momentum is computed as a weighted average of ID and MS measurements.
-
-Performance studies on muon reconstruction and identification done using 2010 data 
-from $\rts=7$~\tev\ collisions and Monte Carlo $Z\to \mu\mu$ events~\cite{ATLAS-CONF-2011-063} 
-have been recently updated with the data from $\rts=8$~\tev\ pp collisions~\cite{ATLAS-CONF-2013-088}.
-The measured reconstruction efficiency for \texttt{combined} muons
-is of about 98\% uniformely in pseudorapidity and 
-is shown in Figure~\ref{fig:mueff}. 
-
-
-
-
-
-
-
+The $\pt$ of the muon is required to be larger than \mbox{$25 \GeV{}$}
+and the muon is required to be isolated: muons overlapping with selected
+jets (see Section \ref{sec:jets}) within a 0.4 cone in $\Delta R$ are
+rejected. In addition, a {\it mini-isolation}~\cite{miniisolation}
+requirement is applied to reduce sensitivity to the high pile-up
+conditions of $\sqrt{s} = $8~TeV collision events. It rejects muon candidates
+with a large total transverse momentum of overlapping ID tracks.
 
 \section{Jets}
 \label{sec:jets}
+
+
 
 \subsection{$b$-tagging}
 \label{sec:btag}
