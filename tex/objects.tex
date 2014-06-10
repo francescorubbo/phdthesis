@@ -174,55 +174,114 @@ distance $d_{ij}$ are combined and the list is updated for a new
 iteration.
 The procedure is repeated until the list is empty.
 
-The anti-$k_t$ algorithm is chosen for its good performance 
-in harsh pile-up conditions, since it consider first topoclusters 
-with higher momentum, and produces jets with a conical
-structure.
+%The anti-$k_t$ algorithm is chosen for its good performance 
+%in harsh pile-up conditions, since it consider first topoclusters 
+%with higher momentum, and produces jets with a conical
+%structure. 
+The jet energy is computed as the sum of the energy of the cells
+forming the jet.
+A $\eta$-dependent correction is applied to subtract the additional
+energy from in-time and out-of-time pileup based on the number of
+primary vertices in the event and the average number of $pp$
+interactions.
+Finally a correction factor to extrapolate the particle level energy
+is derived from simulation of single $pp$ interactions.
 
-A pile-up correction is applied
-
-Once the jet is reconstructed, a 
-pile-up correction is applied in 
-order to subtract the average extra 
-energy in the jet originating from pp 
-interactions in the same or in other bunch crossings. 
-This pile-up correction depends on the number of primary vertices in an event ($NPV$),
-on the number of average interactions in 
-a luminosity block ($<\mu>$), and is derived in bins of jet $\eta$ in order to
-account for the different geometry of the detector. The
-correction is applied to bring all jets to a 
-reference point corresponding to $\mu=0$ and $NPV = 1$
-
-Finally the jet energy is corrected to the particle
-level using a orrection factor (referred to as 
-{\it jet energy response} obtained from a QCD 
-dijet \texttt{PYTHIA} Monte Carlo sample
-which does not include
-multiple pp interactions, as these have been already
-corrected for.
-
-The jets used for the calibration are isolated jets\footnote{Here an
-isolated jet is a jet which does not have any other
-jet with $\pt>7\gev$
-around a $\Delta R$ cone of 2.5$R$, where $R$ is
-the jet algorithm paramenter, i.e., for the \texttt{AKT4}, 0.4}
-reconstructed in the calorimeter and matched to
-a (also isolated) truth-level jet within $\Delta R<0.3$
-The simulated jet energy response 
-is the ratio between the energy measured in the LC jets ($E_{\rm LC}^j$)
-and the truth jet energy ($E_{\rm truth}^j$). It is measured in bins of
-the truth jet energy and of the calorimeter jet pseudorapidity $\eta_{\rm det}$
-and a bin-by-bin fit is performed to obtain a
-calibration function in terms of $E_{\rm LC}^j$
-binned in $\eta_{\rm det}$.
-The jet response correction is
-shown in Figure~\ref{fig:corr_jet}
-as a function of $\eta_{\rm det}$
-for different values of the jet energy.
-
+Only jets with $\pt{}>25 \GeV{}$ and $|\eta|<2.5$ are considered. In
+order to ensure that the selected jets originate from the hard
+scattering process, the information of tracks associated with the jets
+is exploited.
+It is required that the total $\pt{}$ of tracks originating from the
+primary vertex be at least half of the total $\pt$ of tracks with
+$\pt{}>1\GeV{}$ associated with the jet.
 
 \subsection{$b$-tagging}
 \label{sec:btag}
 
+When a bottom quark is produced in an event, it hadronizes into a $B$
+hadron, which has a lifetime of the order of $10^{-12}$~s and hence
+can travel about 3~mm before decaying.
+This leads to displaced secondary vertices and large impact parameters
+for the decay products. Therefore the measurement and identification
+of these objects in the ID allow to identify jets corresponding to
+bottom quarks.
+
+$b$-tagging is performed by the combination of three algorithms,
+called {\it JetFitter}, {\it IP3D}, and {\it SV1}, which exploit
+different properties to determine a probability ($b$-tag weight) for
+the jet to correspond to a $b$-quark.
+The IP3D algorithm estimates the $b$-tag weight by defining a
+likelihood based on the impact parameters, along the beam axis and in
+the transverse plane, of the tracks associated with the jet.
+The SV1 algorithm reconstructs the secondary vertex and computes a
+likelihood ratio to discriminate between $b$-jets and light jets using
+the number of track pairs in the secondary vertex, their total
+invariant mass and the fraction of momentum corresponding to the
+secondary vertex.
+The JetFitter algorithm performs a reconstruction of the full decay
+chain of $B$ and $C$ hadrons by using a Kalman filter to determine a
+common path between the primary vertex and the vertices from $b$ and
+$c$ hadrons inside the jet. In addition to the observables used by the
+SV1 algorithm, the significance of the significance of the
+flight-length is used as discriminant.
+A neural network, called {\it MV1} algorithm, is used to combine the
+output of the three algorithms into a single $b$-tag weight.
+The working point used to tag $b$-jets corresponds a 70\% efficiency,
+while the contamination from light jets is $\sim0.8\%$, and the one
+from $c$-jets $\sim20\%$.
+
+The $b$-tagging efficiencies are measured for 
+$b$, $c$ and light flavors~\cite{btagging,ctagging,ltagging} and the
+simulation is calibrated with the appropriate scale factors, $\pt$ and
+$\eta$-dependent.
+For $b$-jets, the efficiency is derived from di-jet samples with
+muons in the final states exploiting the momentum of the
+muon transverse to the axis of the system formed by the muon and the jet
+to distinguish muons from $b$-jets from muons from $c$- and light jets. 
+The contamination from $c$-jets is measured in samples of jets with
+$D^*$ mesons, where the yields of $D^*$ mesons with and without
+$b$-tagging requirements are compared.
+The efficiency for $b$-tagging light jets is measured in an inclusive
+jet sample, using the {\it negative tag method}, where requirements on
+significance of tracks impact parameter significance or of decay 
+length of secondary vertices is reversed.
+
+\subsubsection{Tag Rate Function method}
+\label{sec:trf}
+
+When requiring $\geq 1$ $b$-tagged jet the available Monte Carlo
+statistics is significantly reduced for some particular background
+processes, leading to large fluctuations in the predicted distributions.
+To overcome this problem the Tag Rate Function (TRF) method is introduced.
+Events from simulation are not rejected based on the $b$-tagging count
+requirement. Events are assigned a weight corresponding to the
+probability for the required number of $b$-jets to be present.
+Appendix~\ref{app:trf} describes the TRF method in more detail.
+
 \section{Missing Transverse Energy}
 \label{sec:met}
+
+At the LHC the overall momentum of the $pp$ collision is zero, as the
+colliding protons have equal energies and opposite direction. 
+However, for inelastic scattering, spectator partons travel down the
+beam pipe without interacting with the detector. Hence, while the $z$
+momentum of the colliding partons is unknown, the momentum transverse
+to the beam pipe is very close to zero. The requirement of transverse
+momentum conservation is therefore used to estimate the transverse
+momentum of neutrinos, which do not interact with the detector, as the
+missing transverse energy (\met{}).  
+
+The \met{} is computed by combining all the topoclusters found in the
+calorimeters. The energy of each topocluster is calibrated based on
+the association with reconstructed objects: electrons, photons, jets
+and muons. The calorimeter clusters that cannot be associated with any
+object are calibrated as energy losses from showers in dead material
+regions. The \met{} and its components are therefore defined as:
+
+\begin{equation}\label{eq:met}
+\begin{array}{lcl}
+E^{\rm miss}_{T} & = & \big|-\sum\vec{p}_T \big| = \sqrt{(E^{\rm miss}_{x})^2 + (E^{\rm miss}_{y})^2} ,\\
+E^{\rm miss}_{x} & = & -\sum\vec{p}_x ,\\
+E^{\rm miss}_{y} & = & -\sum\vec{p}_y ,\\
+\end{array}	\end{equation}
+where the sums run over all the topoclusters in the event.
