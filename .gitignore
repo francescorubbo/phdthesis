@@ -6,3 +6,6 @@
 *.out
 *.pdf
 *.toc
+*.bcf
+*.blg
+*.xml
