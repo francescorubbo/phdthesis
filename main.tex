@@ -6,7 +6,9 @@
 
 \input{tex/preamble}
 
-\includeonly{tex/objects}
+\includeonly{tex/experiment}
+
+\addbibresource{bib/experiment.bib}
  
 \begin{document} 
 
@@ -35,10 +37,11 @@
 \clearpage
 
 \phantomsection
-\addcontentsline{toc}{chapter}{Bibliography}
-\bibliographystyle{bib/thesis}
+\addcontentsline{toc}{chapter}{\bibname}
+\printbibliography
+%\bibliographystyle{bib/thesis}
 %\bibliography{bib/thesis}
-\input{main.bbl}
+%\input{main.bbl}
 \clearpage
 
 \listoffigures
