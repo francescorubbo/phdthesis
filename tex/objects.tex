@@ -23,18 +23,20 @@ Therefore, tracks are used to identify charged particles and measure
 their momenta. In addition, the extrapolation of the trajectories
 allows to identify the interaction vertices.
  
-In order to reconstruct the track, the first step is to retrieve the information from
-the ID hits, which are converted into three-dimensional space points. Then, 
-the {\it inside-out} algorithm~\cite{insideoutalgo} iteratively builds
-a track by combining space points one by one, starting from a
-seed of three aligned hits in the pixel detector or in the SCT.
-For each new point a Kalman filter algorithm~\cite{kalmanfilter}
+In order to reconstruct the track, the first step is to retrieve the
+information from the ID hits, which are converted into
+three-dimensional space points. Then, the {\it inside-out}
+algorithm~\cite{insideoutalgo}  iteratively builds a track by
+combining space points one by one, starting from a seed of three
+aligned hits in the pixel detector or in the SCT. 
+For each new point, a Kalman filter algorithm~\cite{kalmanfilter}
 checks the compatibility between the track and the new point. 
 A cleaning procedure prunes the track collection, removing 
-tracks sharing hits with other tracks, or reconstructed from noise hits. 
-Finally, the track quality is improved by taking into account the signal
-from the TRT and the effects from the interaction
-of the charged particle with the detector material. 
+tracks sharing hits with other tracks and tracks reconstructed from
+noise hits. 
+Finally, the track quality is improved by taking into account the
+signal from the TRT and the effects from the interaction of the
+charged particle with the detector material. 
 
 For signals in the TRT which are not associated to any track candidate
 by the inside-out reconstruction, a second algorithm,
@@ -47,13 +49,12 @@ and extrapolates back to the SCT and pixel detector.
 \section{Primary Vertices}
 \label{sec:pv}
 
-
 The reconstruction of the interaction points, called {\it Primary
   Vertices} (PVs), is essential to identify which one corresponds to the signal
 process in order to reconstruct the Physics objects accordingly.
 The reconstruction of primary vertices is divided in two stages: first
 vertex candidates are identified by association of reconstructed
-tracks, then the actual vertex position is precisely determined.
+tracks; then, the actual vertex position is precisely determined.
 The two steps are repeated iteratively~\cite{vertexalgo}.
 
 The initial position for a PV is the maximum in the distribution of
@@ -62,10 +63,10 @@ estimated with an iterative $\chi^2$ fitting algorithm, which
 down-weight the contribution of incompatible tracks. Tracks
 incompatible with the PV by more than 7$\sigma$ are used to
 reconstruct a new vertex. The procedure is repeated until there are no
-tracks left to create a new vertex.
+tracks left to create a new vertex. Among the PV candidates found with
+this procedure, the ones with less than two tracks associated are ignored. 
 
-PVs with less than two tracks associated. The PV
-corresponding to the signal process is assumed to be the one with
+The PV corresponding to the signal process is assumed to be the one with
 the highest sum of squared transverse momenta of the tracks. The rest
 of the PVs are considered pile-up interactions.
 
@@ -119,14 +120,15 @@ semi-leptonic decays.
 
 Overall, electron candidates are identified with \mbox{$\approx{}85\%$} 
 efficiency and a contamination rate of about \mbox{$2\cdot{}10^{-5}$}.
-A {\it loose} selection, where some of the requirements are relaxed, 
-is also used, with the purpose of studying and modeling the contamination
-in the {\it tight} candidates. The procedure to estimate this background
+A {\it loose} selection, where isolation and track-cluster matching
+requirements are relaxed, is also used, with the purpose of studying
+and modeling the contamination in the {\it tight} candidates. 
+The procedure to estimate this background
 contribution is detailed in Sec.~\ref{sec:bckg}[QCD background].
 
-The $\et$ of the electron is required to be larger than \mbox{$25 \GeV{}$}
-and electrons in the transition region $1.37<|\eta_{\mathrm{cluster}}|<1.52$
-are not considered.
+In order to ensure high purity, the $\et$ of the electron is required
+to be larger than \mbox{$25 \GeV{}$} and electrons in the transition
+region $1.37<|\eta_{\mathrm{cluster}}|<1.52$ are not considered.
 
 \section{Muons}
 \label{sec:muons}
@@ -139,7 +141,7 @@ the tracks with the {\it MuId} algorithm~\cite{muidalgo} to build
 
 The algorithm searches for track segments in the RPC and TGC in
 $\Delta\eta\times\Delta\phi=0.4\times0.4$ regions where the trigger
-fired. A single MS track is built with a least-square fitting method and
+fired. A single MS track is built with a least-square fitting method, and
 the trajectory is extrapolated back to the interaction point, taking
 into account the energy loss in the calorimeter material. 
 The MS track is combined with the ID track that provides the best
@@ -147,7 +149,7 @@ match, based on a $\chi^2$ test. If no track is found, no combined
 muon candidate is built.
 The momentum of the muon candidate is computed as a weighted average
 of ID and MS measurements and calibrated using $Z\to \mu\mu$ events.
-Muons are reconstructed with \mbox{$\approx{}85\%$} efficiency
+Muons are reconstructed with \mbox{$\approx{}85\%$} efficiency.
 
 The $\pt$ of the muon is required to be larger than \mbox{$25 \GeV{}$}
 and the muon is required to be isolated: muons overlapping with selected
@@ -168,7 +170,7 @@ and as energy deposits in the calorimeters.
 Neighboring calorimeter cells are grouped into topological clusters
 ({\it topoclusters}) based on the significance of the energy deposit
 in the calorimeter cells with respect to their noise
-level. Cells with $|E_{\rm cell}|>4\sigma$ are considered as seeds and
+level. Cells with $|E_{\rm cell}|>4\sigma$ are considered as seeds, and
 all the neighboring cells with $|E_{\rm cell}| > 2\sigma$ are included
 in the topocluster. Cells adjacent to the selected ones are also
 included without any energy requirement.
@@ -195,10 +197,10 @@ The algorithm computes $d_{ij}$, the distance between two topocluster
 inputs $i$ and $j$, and $d_{iB}$,  the distance between the input $i$
 and the beam axis, for the whole list of topoclusters found in the
 event. If $d_{iB}$ is the smallest distance, the
-topocluster $i$ is considered a jet, removed from the list and the
+topocluster $i$ is considered a jet and removed from the list, and the
 algorithm repeats the procedure with the remaining input objects.
 Otherwise, the $i$ and $j$ topoclusters corresponding to the smallest
-distance $d_{ij}$ are combined and the list is updated for a new
+distance $d_{ij}$ are combined, and the list is updated for a new
 iteration.
 The procedure is repeated until the list is empty.
 
