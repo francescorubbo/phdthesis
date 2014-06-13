@@ -48,6 +48,34 @@ and extrapolates back to the SCT and pixel detector.
 \label{sec:pv}
 
 
+The reconstruction of the interaction points, called {\it Primary
+  Vertices} (PVs), is essential to identify which one corresponds to the signal
+process in order to reconstruct the Physics objects accordingly.
+The reconstruction of primary vertices is divided in two stages: first
+vertex candidates are identified by association of reconstructed
+tracks, then the actual vertex position is precisely determined.
+The two steps are repeated iteratively~\cite{vertexalgo}.
+
+The initial position for a PV is the maximum in the distribution of
+the $z_0$ parameter of reconstructed tracks. The PV is then
+estimated with an iterative $\chi^2$ fitting algorithm, which
+down-weight the contribution of incompatible tracks. Tracks
+incompatible with the PV by more than 7$\sigma$ are used to
+reconstruct a new vertex. The procedure is repeated until there are no
+tracks left to create a new vertex.
+
+PVs with less than two tracks associated. The PV
+corresponding to the signal process is assumed to be the one with
+the highest sum of squared transverse momenta of the tracks. The rest
+of the PVs are considered pile-up interactions.
+
+Vertices incompatible with the beam collision region are considered
+secondary vertices.
+Also referred to as displaced vertices, they typically originates from
+decays of long-lived particles.
+The reconstruction of secondary vertices is useful to identify
+$B$-hadrons and will be described in Section~\ref{sec:btag}.
+
 \section{Electrons}
 \label{sec:electrons}
 
