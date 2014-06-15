@@ -32,7 +32,7 @@ aligned hits in the pixel detector or in the SCT.
 For each new point, a Kalman filter algorithm~\cite{kalmanfilter}
 checks the compatibility between the track and the new point. 
 A cleaning procedure prunes the track collection, removing 
-tracks sharing hits with other tracks and tracks reconstructed from
+tracks sharing hits with other tracks, and tracks reconstructed from
 noise hits. 
 Finally, the track quality is improved by taking into account the
 signal from the TRT and the effects from the interaction of the
@@ -75,7 +75,7 @@ secondary vertices.
 Also referred to as displaced vertices, they typically originates from
 decays of long-lived particles.
 The reconstruction of secondary vertices is useful to identify
-$B$-hadrons and will be described in Section~\ref{sec:btag}.
+$B$-hadrons, as it will be described in Section~\ref{sec:btag}.
 
 \section{Electrons}
 \label{sec:electrons}
@@ -84,9 +84,8 @@ An electron candidate object~\cite{elereco} is selected by searching
 for a narrow, 
 localized cluster of energy deposits in the EM calorimeter, 
 with at least one ID track associated to it.
-
 A {\it sliding-window} clustering algorithm is used to identify electron 
-clusters. The algorithm performs a scan of the calorimeter searching 
+clusters. The algorithm performs a scan of the calorimeter, searching 
 for local maxima of energy
 within a $\eta$-$\phi$ window of $0.075\times{}0.125$.
 The scan is performed in the range $|\eta_{\mathrm{cluster}}|<2.47$, 
@@ -97,13 +96,13 @@ associated with the cluster.
 The electron four-momentum is built from the cluster energy
 and the direction of the associated ID track.
 When multiple tracks are associated with the cluster, the closest
-to the cluster direction\footnote{The position of a cluster 
+to the cluster\footnote{The position of a cluster 
 is computed as a weighted average of the $\eta$-$\phi$ positions 
 of the calorimeters cells in the cluster, based on the absolute 
 value cell's energy.} is considered.
 The track momentum is required to be compatible with the cluster energy,
 which is calibrated to the electromagnetic scale. The calibration is
-derived from simulation, test-beam studies and data $Z\to ee$ 
+derived from simulation, test-beam studies, and data $Z\to ee$ 
 events~\cite{elecalib}.
 
 In order to suppress the mis-identification of other particles  
@@ -113,28 +112,27 @@ The shower development is narrower for electrons than for hadrons, and
 the hadronic leakage\footnote{The hadronic leakage is the fraction of 
 energy reconstructed in the first layer of the hadronic calorimeter}
 is smaller. Track quality requirements reduce the impact of accidental 
-track association with photons and energetic $\pi^0$ and $\eta$ mesons
+track association with photons, energetic $\pi^0$ or $\eta$ mesons
 with electromagnetic decays reconstructed as a single energy cluster.
-Finally, the isolation helps rejecting electrons from heavy hadron 
-semi-leptonic decays.
+Finally, the isolation helps rejecting electrons from semi-leptonic
+decays of  heavy hadrons.
 
 Overall, electron candidates are identified with \mbox{$\approx{}85\%$} 
 efficiency and a contamination rate of about \mbox{$2\cdot{}10^{-5}$}.
 A {\it loose} selection, where isolation and track-cluster matching
 requirements are relaxed, is also used, with the purpose of studying
-and modeling the contamination in the {\it tight} candidates. 
+and modeling the contamination among the tight candidates. 
 The procedure to estimate this background
-contribution is detailed in Sec.~\ref{sec:bckg}[QCD background].
-
+contribution is detailed in Section~\ref{sec:bckg}[QCD background].
 In order to ensure high purity, the $\et$ of the electron is required
-to be larger than \mbox{$25 \GeV{}$} and electrons in the transition
+to be larger than \mbox{$25 \GeV{}$}, and electrons in the transition
 region $1.37<|\eta_{\mathrm{cluster}}|<1.52$ are not considered.
 
 \section{Muons}
 \label{sec:muons}
 
-Muons are reconstructed in the region $|\eta|<2.5$ using tracks measured in the 
-Muon Spectrometer (MS) and in the ID.
+Muons are reconstructed in the region $|\eta|<2.5$ using tracks
+measured in the Muon Spectrometer (MS) and in the ID.
 The information from the two systems is used by matching
 the tracks with the {\it MuId} algorithm~\cite{muidalgo} to build 
 {\it combined} muon candidates.
@@ -143,7 +141,7 @@ The algorithm searches for track segments in the RPC and TGC in
 $\Delta\eta\times\Delta\phi=0.4\times0.4$ regions where the trigger
 fired. A single MS track is built with a least-square fitting method, and
 the trajectory is extrapolated back to the interaction point, taking
-into account the energy loss in the calorimeter material. 
+into account the energy losses in the calorimeter material. 
 The MS track is combined with the ID track that provides the best
 match, based on a $\chi^2$ test. If no track is found, no combined
 muon candidate is built.
@@ -163,9 +161,11 @@ with a large total transverse momentum of overlapping ID tracks.
 \label{sec:jets}
 
 Jets are collimated showers of particles from the hadronization of
-quarks or gluons produced at the primary vertex.
-The resulting stable particles leave signals both as tracks in the ID
-and as energy deposits in the calorimeters.
+quarks or gluons produced at the proton collision.
+The resulting stable particles leave clusters of signals both as
+tracks in the ID and as energy deposits in the calorimeters.
+Reconstructing the total momentum of each cluster allows to estimate
+the original parton four-momentum.
 
 Neighboring calorimeter cells are grouped into topological clusters
 ({\it topoclusters}) based on the significance of the energy deposit
@@ -178,7 +178,7 @@ Topoclusters are calibrated at the EM scale. For $\sqrt{s} = $8~TeV
 collision events an additional correction, called Local Cluster
 Weighting (LCW)~\cite{lcwcalib}, is applied. The LCW calibration
 scheme classifies the clusters as {\it mainly electromagnetic} or
-{\it mainly hadronic}, based on the their shape, and applies
+{\it mainly hadronic}, based on their shape, and applies
 dedicated corrections derived from simulation.
 
 Jets are then reconstructed using the {\it anti-$k_t$}
@@ -197,7 +197,7 @@ The algorithm computes $d_{ij}$, the distance between two topocluster
 inputs $i$ and $j$, and $d_{iB}$,  the distance between the input $i$
 and the beam axis, for the whole list of topoclusters found in the
 event. If $d_{iB}$ is the smallest distance, the
-topocluster $i$ is considered a jet and removed from the list, and the
+topocluster $i$ is considered a jet and removed from the list. Then the
 algorithm repeats the procedure with the remaining input objects.
 Otherwise, the $i$ and $j$ topoclusters corresponding to the smallest
 distance $d_{ij}$ are combined, and the list is updated for a new
@@ -210,20 +210,20 @@ The procedure is repeated until the list is empty.
 %structure. 
 The jet energy is computed as the sum of the energy of the cells
 forming the jet.
-A $\eta$-dependent correction is applied to subtract the additional
-energy from in-time and out-of-time pileup based on the number of
+A \mbox{$\eta$-dependent} correction is applied to subtract the additional
+energy from in-time and out-of-time pileup, based on the number of
 primary vertices in the event and the average number of $pp$
 interactions.
-Finally a correction factor to extrapolate the particle level energy
-is derived from simulation of single $pp$ interactions.
+Finally, a correction factor to extrapolate the particle level energy,
+derived from simulation of single $pp$ interactions, is applied.
 
 Only jets with $\pt{}>25 \GeV{}$ and $|\eta|<2.5$ are considered. In
 order to ensure that the selected jets originate from the hard
 scattering process, the information of tracks associated with the jets
 is exploited.
 It is required that the total $\pt{}$ of tracks originating from the
-primary vertex be at least half of the total $\pt$ of tracks with
-$\pt{}>1\GeV{}$ associated with the jet.
+primary vertex for the signal process be at least half of the total
+$\pt$ of tracks with $\pt{}>1\GeV{}$ associated with the jet.
 
 \subsection{$b$-tagging}
 \label{sec:btag}
@@ -231,9 +231,9 @@ $\pt{}>1\GeV{}$ associated with the jet.
 When a bottom quark is produced in an event, it hadronizes into a $B$
 hadron, which has a lifetime of the order of $10^{-12}$~s and hence
 can travel about 3~mm before decaying.
-This leads to displaced secondary vertices and large impact parameters
+This long decay length leads to displaced secondary vertices and large impact parameters
 for the decay products. Therefore the measurement and identification
-of these objects in the ID allow to identify jets corresponding to
+of these objects in the ID allows to identify jets corresponding to
 bottom quarks.
 
 $b$-tagging is performed by the combination of three algorithms,
@@ -251,9 +251,9 @@ secondary vertex.
 The JetFitter algorithm performs a reconstruction of the full decay
 chain of $B$ and $C$ hadrons by using a Kalman filter to determine a
 common path between the primary vertex and the vertices from $b$ and
-$c$ hadrons inside the jet. In addition to the observables used by the
-SV1 algorithm, the significance of the significance of the
-flight-length is used as discriminant.
+$c$ hadrons inside the jet. The significance of the flight length is
+used as discriminant, in addition to the observables used by the
+SV1 algorithm.
 A neural network, called {\it MV1} algorithm, is used to combine the
 output of the three algorithms into a single $b$-tag weight.
 The working point used to tag $b$-jets corresponds a 70\% efficiency,
@@ -261,32 +261,39 @@ while the contamination from light jets is $\sim0.8\%$, and the one
 from $c$-jets $\sim20\%$.
 
 The $b$-tagging efficiencies are measured for 
-$b$, $c$ and light flavors~\cite{btagging,ctagging,ltagging} and the
+$b$, $c$, and light flavors~\cite{btagging,ctagging,ltagging} and the
 simulation is calibrated with the appropriate scale factors, $\pt$ and
 $\eta$-dependent.
-For $b$-jets, the efficiency is derived from di-jet samples with
-muons in the final states exploiting the momentum of the
-muon transverse to the axis of the system formed by the muon and the jet
-to distinguish muons from $b$-jets from muons from $c$- and light jets. 
+For $b$-jets, the efficiency in $\sqrt{s} = $7~TeV collisions is
+derived from di-jet samples with muons in the final states. 
+The muon momentum component transverse to
+the axis of the system formed by the muon and the jet is exploited
+to distinguish muons from $b$-jets from muons from $c$- and light
+jets. The large $\sqrt{s} = $8~TeV dataset allows to use instead a pure
+\ttbar{} sample where both Ws decay leptonically. Events with exactly
+2 jets are selected, where one of the two is $b$-tagged. By
+construction, the other jet originates from a bottom quark as well, and
+can be used to probe the $b$-tagging efficiency.
+
 The contamination from $c$-jets is measured in samples of jets with
 $D^*$ mesons, where the yields of $D^*$ mesons with and without
 $b$-tagging requirements are compared.
 The efficiency for $b$-tagging light jets is measured in an inclusive
 jet sample, using the {\it negative tag method}, where requirements on
-significance of tracks impact parameter significance or of decay 
+significance of tracks impact parameter and significance of decay 
 length of secondary vertices is reversed.
 
 \subsubsection{Tag Rate Function method}
 \label{sec:trf}
 
-When requiring $\geq 1$ $b$-tagged jet the available Monte Carlo
-statistics is significantly reduced for some particular background
+When requiring $\geq 1$ $b$-tagged jet, the amount of simulated events
+is significantly reduced for some particular background
 processes, leading to large fluctuations in the predicted distributions.
-To overcome this problem the Tag Rate Function (TRF) method is introduced.
+To overcome this problem, the Tag Rate Function (TRF) method is introduced.
 Events from simulation are not rejected based on the $b$-tagging count
 requirement. Events are assigned a weight corresponding to the
 probability for the required number of $b$-jets to be present.
-Appendix~\ref{app:trf} describes the TRF method in more detail.
+Appendix~\ref{app:trf} describes the TRF method in greater detail.
 
 \section{Missing Transverse Energy}
 \label{sec:met}
