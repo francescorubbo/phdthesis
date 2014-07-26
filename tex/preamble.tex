@@ -26,6 +26,7 @@
 \usepackage{bm}% bold math
 \usepackage{mathrsfs} 
 \usepackage{amssymb}
+\usepackage{multirow}
 
 \setlength{\oddsidemargin}{0cm}
 \setlength{\evensidemargin}{0cm}
@@ -42,20 +43,32 @@
 \newcommand{\ssbar}      {\mbox{$s\bar{s}$}}
 \newcommand{\ttbar}      {\mbox{$t\bar{t}$}}
 \newcommand{\bbbar}      {\mbox{$b\bar{b}$}}
-\newcommand{\wjets}      {\mbox{$W + 4\; jets$}}
 \newcommand{\pttbar}     {\mbox{$p_{t\bar{t}}$}}
-\newcommand{\pwjets}     {\mbox{$p_{W +4 \; jets}$}}
 \newcommand{\ljets}      {\mbox{$l + \; jets$}}
 \newcommand{\ejets}      {\mbox{$e + \; jets$}}
 \newcommand{\mujets}     {\mbox{$\mu + \; jets$}}
-\newcommand{\herwig}     {{\sc herwig}}
-\def\pt{\ensuremath{p_{\mathrm{T}}}} % Subscript roman not italic (EE)
+\newcommand{\wjets}     {\mbox{$W + \;jets$}}
+\newcommand{\wbb}     {\mbox{$Wb\bar{b}+\;jets$}}
+\newcommand{\wcc}     {\mbox{$Wc\bar{c}+\;jets$}}
+\newcommand{\wc}     {\mbox{$Wc+\;jets$}}
+\newcommand{\wlight}     {\mbox{$W+\;light~jets$}}
+\newcommand{\wpp}     {\mbox{$W^+$}}
+\newcommand{\wm}     {\mbox{$W^-$}}
+\newcommand{\zjets}     {\mbox{$Z +\;jets$}}
+\newcommand{\herwig}     {{\tt HERWIG}}
+\newcommand{\pythia}     {{\tt PYTHIA}}
+\newcommand{\mcatnlo}     {{\tt MC@NLO}}
+\newcommand{\powheg}     {{\tt POWHEG}}
+\def\pt{\ensuremath{p_{\mathrm{T}}}}
+\def\mt{\ensuremath{m_{\mathrm{T}}}}
 \def\met{\mbox{\ensuremath{\not\!\!{E_{\mathrm{T}}}}}}
 \def\mex{\mbox{\ensuremath{\not\!\!{E_x}}}}
 \def\mexy{\mbox{\ensuremath{\not\!\!{E_{x,y}}}}}
 \def\mey{\mbox{\ensuremath{\not\!\!{E_y}}}}
 \def\et{\mbox{\ensuremath{E_{\mathrm{T}}}}}
 \newcommand{\mtw}{m_{\mathrm T}^W}
+\newcommand{\effFake}{\ensuremath{\epsilon_{\mathrm{fake}}}}
+\newcommand{\effReal}{\ensuremath{\epsilon_{\mathrm{real}}}}
 
 \def\MeV{\; \mathrm{MeV}}
 \def\GeV{\; \mathrm{GeV}}
@@ -88,6 +101,7 @@
 \newcommand{\wstot}{w_{s \, \mathrm{tot}}}
 \newcommand{\fside}{F_{\mathrm{side}}}
 \newcommand{\deltae}{\Delta E}
+\newcommand{\deltaR}[2]{\ensuremath{\Delta{}R\left(#1, #2\right)}}
 \newcommand{\eratio}{E_{\mathrm{ratio}}}
 
 \newcommand{\ttg}{\ttbar\gamma}
