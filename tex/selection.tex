@@ -2,7 +2,7 @@
 \label{sec:selection}
 
 This section describes the event selection criteria used for this
-analysis. The event sample used for this work are selected based on
+analysis. The event samples used for this work are selected based on
 requirements applied to the reconstructed objects in order to maximize
 the signal (\ttbar{} events) to background ratio. In addition, this
 section illustrates the techniques used to estimate the background
@@ -28,17 +28,21 @@ minimum \pt{} requirements applied for data collected in 2011 and 2012
 are detailed in table~\ref{tab:trigthresholds}.
 
 \begin{table}
-  \caption{Minimum \pt{} requirements for the single lepton trigger during
-  2011 and 2012 data-taking.}
+  \caption{Minimum lepton \pt{} requirements for the single lepton trigger during
+  2011 and 2012 data-taking, and the corresponding offline requirements.}
   \label{tab:trigthresholds}
   \centering
-  \begin{tabular}{lcc}
+  \begin{tabular}{lcccc}
     \toprule
-    channel & $2011$ -- $\sqrt{s} = 7 \TeV{}$ & $2012$ -- $\sqrt{s} = 8
-    \TeV{}$ \\
+    \multirow{2}*{channel} & \multicolumn{2}{c}{$2011$ -- $\sqrt{s} =
+      7 \TeV{}$} & \multicolumn{2}{c}{$2012$ -- $\sqrt{s} = 8\TeV{}$}
+    \\
+    & trigger & offline & trigger & offline \\
     \midrule
-    \mujets{}  & $\pt{}>18 \GeV{}$    & $\pt{}>24 \GeV{}$       \\
-    \ejets{}     & $\pt{}>20 \GeV{}$    & $\pt{}>24 \GeV{}$       \\
+    \mujets{}  & $\pt{}>18 \GeV{}$ & $\pt{}>20 \GeV{}$ & $\pt{}>24
+    \GeV{}$ & $\pt{}>25 \GeV{}$ \\
+    \ejets{}     & $\pt{}>20 \GeV{}$ & $\pt{}>25 \GeV{}$ & $\pt{}>24
+    \GeV{}$  & $\pt{}>25 \GeV{}$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -66,7 +70,7 @@ W boson are applied.\footnote{$\mt = \sqrt{2 p^\ell_{\rm T} \met
     (1-\cos\Delta\phi)}$, with $p^\ell_{\rm T}$  being the transverse
   momentum (energy) of the muon (electron) and $\Delta\phi$ the
   azimuthal angle separation between the lepton and the direction of
-  the missing transverse momentum.}. Since the sample composition
+  the missing transverse momentum.} Since the sample composition
 varies with the lepton flavor and $b$-jet multiplicity, different
 requirements are applied for each scenario, as detailed in table~\ref{tab:metmtwcuts}
 
@@ -74,33 +78,40 @@ requirements are applied for each scenario, as detailed in table~\ref{tab:metmtw
   \caption{Minimum \met{} and \mt{}(W) requirements.}
   \label{tab:metmtwcuts}
   \centering
-  \begin{tabular}{lccccc}
+  \begin{tabular}{lcccc}
     \toprule
      &
-    \multicolumn{2}{c}{$2011$ -- $\sqrt{s} = 7 \TeV$} &
+    $2011$ -- $\sqrt{s} = 7 \TeV$ &
     \multicolumn{3}{c}{$2012$ -- $\sqrt{s} = 8 \TeV$} \\
-    channel   & 0 $b$-jets & $\geq{}1$ $b$-jet & 0 $b$-jets & 1
+    channel   & $\geq{}1$ $b$-jet & 0 $b$-jets & 1
     $b$-jet & $\geq{}2$ $b$-jets \\
     \midrule
-    \multirow{2}*{\mujets{}} & \multicolumn{2}{c}{$\met{}>20 \GeV{}$} & $\met{}>40
+    \multirow{2}*{\mujets{}} & $\met{}>20 \GeV{}$ & $\met{}>40
     \GeV{}$ & $\met{}>20 \GeV{}$ & -- \\
                                            &
-                                           \multicolumn{2}{c}{$\met{}+\mtw{}>60
-                                             \GeV{}$} &
+                                           $\met{}+\mtw{}>60 \GeV{}$ &
                                            $\met{}+\mtw{}>60 \GeV{}$ &
                                            $\met{}+\mtw{}>60 \GeV{}$ &
                                            -- \\
 
-     \multirow{2}*{\ejets{}} & \multicolumn{2}{c}{$\met{}>30 \GeV{}$} & $\met{}>40 \GeV{}$ & $\met{}>20 \GeV{}$ & -- \\
-                                         & \multicolumn{2}{c}{$\mtw{}>30 \GeV{}$} &
+     \multirow{2}*{\ejets{}} & $\met{}>30 \GeV{}$ & $\met{}>40 \GeV{}$
+     & $\met{}>20 \GeV{}$ & -- \\ 
+                                         & $\mtw{}>30 \GeV{}$ &
                                        $\met{}+\mtw{}>60 \GeV{}$ &
                                        $\met{}+\mtw{}>60 \GeV{}$ & -- \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-\section{Background modeling}
+\section{Signal and background modeling}
 \label{sec:bckgmodel}
+
+The requirements described in section~\ref{sec:evtsel} are designed to
+select events with semi-leptonic decays of the \ttbar{} pair. However, fully
+leptonic decays can also be selected when one of the two lepton is not
+reconstructed. These events are considered as part of the signal
+sample, notwithstanding that the top quark pair kinematics cannot be
+properly reconstructed under the semi-leptonic assumption.
 
 Even though the requirements are designed to select the \ttbar{}
 topology, other processes contaminate the samples: $W$ and $Z$ boson
@@ -110,12 +121,12 @@ fraction of the selected events.
 In the case of \wjets{} events, the largest background, the leptonic W
 decay produce a high-\pt{} isolated lepton, while the additional jets
 production, including $b$-jets, mimics the hadronic top quark decay.
-Analogously the leptonic decays of a boson in \zjets{} and di-boson
-processes feature high-\pt{} leptons reconstructed with high
+Analogously the leptonic decays of a boson in \zjets{} and boson pairs
+productions feature high-\pt{} leptons reconstructed with high
 efficiency.
 On the other hand, the reconstruction of fake leptons happens seldom;
 however, a very small selection efficiency for QCD multi-jets
-production still results into a significant amount of background
+production still results in a significant amount of background
 events, due to the large cross section.
 
 The background composition of the data samples is estimated with Monte
@@ -127,9 +138,22 @@ multi-jet background is extrapolated from data control regions.
 \subsection{Simulated samples}
 \label{sec:mcsamples}
 
+Different MC generators, PDF sets and parton shower and fragmentation
+algorithms are used to model signal and backgrounds in the data
+samples collected at $\sqrt{s} = 7 \TeV{}$ (2011) and at $\sqrt{s} = 8
+\TeV{}$ (2012), with the goal of providing the most reliable
+prediction in each scenario. In the following the different choices
+for each process are listed.
+
+The \ttbar{}+jets process is simulated using the \alpgen{} generator
+with the {\tt CTEQ6L1} PDF set~\cite{cteq6}, interfaced to the 
+\herwig parton shower (2011) and using \powheg{} with the {\tt CT10}
+PDF set~\cite{ct10}, interfaced to the \pythia{} parton shower
+(2012).
+
 Simulated samples of $W/Z$ boson production are generated with up to
-five additional partons using the {\tt ALPGEN} LO generator and the
-{\tt CTEQ6L1} PDF set~\cite{cteq6}, interfaced to \herwig{} (2011) or
+five additional partons using the {\tt ALPGEN} generator and the
+{\tt CTEQ6L1} PDF set, interfaced to \herwig{} (2011) or
 \pythia{} (2012) for parton showering and fragmentation. 
 Dedicated samples are produced to simulate $W$ production in
 association with bottom quark pairs (\wbb{}), charm quark
@@ -146,14 +170,14 @@ matrix element prediction only for $\Delta R(Q,\bar{Q})>0.4$.
 Simulated samples of single top quark backgrounds corresponding to the
 $s$-channel and $Wt$ production mechanisms are generated with \mcatnlo{}
 interfaced with the \herwig{} parton shower (2011) and \powheg{}
-interfaced with \pythia{} (2012), using the {\tt CT10} PDF set~\cite{ct10}.
+interfaced with \pythia{} (2012), using the {\tt CT10} PDF set.
 The simulation of $t$-channel single top quark production is
 generated with the {\tt ACERMC} LO generator with the {\tt MRST LO**}
 PDF set~\cite{mrst}  (2011) and \powheg{} interfaced with \pythia{}
 with the {\tt CT10} PDF set (2012). Single top samples are normalized
 to the corresponding NLO cross sections~\cite{stschan,sttchan,stwt}.
-Finally, the diboson backgrounds are modelled using \herwig{} with
-the {\tt MRST LO**} PDF set, and are normalised to their NLO
+Finally, the boson pair production is modelled using \herwig{} with
+the {\tt MRST LO**} PDF set, and is normalized to the NLO
 theoretical cross sections~\cite{dibosonxs}.
 
 \subsection{\wjets{} background normalization}
@@ -172,7 +196,7 @@ in data to derive the correct overall normalization for the MC prediction.
 The total number of \wjets{} events in the selected data sample
 $N_W=N_{\wpp{}}+N_{\wm{}}$ is estimated as
 \begin{equation}
-N_W = \left(\frac{N_{\wpp{}}+N_{\wm{}}}{N_{\wpp{}}-N_{\wm{}}}\right )_{\rm MC}(N_{\wpp{}}-N_{\wm{}})_{\rm meas}.
+N_W = \left(\frac{N_{\wpp{}}+N_{\wm{}}}{N_{\wpp{}}-N_{\wm{}}}\right )_{\rm MC}(N_{\wpp{}}-N_{\wm{}})_{\rm meas}
 \label{eq:nw}
 \end{equation}
 , where positive and negative $W$ bosons are identified from the
@@ -211,8 +235,8 @@ to renormalize to unity the sum of the flavor fractions.
 Table~\ref{tab:wsf} summarizes the flavor fraction and normalization
 calibration factors derived in the \ejets{} and \mujets{} channel for
 the 2011 dataset at $\sqrt{s} = 7 \TeV{}$.
-For the analysis of the 2012 dataset a similar approach was used by
-implementing an {\it in-situ} calibration described in section~\ref{sec:fit}.
+For the analysis of the 2012 dataset a similar approach is used by
+implementing the {\it in-situ} calibration described in section~\ref{sec:fit}.
 
 \begin{table}
   \caption{Calibration factors for flavor composition and overall
@@ -252,9 +276,9 @@ magnitude larger above that of \ttbar{} production.
 Because of this and the fact that these probabilities depend on the
 detector configuration and geometry, it is more efficient to
 extrapolate the multi-jet background in the selected sample from a
-control region.
+control region with a technique referred to as {\it matrix method}.
 
-The {\it Matrix Method} is based on the selection of two categories of
+The matrix method is based on the selection of two categories of
 events: the ones that satisfy loose lepton selection requirements, and
 the ones that satisfy tight lepton selection requirements.
 The number of events with one loose lepton and
@@ -313,3 +337,31 @@ $\effFake{}(\effReal{}-1)/(\effReal{}-\effFake{})$
 and the weight for loose-not-tight events is
 $(\effFake{}\cdot{}\effReal{})/(\effReal{}-\effFake{})$.
 
+\section{Comparison between data and prediction}
+\label{sec:datamc}
+
+The expected and observed number of selected events in both the \mujets{} and
+the \ejets{} channels are reported in tables~\ref{tab:yields2011}
+(2011), \ref{tab:yields2012mu} and \ref{tab:yields2012ele} (2012).
+
+\input{tex/selection_tables.tex}
+
+The modeling of the main background process is validated by comparing
+distributions as observed in the data samples with the corresponding
+predictions from simulation. Kinematic quantities of the reconstructed
+objects used for selection are
+considered. Figures~\ref{fig:2011mu_pretag}
+and~\ref{fig:2011mu_tagged} (\mujets{}), and~\ref{fig:2011ele_pretag}
+and~\ref{fig:2011ele_tagged} show the comparison of the distributions
+of the lepton \pt{} and pseudo-rapidity, the leading\footnote{Jets are
+conventionally ordered in decreasing \pt{}; hence the ``leading jet''
+is the reconstructed jet with the highest transverse momentum} jet
+\pt{} and pseudo-rapidity, the W transverse mass and the missing
+transverse energy for background and signal enriched samples of the
+2011 dataset at $\sqrt{s} = 7 \TeV{}$. The analogous distributions for
+samples of the 2012 dataset at $\sqrt{s} = 8 \TeV{}$ are shown in
+figures~\ref{fig:2012mu_pretag},~\ref{fig:2012mu_0tag},~\ref{fig:2012mu_1tag},~\ref{fig:2012mu_2tag}
+(\mujets{}) and
+~\ref{fig:2012ele_pretag},~\ref{fig:2012ele_0tag},~\ref{fig:2012ele_1tag},~\ref{fig:2012ele_2tag} (\ejets{}).
+
+\input{tex/selection_plots.tex}
