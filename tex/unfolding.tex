@@ -1,0 +1,283 @@
+\chapter{Unfolding}
+\label{sec:unfolding}
+
+In order to allow a direct comparison between the experimental results
+and the theoretical predictions, the parton level asymmetry spectra need
+to be estimated.
+As discussed in Sec.~\ref{sec:reconstruction} the asymmetry computed
+from the reconstructed kinematics of the \ttbar{} system is affected
+by the efficiency of correctly reconstructing the \dy{} sign. The
+distortion induced on the \ac{} values depends on the kinematic region
+considered and it can dilute the asymmetry up to half of its original
+({\it true}) value.
+The \ttbar{} MC simulation is used to map the distortions,
+bin--dependent {\it efficiencies} and {\it migrations}, caused by
+resolution and acceptance effects. The unfolding procedure consists in
+combining this information with the distributions observed in data in
+order to estimate the parton level distributions. 
+
+\section{Fully Bayesian Unfolding}
+\label{sec:fbu}
+
+The Fully Bayesian Unfolding~\cite{fbu} consists in the application of Bayes'
+theorem to the problem of unfolding. This application can be stated in
+the following terms: given an observed spectrum
+$\Data\in\Integer^{N_r}$ and a response matrix
+$\TrasfMatrix\in\Real{}^{N_r}\times{}\Real{}^{N_t}$, the posterior
+probability of the true spectrum $\Truth{}\in{}\Real{}^{N_t}$ follows
+the probability density
+\begin{equation}
+\conditionalProb{\Truth{}}{\Data{},\TrasfMatrix{}}
+\propto{}
+\conditionalLhood{\Data{}}{\Truth{},\TrasfMatrix{}}
+\cdot{}
+\pi{}\left(\Truth{}\right)
+\end{equation}
+where \conditionalLhood{\Data{}}{\Truth{},\TrasfMatrix{}} is the
+conditional likelihood for \Data{} given \Truth{} and \TrasfMatrix{},
+and $\pi{}$ is the prior probability density for the true spectrum \Truth{}.
+
+\subsection{Likelihood}
+\label{sec:fbullhood}
+Under the assumption that the data are poissonian counts, the
+likelihood \conditionalLhood{\Data{}}{\Truth{},\TrasfMatrix{}} can be
+computed from the following two pieces of information, contained in
+the response matrix \TrasfMatrix{}:
+\begin{itemize}
+\item the probability $P(r|t)$ of an event to be
+  produced in the true bin $t$ and to be observed in the reconstructed
+  bin $r$;
+\item the efficiency $\epsilon{}_t$ for an event produced in the
+  true bin $t$ and that is reconstructed in any bin $r$.
+\end{itemize}
+The above quantities allow the extrapolation of the reconstructed spectrum
+\Reco{} corresponding to a given true spectrum \Truth{} as in
+\begin{equation}
+r_i(\Truth{},\TrasfMatrix{}) = \sum_{j=0}^{N_r}\epsilon_j\cdot{}p(r_i|t_j)\phantom{.}
+\end{equation}
+The likelihood is then defined by comparing the observed spectrum
+\Data{} with the expected one, which includes the background
+prediction \Bckg{}:
+\begin{equation}
+\conditionalLhood{\Data{}}{\Truth{}} =
+\prod_{i=1}^{N_r}Poisson(d_i,r_i(\Truth{},\TrasfMatrix{})+b_i)\phantom{.}
+\end{equation}
+
+\subsection{Prior and sampling}
+\label{sec:fbuprior}
+While the response matrix can be estimated from the simulated
+sample of signal events, the prior probability density \prior{} is to
+be chosen according to what we know about \Truth{} before the
+measurement is performed.
+The simplest choice is an {\it uninformative}
+prior that assigns equal probabilities to all \Truth{} spectra in a
+subset of $N_t$ $\left[\Tinf{}, \Tsup{}\right]$:
+\begin{equation}
+\prior{}
+\propto{}
+\begin{cases}
+1 & \text{if }
+T_{t}\in{}\left[\Tinf{}, \Tsup{}\right], \forall{}t\in{}\left[1, N_t\right] \\
+0 & \text{otherwise} \\
+\end{cases}
+\end{equation}
+A more general definition for the prior is given by 
+\begin{equation}
+\prior{}
+\propto{}
+\begin{cases}
+e^{\alpha{}S(\Truth{})} & \text{if }
+T_{t}\in{}\left[\Tinf{}, \Tsup{}\right], \forall{}t\in{}\left[1, N_t\right] \\
+0 & \text{otherwise} \\
+\end{cases}
+\end{equation}
+where $\alpha{}$ is an arbitrary strength parameter, and
+$S(\Truth{})$ is a regularization function.
+The choice of $\alpha$ determines the impact of the prior on
+\conditionalProb{\Truth{}}{\Data{}}, while $S(\Truth{})$ determines
+which additional information is used to constrain the parameter
+space.
+
+Having chosen the prior, the posterior probability density
+\conditionalProb{\Truth{}}{\Data{}} is determined by sampling the
+$N_t$--dimensional parameter space, and evaluating for each point
+\conditionalLhood{\Data{}}{\Truth{}} and \prior{}, thus performing a
+numerical integration.
+Combining this set of points with the weight given by
+$\conditionalLhood{\Data{}}{\Truth{},\TrasfMatrix{}}\cdot{}\pi{}$, one
+can determine not only the posterior probability density distribution
+for each bin of the spectrum, but also the posterior probability
+density distribution for any quantity that is computed from the
+spectrum, such as \ac{}. The mean and RMS of the posterior probability
+density for \ac{} are taken as central value and statistical uncertainty respectively.
+As an example, the unfolding input, the response matrix, and posterior
+probability densities for the \dy{} distribution and the corresponding
+\ac{} are illustrated in Fig.~\ref{fig:posteriorIncl}.
+\begin{figure}[!htb]\centering
+  \includegraphics[width=0.495\textwidth]{figures/unfolding/unfInputProtosA2pos__lin}
+  \includegraphics[width=0.495\textwidth]{figures/unfolding/unfOutputProtosA2pos__lin}
+  \includegraphics[width=0.495\textwidth]{figures/unfolding/exampleBinPosterior}
+  \includegraphics[width=0.495\textwidth]{figures/unfolding/example_inclusive_posterior}
+  \caption{
+    \label{fig:posteriorIncl}
+   Unfolding input and output (top), and posterior distributions
+   (bottom). In this figure we use a pseudo-data sample with a known
+   positive asymmetry.  The inputs (top-left) are the
+   expected \dy{} distributions at the reconstruction level for the
+   backgrounds. The FBU output (top-right) is the estimated
+   spectrum at the parton level (blue bands and markers), that is
+   computed unfolding the \protos{} reconstructed \dy{} distribution
+   with the efficiency and transfer matrix estimated from
+   the \alpgen{} sample. The content of each bin is estimated from the
+   bin posterior, shown for example in the bottom-left plot for the
+   first bin (the full circle is the reconstructed value, the black
+   line is the bin posterior, the red cross is the true bin content,
+   and the blue empty square is the mean value of the posterior). From
+   the posterior of each bin, the \ac{} posterior (bottom-right) can
+   be computed. In this case we measure an unfolded asymmmetry of
+   $2.7\pm1.0$ from a $2.5$ injected asymmetry.
+   }
+\end{figure}
+
+\subsection{Binning choice and bias}
+
+The choice of the binning for the \dy{} distribution is driven by two
+factors:
+\begin{itemize}
+\item The number of parameters to estimate (the \dy{} bin yields)
+  affects their variance; with fewer bins, the relative statistical
+  errors on the bin contents are reduced. Therefore the resulting
+  statistical error on \ac{} is smaller with fewer bins. At least two
+  bins are necessary to compute \ac{} (positive and negative side of
+  the \dy{} distribution).
+\item A large number of bins allows an accurate mapping of the
+  migrations, yielding unbiased estimates for each bin
+  content. However, only migrations that change the \dy{} sign affect
+  the computation of \ac{}. Such migrations are more likely for small
+  \dy{} values, therefore a fine binning of the central \dy{} region
+  ensures an unbiased measurement of \ac{}. 
+\end{itemize}
+The benchmarks driving the choice of the binning are thus the
+statistical error and the bias on \ac{}.
+
+The statistical error on \ac{} is validated by performing unfolding in
+an ensemble of pseudo-experiments where statistically independent
+pseudo-data distributions are generated based on Poisson statistics.  
+The distribution of $(\ac{}^{unf}-\ac{}^{true})/\sigma^{unf}$
+({\it pull}) in the ensemble is considered, where $\ac{}^{unf}$ and
+$\sigma^{unf}$ are the unfolded asymmetry value and its uncertainty,
+while $\ac{}^{true}$ is the parton level asymmetry of the sample used
+to generate the pseudo-data. As shown in Fig.~\ref{fig:pulllinearity}, the
+RMS of the pull distribution is $\approx{}1$, indicating that the
+uncertainty is correctly estimated.  
+
+The bias in the unfolding response is measured by studying the
+unfolded asymmetry in pseudo-data samples for which the true
+asymmetry is known. The asymmetric samples are built by reweighing the
+baseline \ttbar{} simulation to the parton level \dy{} spectrum of BSM axi--gluon
+samples (see Sec.~\ref{sec:theory}) corresponding to $\pm2\%$, $\pm4\%$
+and $\pm6\%$ asymmetries. In order to minimize the effect of
+statistical fluctuations, the unfolding procedure for each reference
+point is repeated in $N_{PE}$ pseudo-experiments. For each reference
+point with true asymmetry $\ac{}^{true}$, the mean of the unfolded
+values $\ac{}^{unf}$, with error $\sigma/\sqrt{N_{PE}}$, is then
+obtained. The set of ($\ac{}^{true}$,$\ac{}^{unf}$) pairs is
+interpolated with a straight line parametrized as: 
+\begin{equation}
+\ac{}^{unf}=a\cdot{}\ac{}^{true}+b\phantom{,}
+\end{equation}
+where $a$ and $b$ are the {\it slope} and {\it offset} parameters.
+The unfolding response is considered unbiased when the distance
+$|1-a|$ is much smaller than the relative statistical error and the
+offset $b$ is much smaller than the absolute statistical error.
+For both 2011 and 2012 measurements, four is the minimum number of
+bins which allows an unbiased response. Figure~\ref{fig:pulllinearity}
+shows the linearity test for the inclusive \ac{} measurement at
+\eighttev{}.
+
+\begin{figure}[!htb]\centering
+  \includegraphics[width=0.495\textwidth]{figures/unfolding/pulls_bin0__A2pos_combined_10m10}
+  \includegraphics[width=0.495\textwidth]{figures/unfolding/linearity_inclusive_bin0_0tagex1tagex2taginQ_10m10}
+  \caption{Pull distribution (left) and linearity test (right) for the
+    inclusive \ac{} measurement at \eighttev{}}
+  \label{fig:pulllinearity}
+\end{figure}
+
+\section{Marginalization}
+\label{sec:marginalization}
+
+The treatment of systematic uncertainties is naturally included in the
+Bayesian inference approach by extending the likelihood
+\conditionalLhood{\Data{}}{\Truth{}} with nuisance parameters terms.
+The {\it marginal} likelihood is defined as
+\begin{equation}
+  \conditionalLhood{\Data{}}{\Truth{}}=
+  \int
+  \conditionalLhood{\Data{}}{\Truth{},\thetavec{}} 
+  \cdot{} \pi{}(\thetavec{})
+  d\thetavec{}\phantom{,}
+\end{equation}
+where \thetavec{} are the nuisance parameters, and
+$\pi{}(\thetavec{})$ their prior probability densities, which are
+assumed to be Normal distributions.
+
+A nuisance parameter is associated to each of the uncertainty sources
+listed in Sec.~\ref{sec:systematics}. Two categories of nuisances
+are considered: the normalizations of the background processes
+(\etavec{}), and the uncertainties associated to the objects
+identification, reconstruction and calibration (\thetavec{}).
+While the first ones only affect the background predictions, the
+latter, referred to as object systematics, affect both the
+reconstructed distribution $\Reco{}(\Truth{};\thetavec{})$ and the backgrounds
+$\Bckg{}(\thetavec{},\etavec{})$. The marginal likelihood becomes then
+\begin{equation}
+\label{eq:marginalLhood}
+  \conditionalLhood{\Data{}}{\Truth{}}=
+  \int
+  \conditionalLhood{\Data{}}{\Reco{}(\Truth{};\thetavec{}),\Bckg{}(\etavec{})} 
+  \cdot{} Normal(\thetavec{}) Normal(\etavec{})
+  d\thetavec{} d\etavec{}\phantom{.}
+\end{equation}
+
+The marginal posterior probability density for \Truth{} is computed by
+sampling the $N_t+N_{np}$ parameter space, where $N_{np}$ is the
+total number of nuisance parameters, and projecting the sample over
+the \Truth{} parameter space. The projections over each nuisance
+parameter gives the corresponding posterior probability density,
+which matches the Normal prior for unconstrained nuisance
+parameters, while it has a narrower shape for nuisance parameters
+that can be measured in the dataset (see Fig.~\ref{fig:nuispar}). 
+The posterior for \ac{} is computed as described in
+Sec.~\ref{sec:fbuprior} with the difference that the RMS of the
+marginal posterior represents the total uncertainty.
+
+\begin{figure}[!htb]\centering
+  \includegraphics[width=0.495\textwidth]{figures/unfolding/unconstrainednp}
+  \includegraphics[width=0.495\textwidth]{figures/unfolding/constrainednp}
+  \caption{Prior and posterior distributions for nuisance parameters
+    corresponding to a component of the JES uncertainty (left) and of
+    the b-tagging efficiency (right) in the \eighttev{} measurement
+    (see Sec.~\ref{sec:8tevresults}).}
+  \label{fig:nuispar}
+\end{figure}
+
+\subsection{Channel combination}
+
+As discussed in Sec.~\ref{sec:selection}, the combination of
+orthogonal channels with different background compositions is crucial
+to estimate precisely the \wjets{} contamination in the \eighttev{}
+data sample.
+The marginalization approach provides a natural framework to treat
+simultaneously unfolding and background estimation using
+multiple data regions. Given the distributions $\Data{}_i$ measured in $N_{ch}$
+independent channels, the likelihood definition~\ref{eq:marginalLhood}
+can be extended to the product  
+\begin{equation}
+  \conditionalLhood{\{\Data{}_1\cdots{}\Data{}_{N_{ch}}\}}{\Truth{}}=
+  \int
+  \prod_{i=1}^{N_{ch}}\conditionalLhood{\Data{}_i}{\Truth{};\thetavec{}} 
+  \cdot{} Normal(\thetavec{})
+  d\thetavec{}\phantom{,}
+\end{equation}
+where the nuisance parameters are evaluated simultaneously for all the
+factors.

@@ -65,6 +65,7 @@
 \newcommand{\mcatnlo}     {{\tt MC@NLO}}
 \newcommand{\powheg}     {{\tt POWHEG}}
 \newcommand{\alpgen}     {{\tt ALPGEN}}
+\newcommand{\protos}     {{\tt PROTOS}}
 \def\pt{\ensuremath{p_{\mathrm{T}}}}
 \def\mt{\ensuremath{m_{\mathrm{T}}}}
 \def\met{\mbox{\ensuremath{\not\!\!{E_{\mathrm{T}}}}}}
@@ -75,6 +76,24 @@
 \newcommand{\mtw}{\ensuremath{m_{\mathrm T}^W}}
 \newcommand{\effFake}{\ensuremath{\epsilon_{\mathrm{fake}}}}
 \newcommand{\effReal}{\ensuremath{\epsilon_{\mathrm{real}}}}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+\newcommand{\Truth}{\ensuremath{\vect{T}}}
+\newcommand{\Reco}{\ensuremath{\vect{R}}}
+\newcommand{\Data}{\ensuremath{\vect{D}}}
+\newcommand{\Bckg}{\ensuremath{\vect{B}}}
+\newcommand{\thetavec}{\ensuremath{\vect{\theta}}}
+\newcommand{\etavec}{\ensuremath{\vect{\eta}}}
+\newcommand{\TrasfMatrix}{\ensuremath{\mathcal{M}}}
+\newcommand{\Real}{\ensuremath{\mathbb{R}}}
+\newcommand{\Integer}{\ensuremath{\mathbb{N}}}
+\newcommand{\conditionalProb}[2]{\ensuremath{p\left(#1|#2\right)}}
+\newcommand{\conditionalLhood}[2]{\ensuremath{\mathcal{L}\left(#1|#2\right)}}
+\newcommand{\prior}{\ensuremath{\pi{}\left(\Truth{}\right)}}
+\newcommand{\Tinf}{\ensuremath{T\ulcorner{}}}
+\newcommand{\Tsup}{\ensuremath{T\urcorner{}}}
+\newcommand{\seventev}{\ensuremath{\sqrt{s}=7\TeV{}}}
+\newcommand{\eighttev}{\ensuremath{\sqrt{s}=8\TeV{}}}
+
 
 \def\MeV{\; \mathrm{MeV}}
 \def\GeV{\; \mathrm{GeV}}
@@ -93,36 +112,8 @@
 \def\mrad{\; \mathrm{mrad}}
 \def\mum{\; \mu\mathrm{m}}
 \def\mus{\; \mu\mathrm{s}}
-\def\invcms{\; \mathrm{cm}^{-2}\mathrm{s}^{-1}}
-\def\cmsseven{\mbox{$\sqrt{s} = 7 \TeV$}}
-\def\cmseight{\mbox{$\sqrt{s} = 8 \TeV$}}
 
 % shower variables
-\newcommand{\rhadone}{R_{\mathrm{had}_1}}
-\newcommand{\rhad}{R_{\mathrm{had}}}
-\newcommand{\reta}{R_\eta}
-\newcommand{\wtwo}{w_2}
-\newcommand{\rphi}{R_\phi}
-\newcommand{\wsthree}{w_{s \, 3}}
-\newcommand{\wstot}{w_{s \, \mathrm{tot}}}
-\newcommand{\fside}{F_{\mathrm{side}}}
-\newcommand{\deltae}{\Delta E}
-\newcommand{\deltaR}[2]{\ensuremath{\Delta{}R\left(#1, #2\right)}}
-\newcommand{\eratio}{E_{\mathrm{ratio}}}
-
-\newcommand{\ttg}{\ttbar\gamma}
-\newcommand{\ptcone}{\mbox{$\pt^{\mathrm{cone20}}$}}
-
-\newcommand{\feg}{f_{e \to \gamma}}
-\newcommand{\Zee}{\mbox{$Z \to ee$} }
-\newcommand{\Zeg}{\mbox{$Z \to e\gamma_{\mathrm{fake}}$} }
-\newcommand{\Zeepm}{\mbox{$Z \to e^+e^-$} }
-
-\newcommand{\emptynull}{\textcolor{white}{0}}
-\newcommand{\emptyplus}{\textcolor{white}{+}}
-\newcommand{\emptyminus}{\textcolor{white}{-}}
-\newcommand{\emptydot}{\textcolor{white}{.}}
-\newcommand{\emptypercent}{\textcolor{white}{\%}}
 
 \usepackage{hyperref}
 \hypersetup{%
