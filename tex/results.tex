@@ -5,6 +5,17 @@
 \section{\ac{} measurements at \seventev{}}
 \label{sec:res7tev}
 
+The measurements are performed in the $\ell{}+\ge4$ jets sample with at least 1
+$b$--jet. The observed \dy{} distribution in data and the background
+predictions used as input for the inclusive measurement are shown in
+Fig.~\ref{fig:dy7tev}.
+
+\begin{figure}[!htb]\centering
+  \includegraphics[width=0.6\textwidth]{figures/results/dy7tev} 
+  \caption{}
+  \label{fig:dy7tev}
+\end{figure}
+
 The asymmetry \ac{} in \ttbar{} production at \seventev{} is measured to be
 $\ac{}= 0.006\pm0.010$, compatible with the SM prediction
 $\ac{}=0.0123\pm0.0005$.
@@ -80,29 +91,29 @@ Statistical uncertainty                          & $0.010$ & $0.021$ & $0.017$\\
 
 The asymmetry spectra, measured as functions of
 \mtt{}, \pttt{} and \ytt{} are compared in Fig.~\ref{fig:unfac_diff}
-with the theoretical SM predictions and found compatible. 
+with the theoretical SM predictions and found to be compatible. 
 In addition, the results are compared with new physics predictions for
 color octets ({\it axigluons}) with masses $M_G=300 \GeV{}$ and $M_G=7
-\TeV{}$~\cite{Ferrario:2009bz,Frampton:2009rk}. Both models would not
+\TeV{}$~\cite{AguilarSaavedra:2011ci}. Both models would not
 be observable in direct searches as \ttbar{} resonances: the light
 axigluon mass is below the threshold for production of top quark
 pairs, while a $7 \TeV$ mass is beyond the kinematic reach of the
-current measurements at \seventev{} and \eighttev{}. In both scenarios
+current searches at \seventev{} and \eighttev{}. In both scenarios
 the new physics couplings with top and light quarks are tuned to yield a
 forward--backward asymmetry compatible with the results reported by
 Tevatron experiments.
 
 \begin{figure}[!htb]\centering
   \subfloat[][]
-  {  \includegraphics[width=0.45\columnwidth]{figures/results/dy_mtt}
+  {  \includegraphics[width=0.45\textwidth]{figures/results/dy_mtt}
   } \quad
   \subfloat[][]
-  {  \includegraphics[width=0.45\columnwidth]{figures/results/dy_pttt} } \\
+  {  \includegraphics[width=0.45\textwidth]{figures/results/dy_pttt} } \\
   \subfloat[][]
-  {  \includegraphics[width=0.45\columnwidth]{figures/results/dy_ytt}
+  {  \includegraphics[width=0.45\textwidth]{figures/results/dy_ytt}
   } \quad
   \subfloat[][]
-  {  \includegraphics[width=0.45\columnwidth]{figures/results/dy_mtt_beta} }
+  {  \includegraphics[width=0.45\textwidth]{figures/results/dy_mtt_beta} }
   \caption{Measured \ac{} spectra compared with SM and bSM predictions
     as functions of \mtt{} (a), \pttt{} (b) and \ytt{} (c). The
     asymmetry as a function of \mtt{} with $\betatt{}>0.6$ is also
@@ -111,23 +122,127 @@ Tevatron experiments.
 \end{figure}
 
 The asymmetry values corresponding to the spectra in
-Fig.~\ref{fig:unfac_diff} are detailed in Tables~\ref{tab:results_mtt},
-\ref{tab:results_pttt} and \ref{tab:results_ytt}.
+Fig.~\ref{fig:unfac_diff} are detailed in App.~\ref{app:differentialresults}.
 The correlation of the asymmetry values $\ac{}^i$ across differential bins is
 fully described by the posterior probability density
-$\conditionalProb{\ac{}^1,...,\ac{}^{N_{diff}}}{\Data{}}$, where
-$N_{diff}$ is the number of differential bins, and it is summarized in
-Tables~\ref{tab:corr_mtt}, ~\ref{tab:corr_pttt} and 
-\ref{tab:corr_ytt} for each measurement.
+$\conditionalProb{\ac{}^1,...,\ac{}^N}{\Data{}}$, where
+$N$ is the number of differential bins, and it is summarized in
+App.~\ref{app:correlations}.
 The \ac{} spectrum as a function of the \ttbar{} invariant mass \mtt{}
 with the additional requirement on the $z$--component of high velocity
 of the \ttbar{} system, $\betatt{}>0.6$, is also shown in
-Fig.~\ref{fig:unfac_diff}, while Table~\ref{tab:results_mtt_beta}
-shows the values of \ac{} for each differential bin, and their
-correlation is reported in Table~\ref{tab:corr_mtt_beta}.
+Fig.~\ref{fig:unfac_diff}. The enhancement of the $\qqbar{}\to\ttbar{}$
+process results in larger asymmetries for both SM and new physics
+predictions.
 
-\input{tex/results_table7tev.tex}
+A comparison of the inclusive \ac{} measurements, together with the Tevatron
+\afb{} ones, with predictions from a broad range of new physics model
+(see Sec.~\ref{sec:bsmca}) is shown in Fig.~\ref{fig:summarybsm}. The
+\ac{} and \afb{} measurements, inclusive and at high \mtt{} mass,
+define a region where the new physics prediction are compatible with
+the current measurements from both Tevatron and LHC experiments.
+Some models show only a limited range of parameter values which yield acceptable
+asymmetries.
 
-\section{\ac{} measurement at \eighttev{}}
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.495\textwidth]{figures/results/bsm}
+  \includegraphics[width=0.495\textwidth]{figures/results/bsm_highmtt}
+  \caption{Measured forward--backward asymmetries \afb{} at Tevatron
+    and charge asymmetries \ac{} at LHC, compared with the SM
+    predictions (black box) and values in allowed new physics
+    scenarios. The horizontal bands and lines correspond to the ATLAS
+    (light green) and CMS (dark green) measurements, while the
+    vertical ones correspond to the CDF (orange) and D0 (yellow)
+    measurements. The inclusive asymmetry measurements are shown in
+    the left plot. The right plot shows a comparison with the \afb{}
+    measurement by CDF for $\mtt{} > 450 \GeV{}$ and the ATLAS \ac{}
+    measurement for $\mtt{} > 600 \GeV{}$.}
+  \label{fig:summarybsm}
+\end{figure}
+
+
+\section{\ac{} measurements at \eighttev{}}
 \label{sec:res8tev}
+
+The measurements at \eighttev{} are performed using six sub-samples of
+$\ell{}+\ge4$ jets events, where, simultaneously, the background normalizations are
+fitted and the parton--level \dy{} distribution is
+estimated. Fig.~\ref{fig:dy7tev} shows the fitted distribution used
+for the inclusive \ac{} measurement compared with the observed one. 
+
+\begin{figure}[!htb]\centering
+  \includegraphics[width=0.6\textwidth]{figures/results/datamcinclu8TeV_postfit} 
+  \caption{}
+  \label{fig:dy7tev}
+\end{figure}
+
+The asymmetry \ac{} in \ttbar{} production at \eighttev{} is measured to be
+$\ac{}= 0.011\pm0.005$, compatible with the SM prediction
+$\ac{}=0.0111\pm0.0004$.
+
+Since the background estimation is part of the bayesian inference
+procedure described in Sec.~\ref{sec:unfolding}, it's not possible to
+study the impact of systematic uncertainties by repeating unfolding on data with
+varied templates, without using marginalization. Instead, the expected
+impact of systematic uncertainties is studied with pseudo-data distributions
+corresponding to the sum of the background and signal predictions.
+For each source of uncertainty, the $\pm{}1\sigma$ variations of the
+predictions are used to build the pseudo--data, and the unfolding
+procedure is repeated. The baseline background templates and response
+matrices, as in the actual measurements, are used.
+Table~\ref{tab:8tevsystematics} shows the average asymmetry variation
+$\delta{\ac{}}$ computed, for each source of uncertainty, as
+$|\ac{}(+1\sigma)-\ac{}(-1\sigma)|/2$.
+As in the measurements at \seventev{}, the precision is dominated by
+the statistical uncertainty, and the sources of largest systematic
+uncertainties are the ones with a large impact on the size of the
+\wjets{} background, such as the uncertainty on the energy scale and
+resolution of lepton and jets. 
+
+\begin{table}[!htb]\centering
+\begin{tabular}{l c}
+\toprule
+Source of systematic uncertainty  & $\delta{\ac{}}$ \\
+\midrule
+Lepton reconstruction/identification    & $<0.0005$\\
+Lepton energy scale and resolution      &  $0.0007$\\
+Jet reconstruction efficiency                 &  $<0.0005$ \\
+Jet energy scale and resolution             &  $0.0017$ \\
+Missing transverse momentum and pile--up modeling& $<0.0005$\\
+Multi--jets background normalization & $<0.0005$\\
+Other backgrounds normalization        & $<0.0005$\\
+$b$--tagging/mis--tag efficiency       & $<0.0005$\\
+Signal modeling                                    & $??$\\
+Parton shower/hadronization                & $??$\\
+Monte Carlo statistics                            & $0.0008$\\
+PDF                                                        &$0.0006$\\
+Unfolding response                               &$<0.0005$\\
+\midrule
+Statistical uncertainty                           & $0.005$ \\
+\midrule
+Total uncertainty                                   & $0.005$ \\
+\bottomrule
+\end{tabular}
+\caption{Expected impact of individual sources of uncertainty on the
+  measured \ac{}. Variations below $10\%$ of the
+  statistical uncertainty are considered negligible.}
+\label{tab:8tevsystematics}
+\end{table}
+
+The asymmetry spectrum as a function of
+\mtt{} is compared in Fig.~\ref{fig:8tevacvsmtt}
+with the theoretical SM predictions and found to be compatible. 
+
+\begin{figure}[!htb]\centering
+  \includegraphics[width=0.6\textwidth]{figures/results/acvsmtt8tev}
+  \caption{Measured \ac{} spectrum as a function of \mtt{} compared with SM prediction.}
+  \label{fig:8tevacvsmtt}
+\end{figure}
+
+The asymmetry values corresponding to the spectra in
+Fig.~\ref{fig:8tevacvsmtt} are detailed in
+App.~\ref{app:differentialresults}, together with the breakdown of the
+systematic uncertainties (App.~\ref{app:systematics}) and the
+correlation matrix (App.~\ref{app:correlations}).
 
