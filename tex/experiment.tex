@@ -47,6 +47,16 @@ the design peak luminosity of \mbox{$10^{34}~\mathrm{cm^{-2}~s^{-1}}$}.
 However, most of the data collected so far were taken with a bunch 
 spacing of \mbox{$50 \ns$} and up to 1308 bunches, yielding a maximum
 peak luminosity of \mbox{$3.65\cdot{}10^{33}~\mathrm{cm^{-2}~s^{-1}}$}.
+As shown in Fig.~\ref{fig:lumivstime}, the peak luminosity has increased
+steadily during the data--taking.
+
+\begin{figure}[ht]\centering
+\includegraphics[width=0.8\textwidth]{figures/experiment/lumivstime}
+\caption{
+The peak instantaneous luminosity delivered to ATLAS per day versus
+time during the p-p runs of 2010,2011 and 2012.}
+\label{fig:lumivstime}
+\end{figure}
 
 Due to the high frequency of collisions and charge density of the
 bunches necessary to achieve such high luminosity, there is a non-zero
@@ -58,18 +68,34 @@ In-time pile-up events are caused by  multiple inelastic interactions
 of protons in the same bunch collision.
 The out-of-time pile-up occurs when the detector records events
 originated in different bunch-crossings.
+The mean number of interactions per bunch collision is shown in
+Fig.~\ref{fig:mu}, with an average of about 9 in 2011 and 20 in 2012.
+
+\begin{figure}[ht]\centering
+\includegraphics[width=0.6\textwidth]{figures/experiment/mu_2011_2012}
+\caption{
+Luminosity-weighted distribution of the mean number of interactions
+per crossing for the 2011 and 2012 data.}
+\label{fig:mu}
+\end{figure}
 
 In 2011 each beam was accelerated to an energy of \mbox{$3.5 \TeV$}, 
-resulting into a center-of-mass energy \mbox{$\sqrt{s} = 7 \TeV$}.
+resulting into a center-of-mass energy \mbox{$\sqrt{s} = 7 \TeV$}, and
+an integrated luminosity of $5.32\ifb{}$ was delivered.
 In 2012, the beam energy was increased to \mbox{$4 \TeV$}, 
-corresponding to \mbox{$\sqrt{s} = 8 \TeV$}.
+corresponding to \mbox{$\sqrt{s} = 8 \TeV$}. An integrated luminosity
+of $23.26\ifb{}$ was delivered.
 The LHC was designed to collide protons up to \mbox{$\sqrt{s} = 14
   \TeV$}. In 2015 the LHC operation will resume with proton collisions
 at \mbox{$\sqrt{s} = 13 \TeV$}. 
 
 The beams are brought to collision in four interaction points along
 the ring, where four experiments are situated: 
-ATLAS, described in Sec.~\ref{sec:ATLAS}, CMS~\cite{cms}, ALICE~\cite{alice} and LHCb~\cite{lhcb}.
+ATLAS, described in Sec.~\ref{sec:ATLAS} and CMS~\cite{cms} are
+multipurpose experiments designed to study a broad range of physics
+processes; the LHCb~\cite{lhcb} experiment is specialized in the
+detection of $b$--hadrons, while the ALICE~\cite{alice} collaboration
+focuses on the study of heavy--ion collisions.
 
 \section{The ATLAS experiment}
 \label{sec:ATLAS}
@@ -246,7 +272,8 @@ distinguish different shower types by the use of shower shapes.
 This is particularly important for the central region, 
 which is devoted to precision measurements of electrons and photons:
 the EMB (\mbox{$|\eta| < 1.475$}) is segmented into three longitudinal
-layers, where the first layer $\eta$ granularity is 0.0031.
+layers, where the first layer granularity is
+$\Delta\eta\times\Delta\phi=0.0031\times0.098$. 
 To ensure continuous coverage in azimuth and to enable fast readout, 
 the lead absorbers are folded into an accordion-shaped structure.
 
@@ -358,6 +385,41 @@ Hence, 1800 Hall sensors were installed in the muon spectrometer
 volume to enable the monitoring of the magnetic field.
 
 
+\section{Forward sub-detectors}
+\label{sec:forward}
+
+ATLAS is equipped with sub--detectors in the forward regions used for
+monitoring tasks.
+The Minimum Bias Trigger Scintillators (MBTS), embedded in the
+structure of TileCal extended barrel modules, are 32 scintillator
+paddles assembled in two disks covering the pseudo--rapidity region
+$2.09<|\eta|<3.84$ and are used to detect minimum bias activity and to
+indirectly measure the luminosity.
+
+Two other systems are specifically designed to determine the
+luminosity delivered to ATLAS: LUCID and ALFA.
+LUCID (LUminosity measurements using Cerenkov Integrating Detector)
+consists of 32 gas-filled tubes surrounding the beam pipe at 17~m from
+the interaction point on both sides of ATLAS and measures the
+luminosity bunch by bunch. 
+ALFA (Absolute Luminosity For ATLAS) is used to calibrate the
+luminosity measurement with dedicated runs, and consists of 8
+scintillating fibers placed at 240~m from the interaction point inside
+roman pots, above and below the beam pipe.
+
+Auxiliary monitoring of the luminosity is provided by the Zero-Degree
+Calorimeter, whose main purpose is to determine the centrality of heavy-ion
+collisions.
+Placed at 140~m from the interaction point on both sides of the beam axis,
+it is made of quartz rods alternated with tungsten plates.
+
+The Beam Condition Monitor (BCM) consists of two sets of
+diamond sensors located 184~cm from the interaction point along the
+beam and at a radial distance of $R=$5.5~cm. 
+It is devoted to the detection of beam losses and provides fast
+signals to abort the beam safely, if the loss rate becomes dangerous
+for the integrity of the ATLAS detector.
+
 \subsection{Trigger system}
 \label{sec:triggerDAQ}
 
@@ -411,17 +473,54 @@ which allows to improve the on-line selection efficiency.
 
 \subsubsection{The trigger menu}
 
-The trigger system is configured via a trigger \textit{menu} which defines trigger \textit{chains}.
+The trigger system is configured via a trigger \textit{menu} which
+defines trigger \textit{chains}.
 Each \textit{chain} is defined by a sequence of steps at each trigger level.
-Thresholds are increasingly tightened at each level in order to maximize selection efficiencies.
-For each HLT level, a sequence of read-out, reconstruction and selection steps is specified.
-A trigger is defined as the combination of the L1 seeding item and the two HLT (L2 and EF) chains.
+Thresholds are increasingly tightened at each level in order to
+maximize selection efficiencies. 
+For each HLT level, a sequence of read-out, reconstruction and
+selection steps is specified. 
+A trigger is defined as the combination of the L1 seeding item and the
+two HLT (L2 and EF) chains. 
 
-Triggers are categorized based on the object reconstructed (jets, muons, etc..), 
-and the selection requirements, such as energy thresholds, multiplicity or isolation.
-This categorization, together with other distinctions, depending on the reconstruction algorithm
-and its configuration, are encoded in the trigger name.
+Triggers are categorized based on the object reconstructed (jets,
+muons, etc..), and the selection requirements, such as energy
+thresholds, multiplicity or isolation. This categorization, together
+with other distinctions, depending on the reconstruction algorithm and
+its configuration, are encoded in the trigger name.
+The naming convention is as follow:
+\begin{equation*}\label{eq:}
+{\rm [LEVEL][N][TYPE(S)][THRESHOLD][ISOLATION][QUALITY]},
+\end{equation*}
+where the components, from left to right, are: the trigger level used; the
+multiplicity of the type; the object candidate; the threshold applied to
+the transverse momentum or energy of the object candidate; the object isolation;
+additional requirements related to the type of algorithm used.
 
 In order to keep the rate within the available bandwidth ($\approx{}200~Hz$), 
 prescales are applied to the triggers with loose requirements so that
 only a fraction of the events passing the selection are actually recorded.
+
+Prescales are dynamically adjusted as the instantaneous luminosity
+decreases at each collision. Data taking time units are defined as
+{\it Luminosity Blocks} (LB), corresponding to few minutes of  data
+taking, with associated information on beam conditions, detector performance 
+and trigger configuration. All the LB between the start and the
+end of a stable beam collision period constitute a {\it run}. Runs are grouped
+in {\it Data Periods}, labelled with capital letters (Period A, Period B, {\it etc}.),
+which correspond to the same general detector conditions, machine configuration and
+trigger menu.
+
+\section{Data Quality}
+\label{sec:daq}
+
+Not all collision events recorded by ATLAS are used for data analysis.
+Each sub-detectors maintains a record of its performance across the
+run. Only the data collected with sub--detectors meeting quality
+requirements are considered for the analysis. Therefore, for each dataset
+{\it Good Runs Lists} (GRL) are compiled recording for each LB which
+sub--detectors satisfied the requirements.
+For the measurements presented in this dissertation, all ATLAS subsystems
+are needed as the physics objects used in the analyses are reconstructed
+using the information from the full detector. 
+
