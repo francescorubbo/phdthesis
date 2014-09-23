@@ -2,7 +2,7 @@
 \label{sec:reconstruction}
 
 In order to access the kinematic quantities of the \ttbar{} system, an
-event--by--event estimation of the direction and energy of \ttbar{}
+event--by--event estimation of the four momenta of \ttbar{}
 pair is required. This section describes the kinematic fit performed
 to associate the reconstructed objects to the final state particles of
 the semi--leptonic \ttbar{} decay and obtain the four momenta of the
@@ -17,8 +17,8 @@ missing transverse momentum. The kinematic likelihood fit finds the
 most likely association between reconstructed objects and \ttbar{} final state particles:
 two $b$ quarks, two light quarks, one lepton and one neutrino.
 The free parameters of the likelihood are the parton energies, the
-lepton transverse momentum and the three neutrino momentum components,
-and the likelihood is defined as
+lepton transverse momentum and the three neutrino momentum components.
+The likelihood is defined as
 \begin{eqnarray}
 L & = & \mathcal{B}(\widetilde{E}_{\rm{p,}1}, \widetilde{E}_{\rm{p,}2} | m_W,  \Gamma_W)
       \cdot \mathcal{B}(\widetilde{E}_{\rm l}, \widetilde{E}_{\nu} | m_W, \Gamma_W) \cdot \nonumber \\
@@ -35,10 +35,10 @@ where:
 \begin{itemize}
 \item the $\widetilde{\square{}}$ are the partonic quantities to be estimated
        and $\hat{\square{}}$ are the measured values;
-\item $\mathcal{B}(E|m,\Gamma)\propto((E^2-m^2)^2+m^2\Gamma^2)^-1$ is
+\item $\mathcal{B}(\widetilde{E}|m,\Gamma)\propto((E^2-m^2)^2+m^2\Gamma^2)^{-1}$ is
   the Breit-Wigner parametrization of the parton energies
   $\widetilde{E}_{\rm{p,}i}$, lepton energy $\widetilde{E}_{\rm{lep}}$
-  and neutrino energy $\widetilde{E}_{\nu}$, in the $W$ and top quark decays.
+  and neutrino energy $\widetilde{E}_{\nu}$, in the $W$ boson and top quark decays.
 \item $\mathcal{W}$ is the transfer function mapping the measured energy
       of a reconstructed object to the energy of the corresponding final state particle.
 \item The mass and width of the $W$ boson and of the top quark are set
@@ -64,16 +64,16 @@ associated quark:
 \begin{equation}
 P(b-\textrm{tag}~|~\textrm{quark flavor}) = \prod_{j}
 \begin{cases}
-\epsilon_b \text{if tagged jet associated with $b$ quark}
-(1-\epsilon_b) \text{if non-tagged jet associated with $b$ quark}
-\epsilon_{light} \text{if non-tagged jet associated with quark from
-  $W$ boson}
-(1-\epsilon_{light}) \text{if tagged jet associated with quark from
-  $W$ boson}
+\epsilon_b~\text{if tagged jet associated with $b$ quark}\\
+(1-\epsilon_b)~\text{if non-tagged jet associated with $b$ quark} \\
+\epsilon_{light}~\text{if non-tagged jet associated with quark from
+  $W$ boson} \\
+(1-\epsilon_{light})~\text{if tagged jet associated with quark from
+  $W$ boson} \\
 \end{cases}
 \end{equation} 
 The average values for $\epsilon_b$ and $\epsilon_{light}$ are $70\%$
-and $\0.8\%$ respectively, even though there is a mild dependence on
+and $0.8\%$ respectively, even though they mildly depend on
 jet \pt{} and pseudo--rapidity. 
 
 The transfer functions $\mathcal{W}(E_{truth}|E_{reco})$ describe the probability that the
@@ -126,10 +126,28 @@ typically occurs in three cases:
   algorithm, depending on the $b$--jet requirement.
 \end{itemize}
 
-The impact of mis--reconstruction is reflected on the 
+The impact of mis--reconstruction is reflected on the resolution of
+the kinematic quantities of the reconstructed \ttbar. The plots
+in Fig.~\ref{fig:reso} show the two dimensional distributions of the
+reconstructed quantities in relation to their true values. The
+resolution on \mtt{} and \pttt{} improves at higher values, while the
+top rapidity shows a small spread over the whole range.
 
-The most relevant benchmark of the reconstruction performance is the
-efficiency of reconstructing correctly the \dy{} sign, defined as
+\begin{figure}[!htb]\centering
+  \includegraphics[width=0.495\textwidth]{figures/reconstruction/mtt}
+  \includegraphics[width=0.495\textwidth]{figures/reconstruction/pttt}
+  \includegraphics[width=0.495\textwidth]{figures/reconstruction/betatt}
+  \includegraphics[width=0.495\textwidth]{figures/reconstruction/topy}
+  \caption{
+    \label{fig:reso}
+    Distributions of kinematic quantities of the
+    reconstructed \ttbar{} pair in relation to their true values.
+  }
+\end{figure} 
+
+For what concerns the asymmetry measurement, the relevant benchmark of
+the reconstruction performance is the efficiency of reconstructing
+correctly the \dy{} sign, defined as
 \begin{equation}
   \label{eq:dysign}
   \epsilon = \frac{N(\dy{}_{truth}\cdot\dy{}_{reco}>0)}{N_{tot}}\phantom{.}
@@ -149,39 +167,35 @@ D = 2\times{}\epsilon - 1\phantom{.}
 The efficiency $\epsilon$, measured in the \ttbar{} simulated sample,
 is $\approx75\%$ corresponding to a dilution factor
 $D=2\times0.75-1=0.5$.
-Figure~\ref{fig:dysign} shows the evolution of the efficiency $\epsilon$
-in different kinematic regions. The \dy{} reconstruction performs
-better at high \mtt{} and low \pttt{}, while there is no strong \ytt{}
-or \betatt{} dependence. 
+The efficiency $\epsilon$ depends on the kinematic region
+considered. As shown in Fig.~\ref{fig:dysign}, the \dy{} reconstruction performs
+better at high \mtt{}. 
 
 \begin{figure}[!htb]\centering
-  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/mujets/correctDy_vs_mass}
-  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/mujets/correctDy_vs_pt}
-  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/mujets/correctDy_vs_y}
-  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/mujets/correctDy_vs_beta}
+  \includegraphics[width=0.495\textwidth]{figures/reconstruction/signdy_eff}
   \caption{
     \label{fig:dysign}
     Probability to reconstruct the correct \dy{} sign as a funcion of
-    the differential variables for the \mujets{} sample.
+    the \ttbar{} invariant mass \mtt{} for the \mujets{} sample.
   }
 \end{figure}
 
-Table~\ref{tab:actruthreco} shows the evolution of the asymmetry
-values due to selection and reconstruction effects.
-
-\begin{table}[!htb]\centering
-  \begin{tabular}{ l c c c}
-    \toprule
-    sample      & true \ac{} & true \ac{} after selection & reconstructed \ac{}\\
-    \midrule
-    \powheg{} &                &     &    \\
-    \mcatnlo{} &                &     &    \\
-    \bottomrule
-  \end{tabular}
-  \caption{\ac{} values in simulated \ttbar{} samples at truth and
-    reconstructed level}
-  \label{tab:actruthreco}
-\end{table}
+%Table~\ref{tab:actruthreco} shows the evolution of the asymmetry
+%values due to selection and reconstruction effects. 
+%
+%\begin{table}[!htb]\centering
+%  \begin{tabular}{ l c c c}
+%    \toprule
+%    sample      & true \ac{} & true \ac{} after selection & reconstructed \ac{}\\
+%    \midrule
+%    \powheg{} &                &     &    \\
+%    \mcatnlo{} &                &     &    \\
+%    \bottomrule
+%  \end{tabular}
+%  \caption{\ac{} values in simulated \ttbar{} samples at truth and
+%    reconstructed level}
+%  \label{tab:actruthreco}
+%\end{table}
 
 \section{Comparison between data and prediction}
 \label{sec:datamcreco}
