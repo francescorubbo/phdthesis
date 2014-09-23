@@ -1,12 +1,20 @@
 \chapter{Kinematic Reconstruction}
 \label{sec:reconstruction}
 
-In order to access the kinematic quantities of the \ttbar{} system, a
-maximum likelihood approach~\cite{klfitter} is used to determine the
+In order to access the kinematic quantities of the \ttbar{} system, an
+event--by--event estimation of the direction and energy of \ttbar{}
+pair is required. This section describes the kinematic fit performed
+to associate the reconstructed objects to the final state particles of
+the semi--leptonic \ttbar{} decay and obtain the four momenta of the
+top quark and antiquark.
+
+\section{Kinematic fit}
+
+A maximum likelihood approach~\cite{klfitter} is used to determine the
 four-momenta of the top and of the antitop quarks from the four-momenta of
-the reconstructed decay products: four reconstructed jets, one lepton, and the
-missing transverse momentum. The kinematic likelihood fit associates
-each reconstructed object to the corresponding final state particle:
+the reconstructed decay products: at least four reconstructed jets, one lepton, and the
+missing transverse momentum. The kinematic likelihood fit finds the
+most likely association between reconstructed objects and \ttbar{} final state particles:
 two $b$ quarks, two light quarks, one lepton and one neutrino.
 The free parameters of the likelihood are the parton energies, the
 lepton transverse momentum and the three neutrino momentum components,
@@ -20,23 +28,25 @@ L & = & \mathcal{B}(\widetilde{E}_{\rm{p,}1}, \widetilde{E}_{\rm{p,}2} | m_W,  \
                  \cdot \mathcal{W}(\hat{E}_{y}^{miss} |    \widetilde{p}_{y, \nu})
                  \cdot \mathcal{W}(\hat{E}_{\rm{lep}} | \widetilde{E}_{\rm{lep}}) \cdot \nonumber \\
            &   & \prod_{\rm{i=1}}^4 \mathcal{W}(\hat{E}_{\rm{jet,}i} | \widetilde{E}_{\rm{p,}i})
-                 \cdot P(\textrm{$b$ tag} ~| ~\textrm{quark}),
+                 \cdot P(\textrm{$b$ tag} ~| ~\textrm{quark flavor}),
 \label{eq:klflikelihood}
 \end{eqnarray}
 where:
 \begin{itemize}
-\item the $\widetilde{\square{}}$ are the partonic quantities
+\item the $\widetilde{\square{}}$ are the partonic quantities to be estimated
        and $\hat{\square{}}$ are the measured values;
-\item $\mathcal{B}$ is the Breit-Wigner parametrisation of the  parton
-      energies $\widetilde{E}_{\rm{p,}i}$ and lepton energy
-      $\widetilde{E}_{\rm{lep}}$;
+\item $\mathcal{B}(E|m,\Gamma)\propto((E^2-m^2)^2+m^2\Gamma^2)^-1$ is
+  the Breit-Wigner parametrization of the parton energies
+  $\widetilde{E}_{\rm{p,}i}$, lepton energy $\widetilde{E}_{\rm{lep}}$
+  and neutrino energy $\widetilde{E}_{\nu}$, in the $W$ and top quark decays.
 \item $\mathcal{W}$ is the transfer function mapping the measured energy
-      of a reconstructed object to the energy of the corresponding final state particle;
-\item $m_W$, $\Gamma_W$, $m_t$, and $\Gamma_t$ are fixed parameters with values
-       $m_W = 80.4~\GeV{}$, $\Gamma_W = 2.1~\GeV{}$, $m_t =
-       172.5~\GeV{}$, and $\Gamma_t = 1.5~\GeV{}$; 
-\item $P(b-\textrm{tag} ~| ~\textrm{quark})$ is the probability for a
-  jet, corresponding to a $b$ or light quark, to be $b$--tagged.
+      of a reconstructed object to the energy of the corresponding final state particle.
+\item The mass and width of the $W$ boson and of the top quark are set
+  to their measured values $m_W = 80.4~\GeV{}$, $\Gamma_W = 2.1~\GeV{}$, $m_t =
+       172.5~\GeV{}$, and $\Gamma_t = 1.5~\GeV{}$. 
+\item The term $P(b-\textrm{tag} ~| ~\textrm{quark flavor})$ is used
+  to weight the jet--parton association based on $b$--tagging
+  information, and it is described in the following.
 \end{itemize}
 
 The likelihood is evaluated for all permutations of four reconstructed
@@ -44,10 +54,27 @@ jets assigned to the four partons.
 In events where five or more jets were reconstructed, only
 the five highest-\pt{} jets are considered. The most probable
 combination, out of all the possible four-jets permutations, is
-chosen. 
-
-\section{Transfer Functions}
-\label{sec:transferfunctions}
+chosen. The role of the probability term $P(b-\textrm{tag} ~|
+~\textrm{quark flavor})$ is to favor the association of $b$--jets with
+the $b$ quarks from the top quark decays. The probability is defined,
+for a given permutation of four jets, as the product of $b$-tag
+efficiencies $\epsilon_b$ or mis--tag rates $\epsilon_{light}$ of each
+jet $j$, based on the $b$--tagging decision and the flavor of the
+associated quark:
+\begin{equation}
+P(b-\textrm{tag}~|~\textrm{quark flavor}) = \prod_{j}
+\begin{cases}
+\epsilon_b \text{if tagged jet associated with $b$ quark}
+(1-\epsilon_b) \text{if non-tagged jet associated with $b$ quark}
+\epsilon_{light} \text{if non-tagged jet associated with quark from
+  $W$ boson}
+(1-\epsilon_{light}) \text{if tagged jet associated with quark from
+  $W$ boson}
+\end{cases}
+\end{equation} 
+The average values for $\epsilon_b$ and $\epsilon_{light}$ are $70\%$
+and $\0.8\%$ respectively, even though there is a mild dependence on
+jet \pt{} and pseudo--rapidity. 
 
 The transfer functions $\mathcal{W}(E_{truth}|E_{reco})$ describe the probability that the
 reconstructed energy $E_{reco}$ corresponds to a true value
@@ -73,6 +100,88 @@ example, the transfer functions for $b$ quarks and for electrons.
     \label{fig:transferfunctions}
     }
 \end{figure}
+
+\section{Performance}
+
+Due to selection, resolution and combinatorics effects, the efficiency
+of reconstructing a \ttbar{} pair matching\footnote{A reconstructed
+  object $i$ is considered matched with a parton $j$ if the condition
+  $\deltaR{i}{j}<0.2$ is satisfied.} the original partons is
+$25\%$. The dominant cause of mis--reconstruction is the wrong jet
+assignment to the corresponding \ttbar{} final state parton. This
+typically occurs in three cases:
+\begin{itemize}
+\item {\it jets outside acceptance}: the jet originating from a given
+  parton does not satisfy the reconstruction requirements, such as
+  $\pt{}>25 \GeV$ or pseudo--rapidity within the $|\eta|<2.5$ range.
+  The fraction of events where all \ttbar{} final state jets are
+  reconstructed is $25-40\%$, depending on the $b$--jets requirement.
+\item {\it jets outside selection}: not all four jets corresponding to
+  the \ttbar{} decay are used in the reconstruction algorithm.
+  This occurs approximately $50\%$ of the times for events with more
+  than five jets and all matched jets within acceptance.
+\item {\it jets mis-assigned}: one or more jets are not assigned to
+  the correct parton. It occurs about $15-25\%$ of the times for
+  events where the correct jets where used in the reconstruction
+  algorithm, depending on the $b$--jet requirement.
+\end{itemize}
+
+The impact of mis--reconstruction is reflected on the 
+
+The most relevant benchmark of the reconstruction performance is the
+efficiency of reconstructing correctly the \dy{} sign, defined as
+\begin{equation}
+  \label{eq:dysign}
+  \epsilon = \frac{N(\dy{}_{truth}\cdot\dy{}_{reco}>0)}{N_{tot}}\phantom{.}
+\end{equation}
+Events where the \dy{} sign is measured incorrectly can occur when the top and
+antitop quarks are not reconstructed from the correct final
+state particles (mis-reconstruction). Even when the reconstruction
+algorithm associates the correct particles, small \dy{} values can be
+reconstructed with the wrong sign due to resolution effects.
+As a result the asymmetry of the distribution of reconstructed \dy{}
+is diluted by a factor 
+\begin{equation}
+  \label{eq:dilution}
+D = 2\times{}\epsilon - 1\phantom{.}
+\end{equation}  
+
+The efficiency $\epsilon$, measured in the \ttbar{} simulated sample,
+is $\approx75\%$ corresponding to a dilution factor
+$D=2\times0.75-1=0.5$.
+Figure~\ref{fig:dysign} shows the evolution of the efficiency $\epsilon$
+in different kinematic regions. The \dy{} reconstruction performs
+better at high \mtt{} and low \pttt{}, while there is no strong \ytt{}
+or \betatt{} dependence. 
+
+\begin{figure}[!htb]\centering
+  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/mujets/correctDy_vs_mass}
+  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/mujets/correctDy_vs_pt}
+  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/mujets/correctDy_vs_y}
+  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/mujets/correctDy_vs_beta}
+  \caption{
+    \label{fig:dysign}
+    Probability to reconstruct the correct \dy{} sign as a funcion of
+    the differential variables for the \mujets{} sample.
+  }
+\end{figure}
+
+Table~\ref{tab:actruthreco} shows the evolution of the asymmetry
+values due to selection and reconstruction effects.
+
+\begin{table}[!htb]\centering
+  \begin{tabular}{ l c c c}
+    \toprule
+    sample      & true \ac{} & true \ac{} after selection & reconstructed \ac{}\\
+    \midrule
+    \powheg{} &                &     &    \\
+    \mcatnlo{} &                &     &    \\
+    \bottomrule
+  \end{tabular}
+  \caption{\ac{} values in simulated \ttbar{} samples at truth and
+    reconstructed level}
+  \label{tab:actruthreco}
+\end{table}
 
 \section{Comparison between data and prediction}
 \label{sec:datamcreco}
@@ -119,64 +228,6 @@ rapidity \ytt{}, and velocity along the beam axis \betatt{} for the
 %    components. [TO BE UPDATED]} 
 %  \label{fig:datamcreco2012}
 %\end{figure}
-
-
-\section{Performance}
-
-The most relevant benchmark of the reconstruction performance is the
-efficiency of reconstructing correctly the \dy{} sign, defined as
-\begin{equation}
-  \label{eq:dysign}
-  \epsilon = \frac{N(\dy{}_{truth}\cdot\dy{}_{reco}>0)}{N_{tot}}\phantom{.}
-\end{equation}
-Events where the \dy{} sign is measured incorrectly can occur when the top and
-antitop quarks are not reconstructed from the correct final
-state particles (mis-reconstruction). Even when the reconstruction
-algorithm associates the correct particles, small \dy{} values can be
-reconstructed with the wrong sign due to resolution effects.
-As a result the asymmetry of the distribution of reconstructed \dy{}
-is diluted by a factor 
-\begin{equation}
-  \label{eq:dilution}
-D = 2\times{}\epsilon - 1\phantom{.}
-\end{equation}  
- 
-The efficiency $\epsilon$, measured in the \ttbar{} simulated sample,
-is $\approx75\%$ corresponding to a dilution factor
-$D=2\times0.75-1=0.5$.
-Figure~\ref{fig:dysign} shows the evolution of the efficiency $\epsilon$
-in different kinematic regions. The \dy{} reconstruction performs
-better at high \mtt{} and low \pttt{}, while there is no strong \ytt{}
-or \betatt{} dependence. 
-
-\begin{figure}[!htb]\centering
-  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/mujets/correctDy_vs_mass}
-  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/mujets/correctDy_vs_pt}
-  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/mujets/correctDy_vs_y}
-  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/mujets/correctDy_vs_beta}
-  \caption{
-    \label{fig:dysign}
-    Probability to reconstruct the correct \dy{} sign as a funcion of
-    the differential variables for the \mujets{} sample.
-  }
-\end{figure}
-
-Table~\ref{tab:actruthreco} shows the evolution of the asymmetry
-values due to selection and reconstruction effects.
-
-\begin{table}[!htb]\centering
-  \begin{tabular}{ l c c c}
-    \toprule
-    sample      & true \ac{} & true \ac{} after selection & reconstructed \ac{}\\
-    \midrule
-    \powheg{} &                &     &    \\
-    \mcatnlo{} &                &     &    \\
-    \bottomrule
-  \end{tabular}
-  \caption{\ac{} values in simulated \ttbar{} samples at truth and
-    reconstructed level}
-  \label{tab:actruthreco}
-\end{table}
 
 \subsection{Likelihood requirement}
 \label{sec:Reconstruction:lhood}
