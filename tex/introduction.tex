@@ -16,7 +16,7 @@ Due to the parity violation typical of the weak
 interaction, processes show differences between particles and
 antiparticles, or between left-handed or right-handed particles.
 Various asymmetries have been studied at collider experiments in the
-past thirty years:
+last thirty years:
 
 \begin{itemize}
 \item A {\it left-right asymmetry} is defined as $A_{LR}=(N_L -
@@ -24,7 +24,7 @@ past thirty years:
   left-polarized particle, and $N_R$ the number of right-polarized
   events. The left-right asymmetry in $Z$ boson production was
   measured in 1992 at the Stanford Linear Collider of polarized and
-  unpolarized electron beams\cite{Elia:1993ka}.
+  unpolarized electron beams~\cite{Elia:1993ka}.
 \item A {\it charge asymmetry}  is defined as $A_{+-}=(N_+ -
   N_-)/(N_+ +N_-)$, where $N_+$ is the number of events with a
   positively charged particle, and $N_-$ the number of events with a
@@ -38,43 +38,48 @@ past thirty years:
 
 The latter is the type of asymmetry more relevant for this
 dissertation. A famous example of forward-backward asymmetry is the
-measurement in muon pair production in $e^+e^-$ annihilation by the
+measurement in $\mu^+\mu^-$ production in $e^+e^-$ annihilation by the
 TASSO collaboration~\cite{Braunschweig:1988fy}. The measurement,
 performed at center-of-mass energies between $35$ and $46.8\GeV{}$,
 showed how the asymmetry provides sensitivity to probe for physics at
-much higher energy, beyond reach for direct observation. In the
+higher energy, beyond reach for direct observation. In the 
 specific case, Fig.~\ref{fig:tasso} shows that, while the inclusive
 cross section measurements agree with the symmetric $QED$ description,
-a forward--backward asymmetry is induced by the interference with the
-$Z$ boson production at $\sqrt{s}\approx 91\GeV{}$.
+a forward--backward asymmetry is induced by the interference with a virtual
+$Z$ boson discovered at a mass of $\sim 91\GeV{}$ in
+proton--antiproton collisions by the UA1 and UA2
+collaborations~\cite{Arnison:1983rp,Banner:1983jy}.
 
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.495\textwidth]{figures/introduction/tasso_xs}
   \includegraphics[width=0.495\textwidth]{figures/introduction/tasso_diffxs}
   \caption{Inclusive cross section as a function of center-of-mass
     energy (left) and angular distribution of the muons (right) for
-    muon pair production at $e^+e^-$ collisions~\cite{Braunschweig:1988fy}.}
+    $\mu^+\mu^-$ production at $e^+e^-$ collisions~\cite{Braunschweig:1988fy}.}
   \label{fig:tasso}
 \end{figure}
 
 An analogous asymmetry in top quark pair (\ttbar{}) production might provide a
 probe for new physics processes at scales beyond the current reach of direct
 searches. The CDF and \dzero{} collaborations reported an unexpectedly
-large forward--backward asymmetry in \ttbar{} production at \ppbar{}
-collisions at Tevatron, Fermilab~\cite{Abazov:2014cca,}. As shown in
+large forward--backward asymmetry in \ttbar{} production using
+proton--antiproton collisions at $\sqrt{s}=1.96\TeV{}$ at Fermilab's
+Tevatron collider~\cite{Abazov:2014cca,Aaltonen:2012it}. As shown in
 Fig.~\ref{fig:afbtev}, the asymmetry has a dependence on the \ttbar{}
-invariant mass (i.e. the center-of-mass energy) with a interesting
-hint of discrepancy with respect to the Standard Model prediction.
+invariant mass (a proxy for the partonic center--of--mass energy) with
+a interesting hint of discrepancy with respect to the Standard Model
+prediction.
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.495\textwidth]{figures/introduction/afb_tevatron}
-  \caption{Dependence of the forward--backward asymmetry on \ttbar{}
-    invariant mass for Tevatron experiments \dzero{} and CDF, compared
-    with the Standard Model prediction. The horizontal error bars
-    indicate the binning used in each experiment.~\cite{Aguilar-Saavedra:2014kpa}}
+  \caption{Dependence of the forward--backward asymmetry measurements
+    by the CDF and D0 Collaborations on the invariant mass of the
+    \ttbar{} system. The horizontal error bars indicate the binning
+    used in each experiment. Also shown is the Standard Model
+    prediction.}
   \label{fig:afbtev}
 \end{figure}
 With the end of Tevatron operations in 2011, no additional data will
-be collected, therefore little room is left for improving the
+be collected. Therefore little room is left for improving the
 precision of the forward--backward asymmetry measurement at \ppbar{}
 collisions, with the goal of clarifying the experimental status.
 However, complementary probes of the asymmetry in \ttbar{} production
@@ -83,20 +88,23 @@ Collider at CERN.
 
 This thesis work focus on the study of a central--forward asymmetry in
 \ttbar{} production at $pp$ collisions, also referred to as {\it
-  charge} asymmetry, and defined in Sec.~\ref{sec:topca}. This
-document is organized as follows: Chapter~\ref{sec:theory} gives an
-introduction to the Standard Model of particle physics, with a focus
-on the top quark phenomenology and the production
-asymmetry. Chapter~\ref{sec:experiment} describes the experimental
-setup of the ATLAS detector within the Large Hadron Collider
-accelerator facility. The simulation of the physics processed used in
-the analysis is described in Chapter~\ref{sec:simulation}, while the
-definition of the physics objects follows in
+  charge} asymmetry. This document is organized as follows:
+Chapter~\ref{sec:theory} gives an introduction to the Standard Model
+of particle physics, with a focus on the top quark phenomenology and
+the production asymmetry. Chapter~\ref{sec:experiment} describes the
+experimental setup of the ATLAS detector within the Large Hadron
+Collider accelerator facility. The simulation of the physics processed
+used in the analysis is described in Chapter~\ref{sec:simulation},
+while the definition of the physics objects follows in
 Chapter~\ref{sec:objects}. Chapter~\ref{sec:strategy} illustrates the
 analysis strategy followed by the description of the event selection
-and the background determination. The reconstruction of the \ttbar
+and the background determination. The reconstruction of the \ttbar{}
 system kinematics is described in Chapter~\ref{sec:reconstruction},
 while Chapter~\ref{sec:unfolding} describes the unfolding procedure
 used to account for acceptance and resolution effects.
-The results are then summarized in Chapter~\ref{sec:results}, and a
-summary of this thesis is given in Chapter~\ref{sec:conclusion}.
+The results of the inclusive and differential measurements of the
+\ttbar{} charge asymmetry using the full LHC Run 1 dataset collected
+with the ATLAS detector are summarized in Chapter~\ref{sec:results},
+along with a comparison to other existing measurements at the LHC.
+Finally the summary of this thesis and an outlook is given in
+Chapter~\ref{sec:conclusion}.
