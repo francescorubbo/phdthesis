@@ -1,0 +1,82 @@
+To overcome the loss of simulated events due to the $b$--tag
+requirement, the tag rate function (TRF) method is introduced. By
+using the TRF method, no event is discarded based on its b--tagging
+count, but instead all the events are weighted.  This weight can be
+interpreted as the probability of the given event to contain the
+desired number of $b$--jets.  The tagging efficiency, parametrized as a
+function of $\eta$, $\pt$ and true jet flavor, is used to compute
+the event weight.
+
+Given a jet with $\eta$, $\pt$ and flavor $f$, its tagging
+probability can be expressed as:
+\begin{equation*}
+	\varepsilon \left(f,|\eta|,\pt\right)
+\end{equation*}
+
+For a given event with $N$ jets, its probability of containing exactly
+one b-tag jet is computed as:
+\begin{equation*}
+	P_{=1} = \sum\limits_{i=1}^N \left( \varepsilon_{i}
+    \prod\limits_{i \neq j} \left( 1 - \varepsilon_{j} \right) \right)
+\end{equation*}
+
+In the same way, it can be used to compute the probability for
+inclusive b-tag selections:
+\begin{align*}
+	P_{=0} &= \prod\limits_{i=1}^N \left( 1 - \varepsilon_{j} \right) \\
+	P_{\geq 1} &= 1 - P_{=0}
+\end{align*}
+
+\section{Validation}
+This method relies on the correct calibration of the tagging
+efficiency in MC samples.  However, closure tests performed with the
+official calibration files have shown that the efficiency
+parametrization is not as accurate as expected.  Assuming a correct
+calibration, the average of the histogram of $1/\varepsilon$ vs
+$\eta$, $\pt$ and true jet flavour should be flat and with mean equal
+to one.  Figure \ref{fig:app:trfClosure} shows the result of this test.
+
+As it can be observed, there is a departure from the expected behavior
+in the edges of the distribution that amounts to up to 20\% in some
+regions of the light and c flavour.  Using the McAtNlo sample, an
+efficiency map has been derived in order to overcome this problem.
+
+Figure \ref{fig:app:trfClosure} shows the result of the closure test
+on the derived efficiency map.  The derived efficiency map will
+therefore be used for the probability computations in the TRF method.
+%
+\begin{figure}\centering
+    \includegraphics[width=0.45\textwidth]{figures/appendix/trf/closure_test_official_b} 
+    \includegraphics[width=0.45\textwidth]{figures/appendix/trf/closure_test_myeff_b}
+    \includegraphics[width=0.45\textwidth]{figures/appendix/trf/closure_test_official_c}
+    \includegraphics[width=0.45\textwidth]{figures/appendix/trf/closure_test_myeff_c}
+    \includegraphics[width=0.45\textwidth]{figures/appendix/trf/closure_test_official_light} 
+    \includegraphics[width=0.45\textwidth]{figures/appendix/trf/closure_test_myeff_light}  
+  \caption{Results of the closure test using efficiency from the
+    official calibration file (left column) and the private efficiency
+    map (right column). The test is split in the different jet
+    flavours: $b$--jets (top), $c$--jets (middle) and light jets (bottom)
+  }
+  \label{fig:app:trfClosure}
+\end{figure}
+
+The validation of the method is further done by comparing in \alpgen{} the
+normalisation and shape of the relevant distributions shown in
+Fig.~\ref{fig:app:trfSpectra}.  As it is seen in the plots, the
+prediction of the TRF method is accurate up to the statistical
+error.
+%
+\begin{figure}\centering
+\includegraphics[width=0.45\textwidth]{figures/appendix/trf/ttbar_muhpresel_jet_pT_14jetin252525251btagin}
+\includegraphics[width=0.45\textwidth]{figures/appendix/trf/ttbar_muhpresel_jet_eta_14jetin252525251btagin}
+\includegraphics[width=0.45\textwidth]{figures/appendix/trf/ttbar_muhpresel_missingET_missET4jetin252525251btagin}
+\includegraphics[width=0.45\textwidth]{figures/appendix/trf/ttbar_muhmuon_Wlep_MassT4jetin252525251btagin}
+  \caption{
+    Comparison between the TRF prediction and the cut--based $b$--tag
+    prediction in \alpgen{}.  The plots show, for the \ttbar{} \mujets{} sample,
+    the \pt{} (top left) and $\eta$ (top right) distributions for the
+    highest--\pt{} jet, the \met{} (bottom left) and the \mtw{}
+    (bottom right) distributions.}
+    \label{fig:app:trfSpectra}
+\end{figure}
+
