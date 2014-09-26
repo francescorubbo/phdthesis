@@ -1,6 +1,6 @@
 % adding pointlessnumbers to avoid "Figure 1.1.: ..."
 \documentclass[11pt, a4paper, openany]{book}
-%\documentclass[11pt, a4paper, headsepline, footsepline, numbers=noenddot, draft]{book}
+\usepackage[paper=a4paper,margin=1in]{geometry}
 
 \pdfoutput=1
 
@@ -21,9 +21,9 @@
  
 \begin{document} 
 
-\pagenumbering{roman} 
-
 \input{tex/title}
+
+\pagenumbering{roman} 
 
 \cleardoublepage
 
