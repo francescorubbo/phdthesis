@@ -1,4 +1,4 @@
-\chapter{The top charge asymmetry in theory and experimental results}
+\chapter{Theoretical framework}
 \label{sec:theory}
 
 \section{The Standard Model}
@@ -7,17 +7,17 @@
 The Standard Model (SM) is a quantum field theory describing the
 interactions between the elementary constituents of matter through the
 fundamental forces.
-The elementary particles -- three {\it leptons}, three {\it neutrinos} and six
+The matter particles -- three {\it leptons}, three {\it neutrinos} and six
 {\it quarks} -- are fermions categorized in three families. For each particle
 there exist an antiparticle with same mass and opposite quantum
-numbers for a total of 24 particles.
-All particles carry a weak charge and interact with
-the weak force carriers $W$ and $Z$. All of the particles, except for
+numbers for a total of 24 matter particles.
+They all carry a weak charge and interact with
+the weak force carriers $W$ and $Z$. All matter particles, except for
 neutrinos, are electrically charged and interact with the
 electromagnetic force, mediated by $\gamma$. Only the quarks have a
 color charge and undergo strong force interactions with {\it gluons}.  
-Table~\ref{tab:smparticles} shows the elementary particles and
-the fundamental force carriers of the Standard Model.
+Table~\ref{tab:smparticles} shows the elementary particles of the
+Standard Model, classified as matter particles and force carriers.
 
 \begin{table}[!htb]\centering
   \begin{tabular}{ l c c c c|c}
@@ -36,8 +36,7 @@ the fundamental force carriers of the Standard Model.
                                        $g$ \\
     \bottomrule
   \end{tabular}
-  \caption[Table of particles and forces in the Standard Model]{Table of
-    particles and forces in the Standard Model}
+  \caption{Table of particles in the Standard Model}
   \label{tab:smparticles}
 \end{table}
 
@@ -57,8 +56,10 @@ hypercharge symmetries.
 \begin{equation}
 \begin{split}
 \lagr{}_{SM}  & = \lagr{}_{SU(3)} + \lagr{}_{SU(2)\times{}U(1)} \\
-& = \lagr{}_{SU(3)}^{Gauge} + \lagr{}_{SU(3)}^{Matter} 
-+ \lagr{}_{SU(2)\times{}U(1)}^{Gauge} + \lagr{}_{SU(2)\times{}U(1)}^{Matter}
+& = \lagr{}_{SU(3)}^{Gauge} 
++ \lagr{}_{SU(2)\times{}U(1)}^{Gauge} 
++ \lagr{}_{SU(3)}^{Matter}
++ \lagr{}_{SU(2)\times{}U(1)}^{Matter}
 + \lagr{}_{SU(2)\times{}U(1)}^{Higgs} +
 \lagr{}_{SU(2)\times{}U(1)}^{Yukawa} \\
 \end{split}
@@ -82,7 +83,7 @@ the $SU(2)\times{}U(1)$ theory in order to account for the
 non-vanishing masses of $W$ and $Z$ bosons and of lepton and quarks.
 The Higgs boson does not interact with the gluon and the photon;
 therefore they are the only two massless particles of the
-SM. Table~\ref{tab:smmasses} summarize the masses of the SM particles.
+SM. Table~\ref{tab:smmasses} summarizes the masses of the SM particles.
 
 \begin{table}\centering
   \begin{tabular}{cccc}\toprule
@@ -124,25 +125,25 @@ SM. Table~\ref{tab:smmasses} summarize the masses of the SM particles.
 
 The top quark was discovered in 1995 at the Tevatron by the
 CDF~\cite{topcdf} and \dzero{}~\cite{topdzero} collaborations. With a
-mass of $\approx{}170\GeV{}$ it is the heaviest elementary particle
+mass of $\approx{}170\GeV{}$, it is the heaviest elementary particle
 observed so far. Its proximity to the electroweak scale suggests that
 the top quark might play a relevant role in new physics
 scenarios. Therefore its production, decay modes and properties have
-been studied in details at the two hadron colliders powerful 
+been studied in detail at the two hadron colliders powerful 
 enough to produce it: the Tevatron, where protons and antiprotons were
 collided (\ppbar{}), and the Large Hadron Collider (LHC), colliding protons.
 
 \subsection{Pair production at hadron colliders}
 \label{sec:topprod}
 
-At hadron colliders, top quarks are mainly produced in pairs through QCD
-processes. The partons constituents of the
+At hadron colliders, top quarks are mainly produced in pairs
+(\ttbar{}) via the strong interaction. The constituent partons of the
 colliding hadrons (protons or antiprotons) participate in a hard
 scattering process and produce a top quark and an antitop quark. The
 leading production modes are: {\it gluon--gluon fusion} and {\it
   quark--antiquark annihilation}. The leading order Feynman diagrams
 for these two processes are shown in Fig.~\ref{fig:ttbarprod}. The
-following discussion focuses on the top quark pair production in proton
+following discussion focuses on the \ttbar{} production in proton
 collisions; however similar considerations apply to the case of
 proton-antiproton collisions.
 
@@ -156,27 +157,26 @@ proton-antiproton collisions.
 \end{figure}
 
 Due to the composite nature of the proton, most of the
-collisions involve only soft (i.e. long distance) interactions of the
+collisions involve only soft (i.e. long--distance) interactions of the
 constituent quarks and gluons. Such interactions cannot be described
 with perturbative QCD because the expansion parameter $\alpha_s$ is
 large for small momentum exchange.
 In some collisions, however, in addition to the long distance parton
-interactions, two quarks or two gluons undergo a hard (i.e. short
-distance) scattering where a top quark pair is produced. 
+interactions, two quarks or two gluons undergo a hard (i.e. short--distance) scattering where a top quark pair is produced. 
 The {\it factorization principle}~\cite{factorprinciple} states that
 the perturbative QCD description of this hard process is possible by
-factorizing the long distance effects into functions $f$ describing the
+factorizing the long--distance effects into functions $f$ describing the
 proton structure. Thus the cross section for top quark pair
 production in a collision of two protons with momenta $P_1$ and $P_2$
 is given by: 
 \begin{equation}
   \sigma(p(P_1)+p(P_2)\to\ttbar{}+{\rm X})
   = 
-  \int_0^1{\rm d}x_1
+  \sum_{a,b}
+  ~\int_0^1{\rm d}x_1
   ~\int_0^1{\rm d}x_2
-  ~\sum_f~ f_f(x_1) f_f(x_2)
-  \cdot{}\hat{\sigma}(q_f(x_1P_1)+\bar{q}_f(x_2P_2)\to\ttbar{}+{\rm
-    X})
+  ~ f_a(x_a,\factscale{}) f_b(x_b,\factscale)
+  \cdot{}\hat{\sigma_{ab\to\ttbar{}+\rm{X}}}(x_1P_1,x_2P_2,\renormscale{},\factscale{})
   \phantom{,}
   \label{eq:ttbarxs}
 \end{equation}
@@ -184,11 +184,11 @@ where the sum runs over all type of partons, and $x_{1,2}$ are the
 fractions of proton momentum carried by the constituents participating
 in the hard interaction. 
 
-The {\it parton distribution functions} (PDFs) $f_f(x,\factscale{})$
+The {\it parton distribution functions} (PDFs) $f_a(x,\factscale{})$
 represent the probability density for a parton of a type $i$ to carry
 a fraction of proton momentum $x$. The {\it factorization scale}
 \factscale{} is set arbitrarily and defines the distinction between
-short and long distance interactions based on the transferred momentum
+short-- and long--- distance interactions based on the transferred momentum
 $Q^2$. An additional renormalization scale \renormscale{} accounts for higher
 order corrections. For calculations and simulations, both scales are
 set to the typical transferred momentum of the process studied. In the case of
@@ -205,7 +205,7 @@ of transferred momentum $Q^2$ at which the proton is probed.
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.75\textwidth]{figures/theory/mstw2008nnlo68cl_allpdfs}
   \caption{MSTW parton distribution functions~\cite{ct10} for gluons
-    and quarks at $Q^2=10\GeV{}$ (left) and $Q^2=10\TeV{}$ (right).}
+    and quarks at $Q^2=10\GeV{}^2$ (left) and $Q^2=10^4\GeV{}^2$ (right).}
   \label{fig:pdfs}
 \end{figure}
 
@@ -253,7 +253,7 @@ s. Therefore decay occurs before hadronization can take place, and the
 decay products carry all of the information about \mbox{4--momentum} and spin
 of the original particle.
 The top quark decays in almost all cases via electroweak
-charged current interaction into a $b$ quark and a $W$ boson, which,
+charged current interaction into a $b$ quark and a $W$ boson that,
 in turn, decays either leptonically, into a charged lepton and the corresponding
 antineutrino, or hadronically into a quark--antiquark pair. Thus the
 final states corresponding to a \ttbar{} pair can be classified in
@@ -302,11 +302,11 @@ Sec~\ref{sec:topprop} yield results compatible with SM predictions.
 A different trend appeared to follow the {\it forward-backward}
 (FB) asymmetry in the production of \ttbar{} pairs in \ppbar{}
 collisions at the Tevatron, The first precise measurements, using half
-of Tevatron dataset, showed large discrepancies between
+of the Tevatron Run II dataset, showed large discrepancies between
 data and theory ($\gtrsim 3\sigma$). 
 The asymmetry \afb{} is defined in terms of the rapidity $y$ of the top and
 antitop quarks in the laboratory frame\footnote{The rapidity of a
-  particle at colliders is given by $y=\frac{1}{2}log\frac{E+p_z}{E-p_z}$, where
+  particle at colliders is given by $y=\frac{1}{2}ln(\frac{E+p_z}{E-p_z})$, where
   $E$ is the energy of the particle and $p_z$ the component of its
   momentum along the beam axis $z$.}: 
 \begin{equation}
@@ -332,10 +332,12 @@ predictions. The result also motivated studies of the \ttbar{}
 production phenomenology aiming at identifying other observables where
 anomalies might appear if the Tevatron asymmetry were indeed a
 sign of new physics. Among these, the charge asymmetry at the LHC is
-one of the best candidates. In $pp$ collisions a FB asymmetry with
-respect to a fixed direction, such as the one defined in
-Eq.~\ref{eq:afb}, vanishes due to the symmetry of the initial state.
-However a {\it forward-central} charge asymmetry \ac{} can be defined, 
+one of the best candidates. 
+
+In $pp$ collisions a FB asymmetry with respect to a fixed direction,
+such as the one defined in Eq.~\ref{eq:afb}, vanishes due to the
+symmetry of the initial state. However a {\it forward-central} charge
+asymmetry \ac{} can be defined, 
 \begin{equation}
 \label{eq:ac}
 \ac{}=\frac{N(\Delta{}|y|>0)-N(\Delta{}|y|<0)}{N(\Delta{}|y|>0)+N(\Delta{}|y|<0)}
@@ -378,7 +380,7 @@ production at the LHC.
 \end{figure}
 
 
-\subsection{SM charge asymmetry}
+\subsection{Charge asymmetry in the SM}
 \label{sec:smca}
 
 The dominant contribution to the SM charge asymmetry originates from
@@ -421,14 +423,13 @@ Fig.~\ref{fig:asymdiagrams} with the QED analogous where a gluon is
 replaced by a photon. The size of the QED corrections to the QCD
 asymmetric cross section depends on the relative importance of \uubar{}
 and \ddbar{} annihilations, due to the difference in electric charge.
-At \ppbar{} collisions (Tevatron) the QED contribution is estimated to
+In \ppbar{} collisions (Tevatron) the QED contribution is estimated to
 be $\approx{}18\%$, while at LHC $pp$ collisions, with larger relative
 \ddbar{} importance, it accounts for approximately $13\%$ of the
 asymmetry~\cite{Kuhn:2011ri}.
-Analogous contributions from weak interactions, where a $Z$ boson is
-replaced to the photon, constitute only a $\approx{}1\%$ correction at
-Tevatron and are negligible at LHC due to the smallness of the
-weak coupling.
+Analogous contributions from weak interactions constitute only a
+$\approx{}1\%$ correction at Tevatron and are negligible at LHC due to
+the smallness of the weak coupling.
 
 The asymmetry definition in Eq.~\ref{eq:afb} and~\ref{eq:ac} can be
 generalized as the ratio between the asymmetric contribution
@@ -442,7 +443,7 @@ Because the asymmetry vanishes at the tree level in the SM, a
 consistent fixed-order expansion at LO in perturbation theory involves the
 numerator at NLO and the denominator at LO:
 \begin{equation}
-  \alpha_SA_{QCD}^{(0)}=\frac{\alpha_S\sigma_A^{(1)}}{\sigma_S^{(0)}}
+  A_{QCD}=\alpha_SA_{QCD}^{(0)}=\frac{\alpha_S\sigma_A^{(1)}}{\sigma_S^{(0)}}
 \end{equation}
 Predictions of \afb{} for Tevatron and \ac{} for LHC have thus been
 computed including the $\mathcal{O}(\alpha_s^3)$
@@ -450,9 +451,8 @@ QCD contribution and the mixed $\mathcal{O}(\alpha_s^2\alpha)$ QCD-QED
 and QCD-weak corrections discussed above. The SM forward-backward
 asymmetry at \ppbar{} collision, evaluated at $\sqrt{s}=1.96\TeV{}$,
 is $\afb{} = 0.088\pm{}0.006$, while the SM predictions for the LHC
-asymmetry are, at \seventev{} and \eighttev{} respectively,
-$\ac{}=0.0123\pm{}0.0005$ and
-$\ac{}=0.0111\pm0.0005$~\cite{Bernreuther:2012sx}.
+asymmetry are $\ac{}=0.0123\pm{}0.0005$ and $\ac{}=0.0111\pm0.0005$,
+at \seventev{} and \eighttev{} respectively~\cite{Bernreuther:2012sx}.
  
 The SM prediction for \ac{} is one order of magnitude smaller than for
 \afb{} because of two effects. First, the symmetric $gg\to\ttbar{}+X$
@@ -470,7 +470,7 @@ $z$-component of the \ttbar{} system velocity \betatt{}~\cite{AguilarSaavedra:20
 between quark and antiquark, in \qqbar{} annihilation the \ttbar{}
 system is often produced with a large longitudinal
 momentum. Fig.~\ref{fig:qqbarfrac} shows how the relative importance
-of the \qqbar{} process increases with \betatt{}.
+of the \qqbar{} process increases with the minimum requirement on \betatt{}.
 
 \begin{figure}[!htb]
   \centering
@@ -480,7 +480,7 @@ of the \qqbar{} process increases with \betatt{}.
   \label{fig:qqbarfrac}
 \end{figure}
 
-\subsection{bSM charge asymmetry}
+\subsection{Charge asymmetry in beyond--SM scenarios}
 \label{sec:bsmca}
 
 An appealing possibility is that the discrepancies between the
@@ -501,7 +501,7 @@ relative sign of the couplings and on the mass $M_G$, the contribution
 to the asymmetry can be positive or negative. 
 
 {\em Neutral $Z'$ boson}. It contributes to the $\uubar{}\to\ttbar{}$
-process in a neutralflavor changing $t$ channel. A negative asymmetry
+process in a flavor changing $t$ channel. A negative asymmetry
 is generated in the leading order interference; therefore higher order
 corrections are required to fit the Tevatron excess. However such
 tuning of the model is disfavored by measurements of other observables.
