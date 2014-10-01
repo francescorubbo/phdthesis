@@ -13,15 +13,15 @@ achievable in both scenarios.
 The goal of the analysis is the measurement of the charge asymmetry
 \ac{} integrated over the kinematics of the \ttbar{} system,
 referred to as {\it inclusive \ac{}}, and its differential spectra as
-a function of the invariant mass of the top quark pair \mtt{}, its
+a function of the invariant mass of the \ttbar{} pair \mtt{}, its
 transverse momentum \pttt{}, and the absolute value of its rapidity
 \ytt{}. In order to achieve this goal, three steps are required:
 \begin{itemize}
-\item Events where top quark pairs are produced are selected and the
-  background composition in the sample is estimated.
+\item Samples enriched in \ttbar{} events are selected and the
+  background composition in the samples is estimated.
 \item The kinematics of the \ttbar{} system is reconstructed in order
-  to access the top quark and antiquark directions and compute the
-  \dy{} observable as described in Sec.~\ref{ref:topca}.
+  to access the top quark and antiquark rapidities and compute the
+  \dy{} observable described in Sec.~\ref{sec:topca}.
 \item The information about the distortions introduced by the two
   steps above is used to estimate the parton--level asymmetries with
   an {\it unfolding} procedure.
@@ -61,11 +61,12 @@ electron) and missing transverse energy.
 
 A preliminary selection of the events is performed during data
 acquisition by the single lepton triggers. Events are recorded when at
-least one high-\pt{} muon or electron is reconstructed by the trigger
+least one high--\pt{} muon or electron is reconstructed by the trigger
 algorithms. 
 The combination of \pt{} and isolation requirements is optimized to ensure
 a good selection efficiency in different luminosity
-conditions. Therefore several trigger configurations are
+conditions.
+Therefore several trigger configurations are
 considered, and events satisfying at least one of the trigger
 decisions are used in the analyses.
 In the \seventev{} dataset, the {\it EF\_e20\_medium}, {\it
@@ -77,7 +78,14 @@ events. In the \eighttev{} dataset, events accepted by either {\it
 \ejets{} channel, while {\it EF\_mu24i\_tight} and {\it
   EF\_mu36\_tight} triggers are used for \mujets{} events.
 The \pt{} and isolation requirements for each trigger are detailed in
-Table~\ref{tab:trigthresholds}.
+Table~\ref{tab:trigthresholds}. 
+The tighter requirements are used at high luminosity, so that
+the rate of selected events is kept within the allowed bandwidth for
+data--taking. The dedicated triggers with high \pt{} and no
+isolation requirements, such as {\it EF\_e45\_medium1}, {\it
+  EF\_e60\_medium1} and {\it EF\_mu36\_tight}, are used to compensate
+for efficiency losses in the identification of high--\pt{} leptons,
+due to the isolation requirements.
 \begin{table}\centering
   \begin{tabular}{l|c|ccc}
     \toprule
@@ -123,20 +131,20 @@ level. Minimum \pt{} requirements ensure that the trigger efficiencies
 are maximized and constant as a function of the lepton \pt{} for the
 selected events. The electron \pt{} requirement is also used to reduce
 the amount of multijet background in the sample. 
-The offline thresholds for the various scenarios are detailed in
+The offline thresholds for the two datasets are detailed in
 Table~\ref{tab:trigthresholds}.
 
 In addition to the lepton, a minimum of four jets with \pt{} larger
 than $25 \GeV$ are required to be reconstructed in the event. Only
 jets reconstructed in the range $|\eta|<2.5$ are
 considered (see Sec.~\ref{sec:jets}). The number of jets tagged as
-$b$--jets is used to define \ttbar{} (with at least one $b$--jet) or
-background (without $b$--jets) enriched regions. The measurements at
+$b$--jets is used to define \ttbar{}--enriched (with at least one $b$--jet) or
+background--enriched (without $b$--jets) samples. The measurements at
 \seventev{} are performed in a \ttbar{} enriched sample with at least
 one $b$--jet. For the measurements at \eighttev{} the \mbox{$b$--jet}
 multiplicity is exploited to estimate precisely the background
 composition considering three categories of events: without $b$--jets,
-with exactly 1 $b$--jet, with at least 2 $b$--jets. 
+with exactly 1 $b$--jet, and with at least 2 $b$--jets. 
 
 In order to suppress the QCD multijet and Z+jets backgrounds,
 requirements on the \met{} and the transverse mass \mt{} of the
@@ -145,7 +153,7 @@ leptonically-decaying W boson are applied.\footnote{$\mt = \sqrt{2
   being the transverse momentum (energy) of the muon (electron) and
   $\Delta\phi$ the azimuthal angle separation between the lepton and
   the direction of the missing transverse momentum.} Since the sample
-composition varies with the lepton flavor and $b$-jet multiplicity,
+composition varies with the lepton flavor and $b$--jet multiplicity,
 different requirements are applied for each scenario, as detailed in
 Table~\ref{tab:metmtwcuts}. This is particular important for the
 measurements at \eighttev{}, where the suppression of the \zjets{}
@@ -182,16 +190,16 @@ background.
 \label{sec:bckgmodel}
 
 The requirements described in Sec.~\ref{sec:evtsel} are designed to
-select semi-leptonic decays of the \ttbar{} pair. However, fully
+select semi--leptonic \ttbar{} decays. However, fully
 leptonic decays can also be selected when one of the two leptons is not
 reconstructed. These events are considered as part of the signal
-sample, notwithstanding that the top quark pair kinematics cannot be
-properly reconstructed under the semi-leptonic assumption.
+sample, notwithstanding that the \ttbar{} kinematics cannot be
+properly reconstructed under the semi-leptonic hypothesis.
 
 Even though the requirements are designed to select the \ttbar{}
 topology, other processes contaminate the samples: $W$ and $Z$ boson
 production in association with jets (\wjets{}, \zjets{}), single top,
-QCD multijet, and diboson ($WW$,$ZZ$,$WZ$ production constitute a
+QCD multijet, and diboson ($WW$, $ZZ$, $WZ$) production constitute a
 non-negligible fraction of the selected events.
 In the case of \wjets{} events, the largest background, the leptonic W
 decay produces a high-\pt{} isolated lepton, while the additional jets
@@ -200,60 +208,75 @@ Analogously the leptonic decays of a boson in \zjets{} and diboson
 processes feature high-\pt{} leptons reconstructed with high
 efficiency.
 While the misidentification of jets as reconstructed leptons is very
-rare, the large cross section to QCD multijet still results in a
-significant amount of background events, due to the large cross
-section.
+rare, the large cross section for QCD multijet production still results in a
+non--negligible amount of background events, whose normalization and
+kinematic features need to be properly estimated.
+
 
 The background composition of the data samples is estimated with Monte
-Carlo simulation and data-driven techniques. In particular the
+Carlo simulation and data--driven techniques. In particular the single top
+and \wjets{} backgrounds are charge asymmetric and need to be estimated
+carefully in order to limit the impact on the measurement. The single top
+production is estimated with precise simulations at NLO, while the
 expected yield of \wjets{} events and the flavor composition of the
-associated jets is calibrated in-situ, as well as the QCD
-multijet background.
+associated jets are calibrated in-situ. The shapes of the
+distributions and the relative normalization across samples are
+predicted with simulation.
+The QCD multijet background is fully estimated from data.
 
 \subsection{Simulated samples}
 \label{sec:mcsamples}
 
 Different MC generators, PDF sets and parton shower and fragmentation
 algorithms are used to model signal and backgrounds in the data
-samples collected at $\sqrt{s} = 7 \TeV{}$ and at $\sqrt{s} = 8
-\TeV{}$, with the goal of providing the most reliable possible
-prediction in each scenario. In the following the different choices
-for each process are listed.
+samples collected at \seventev{} and at \eighttev{}, with the goal of
+providing the most reliable possible prediction in each scenario.
+Developments in the MC algorithms and the improved understanding of
+data led, in some cases, to changes in the analysis of the \eighttev{}
+dataset, with respect to the choices made for the analysis of the
+\seventev{} one. 
+In the following the different choices for each process are listed.
 
-The \ttbar{}+jets process is simulated using the \alpgen{} generator
-with the {\tt CTEQ6L1} PDF set, interfaced to the 
-\herwig{} parton shower (2011) and using \powheg{} with the {\tt CT10}
-PDF set, interfaced to the \pythia{} parton shower
-(2012).
+The \ttbar{}+jets process for the analysis of the dataset at
+\seventev{} is simulated using the \alpgen{} generator with the {\tt
+  CTEQ6L1} PDF set, interfaced to the \herwig{} parton shower.  
+At \eighttev{}, the \powheg{} generator is used with the {\tt CT10}
+PDF set, and it is interfaced to the \pythia{} parton shower. 
 
 Simulated samples of $W/Z$ boson production are generated with up to
 five additional partons using the {\tt ALPGEN} generator and the
-{\tt CTEQ6L1} PDF set, interfaced to \herwig{} (2011) or
-\pythia{} (2012) for parton showering and fragmentation. 
-Dedicated samples are produced to simulate $W$ production in
+{\tt CTEQ6L1} PDF set, interfaced to \herwig{} (\seventev{} analysis) or
+\pythia{} (\eighttev{} analysis) for parton showering and fragmentation. 
+Separate samples are produced to simulate $W$ production in
 association with bottom quark pairs (\wbb{}), charm quark
 pairs (\wcc{}), single charm quarks (\wc{}), and light
-flavor partons, including gluons (\wlight{}).
-The $Z$+jets samples are generated separately for $Z$+light jets,
-$Zb\bar{b}$+jets, and $Zc\bar{c}$+jets and normalized to the inclusive
+flavor partons, including gluons (\wlight{}). The samples are initially
+normalized to the NNLO theoretical cross sections ~\cite{vjetsxs},
+however, this is superseded by the calibration derived from data
+(Sec.~\ref{sec:wjets}).
+The $Z$+jets samples are generated separately for $Zb\bar{b}$+jets,
+$Zc\bar{c}$+jets and $Z$+light jets and normalized to the inclusive
 NNLO theoretical cross section~\cite{vjetsxs}.
 Overlap between $W/ZQ\bar{Q}$+jets ($Q=b,c$) events generated from the
 matrix element calculation and those generated from parton-shower
 evolution in the $W/Z$+light jets samples is avoided by using the
 matrix element prediction only for $\Delta R(Q,\bar{Q})>0.4$.
 
-Simulated samples of single top quark backgrounds corresponding to the
-$s$-channel and $Wt$ production mechanisms are generated with \mcatnlo{}
-interfaced with the \herwig{} parton shower (2011) and \powheg{}
-interfaced with \pythia{} (2012), using the {\tt CT10} PDF set.
-The simulation of $t$-channel single top quark production is
-generated with the {\tt ACERMC} LO generator with the {\tt MRST LO**}
-PDF set (2011) and \powheg{} interfaced with \pythia{}
-with the {\tt CT10} PDF set (2012). Single top samples are normalized
-to the corresponding NLO cross sections~\cite{stschan,sttchan,stwt}.
+In the \seventev{} analysis, simulated samples of single top quark
+production via $s$--channel and $Wt$ processes are generated with
+\mcatnlo{} interfaced with the \herwig{} parton shower, while the
+$t$--channel production is simulated with the {\tt ACERMC} LO
+generator with the {\tt MRST LO**} PDF set.
+At \eighttev{} all three processes are simulated with \powheg{}
+interfaced with \pythia{}, using the {\tt CT10} PDF set.
+Single top samples are normalized to the corresponding NLO cross
+sections~\cite{stschan,sttchan,stwt}. 
 Finally, diboson production is modelled using \herwig{} with
-the {\tt MRST LO**} PDF set, and is normalized to the NLO
-theoretical cross sections~\cite{dibosonxs}.
+the {\tt MRST LO**} PDF set for the \seventev{} analysis, while for
+the \eighttev{} one \alpgen{} is used, interfaced with \herwig{} for
+the parton shower, with the {\tt CTEQ6L1} PDF set. In both cases, the
+sample is normalized to the NLO theoretical cross
+sections~\cite{dibosonxs}.
 
 \subsection{\wjets{} background normalization}
 \label{sec:wjets}
@@ -281,7 +304,27 @@ charge of the reconstructed lepton.
 
 The $W$ boson charge asymmetry observed in simulation depends
 on the flavor composition of the sample, as the size and sign of the
-asymmetry varies for \wbb{}, \wcc{}, \wc{} and \wlight{} production.
+asymmetry varies for \wbb{}, \wcc{}, \wc{} and \wlight{} production,
+as summarized in Table~\ref{tab:wca}.
+\begin{table}
+  \centering
+  \begin{tabular}{lcccc}
+    \toprule
+     & \multicolumn{4}{c}{fraction/lepton charge asymmetry} \\
+    process & {\it pretag} & 0 $b$--jets & 1 $b$--jet & at least 2 $b$--jets \\
+    \midrule
+    \wbb{} & 9\%/0.24 & 3\%/0.28 & 28\%/0.23 & 71\%/0.20 \\
+    \wcc{} & 18\%/0.27 & 16\%/0.29 & 25\%/0.23 & 14\%/0.19 \\
+    \wc{} & 16\%/-0.07 & 14\%/-0.07 & 27\%/-0.07 & 11\%/-0.08 \\
+    \wlight{} & 57\%/0.28 & 67\%/0.28 & 20\%/0.24 & 4\%/0.25 \\ 
+    \midrule
+    \wjets{} & --/0.22 & --/0.23 & --/0.15 & --/0.17 \\
+   \bottomrule
+  \end{tabular}
+  \caption{Composition of the simulated \wjets{} background and lepton charge
+    asymmetry of each flavor in the $\ell+\geq$4 jets.}
+  \label{tab:wca}
+\end{table}
 Therefore a calibration of the flavor composition is derived
 simultaneously with the estimation of the total normalization in
 Eq.~\ref{eq:nw}.
@@ -304,14 +347,17 @@ flavor type $x = \bbbar{}, \ccbar{}, c, light$.
  fully correlated calibration, given the similarity of the processes,
  three calibration factors $K_{\bbbar{}/\ccbar{}}=F^{\rm
    data}_{\bbbar{}}/F^{\rm MC}_{\bbbar{}}=F^{\rm
-   data}_{\ccbar{}}/F^{\rm MC}_{\ccbar{}}$, $K_c=F^{\rm data}_{c}/F^{\rm MC}_{c}$ and $K_{light}=F^{\rm
-  data}_{light}/F^{\rm MC}_{light}$ are estimated to fit data. The
-calibration factors are then extrapolated to the signal region, where
-at least four jets are required, using the MC prediction
+   data}_{\ccbar{}}/F^{\rm MC}_{\ccbar{}}$, $K_c=F^{\rm
+   data}_{c}/F^{\rm MC}_{c}$ and $K_{light}=F^{\rm
+   data}_{light}/F^{\rm MC}_{light}$ are estimated to fit data. The
+ calibration factors are then extrapolated to the signal region, where
+ at least four jets are required, using the MC prediction
 to renormalize to unity the sum of the flavor fractions.
+The extrapolation involves additional systematic uncertainties, thus
+limiting the precision of the calibration.
 Table~\ref{tab:wsf} summarizes the flavor fraction and normalization
 calibration factors derived in the \ejets{} and \mujets{} channel for
-the 2011 dataset at $\sqrt{s} = 7 \TeV{}$.
+the dataset at \seventev{}.
 
 \begin{table}
   \centering
@@ -327,11 +373,12 @@ the 2011 dataset at $\sqrt{s} = 7 \TeV{}$.
     \bottomrule
   \end{tabular}
   \caption{Calibration factors for flavor composition and overall
-    normalization of the \wjets{} background as measured in the 2011 dataset.}
+    normalization of the \wjets{} background as measured in the
+    dataset at \seventev{}.}
   \label{tab:wsf}
 \end{table}
 
-For the analysis of the 2012 dataset a similar approach is used by
+For the analysis of the dataset at \eighttev{} a similar approach is used by
 performing the {\it in-situ} calibration embedded in the unfolding
 procedure described  in Sec.~\ref{sec:unfolding}. The three $b$--jet
 multiplicity subsamples are further split according to the lepton charge, thus
@@ -346,13 +393,22 @@ asymmetry, therefore no shape information is used.
 The three calibration factors for \wbb{}/\wcc{}, \wc{} and \wlight{}
 obtained from the inclusive \ac{} measurements are respectively
 $1.50\pm0.11$, $1.07\pm0.27$ and $0.80\pm0.04$ for the combined
-\ljets{} sample. 
+\ljets{} sample. These factors are not expected to be consistent with
+the ones shown in Table~\ref{tab:wsf}, since they represent
+calibrations of different simulation chains (\herwig{} parton shower
+is used at \seventev{}, \pythia{} at \eighttev{}). The improved
+precision is due to the use of the three $b$--jet multiplicity samples
+(0, 1, at least 2 $b$--jets) and the more precise $b$--tagging calibration.
 
 \begin{figure}\centering
   \includegraphics[width=0.75\textwidth]{figures/selection/datamcinclu8TeV_prefit}
   \caption{
    Comparison between data and predictions in the six channels
-   considered for the measurement at \eighttev{}.
+   considered for the measurement at \eighttev{}. The plot shows the
+   distributions used to measure the inclusive \ac{}. In the samples
+   without $b$--jets, the overall yield is compared, while the four bins
+   of the \dy{} distribution are shown for each of the
+   \ttbar{}--enriched samples with 1 or at least 2 $b$--jets.
   }
   \label{fig:datamc_prefit}
 \end{figure}
@@ -385,7 +441,11 @@ the ones that satisfy tight lepton selection requirements. The tight
 requirements are the ones used in the analysis (see
 Sec.~\ref{sec:electrons} and Sec.~\ref{sec:muons}), while the loose
 selection is obtained by applying looser isolation and identification
-criteria. Therefore, the tight lepton sample constitutes a subset of
+criteria. For the loose muon selection the mini--isolation requirement
+is dropped, while loose electrons are selected with the
+\texttt{medium++} identification and without applying additional
+isolation requirements.
+Therefore, the tight lepton sample constitutes a subset of
 the loose lepton one.
 The number of events with one loose lepton and
 the number of events with one tight lepton can be written as:
@@ -423,10 +483,12 @@ The fake efficiency
 \end{equation}
 is measured in data control regions with small \met{} and \mtw{},
 where the contribution from fake leptons is larger. While \effReal{}
-is close to unity and does not depend on the event topology, \effFake{} is
-parametrized as a function of kinematic observables such as lepton
-$\eta$ and \deltaR{\ell{}}{jet}. With these two efficiencies, one can
-solve the two linear equations (\ref{eqn:intro-mm-Nloose}) for
+is above 0.8 for both electron and muons and does not depend on the
+event topology, \effFake{} is parametrized as a function of kinematic
+observables such as lepton $\eta$ and \deltaR{\ell{}}{jet}. Typical
+values for \effFake{} lie between 0.2 and 0.4 for electrons and
+between 0.1 and 0.3 for muons. With the two efficiencies known, one
+can solve the two linear equations (\ref{eqn:intro-mm-Nloose}) for
 $N^{\mathrm{tight}}_\mathrm{fake}$ as a function of $N^\mathrm{loose}$
 and $N^\mathrm{tight}$, obtaining:
 %                                                                                             
@@ -443,14 +505,16 @@ data events, where the weight for tight events is
 $\effFake{}(\effReal{}-1)/(\effReal{}-\effFake{})$
 and the weight for loose-not-tight events is
 $(\effFake{}\cdot{}\effReal{})/(\effReal{}-\effFake{})$.
+This allows the prediction of not only the normalization, but also the
+shape of kinematic distributions.
 
 \section{Comparison between data and prediction}
 \label{sec:datamc}
 
 The expected and observed number of selected events in both the
 \mujets{} and the \ejets{} channels are reported in
-Table~\ref{tab:yields2011} for the 2011 dataset, and in
-Tables~\ref{tab:yields2012mu} and \ref{tab:yields2012ele}  for 2012.
+Table~\ref{tab:yields2011} for the dataset at \seventev{}, and in
+Tables~\ref{tab:yields2012mu} and \ref{tab:yields2012ele}  for \eighttev{}.
 
 \input{tex/selection_tables.tex}
 
@@ -465,7 +529,7 @@ process. Fig.~\ref{fig:pretagdatamc} shows that the various
 backgrounds cluster in different kinematic regions depending on their
 properties. For processes with real $W$ bosons, such as top quark(s)
 and \wjets{} production, the \mtw{} distribution peaks at
-$\approx90\GeV{}$, while processes without neutrinos, such as
+$\approx80\GeV{}$, while processes without neutrinos, such as
 $Z(\to\ell\ell)+$jets and the multijet background, are more prominent
 at low \met{} values.
  
@@ -481,15 +545,18 @@ at low \met{} values.
 \end{figure}
 
 The fraction of \ttbar{} events can be enhanced by requiring one or
-at least two $b$--tagged jets, and the pure samples is used to check the
+at least two $b$--tagged jets, and the pure samples are used to check the
 modeling of the kinematic quantities of the reconstructed
 objects used for selection and reconstruction, as shown in
-Fig.~\ref{fig:taggeddatamc}. 
+Fig.~\ref{fig:taggeddatamc}. Events with at least 1 $b$--jet are
+eventually used to measure the asymmetry. A total of about 50000 and
+320000 \ttbar{} events is selected in the dataset at \seventev{} and
+\eighttev{}, respectively.
 The distributions in data of the lepton \pt{} and pseudo-rapidity, the
 leading\footnote{Jets are conventionally ordered in decreasing \pt{};
   hence the ``leading jet'' is the reconstructed jet with the highest
   transverse momentum} jet \pt{} and pseudo-rapidity are in good
-agreement with the predictions. 
+agreement with the predictions.
 
 \begin{figure}\centering
   \subfloat[][]
@@ -585,7 +652,20 @@ all detector regions and to simulation only in the calorimeter
 transition region. 
 The systematic uncertainties associated with these calibrations vary
 slightly the selection acceptance, with effects on the event yield
-below the percent level.
+below the percent level. Examples of the calibration measurements are
+shown in Fig.~\ref{fig:lepscalesyst}.
+
+\begin{figure}\centering
+  \includegraphics[width=0.495\textwidth]{figures/selection/systs/muonmomentumscale}
+  \includegraphics[width=0.495\textwidth]{figures/selection/systs/eleenergyscale}
+  \caption{
+    Measurements of the lepton momentum scale calibration for muons
+    (left)~\cite{Sforza:1529999} and electrons
+    (right)~\cite{Aad:2014nim}. The shaded regions represent the
+    systematic uncertainties. 
+  }
+  \label{fig:lepscalesyst}
+\end{figure}
 
 \subsubsection{JVF efficiency}
 \label{sec:syst_jvf}
@@ -622,7 +702,17 @@ for jets in the transverse momentum range $20\GeV{}<\pt{}\lesssim
 The overall variation due to JES systematic uncertainty 
 evaluated in the central detector region 
 is $\sim$4\% for jets with $\pt{}=25\GeV$ and improves to $\sim$1\% for  
-jets with $\pt=500\GeV$.
+jets with $\pt=500\GeV$, as shown in Fig.~\ref{fig:jessyst}.
+
+\begin{figure}\centering
+  \includegraphics[width=0.495\textwidth]{figures/selection/systs/jessystpt}
+  \includegraphics[width=0.495\textwidth]{figures/selection/systs/jessysteta}
+  \caption{
+    Different components of the JES uncertainty as a function of \pt{}
+    (left) and $\eta$ (right).
+  }
+  \label{fig:jessyst}
+\end{figure}
 
 \subsubsection{Jet energy resolution}
 \label{sec:syst_jer}
@@ -703,8 +793,8 @@ the impact of the choice of the PDFs parametrization and its
 uncertainty, the measurements are repeated using \wjets{} simulations
 with variations of the CT10, MSTW, and NNPDF PDFs
 sets~\cite{pdf4lhc}. A small effect ($\sim0.001$) is seen in the
-inclusive \ac{} measurement at \seventev{}, while the effect is
-negligible for all other measurements.  
+inclusive \ac{} measurements, while the effect is negligible for all
+differential measurements.
 
 \subsubsection{Multijet}
 \label{sec:syst_qcd}
@@ -718,3 +808,11 @@ channel.
 In the \eighttev{} measurements a $50\%$ uncertainty is assigned to the
 normalization of the multijet templates for each of the $b$-tagging
 multiplicities considered.
+
+\subsection{Signal modeling}
+
+The signal simulation is used to perform the unfolding procedure
+described in Sec.~\ref{sec:unfolding}. In order to investigate the
+impact of the \ttbar{} signal modeling, additional samples generated
+with \mcatnlo{} interfaced with \herwig{} and \powheg{} interfaced
+with \herwig{} are considered.
