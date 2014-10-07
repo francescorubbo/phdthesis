@@ -120,8 +120,6 @@ of the \ttbar{} system, $\betatt{}>0.6$, is also shown in
 Fig.~\ref{fig:unfac_diff}. The enhancement of the $\qqbar{}\to\ttbar{}$
 process results in larger asymmetries for both SM and new physics
 predictions.
-
-
 \begin{figure}[!htb]\centering
   \subfloat[][]
   {  \includegraphics[width=0.45\textwidth]{figures/results/dy_mtt}
@@ -141,7 +139,6 @@ predictions.
     shown (d).}
   \label{fig:unfac_diff}
 \end{figure}
-
 The asymmetry values corresponding to the spectra in
 Fig.~\ref{fig:unfac_diff} are detailed in
 Tables~\ref{tab:results_mtt},~\ref{tab:results_pttt},~\ref{tab:results_ytt},
@@ -152,6 +149,52 @@ fully described by the posterior probability density
 $\conditionalProb{\ac{}^1,...,\ac{}^N}{\Data{}}$, where
 $N$ is the number of differential bins, and it is summarized in
 App.~\ref{app:correlations}.
+
+\subsection{LHC results: ATLAS and CMS}
+
+Analogous measurements of the asymmetry \ac{} at \seventev{} have been
+performed by the CMS collaboration~\cite{Chatrchyan:2012cxa}, who
+reported an inclusive asymmetry
+$\ac{}=0.004\pm0.010(stat.)\pm0.011(syst.)$.
+The results are compatible with the SM predictions and with the
+measurements presented in this thesis. 
+With about 46000 \ttbar{} events, CMS sample has a similar size to the
+ATLAS one ($\sim50000$ events); thus the statistical uncertainties are
+of similar size. On the other hand CMS systematic uncertainties are
+significantly larger, due to the impact of the signal modeling used in the
+unfolding algorithm (SVD).
+
+The ATLAS and CMS inclusive \ac{} results are combined in order to
+obtain a more precise measurement~\cite{ATLAS-CONF-2014-012}. The
+combination is performed using the Best Linear Unbiased Estimate
+(BLUE)~\cite{Lyons:1988rp,Valassi:2003mu}, where the correlation of
+systematic uncertainties is taken into account. In particular, signal
+modeling and PDF uncertainties are considered fully correlated between
+ATLAS and CMS results, while a 50\% correlation is assigned to the
+\wjets{} normalization uncertainty. All uncertainties related with the
+detector description are instead considered not correlated. Since the
+ATLAS results is dominated by the statistical uncertainty
+(uncorrelated), the combined results is insensitive to variations of
+these choices. The combined result is found to be
+$0.005\pm0.007(stat.)\pm0.006(syst.)$, compatible with the SM
+prediction. The comparison between values of \ac{} as measured by
+ATLAS and CMS, and from the combination of the, is shown in
+Fig.~\ref{fig:combineac}.
+\begin{figure}[!htb]\centering
+  \includegraphics[width=0.45\textwidth]{figures/results/combineac7tev} 
+  \caption{Summary of the single \ac{} measurements and the LHC
+    combination compared to the theory prediction (calculated at NLO
+    including electroweak corrections). The inner red error bars
+    indicate the statistical uncertainty, the blue outer error bars
+    indicate the total uncertainty. The grey band illustrates the
+    total uncertainty of the combined result.} 
+  \label{fig:combineac}
+\end{figure}
+The combination of the differential measurements is not possible, as a
+different number and width of differential bin has been used by the
+two Collaborations.
+
+\subsection{Interpretation}
 
 A comparison of the inclusive \ac{} measurements, together with the Tevatron
 \afb{} ones, with predictions from a broad range of new physics model
@@ -188,13 +231,11 @@ $\ell{}+\ge4$ jets events, where, simultaneously, the background
 normalizations are fitted and the parton--level \dy{} distribution is
 estimated. Fig.~\ref{fig:dy7tev} shows the fitted distribution used
 for the inclusive \ac{} measurement compared with the observed one. 
-
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.6\textwidth]{figures/results/datamcinclu8TeV_postfit} 
   \caption{}
   \label{fig:dy7tev}
 \end{figure}
-
 The asymmetry \ac{} in \ttbar{} production at \eighttev{} is measured to be
 $\ac{}= 0.011\pm0.005$, compatible with the SM prediction
 $\ac{}=0.0111\pm0.0004$.
@@ -250,12 +291,31 @@ Total uncertainty                                   & $0.005$ \\
 
 The asymmetry spectrum as a function of \mtt{} is compared in
 Fig.~\ref{fig:8tevacvsmtt} with the theoretical SM predictions.
+As for the \seventev{} measurements, the results are compared with new
+physics predictions for color octets with low and high
+masses~\cite{Aguilar-Saavedra:2014nja}.
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.6\textwidth]{figures/results/acvsmtt8tev}
   \caption{Measured \ac{} spectrum as a function of \mtt{} compared with SM prediction.}
   \label{fig:8tevacvsmtt}
 \end{figure}
-The \ac{} values are summarized in Table~\ref{tab:8tevacvsmtt}
+The \ac{} values are summarized in Table~\ref{tab:results_mtt_8tev}.
+\input{tex/results_table8tev.tex}
+
+\subsection{LHC results: ATLAS and CMS}
+
+Preliminary results at \eighttev{} from the CMS
+collaboration~\cite{CMS-PAS-TOP-12-033} include the measurement of
+\ac{}, inclusively and as a function of \mtt{}, \pttt{} and \ytt{}.
+The reported inclusive asymmetry
+$\ac{}=0.005\pm0.007(stat.)\pm0.006(syst.)$ is compatible with the SM
+predictions and with the measurement presented in this thesis. Both
+statistical and systematic uncertainties are larger than the ones
+reported in this work. The statistical precision is presumably
+degraded by the use of a large number of \dy{} bins in the unfolding
+procedure, while the larger impact of all systematic components
+points to a less precise background estimation.
+
 
 %The asymmetry values corresponding to the spectra in
 %Fig.~\ref{fig:8tevacvsmtt} are detailed in
