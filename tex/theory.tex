@@ -175,9 +175,8 @@ is given by:
   \sum_{a,b}
   ~\int_0^1{\rm d}x_1
   ~\int_0^1{\rm d}x_2
-  ~ f_a(x_a,\factscale{}) f_b(x_b,\factscale)
-  \cdot{}\hat{\sigma_{ab\to\ttbar{}+\rm{X}}}(x_1P_1,x_2P_2,\renormscale{},\factscale{})
-  \phantom{,}
+  ~ f_a(x_a,\factscale{})~f_b(x_b,\factscale)
+  ~\hat{\sigma}_{ab\to\ttbar{}+\rm{X}}(x_1P_1,x_2P_2,\renormscale{},\factscale{}),
   \label{eq:ttbarxs}
 \end{equation}
 where the sum runs over all type of partons, and $x_{1,2}$ are the
@@ -226,7 +225,7 @@ a center-of-mass energy \seventev{} and \eighttev{}. As shown in
 Fig.~\ref{fig:pdfs}, the probability of gluon collisions is
 significantly larger than for any other parton in the corresponding
 range of $x$. Thus the production of top quark pairs at the LHC is
-dominated by the gluon fusion process ($\approx{}90\%$). On the
+dominated by the gluon fusion process ($\approx{}85\%$). On the
 contrary, at the Tevatron, the typical value of $x\approx{}0.2$ makes
 the valence quark-antiquark annihilation the prevalent \ttbar{}
 production mode.
@@ -270,9 +269,9 @@ originating from the decays of the top and the antitop quarks:
   neutrinos. 
 \end{itemize}
 Given that the $W$ boson hadronic branching ratio is
-$\approx{}2/3$, the full hadronic and semileptonic final states occur
-$4$ out of $9$ times each, while the dileptonic decay has the
-remaining $1/9$ probability.  
+$\sim67\%$, the full hadronic and semileptonic final states occur
+$\sim45\%$ and $\sim44\%$ of the times, respectively, while the dileptonic decay has the
+remaining $\sim11\%$ probability.  
 
 \subsection{Properties}
 \label{sec:topprop}
@@ -281,10 +280,14 @@ The properties of the top quark have been studied in detail at hadron
 collider experiments. The combination of Tevatron and LHC results
 brought the precision on the top mass measurement well below $1 \GeV{}$
 with $m_t=173.3\pm{}0.8 \GeV{}$~\cite{topmass}.
-An exotic electric charge of $4e/3$ for the top quark, for which the
-SM predicts a $2e/3$ charge, has been excluded by measurements at both
-Tevatron experiments~\cite{Abazov:2006vd,Aaltonen:2010js} and at the
-ATLAS experiment~\cite{Aad:2013uza}.
+The couplings with vector bosons are important parameters of the SM
+and are studied at LHC by measuring the \ttbar{}$V$ associated
+production~\cite{CMS-PAS-TOP-13-011,ATLAS-CONF-2014-038}.
+The study of the top decay allowed to investigate the structure of the
+electroweak $Wtb$--vertex by measuring the $W$ boson
+helicity~\cite{Khachatryan:2014vma} and
+polarization~\cite{ATLAS-CONF-2013-033}. To date, results are
+consistent with SM expectations.
 Since the top quark does not form bound hadronic states due to its
 short lifetime, it is the only quark whose spin properties, which are usually
 concealed by hadronization, can be measured. The final state
@@ -299,75 +302,27 @@ predictions~\cite{Aad:2013ksa,Aad:2014pwa,Chatrchyan:2013wua}.
 
 The measurements of the top quark properties listed in
 Sec~\ref{sec:topprop} yield results compatible with SM predictions.
-A different trend appeared to follow the {\it forward-backward}
+A different trend appeared to follow the {\it forward--backward}
 (FB) asymmetry in the production of \ttbar{} pairs in \ppbar{}
-collisions at the Tevatron, The first precise measurements, using half
-of the Tevatron Run II dataset, showed large discrepancies between
-data and theory ($\gtrsim 3\sigma$). 
-The asymmetry \afb{} is defined in terms of the rapidity $y$ of the top and
-antitop quarks in the laboratory frame\footnote{The rapidity of a
-  particle at colliders is given by $y=\frac{1}{2}ln(\frac{E+p_z}{E-p_z})$, where
-  $E$ is the energy of the particle and $p_z$ the component of its
-  momentum along the beam axis $z$.}: 
+collisions at the Tevatron. In this section, we will discuss the
+origins of the forward--backward asymmetry in SM \ttbar{} production,
+present a summary of Tevatron results, and illustrate the relevant
+observables at the LHC. 
+
+\subsection{Asymmetry in the SM}
+\label{sec:smca}
+
+The natural definition of a forward--backward asymmetry in the
+\ttbar{} rest frame is the asymmetry in the distribution of the angle
+$\theta_t$ between the outgoing top quark and the incoming quark
+(Fig.~\ref{fig:cmdiagram}):
 \begin{equation}
-\label{eq:afb}
-\afb{}=\frac{N(\Delta{}y>0)-N(\Delta{}y<0)}{N(\Delta{}y>0)+N(\Delta{}y<0)}
-\phantom{,}
+\label{eq:afbcostheta}
+\afb{}=\frac{N(\cos\theta_t>0)-N(\cos\theta_t<0)}{N(\cos\theta_t>0)+N(\cos\theta_t<0)}.
 \end{equation}
-with $\Delta{}y=y_t - y_{\bar{t}}$ and $N$ number of events.
-At present, when the full Tevatron dataset has been analyzed, the
-discrepancies have been reduced with respect to previous results. The
-CDF collaboration reports a $1.7\sigma$ excess over the SM
-prediction~\cite{Aaltonen:2012it}, whereas the \dzero{} collaboration
-finds agreement within $1\sigma$~\cite{Abazov:2014cca}.
-
-At the time when this thesis work began, a discrepancy between
-experimental data and the SM prediction over three standard deviations
-was reported by the CDF collaboration in the measurement of \afb{} at
-high \ttbar{} invariant mass $\mtt{}>450\GeV{}$, using half of the
-total dataset. This anomaly triggered a intense activity, both in
-developing new physics models which could explain the anomaly in
-\ttbar{} production, and in calculating more precise and accurate SM
-predictions. The result also motivated studies of the \ttbar{}
-production phenomenology aiming at identifying other observables where
-anomalies might appear if the Tevatron asymmetry were indeed a
-sign of new physics. Among these, the charge asymmetry at the LHC is
-one of the best candidates. 
-
-In $pp$ collisions a FB asymmetry with respect to a fixed direction,
-such as the one defined in Eq.~\ref{eq:afb}, vanishes due to the
-symmetry of the initial state. However a {\it forward-central} charge
-asymmetry \ac{} can be defined, 
-\begin{equation}
-\label{eq:ac}
-\ac{}=\frac{N(\Delta{}|y|>0)-N(\Delta{}|y|<0)}{N(\Delta{}|y|>0)+N(\Delta{}|y|<0)}
-\phantom{,}
-\end{equation}
-with $\Delta{}|y|=|y_t| - |y_{\bar{t}}|$.
-
-The need for a different observable becomes more clear by considering
-the asymmetry in the distribution of the angle $\theta_t$ between the outgoing
-top quark and the incoming quark (Fig.~\ref{fig:cmdiagram}). This angle
-would be the fundamental observable to measure the charge asymmetry in
-\ttbar{} production, but the direction of the incoming quark is
-not directly accessible at experiments. However, at Tevatron \ppbar{}
-collisions, the quark is provided by the proton with very high
-probability ($\gtrsim{}99\%$ at $\sqrt{s}=1.96\TeV{}$); therefore the
-top quark rapidity $y$ with respect to the proton beam direction can
-be used in Eq.~\ref{eq:afb} to distinguish between {\it forward} and
-{\it backward} production with high efficiency. At LHC $pp$ collisions
-the incoming quark has the same probability to be provided by
-either proton beam; thus the FB asymmetry of Eq.~\ref{eq:afb} vanishes by
-construction. However, valence quarks are more likely to participate
-in the interaction than sea quarks and carry, on average, a larger fraction of
-momentum than sea anti-quarks. Therefore, in the laboratory frame, the
-direction of flight of the \ttbar{} system is likely to be the same as of
-the incoming quark. In this scenario, a forward top quark in
-the \ttbar{} C.M. has on average a larger absolute rapidity $|y|$, in
-the laboratory frame, than the backward antiquark. Thus the asymmetry
-in Eq.~\ref{eq:ac} allows probing the charge asymmetry in \ttbar{}
-production at the LHC.
-
+Therefore, the asymmetry is defined only for \mbox{$\qqbar{}\to\ttbar{}$}
+events, as it is not possible to define a direction of reference for
+$gg\to\ttbar{}$ events, which are intrinsically symmetric.
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.495\textwidth]{figures/theory/cmdiagram}
   \caption{A representation of the $\qqbar{}\to\ttbar{}$ process in the
@@ -379,21 +334,20 @@ production at the LHC.
   \label{fig:cmdiagram}
 \end{figure}
 
-
-\subsection{Charge asymmetry in the SM}
-\label{sec:smca}
-
+From Eq.~\ref{eq:afbcostheta} follows that a non--zero asymmetry
+appears if the angular differential cross section includes
+non--vanishing terms with odd powers in $\cos\theta_t$.
 The dominant contribution to the SM charge asymmetry originates from
-the QCD $\qqbar{}\to\ttbar{}+X$ production. Specifically, it originates from the
-interference between the Born amplitude for $\qqbar{}\to\ttbar{}$ and
+the QCD \mbox{$\qqbar{}\to\ttbar{}+X$} production. Specifically, it originates from the
+interference between the Born amplitude for \mbox{$\qqbar{}\to\ttbar{}$} and
 its one--loop box correction, and from the one between initial and final
-state radiation (ISR, FSR) in $\qqbar{}\to{}\ttbar{}g$
+state radiation (ISR, FSR) in \mbox{$\qqbar{}\to{}\ttbar{}g$}
 (Fig.~\ref{fig:asymdiagrams}). The terms of the angular differential cross section
 $d\sigma_{\qqbar{}\to{}\ttbar{}}/d\cos\theta_t$ (Fig.~\ref{fig:cmdiagram})
 corresponding to these interferences are antisymmetric for the
 exchange of top and antitop quark momenta~\cite{Kuhn:1998kw}. In
-particular, considering the definitions in Eq.~\ref{eq:afb}
-and~\ref{eq:ac}, Born-box interference generates positive asymmetries,
+particular, considering the definitions in Eq.~\ref{eq:afbcostheta},
+Born-box interference generates positive asymmetries,
 while the ISR-FSR interference generates negative asymmetries.
 The relative size of the two contributions depends on the transverse
 momentum of the \ttbar{} system \pttt{}. For
@@ -418,7 +372,7 @@ positive asymmetry.
 \end{figure}
 
 Charge asymmetric contributions also arise from the interference of
-the QCD $\qqbar{}\to{}\ttbar{}$ diagrams in
+the QCD \mbox{$\qqbar{}\to{}\ttbar{}$} diagrams in
 Fig.~\ref{fig:asymdiagrams} with the QED analogous where a gluon is
 replaced by a photon. The size of the QED corrections to the QCD
 asymmetric cross section depends on the relative importance of \uubar{}
@@ -431,7 +385,7 @@ Analogous contributions from weak interactions constitute only a
 $\approx{}1\%$ correction at Tevatron and are negligible at LHC due to
 the smallness of the weak coupling.
 
-The asymmetry definition in Eq.~\ref{eq:afb} and~\ref{eq:ac} can be
+The asymmetry definition in Eq.~\ref{eq:afbcostheta} can be
 generalized as the ratio between the asymmetric contribution
 $\sigma_A$ to the cross section and the symmetric one $\sigma_S$:
 \begin{equation}
@@ -443,32 +397,100 @@ Because the asymmetry vanishes at the tree level in the SM, a
 consistent fixed-order expansion at LO in perturbation theory involves the
 numerator at NLO and the denominator at LO:
 \begin{equation}
-  A_{QCD}=\alpha_SA_{QCD}^{(0)}=\frac{\alpha_S\sigma_A^{(1)}}{\sigma_S^{(0)}}
+  A_{QCD}^{(0)}=\frac{\alpha_S\sigma_A^{(1)}}{\sigma_S^{(0)}}
 \end{equation}
-Predictions of \afb{} for Tevatron and \ac{} for LHC have thus been
-computed including the $\mathcal{O}(\alpha_s^3)$
+To date, predictions have thus been computed including the $\mathcal{O}(\alpha_s^3)$
 QCD contribution and the mixed $\mathcal{O}(\alpha_s^2\alpha)$ QCD-QED
-and QCD-weak corrections discussed above. The SM forward-backward
-asymmetry at \ppbar{} collision, evaluated at $\sqrt{s}=1.96\TeV{}$,
-is $\afb{} = 0.088\pm{}0.006$, while the SM predictions for the LHC
-asymmetry are $\ac{}=0.0123\pm{}0.0005$ and $\ac{}=0.0111\pm0.0005$,
-at \seventev{} and \eighttev{} respectively~\cite{Bernreuther:2012sx}.
- 
+and QCD-weak corrections discussed above. 
+
+\subsection{\afb{} at \ppbar{} collisions}
+
+The $\cos\theta_t$ quantity would be the fundamental observable to
+measure the asymmetry in \ttbar{} production, but the direction of the
+incoming quark is not directly accessible at experiments. However, at
+Tevatron \ppbar{} collisions, the quark is provided by the proton with
+very high probability ($\gtrsim{}99\%$ at $\sqrt{s}=1.96\TeV{}$);
+therefore the top quark rapidity $y$\footnote{The rapidity of a
+  particle at colliders is given by
+  $y=\frac{1}{2}ln(\frac{E+p_z}{E-p_z})$, where $E$ is the energy of
+  the particle and $p_z$ the component of its momentum along the beam
+  axis $z$.} with respect to the proton beam direction can be used to
+distinguish between {\it forward} and {\it backward} production with
+high efficiency.
+The asymmetry \afb{} is then re--defined in terms of the rapidity $y$ of the top and
+antitop quarks in the laboratory frame: 
+\begin{equation}
+\label{eq:afb}
+\afb{}=\frac{N(\Delta{}y>0)-N(\Delta{}y<0)}{N(\Delta{}y>0)+N(\Delta{}y<0)},
+\end{equation}
+with $\Delta{}y=y_t - y_{\bar{t}}$ and $N$ number of events.
+
+The first precise measurements of \afb, using half
+of the Tevatron Run II dataset, showed large discrepancies between
+data and theory ($\gtrsim 3\sigma$).
+At present, when the full Tevatron dataset has been analyzed, the
+discrepancies have been reduced with respect to previous results. The
+CDF collaboration reports \mbox{$\afb=0.164\pm0.045$}~\cite{Aaltonen:2012it},
+corresponding to a $1.7\sigma$ excess over the SM prediction \mbox{$\afb{} =
+0.088\pm{}0.006$}, whereas the \dzero{} collaboration
+finds agreement within $1\sigma$ with
+\mbox{$\afb{}=0.106\pm0.030$}~\cite{Abazov:2014cca}. However, as
+already discussed in Sec.~\ref{sec:introduction}, the \afb{} spectrum as a
+function of the \ttbar{} invariant mass \mtt{} still shows tantalizing
+discrepancies with respect to the theoretical prediction.
+
+At the time when this thesis work began, the discrepancy between
+experimental data and the SM prediction was particularly interesting,
+with an excess over three standard deviations reported by the CDF
+collaboration in the measurement of \afb{} at high \ttbar{} invariant
+mass $\mtt{}>450\GeV{}$, using half of the total dataset. This anomaly
+triggered a intense activity, both in developing new physics models
+which could explain the anomaly in \ttbar{} production, and in
+calculating more precise and accurate SM predictions. The result also
+motivated studies of the \ttbar{} production phenomenology aiming at
+identifying other observables where anomalies might appear if the
+Tevatron asymmetry were indeed a sign of new physics. Among these, the
+charge asymmetry at the LHC is one of the best candidates. 
+
+\subsection{\ac{} at $pp$ collisions}
+
+At LHC $pp$ collisions the incoming quark has the same probability to be provided by
+either proton beam; thus an FB asymmetry with respect to a fixed direction,
+such as the one defined in Eq.~\ref{eq:afb}, vanishes due to the
+symmetry of the initial state. However, valence quarks are more likely to participate
+in the interaction than sea quarks and carry, on average, a larger fraction of
+momentum than sea anti-quarks. Therefore, in the laboratory frame, the
+direction of flight of the \ttbar{} system is likely to be the same as of
+the incoming quark. In this scenario, a forward top quark in
+the \ttbar{} C.M. has on average a larger absolute rapidity $|y|$, in
+the laboratory frame, than the backward antiquark. 
+A {\it forward-central} charge asymmetry \ac{} can be defined:
+\begin{equation}
+\label{eq:ac}
+\ac{}=\frac{N(\Delta{}|y|>0)-N(\Delta{}|y|<0)}{N(\Delta{}|y|>0)+N(\Delta{}|y|<0)},
+\end{equation}
+with $\Delta{}|y|=|y_t| - |y_{\bar{t}}|$.
+Such definition allows probing the asymmetry in \ttbar{} production at the LHC.
+
+
+The SM predictions for the LHC asymmetry are \mbox{$\ac{}=0.0123\pm{}0.0005$}
+and \mbox{$\ac{}=0.0111\pm0.0005$}, at \seventev{} and \eighttev{}
+respectively~\cite{Bernreuther:2012sx}.  
 The SM prediction for \ac{} is one order of magnitude smaller than for
 \afb{} because of two effects. First, the symmetric $gg\to\ttbar{}+X$
-process is dominant at the LHC, accounting for $80\%$ of the total
+process is dominant at the LHC, accounting for $85\%$ of the total
 cross section, as opposed to the $15\%$ at the Tevatron. This process
 contributes exclusively to the denominator in Eq.~\ref{eq:afb}
-and~\ref{eq:ac}, diluting the asymmetric $\qqbar{}\to\ttbar{}$
+and~\ref{eq:ac}, diluting the asymmetric \mbox{$\qqbar{}\to\ttbar{}$}
 production. In addition, the probability that the anti-quark carries a
 larger fraction of momentum than the quark -- in which case the
 assumption that the \ttbar{} system is boosted in the direction of the
 incoming quark is voided -- is not negligible, and leads to a further
-dilution of the asymmetry. The impact of both
-dilutions can be reduced by applying a minimum requirement on the
-$z$-component of the \ttbar{} system velocity \betatt{}~\cite{AguilarSaavedra:2011cp}. Due to the average momentum imbalance
-between quark and antiquark, in \qqbar{} annihilation the \ttbar{}
-system is often produced with a large longitudinal
+dilution of the asymmetry. The impact of both dilutions can be reduced
+by applying a minimum requirement on the $z$-component of the \ttbar{}
+system velocity \betatt{}~\cite{AguilarSaavedra:2011cp}. Due to the
+average momentum imbalance between quark and antiquark, in \qqbar{}
+annihilation the \ttbar{} system is often produced with a large longitudinal
 momentum. Fig.~\ref{fig:qqbarfrac} shows how the relative importance
 of the \qqbar{} process increases with the minimum requirement on \betatt{}.
 
@@ -489,13 +511,17 @@ new physics in \ttbar{} production. In the last few years various
 extensions of the SM have been proposed to explain the excess of the
 measured \afb{}. The following models have been studied in
 detail by theorists with a focus on their impact on the charge
-asymmetry in \ttbar{} production~\cite{Aguilar-Saavedra:2014kpa}. 
+asymmetry in \ttbar{} production~\cite{Aguilar-Saavedra:2014kpa}. The
+parameters of the models are chosen to be compatible with the \ttbar{}
+cross section measurements, and they are required to fit within the
+constraints from flavor physics and other electroweak precision
+tests. However a relatively wide range of asymmetries can be predicted.
 
 {\em Color-octet vector $G$}. Exchanged in the $s$ channel via
 flavor-diagonal couplings, it gives 
 an amplitude that interferes with the SM gluon-exchange diagram. The
 corresponding contribution to the charge asymmetry in
-$\qqbar{}\to\ttbar{}$ is proportional to the product of axial
+\mbox{$\qqbar{}\to\ttbar{}$} is proportional to the product of axial
 couplings with light and top quarks $g_A^{u,d}g_A^t$. Depending on the
 relative sign of the couplings and on the mass $M_G$, the contribution
 to the asymmetry can be positive or negative. 
