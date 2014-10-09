@@ -57,10 +57,10 @@ respectively, for which Eq.~\ref{eq:convolution} becomes the matrix product
 
 The goal of unfolding is to construct estimators for the $N_t$
 parameters $\Truth{}=\{t_1,\cdots{},t_{N_t}\}$, given a distribution
-measured in data. The response matrix \TrasfMatrix{} is derived from
+\Reco{} of measured values. The response matrix \TrasfMatrix{} is derived from
 an arbitrary reference sample, typically derived from simulation.
 In order to derive \Truth{} from Eq.~\ref{eq:matrixprod}, the response
-matrix \TrasfMatrix{} need to be inverted. However, depending on the
+matrix \TrasfMatrix{} has to be inverted. However, depending on the
 problem at hand, the response matrix might not be
 invertible. Unfolding algorithms typically adopt approximations in
 order to ensure invertibility. In addition, the estimator obtained from
@@ -128,7 +128,7 @@ expense of increasing the variance.
 
 \section{Fully Bayesian Unfolding}
 \label{sec:fbu}
-The unfolding methods present so far try to cope with the difficulty
+The unfolding methods presented so far try to cope with the difficulty
 of solving the inverse problem by introducing a bias. The algorithm
 studied and implemented for this thesis provides an exact solution to
 the unfolding problem by removing the need of inverting the response
@@ -165,7 +165,7 @@ the response matrix \TrasfMatrix{}:
   produced in the true bin $t$ and to be observed in the reconstructed
   bin $r$;
 \item the efficiency $\epsilon{}_t$ for an event produced in the
-  true bin $t$ and that is reconstructed in any bin $r$.
+  true bin $t$ to be reconstructed in any bin $r$.
 \end{itemize}
 The above quantities allow the extrapolation of the reconstructed spectrum
 \Reco{} corresponding to a given true spectrum \Truth{} as in
@@ -217,33 +217,23 @@ The choice of $\alpha$ determines the impact of the prior on
 which additional information is used to constrain the parameter
 space.
 
-In the analysis of the dataset at \seventev{}, the curvature prior is
+In the analysis of the dataset at \seventev{}, a curvature prior is
 used for the unfolding of the inclusive \ac{} and of the
 differential \ac{} spectrum as a function of \pttt{}.
-The curvature prior is defined as:
-\begin{equation}
-\prior{}
-\propto{}
-\begin{cases}
-e^{\alpha{}S(\Truth{})} & \text{if }
-T_{t}\in{}\left[\Tinf{}, \Tsup{}\right], \forall{}t\in{}\left[1, N_t\right] \\
-0 & \text{otherwise} \\
-\end{cases}
-\end{equation}
-where $\alpha{}$ is an arbitrary regularization parameter, and
-$S(\Truth{})$ is the difference between the
-\emph{Thikonov} regularization functions $C(\Truth)$ (i.e. curvatures)
-for the given point \Truth{} and for the truth distribution in simulation.
+In the curvature prior the regularization function $S(\Truth{})$ is
+the difference between the \emph{Thikonov} regularization functions
+$C(\Truth)$ (i.e. curvatures) for the given point \Truth{} and for the
+truth distribution in simulation. 
 The \emph{Thikonov} regularization function is defined as
 \begin{equation}
         C(\Truth{}) =
         \sum_{t=2}^{N_t-1}\left[(T_{t+1}-T_{t})-(T_t-T_{t-1})\right]^2.
 \end{equation}
 The application of this prior disfavors, with strength $\alpha{}$,
-sampled \Truth{} candidates with curvature that is very different from
+\Truth{} candidates with curvature that is very different from
 the one of the truth spectrum in simulation.
-A regularization strength $\alpha{}=-10^{-8}$ is chosen, reducing the
-uncertainty on \ac{} by 50\%, with negligible bias.
+A regularization strength $\alpha{}=-10^{-8}$ is used, reducing the
+uncertainty on the inclusive \ac{} by 50\%, with negligible bias.
 
 \subsection{Sampling}
 \label{sec:sampling}
@@ -265,8 +255,8 @@ spectrum, such as \ac{}:
 \begin{equation}
 \conditionalProb{\ac{}}{\Data{}} = 
 \int~
-\ac{}(\dy{})~
-\conditionalProb{\dy{}}{\Data{}}~d\dy
+\ac{}(\Truth{})~
+\conditionalProb{\Truth{}}{\Data{}}~d\Truth{}
 \end{equation}
 The mean and RMS of the posterior probability
 density for \ac{} are taken as central value and statistical uncertainty respectively.
@@ -380,24 +370,24 @@ $\pi{}(\thetavec{})$ their prior probability densities, which are
 assumed to be Gaussian distributions $G$ with $\mu=0$ and $\sigma=1$.
 
 A nuisance parameter is associated to each of the uncertainty sources
-listed in Sec.~\ref{sec:systematics}. Two categories of nuisances
+listed in Sec.~\ref{sec:syst_objects}. Two categories of nuisances
 are considered: the normalizations of the background processes
 ($\thetavec{}_b$), and the uncertainties associated to the objects
-identification, reconstruction and calibration ($\thetavec{}_o$).
+identification, reconstruction and calibration ($\thetavec{}_s$).
 While the first ones only affect the background predictions, the
 latter, referred to as object systematics, affect both the
 reconstructed distribution for \ttbar{} signal and for
 the total background prediction, referred to as
-$\Reco{}(\Truth{};\thetavec{}_o)$ and
-$\Bckg{}(\thetavec{}_o,\thetavec{}_b)$, respectively.
+$\Reco{}(\Truth{};\thetavec{}_s)$ and
+$\Bckg{}(\thetavec{}_s,\thetavec{}_b)$, respectively.
 The marginal likelihood becomes then
 \begin{equation}
 \label{eq:marginalLhood}
   \conditionalLhood{\Data{}}{\Truth{}}=
   \int
-  \conditionalLhood{\Data{}}{\Reco{}(\Truth{};\thetavec{}_o),\Bckg{}(\thetavec{}_o,\thetavec{}_b)} 
-  \cdot{} G(\thetavec{}_o) ~G(\thetavec{}_b)
-  ~d\thetavec{}_o ~d\thetavec{}_b.
+  \conditionalLhood{\Data{}}{\Reco{}(\Truth{};\thetavec{}_s),\Bckg{}(\thetavec{}_s,\thetavec{}_b)} 
+  \cdot{} G(\thetavec{}_s) ~G(\thetavec{}_b)
+  ~d\thetavec{}_s ~d\thetavec{}_b.
 \end{equation}
 
 The marginal posterior probability density for \Truth{} is computed by
@@ -408,9 +398,11 @@ parameter gives the corresponding posterior probability density,
 which matches the Gaussian prior for unconstrained nuisance
 parameters, while it has a narrower shape for nuisance parameters
 that can be measured in the dataset (see Fig.~\ref{fig:nuispar}).
-The posterior for \ac{} is computed as described in
+The posterior probability density for \ac{} is computed as described in
 Sec.~\ref{sec:sampling} with the difference that the RMS of the
-marginal posterior represents the total uncertainty.
+marginal posterior represents the total uncertainty. Analogously, each
+nuisance parameter is estimated by the mean and RMS of the
+corresponding projection of the posterior probability density.
 
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.495\textwidth]{figures/unfolding/unconstrainednp}
@@ -431,7 +423,7 @@ The marginalization approach provides a natural framework to treat
 simultaneously unfolding and background estimation using
 multiple data regions. Given the distributions $\Data{}_i$ measured in $N_{ch}$
 independent channels, the likelihood definition~\ref{eq:marginalLhood}
-can be extended to the product  
+is extended to the product  
 \begin{equation}
   \conditionalLhood{\{\Data{}_1\cdots{}\Data{}_{N_{ch}}\}}{\Truth{}}=
   \int
@@ -441,3 +433,64 @@ can be extended to the product
 \end{equation}
 where the nuisance parameters are evaluated simultaneously for all the
 factors.
+
+The \eighttev{} measurements are
+performed using a combination of six channels based on
+the lepton charge and the $b$--jet multiplicity. In addition to the
+expected number of \ttbar{} events for each bin in \Truth{}, the
+\wjets{} calibration factors $K_{\bbbar{}/\ccbar{}}$, $K_c$ and $K_{light}$ are free
+parameters in the likelihood.
+The posterior probability density is thus
+\begin{equation}
+\begin{split}
+  \conditionalProb{\Truth{}}{\{\Data{}_1\cdots{}\Data{}_{N_{ch}}\}}=&
+  \int
+  \prod_{i=1}^{N_{ch}}\conditionalLhood{\Data{}_i}{\Reco{}_i(\Truth{};\thetavec{}_s),\Bckg{}_i(\thetavec{}_s,\thetavec{}_b)}  \\
+&  ~G(\thetavec{}_s)
+  ~G(\thetavec{}_b)
+  ~\pi{}(\Truth{})
+  ~\pi{}(K_{\bbbar{}/\ccbar{}})
+  ~\pi{}(K_c)
+  ~\pi{}(K_{light})
+  ~d\thetavec{}_s
+  ~d\thetavec{}_b,\\
+\end{split}
+\end{equation}
+with
+$\Bckg{}=\Bckg{}(K_{\bbbar{}/\ccbar{}},K_c,K_{light};\thetavec_s,\thetavec{}_b)$,
+and the $\pi{}$'s are uninformative priors.
+Therefore, normalization nuisance parameters are considered
+only for the remaining background processes: single top, \zjets{} and
+multijet. An independent nuisance parameters is assigned to \zjets{}
+and multijet normalizations for each $b$--jet multiplicity, given that
+the modeling of $b$--tagging efficiencies is not calibrated
+specifically for these processes. Independent nuisance parameters are
+considered for the multijet background estimation in \mujets{} and in
+\ejets{}. An additional nuisance parameters is
+assigned to the simulated single top and \zjets{} backgrounds,
+corresponding to uncertainty on the integrated luminosity to which the
+MC sample are normalized.
+
+A total of eleven normalization nuisance parameters $\thetavec_b$ is
+considered, while the object definition parameters $\thetavec_s$ are 53. 
+Table~\ref{tab:nuispar} summarizes the expected precision and measured
+values for all nuisance parameters. The expected precision is obtained
+by evaluating the likelihood for a pseudo--data sample corresponding
+to the sum of background and signal predictions; thus the central
+value for each parameter is measured to be $\theta\sim0$, while the
+uncertainty is $\delta\theta\leq1$, depending on the constraining power of
+the dataset on each parameter.
+
+\begin{table}
+  \centering
+  \begin{tabular}{lcc}
+    \toprule
+    parameter & expected $\theta\pm\delta\theta$ & measured $\theta\pm\delta\theta$ \\
+    \midrule
+    Luminosity & $0.0\pm1.0$& $0.0\pm1.0$\\
+    TO BE FILLED & & \\
+   \bottomrule
+  \end{tabular}
+  \caption{Expected and measured nuisance parameters.}
+  \label{tab:nuispar}
+\end{table}
