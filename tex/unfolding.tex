@@ -438,10 +438,16 @@ r_i(\Truth{},\TrasfMatrix{};0) \cdot ( 1 + \sum_k
 and, for each background process $b$,
 \begin{equation}
 b_i(\thetavec{}_s,\theta_b) =
-b_i(0) \cdot ( 1 + \theta_b) \cdot
+b_i(0) \cdot ( 1 + \theta_b\cdot\Delta b) \cdot
 (1 + \sum_k \theta_s^k\cdot\Delta b_i^k ),
 \end{equation}
-where the sum runs over all sources of object systematic uncertainty.
+where $\Delta b$ is the uncertainty on the background normalization,
+$\Delta r_i^k$ ,$\Delta r_i^k$ are the systematic variations for
+bin $i$ corresponding to the uncertainty $k$, and the sum runs over
+all sources of object systematic uncertainty.
+The prior probability densities $G(\thetavec{}_b$ are truncated at
+$\theta_{min}=-1/\Delta b$ in order to avoid negative background
+normalizations. 
 
 The marginal posterior probability density for \Truth{} is computed by
 sampling the $N_t+N_{np}$ parameter space, where $N_{np}$ is the
@@ -498,7 +504,7 @@ The posterior probability density is thus
 \begin{split}
   \conditionalProb{\Truth{}}{\{\Data{}_1\cdots{}\Data{}_{N_{ch}}\}}=&
   \int
-  \prod_{i=1}^{N_{ch}}\conditionalLhood{\Data{}_i}{\Reco{}_i(\Truth{};\thetavec{}_s),\Bckg{}_i(\thetavec{}_s,\thetavec{}_b)}  \\
+  \prod_{i=1}^{N_{ch}}\conditionalLhood{\Data{}_i}{\Reco{}_i(\Truth{};\thetavec{}_s),\Bckg{}_i(\thetavec{}_s,\thetavec{}_b)}\\
 &  ~G(\thetavec{}_s)
   ~G(\thetavec{}_b)
   ~\pi{}(\Truth{})
@@ -534,16 +540,34 @@ value for each parameter is measured to be $\theta\sim0$, while the
 uncertainty is $\delta\theta\leq1$, depending on the constraining power of
 the dataset on each parameter.
 
+\begin{figure}[!htb]\centering
+  \includegraphics[width=0.6\textwidth]{figures/unfolding/nuispar}
+  \caption{Fitted nuisance parameters to pseudo--data (black) and data
+    (red) for the inclusive \ac{} measurement at \eighttev{}. The
+    shaded regions highlight the $1\sigma$ (green) and $2\sigma$
+    intervals of the prior probability density.}
+  \label{fig:nuispar}
+\end{figure}
+
+The likelihood evaluated for the actual data gives the nuisance
+parameters corresponding to the measurements. 
+Most nuisance parameters are measured to be well within $1\sigma$ of
+their prior probability density, with little constraining power
+($\delta\theta\approx1$). The $b$--jet multiplicity provides
+information on the $b$--tag calibration, whose largest uncertainty
+component ($b$--efficiency, break--5) is constrained.
+
 \subsection{Additional systematic uncertainties}
 
 The use of unfolding introduces systematic uncertainties
 specific of the \ttbar{} simulated sample used to derive the response
 matrix \TrasfMatrix{}.
 The main potential sources of uncertainty are the statistical fluctuations due
-to the limited size of the MC sample and the modeling of the
-acceptance efficiency $\epsilon$.
+to the limited size of the MC sample and the modeling of the acceptance
+and reconstruction effects in the response matrix.
 
 \subsubsection{Monte Carlo statistics}
+\label{sec:mcstat}
 
 The impact of statistical fluctuations is studied by repeating the
 unfolding procedure $N_{ens}=1000$ times to build an ensemble of
@@ -555,10 +579,10 @@ values in the ensemble, shown in Fig.~\ref{fig:mcstat} for the
 inclusive \ac{} \eighttev{}, is gaussian--like and centered at the
 true \ac{} value. The RMS of the distribution quantifies the impact
 of the limited MC statistics. In the \seventev{} analysis, a MC sample
-of ?? \ttbar{} events is used, corresponding to an uncertainty on the
+of 4.2M \ttbar{} events is used, corresponding to an uncertainty on the
 inclusive \ac{} of about $0.2\%$. The measurements at \eighttev{} are
-performed with a ?? events MC sample, bringing the uncertainty down to
-$0.07\%$. An analogous estimation is performed for each differential
+performed with a 75M events MC sample, bringing the uncertainty down to
+$0.08\%$. An analogous estimation is performed for each differential
 measurements, and the corresponding uncertainties are summarized in
 App.~\ref{}.
 
@@ -569,4 +593,46 @@ App.~\ref{}.
   varying each time the response matrix according to statistical
   fluctuations.}
   \label{fig:mcstat}
+\end{figure}
+
+\subsubsection{Response matrix modeling}
+
+The unfolding procedure relies on the MC simulation of \ttbar{} events
+to model acceptance and migration effects in the response matrix
+\TrasfMatrix{}. Most of these effects originate from the properties of
+the detector and the object reconstruction, whose uncertainties are
+accounted for in the marginalization procedure described in
+Sec.~\ref{sec:marginalization}. However, the modeling of the
+$pp\to\ttbar{}$ process might affect the acceptance efficiencies
+$\epsilon_{t_j}$ and the reconstruction performance. While both these
+effects are typically large in cross measurements, they are expected
+to cancel in the difference and ratio of the asymmetry calculation.
+
+The modeling of the \ttbar{} signal is studied by comparing the
+measurements with MC samples corresponding different choices of generator
+(\alpgen{} or \mcatnlo{} at \seventev{} and \powheg{} or \mcatnlo{} at
+\eighttev{}) and PS (\pythia{} or \herwig{}).
+The sensitivity of these comparisons is limited by the MC statistics
+uncertainty (see Sec.~\ref{sec:mcstat}) of the samples. 
+The various \ttbar{} samples  at \seventev{} have similar size, the MC
+statistics uncertainty is relatively small ($0.2\%$ for inclusive
+\ac{}) compared to the statistical error, and the comparison shows
+negligible differences for both inclusive and differential measurements.
+In the inclusive measurement at \eighttev{}, a $0.32\%$ and $0.08\%$
+difference is observed when comparing generators and PS,
+respectively. The differences observed in the differential measurement
+as a function of \mtt{} is summarized in Fig.~\ref{fig:ttbarmodel}.
+However, for the alternative \ttbar{} samples, fewer events are
+generated with respect to the baseline simulation using \powheg{}
+interfaced with \pythia{}. 
+The sample generated with \powheg{} interfaced with \pythia{} has 30M events, corresponding to a $0.13\%$ uncertainty on the inclusive
+\ac{}, while the 15M events sample, generated with \mcatnlo{}
+interfaced with \herwig{}, yields a $0.19\%$ uncertainty. Therefore
+the comparisons of generators and PS are affected by $0.23\%$ and
+$0.15\%$ uncertainties, respectively.
+
+\begin{figure}[!htb]\centering
+  \includegraphics[width=0.6\textwidth]{figures/unfolding/ttbarmodel}
+  \caption{.}
+  \label{fig:ttbarmodel}
 \end{figure}
