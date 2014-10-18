@@ -258,7 +258,9 @@ The application of this prior disfavors, with strength $\alpha{}$,
 \Truth{} candidates with curvature that is very different from
 the one of the truth spectrum in simulation.
 A regularization strength $\alpha{}=-10^{-8}$ is used, reducing the
-uncertainty on the inclusive \ac{} by 50\%, with negligible bias.
+uncertainty on the inclusive \ac{} by 50\%, with negligible
+bias. Additional details are provided in
+App.~\ref{app:unfolding:regularization}.
 
 In the measurements as a function of \mtt{} and \ytt{}, where the
 expected curvature varies significantly from bin to bin, choices
@@ -325,6 +327,7 @@ The mean and RMS of the posterior probability density for \ac{} are
 taken as central value and statistical uncertainty respectively. 
 
 \subsubsection{Binning choice and bias}
+\label{sec:binandbias}
 
 The choice of the binning for the \dy{} distribution is driven by two
 competing factors:
@@ -365,10 +368,13 @@ where $a$ and $b$ are the {\it slope} and {\it offset} parameters.
 The unfolding response is considered unbiased when the distance
 $|1-a|$ and the offset $b$ are smaller than 10\% of the relative and
 absolute statistical error, respectively.
+Figure~\ref{fig:pulllinearity} shows the fitted line for
+the inclusive \ac{} measurement at \eighttev{}.
 For all measurements at \seventev{} and \eighttev{}, four is the
 minimum number of \dy{} bins that allows an unbiased
-response. Figure~\ref{fig:pulllinearity} shows the linearity test for
-the inclusive \ac{} measurement at \eighttev{}.
+response. The binning choice for each measurement and the
+corresponding unfolding response are detailed in
+App.~\ref{app:unfolding:binning} and \ref{app:unfolding:linearity}.
 
 The statistical uncertainty on \ac{} is validated by performing unfolding in
 an ensemble of pseudo-experiments where statistically--independent
@@ -379,12 +385,13 @@ $\sigma^{unf}$ are the unfolded asymmetry value and its uncertainty,
 while $\ac{}^{true}$ is the parton--level asymmetry of the sample used
 to generate the pseudo-data. As shown in Fig.~\ref{fig:pulllinearity}, the
 RMS of the pull distribution is $\approx{}1$, indicating that the
-uncertainty is correctly estimated.
+uncertainty is correctly estimated. The pull distributions for each
+measurement are collected in App.~\ref{app:unfolding:pulls}
 
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.495\textwidth]{figures/unfolding/linearity}
   \includegraphics[width=0.495\textwidth]{figures/unfolding/pulls}
-  \caption{Pull distribution (left) and linearity test (right) for the
+  \caption{Unfolding response (left) and pull distribution (right) for the
     inclusive \ac{} measurement at \eighttev{}}
   \label{fig:pulllinearity}
 \end{figure}
@@ -466,9 +473,10 @@ corresponding projection of the posterior probability density.
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.495\textwidth]{figures/unfolding/unconstrainednp}
   \includegraphics[width=0.495\textwidth]{figures/unfolding/constrainednp}
-  \caption{Prior and posterior distributions for nuisance parameters
-    corresponding to a component of the JES uncertainty (left) and of
-    the b-tagging efficiency (right) in the measurement at \eighttev{}.}
+  \caption{Prior and posterior probability densities for nuisance parameters
+    corresponding to a the electron momentum scale (left) and a
+    component of the b-tagging efficiency (right) in the measurement
+    at \eighttev{}.}
   \label{fig:nuispar}
 \end{figure}
 
@@ -588,10 +596,9 @@ App.~\ref{}.
 
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.6\textwidth]{figures/unfolding/mcstat}
-  \caption{Distribution of the difference between unfolded \ac{} and
-    true \ac{} for pseudo--data. Unfolding is repeated 1000 times with
-  varying each time the response matrix according to statistical
-  fluctuations.}
+  \caption{Distribution of the \ac{} central values for 1000
+    pseudo--experiments where the response matrix is varied
+    according to statistical fluctuations of the MC sample.}
   \label{fig:mcstat}
 \end{figure}
 
@@ -614,25 +621,37 @@ measurements with MC samples corresponding different choices of generator
 \eighttev{}) and PS (\pythia{} or \herwig{}).
 The sensitivity of these comparisons is limited by the MC statistics
 uncertainty (see Sec.~\ref{sec:mcstat}) of the samples. 
-The various \ttbar{} samples  at \seventev{} have similar size, the MC
-statistics uncertainty is relatively small ($0.2\%$ for inclusive
-\ac{}) compared to the statistical error, and the comparison shows
-negligible differences for both inclusive and differential measurements.
+The various \ttbar{} samples  at \seventev{} have similar size, with a
+small MC statistics uncertainty ($0.2\%$ for inclusive
+\ac{}), and the comparison shows negligible differences for both
+inclusive and differential measurements. 
 In the inclusive measurement at \eighttev{}, a $0.32\%$ and $0.08\%$
 difference is observed when comparing generators and PS,
 respectively. The differences observed in the differential measurement
 as a function of \mtt{} is summarized in Fig.~\ref{fig:ttbarmodel}.
-However, for the alternative \ttbar{} samples, fewer events are
-generated with respect to the baseline simulation using \powheg{}
-interfaced with \pythia{}. 
-The sample generated with \powheg{} interfaced with \pythia{} has 30M events, corresponding to a $0.13\%$ uncertainty on the inclusive
+These differences are large effects compared with the statistical
+precision. However, for the alternative \ttbar{} samples considered,
+fewer events are generated with respect to the baseline simulation
+using \powheg{} interfaced with \pythia{}. 
+The sample generated with \powheg{} interfaced with \pythia{} has 30M
+events, corresponding to a $0.13\%$ uncertainty on the inclusive
 \ac{}, while the 15M events sample, generated with \mcatnlo{}
 interfaced with \herwig{}, yields a $0.19\%$ uncertainty. Therefore
 the comparisons of generators and PS are affected by $0.23\%$ and
-$0.15\%$ uncertainties, respectively.
+$0.15\%$ uncertainties, respectively. The differences observed when
+comparing PS algorithm are compatible with fluctuations due to MC limited
+statistics. A significantly large variation is observed for
+$\mtt{}>900\GeV{}$ when comparing generators.
+In order to perform a more precise estimation of the uncertainties
+associated with \ttbar{} modeling, large (100M events) MC samples are
+in production and the differences will be studied at the truth level.
 
 \begin{figure}[!htb]\centering
-  \includegraphics[width=0.6\textwidth]{figures/unfolding/ttbarmodel}
-  \caption{.}
+  \includegraphics[width=0.475\textwidth]{figures/unfolding/acvsmtt_phmcnlo}
+  \includegraphics[width=0.475\textwidth]{figures/unfolding/acvsmtt_ppph}
+  \caption{Differences in the measured \ac{} spectrum as a function of
+    \mtt{} using different generators (left) and different PS
+    algorithms (right). The MC statistics uncertainty is also
+    shown.}
   \label{fig:ttbarmodel}
 \end{figure}

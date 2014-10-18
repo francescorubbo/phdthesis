@@ -1,11 +1,11 @@
-In this appendix we illustrate the details of the FBU implementation
-the unfolding cross-checks.
+In this appendix we illustrate the details of the unfolding
+configuration and validation.
 
-\subsection{Regularization}
-\label{sec:app:unfolding:regularization}
+\section{Regularization}
+\label{app:unfolding:regularization}
 In this section we briefly summarize the details of the regularization
-used for the inclusive unfolding and for the differential one as a
-function of \pttt{}.
+used for the inclusive \ac{} measurement at \seventev{} and for the
+differential one as a function of \pttt{}.
 
 We use the definition of curvature
 %
@@ -17,229 +17,168 @@ We use the definition of curvature
 where $N_b$ is the number of bins. We compute the regularization
 function as the absolute value of the curvature difference between the
 truth spectrum and the $\tilde{\Truth{}}$ spectrum of the simulated
-events that are used to fill the transfer matrix:
+events that are used to build the response matrix:
 %
 \begin{equation}
  S(\Truth{}) = |C(\Truth) - C(\tilde{\Truth{}})|.
 \end{equation}
 %
 The main idea behind this function is that it decreases the weight of
-generated points \Truth{} with curvature that is very different from
-the one of the truth spectrum.
-
-For the unfolding of two-dimensional spectra, the curvature is
+sampled points \Truth{} with curvature that is very different from
+the one of the simulated spectrum.
+For the differential measurement, the curvature is
 computed separately in each differential subrange and the
 regularization function is the sum of the regularization functions
-computed in each subrange.  We choose to compute the curvature
-separately within each subrange for two reasons: first, we do not want
-to include in this calculation the bins that mark the transition
-between one subrange and the next; second, the numerical value of the
-curvature can be significantly different in different bins of the
-differential variable.  The numerical values of the curvature are
-reported in table~\ref{tab:curvature}; the numerical value of the
-parameter $\alpha{}$ is chosen so that $\alpha{}\cdot{}S$ is not far
-from unity.
-%
-\begin{table}[htbp]
-  \begin{center}
-  \begin{tabular}{ l ccccc }
-  \toprule
-   & \multicolumn{5}{c}{Curvature : $\frac{\text{truth}}{\text{reco}}$} \\
-   \midrule
-   inclusive & $\frac{6.1e+05}{9.7e+05}$ & & & & \\
-   \mtt{} & $\frac{1.4e+09}{1.0e+07}$ & $\frac{1.2e+08}{1.4e+05}$ & $\frac{1.8e+08}{5.5e+05}$ & $\frac{7.4e+07}{3.1e+05}$ & $\frac{1.7e+07}{7.6e+04}$ \\
-   \pttt{} & $\frac{1.4e+06}{8.4e+04}$ & $\frac{7.0e+05}{1.8e+05}$ & $\frac{2.6e+06}{2.7e+05}$ & & \\
-   \ytt{} & $\frac{1.8e+09}{1.5e+07}$ & $\frac{3.2e+09}{2.3e+07}$ & $\frac{5.2e+07}{2.8e+06}$ & $\frac{4.9e+08}{1.5e+06}$ & \\
-   \bottomrule
-    \end{tabular}
-  \end{center}
-  \caption{Curvature numerical values of the spectra being unfolded,
-  at the truth level and at the reconstruction level. For the
-  differential spectra, the curvature is computed separately in each
-  subrange corresponding to one bin of the differential variable.
-  }
-  \label{tab:curvature}
-\end{table}
-
-Fig.~\ref{fig:app:fbutestprior} shows the FBU posterior for the inclusive measurement
-corresponding to four different choices of the regularization parameter $\alpha{}$.
-While the width of the posterior is sensibly reduced for larger values of $\alpha{}$, the mean value is stable.
+computed in each subrange.  The curvature is computed
+separately within each subrange in order to skip the transition
+between one subrange and the next. 
+Fig.~\ref{fig:app:fbutestprior} shows the posterior probability
+density for the inclusive \ac{} corresponding to four different
+choices of the regularization parameter $\alpha{}$.
+While the width of the posterior is sensibly reduced for larger values
+of $\alpha{}$, the mean value is stable.
 
 \begin{figure}
   \begin{center}
   \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/FBUtestprior}
   \caption{
     \label{fig:app:fbutestprior}
-    FBU posterior for the inclusive measurement corresponding to four values of $\alpha{}$.
+    Posterior probability density for the inclusive \ac{}
+    corresponding to four values of $\alpha{}$.
     }
   \end{center}
 \end{figure}
 
+\section{Binning}
+\label{app:unfolding:binning}
 
-\subsection{Linearity}
-\label{sec:app:unfolding:linearity}
-The following figures show the results of the tests that we perform to
-verify the linearity of the FBU method.  These tests are performed for
-the one-dimensional unfolding used in the inclusive measurement
-(figure~\ref{fig:app:fbuLin}), and for the two-dimensional unfolding
-used in the differential measurements
-(figures~\ref{fig:app:fbuUnfACmtt}--\ref{fig:app:fbuLinACpTtt}.  The
-linearity is tested by measuring the \ac{} value after unfolding for
-several \protos{} axigluon samples that have a
-non-zero asymmetry. Figure~\ref{fig:app:fbuErrLhoodCut} illustrates
-the reduction in the unfolding statistical error that can be obtained
-by requiring that the kinematic fit likelihood is greater than $-50$.
-\begin{figure}\centering
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/linearityAcIncl_bin_flatPrior}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/linearityAcIncl_bin_curvature1e-8Prior}
-  \caption{
-    \label{fig:app:fbuLin}
-    Unfolding with FBU for $\ac{}_{\text{incl}}$: linearity for
-    several \dy{} binnings using a flat prior (left) and a regularization prior 
-    based on the curvature of the \dy{} distribution (right).
-    }
-\end{figure}
-%
-\begin{figure}
+All measurements are performed using four bins for the \dy{}
+distribution.
+The bin edges are adjusted in the different kinematic regions in order
+to take into account the varying width of the distribution and \dy{}
+resolution. The simplest configuration yielding a negligible bias in
+the unfolding response is chosen. In the measurements at \seventev{},
+the same \dy{} binning, summarized in Table~\ref{tab:unf:binning7tev},
+is used for all differential measurements. 
+\begin{table}[htbp]
   \begin{center}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/unfolded_map_dymass}
-  \caption{
-    \label{fig:app:fbuUnfACmtt}
-    Unfolded \dy{} distribution for axigluon sample with 2\% asymmetry
-    in the five \ttbar{} mass bins using a flat prior.
-    }
-  \end{center}
-\end{figure}
-%
-\begin{figure}
+    \begin{tabular}{l l r}
+      \toprule
+      Variable & & Bin edges \\
+      \midrule
+      \dy{}         &            & $[-5.0, -0.5, 0.0, +0.5, +5.0]$ \\
+      \mtt{}        & $[\GeV{}]$ & $[0, 420, 500, 600, 750,
+      +\infty{}]$ \\
+      \pttt{}       & $[\GeV{}]$ & $[0, 25, 60, +\infty{}]$ \\
+      |\ytt{}|     &            & $[0, 0.3, 0.7, +\infty{}]$ \\
+      \bottomrule
+     \end{tabular}
+   \end{center}
+  \caption{Bin edges of the \dy{}, \mtt{}, \pttt{}, and |\ytt{}|
+  bins.}
+  \label{tab:unf:binning7tev}
+\end{table}
+The binning choices for the measurements at \eighttev{} is detailed in
+Table~\ref{tab:unf:binning8tev}.
+\begin{table}[htbp]
   \begin{center}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/map_dymass_fbuLinearity_asymmetries1__ens}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/map_dymass_fbuLinearity_asymmetries2__ens}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/map_dymass_fbuLinearity_asymmetries3__ens}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/map_dymass_fbuLinearity_asymmetries4__ens}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/map_dymass_fbuLinearity_asymmetries5__ens}
-  \caption{
-    \label{fig:app:fbuLinACmtt}
-    Unfolding with FBU for $\ac{}_{\mtt{}}$: linearity in the five
-    \ttbar{} mass bins. Red curves are obtained
-    without the cut on the kinematic fit likelihood; black curves are
-    obtained applying the cut.
-  }
-  \end{center}
-\end{figure}
-%
-\begin{figure}
-  \begin{center}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/unfolded_map_dyy}
-  \caption{
-    \label{fig:app:fbuUnfACmtt}
-    Unfolded \dy{} distribution for axigluon sample with 2\% asymmetry in the three \ttbar{} rapidity bins
-    using a flat prior.
-    }
-  \end{center}
-\end{figure}
-%
-\begin{figure}
-  \begin{center}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/map_dyy_fbuLinearity_asymmetries1__ens}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/map_dyy_fbuLinearity_asymmetries2__ens}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/map_dyy_fbuLinearity_asymmetries3__ens}
-  \caption{
-    \label{fig:app:fbuLinACytt}
-    Unfolding with FBU for $\ac{}_{\ytt{}}$: linearity in the three \ttbar{} rapidity bins. Red curves are obtained
-    without the cut on the kinematic fit likelihood; black curves are
-    obtained applying the cut.
-    }
-  \end{center}
-\end{figure}
-%
-\begin{figure}
-  \begin{center}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/unfolded_map_dypt}
-  \caption{
-    \label{fig:app:fbuUnfACmtt}
-    Unfolded \dy{} distribution for axigluon sample with 2\% asymmetry
-    in the three \ttbar{} transverse momentum bins.
-    }
-  \end{center}
-\end{figure}
-%
-\begin{figure}
-  \begin{center}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/map_dypt_fbuLinearity_asymmetries1__ens}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/map_dypt_fbuLinearity_asymmetries2__ens}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/map_dypt_fbuLinearity_asymmetries3__ens}
-  \caption{
-    \label{fig:app:fbuLinACpTtt}
-    Unfolding with FBU for $\ac{}_{\ytt{}}$: linearity in the
-    three \ttbar{} transverse momentum bins. Red curves are obtained
-    without the cut on the kinematic fit likelihood; black curves are
-    obtained applying the cut.
-    }
-  \end{center}
-\end{figure}
-%
-\begin{figure}
-  \begin{center}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/map_dy_fbuLinearity_asymmetries1_beta06_ens}
-  \caption{
-    \label{fig:app:fbuLinbeta06}
-    Unfolding with FBU for $\ac{}_{\text{incl}}$ with \betatt\textgreater0.6: linearity. Red curves are obtained
-    without the cut on the kinematic fit likelihood; black curves are
-    obtained applying the cut.
-    }
-  \end{center}
-\end{figure}
-%
-\begin{figure}
-  \begin{center}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/map_dymass_fbuLinearity_asymmetries1_beta06_ens}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/map_dymass_fbuLinearity_asymmetries2_beta06_ens}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/map_dymass_fbuLinearity_asymmetries3_beta06_ens}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/map_dymass_fbuLinearity_asymmetries4_beta06_ens}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/map_dymass_fbuLinearity_asymmetries5_beta06_ens}
-  \caption{
-    \label{fig:app:fbuLinACmttbeta06}
-    Unfolding with FBU for $\ac{}_{\mtt{}}$ with \betatt\textgreater0.6: linearity in the five
-    \ttbar{} mass bins. Red curves are obtained
-    without the cut on the kinematic fit likelihood; black curves are
-    obtained applying the cut.
-  }
-  \end{center}
-\end{figure}
-%
-\begin{figure}
-  \begin{center}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/slopeVsDiffBin}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/offsetVsDiffBin}
-  \caption{
-    \label{fig:app:fbuLinSlopeOffset}
-    Unfolding with FBU: slope (left) and offset (right) from the
-    linearity fit for $\ac{}_{\mtt{}}$, $\ac{}_{\pttt{}}$, and $\ac{}_{\ytt{}}$.
-    }
-  \end{center}
-\end{figure}
-%
-\begin{figure}
-  \begin{center}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/acErrVsDiffBin}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/pulls_asymmetries1}
-  \caption{
-    \label{fig:app:fbuErrLhoodCut}
-    Two-dimensional unfolding with FBU: \ac{} statistical error as a
-    function of the differential bin (left) and example pull
-    distribution (right) for the first \mtt{} bin.
-  }
-  \end{center}
-\end{figure}
-\clearpage
+    \begin{tabular}{l r}
+      \toprule
+      Differential bin & Bin edges \\
+      \midrule
+      Inclusive & $[-5.0, -0.8, 0.0, +0.8, +5.0]$ \\
+      \midrule
+      $\mtt{}<420\GeV{}$ & $[-5.0, -0.3, 0.0, +0.3, +5.0]$ \\
+      $420\GeV{}\mtt{}<500\GeV{}$ & $[-5.0, -0.6, 0.0, +0.6, +5.0]$ \\
+      $500\GeV{}\mtt{}<600\GeV{}$ & $[-5.0, -0.9, 0.0, +0.9, +5.0]$ \\
+      $600\GeV{}\mtt{}<750\GeV{}$ & $[-5.0, -1.2, 0.0, +1.2, +5.0]$ \\
+      $750\GeV{}\mtt{}<900\GeV{}$ & $[-5.0, -1.4, 0.0, +1.4, +5.0]$ \\
+      $\mtt{}>900\GeV{}$ & $[-5.0, -1.4, 0.0, +1.4, +5.0]$ \\
+      \bottomrule
+     \end{tabular}
+   \end{center}
+  \caption{Bin edges of the \dy{} bins in each \mtt{} range}
+  \label{tab:unf:binning8tev}
+\end{table}
 
+\section{Unfolding response}
+\label{app:unfolding:linearity}
 
-\subsection{Pulls}
-We checked that the mean and RMS of the \ac{} posteriors are good estimators for the \ac{} interval by
-looking at pull distributions produced from ten thousand pseudo-experiments.
-Figures \ref{fig:app:pulls_inclu},\ref{fig:app:pulls_vs_mass},\ref{fig:app:pulls_vs_y} and \ref{fig:app:pulls_vs_pt} show
-the pull distributions for inclusive and differential measurements.
+In this section the parameters of the unfolding response, measured as
+described in Sec.~\ref{sec:binandbias}, are reported in
+Table~\ref{tab:unf:response7tev} and \ref{tab:unf:response8tev} for
+the measurements at \seventev{} and \eighttev{}, respectively. 
+
+\begin{table}[htbp]
+  \begin{center}
+    \begin{tabular}{l c c}
+      \toprule
+      Differential bin & $a$ & $b$ \\
+      \midrule
+      Inclusive                           & $1.04\pm0.01$ & $0.001\pm0.001$\\
+      Incl., $\betatt{}>0.6$        & $1.05\pm0.02$ & $-0.002\pm0.001$\\
+      Incl., $\mtt{}>600\GeV{}$ & $0.99\pm0.02$ & $-0.002\pm0.002$\\
+      \midrule
+      $\mtt{}<420\GeV{}$                & $0.98\pm0.09$  & $0.000\pm0.002$\\
+      $420\GeV{}<\mtt{}<500\GeV{}$& $0.99\pm0.05$  & $0.002\pm0.002$  \\
+      $500\GeV{}<\mtt{}<600\GeV{}$& $0.97\pm0.05$  & $-0.005\pm0.002$\\
+      $600\GeV{}<\mtt{}<750\GeV{}$& $0.97\pm0.05$ & $-0.007\pm0.002$\\
+      $\mtt{} >750\GeV{}$& $0.99\pm0.06$ & $-0.003\pm0.003$\\
+      \midrule
+      $|\ytt{}|<0.3$                & $0.98\pm0.12$  & $-0.003\pm0.002$\\
+      $0.3<|\ytt{}|<0.7$         & $0.99\pm0.04$  & $0.004\pm0.001$\\
+      $|\ytt{}|>0.7$                & $0.98\pm0.03$  & $0.000\pm0.001$\\
+      \midrule
+      $\pttt{}<25\GeV{}$                & $1.01\pm0.06$  & $-0.004\pm0.002$\\
+      $25\GeV{}<\pttt{}<60\GeV{}$& $1.02\pm0.05$  & $0.008\pm0.003$  \\
+      $500\GeV{}<\mtt{}<600\GeV{}$& $1.04\pm0.04$  & $-0.001\pm0.001$\\
+      \midrule
+      $\betatt{}>0.6, \mtt{}<420\GeV{}$                & $0.96\pm0.11$  & $-0.004\pm0.003$\\
+      $\betatt{}>0.6, 420\GeV{}<\mtt{}<500\GeV{}$& $0.99\pm0.07$  & $0.004\pm0.003$  \\
+      $\betatt{}>0.6, 500\GeV{}<\mtt{}<600\GeV{}$& $0.97\pm0.07$  & $-0.006\pm0.004$\\
+      $\betatt{}>0.6, 600\GeV{}<\mtt{}<750\GeV{}$& $0.94\pm0.07$ & $-0.007\pm0.006$\\
+      $\betatt{}>0.6, \mtt{} >750\GeV{}$& $0.88\pm0.08$ & $0.003\pm0.007$\\
+      \bottomrule
+     \end{tabular}
+   \end{center}
+  \caption{Coefficient (a) and offset (b) parameters of the unfolding
+    response for measurements at \seventev{}}
+  \label{tab:unf:response7tev}
+\end{table}
+
+\begin{table}[htbp]
+  \begin{center}
+    \begin{tabular}{l c c}
+      \toprule
+      Differential bin & $a$ & $b$ \\
+      \midrule
+      Inclusive & $0.9993\pm0.0019$ & $-0.0003\pm0.0001$\\
+      \midrule
+      $\mtt{}<420\GeV{}$                & $0.988\pm0.009$  & $-0.0004\pm0.0002$\\
+      $420\GeV{}<\mtt{}<500\GeV{}$& $0.9968\pm0.0034$  & $-0.0001\pm0.0002$  \\
+      $500\GeV{}<\mtt{}<600\GeV{}$& $0.9833\pm0.0029$  & $-0.0002\pm0.0002$\\
+      $600\GeV{}<\mtt{}<750\GeV{}$& $0.9581\pm0.0029$ & $0.0014\pm0.0002$\\
+      $750\GeV{}<\mtt{}<900\GeV{}$& $0.924\pm0.005$ & $-0.0013\pm0.0004$\\
+      $\mtt{}>900\GeV{}$                & $0.958\pm0.005$ & $-0.0003\pm0.0004$\\
+      \bottomrule
+     \end{tabular}
+   \end{center}
+  \caption{Coefficient (a) and offset (b) parameters of the unfolding
+    response for measurements at \eighttev{}}
+  \label{tab:unf:response8tev}
+\end{table}
+
+\section{Pulls}
+\label{app:unfolding:pulls}
+
+In order to check that the mean and RMS of the \ac{} posteriors are
+good estimators for the \ac{} interval the pull distributions are
+produced from ten thousand pseudo-experiments.
+Figures \ref{fig:app:pulls_inclu}, \ref{fig:app:pulls_vs_mass},
+\ref{fig:app:pulls_vs_y} and \ref{fig:app:pulls_vs_pt} show the pull
+distributions for inclusive and differential measurements at \seventev{}.
+The pull distributions for the differential measurement at \eighttev{}
+are shown in Fig.~\ref{fig:app:pulls_vs_mass8tev}
 The RMS close to unity indicates the intervals are correctly estimated.
 
 \begin{figure}
@@ -286,65 +225,23 @@ The RMS close to unity indicates the intervals are correctly estimated.
   \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/ensemble_map_dyy_asymmetries3}
   \caption{
     \label{fig:app:pulls_vs_y}
-    Pull distributions for \ac{} in the three \ytt{} bins.
+    Pull distributions for \ac{} in the three |\ytt{}| bins.
   }
   \end{center}
 \end{figure}
 
-
-
-
-
-
-\subsection{Acceptance efficiency in asymmetric samples}
-Fig.~\ref{fig:app:protosEff} shows that the acceptance in \dy{} bins does not change significantly in the reweighted \alpgen{} samples used for the linearity test.
-
 \begin{figure}
   \begin{center}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/protosEfficiencies}
+  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/ensemble_map_dymass_asymmetries1}
+  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/ensemble_map_dymass_asymmetries2}
+  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/ensemble_map_dymass_asymmetries3}
+  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/ensemble_map_dymass_asymmetries4}
+  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/ensemble_map_dymass_asymmetries5}
   \caption{
-    \label{fig:app:protosEff}
-    Acceptance efficiencies for the six asymmetric \alpgen{} samples obtained by reweighting with truth \dy{} distributions from protos axigluon samples.
+    \label{fig:app:pulls_vs_mass8tev}
+    Pull distributions for \ac{} in the six \mtt{} bins.
   }
   \end{center}
 \end{figure}
-\clearpage
 
-\subsection{Matrix Inversion}
-\label{sec:app:unfolding:matinv}
-The FBU unfolding with a flat prior corresponds to the plain matrix inversion.
-In this section we compare the unfolded \dy{} distribution and asymmetry obtained
-with FBU with the ones obtained with the matrix inversion method.
-
-Fig.~\ref{fig:app:fbuvsmatinvbins} shows the FBU posteriors for \dy{} bins compared 
-with ensembles of the unfolded bin content obtained with matrix inversion.
-The mean and RMS values are compatible in the two cases.
-fig.~\ref{fig:app:fbuvsmatinvasymm} shows the FBU posterior and the matrix inversion 
-ensemble distribution for \ac{}. The distributions obtained with the two methods are cmpatible. 
-\begin{figure}
-  \begin{center}
-    \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/FBUvsMI_dim1_map_dy}
-    \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/FBUvsMI_dim2_map_dy}
-    \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/FBUvsMI_dim3_map_dy}
-    \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/FBUvsMI_dim4_map_dy}
-    \caption{
-      \label{fig:app:fbuvsmatinvbins}
-      FBU posterior distributions for the four unfolded \dy{} bins (black points) 
-      with overlayed the distributions of corresponding bin content from ensembles
-      of unfolded \dy{} distributions obtained with matrix inversion (blue line).
-    }
-  \end{center}
-\end{figure}
-
-\begin{figure}
-  \begin{center}
-    \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/FBUvsMI_asymmetry_map_dy}
-    \caption{
-      \label{fig:app:fbuvsmatinvasymm}
-      FBU posterior distributions for \ac{} (black points) 
-      with overlayed the \ac{} distributions from ensembles
-      of unfolded \dy{} distributions obtained with matrix inversion (blue line).
-    }
-  \end{center}
-\end{figure}
 
