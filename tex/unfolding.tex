@@ -547,7 +547,6 @@ to the sum of background and signal predictions; thus the central
 value for each parameter is measured to be $\theta\sim0$, while the
 uncertainty is $\delta\theta\leq1$, depending on the constraining power of
 the dataset on each parameter.
-
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.6\textwidth]{figures/unfolding/nuispar}
   \caption{Fitted nuisance parameters to pseudo--data (black) and data
@@ -556,14 +555,16 @@ the dataset on each parameter.
     intervals of the prior probability density.}
   \label{fig:nuispar}
 \end{figure}
-
 The likelihood evaluated for the actual data gives the nuisance
 parameters corresponding to the measurements. 
 Most nuisance parameters are measured to be well within $1\sigma$ of
 their prior probability density, with little constraining power
 ($\delta\theta\approx1$). The $b$--jet multiplicity provides
 information on the $b$--tag calibration, whose largest uncertainty
-component ($b$--efficiency, break--5) is constrained.
+component ($b$--efficiency, break--5) is constrained. The nuisance
+parameters for the measurement as a function of \mtt{} and a
+comparison of \ejets{} and \mujets{} channels is shown in
+App.~\ref{app:unfolding:marginalization}. 
 
 \subsection{Additional systematic uncertainties}
 
@@ -590,9 +591,9 @@ of the limited MC statistics. In the \seventev{} analysis, a MC sample
 of 4.2M \ttbar{} events is used, corresponding to an uncertainty on the
 inclusive \ac{} of about $0.2\%$. The measurements at \eighttev{} are
 performed with a 75M events MC sample, bringing the uncertainty down to
-$0.08\%$. An analogous estimation is performed for each differential
+$0.08\%$. An analogous estimation is performed for the differential
 measurements, and the corresponding uncertainties are summarized in
-App.~\ref{}.
+App.~\ref{app:unfolding:mcstat}.
 
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.6\textwidth]{figures/unfolding/mcstat}

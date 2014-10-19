@@ -75,7 +75,7 @@ is used for all differential measurements.
      \end{tabular}
    \end{center}
   \caption{Bin edges of the \dy{}, \mtt{}, \pttt{}, and |\ytt{}|
-  bins.}
+  bins in the measurements at \seventev{}.}
   \label{tab:unf:binning7tev}
 \end{table}
 The binning choices for the measurements at \eighttev{} is detailed in
@@ -97,7 +97,8 @@ Table~\ref{tab:unf:binning8tev}.
       \bottomrule
      \end{tabular}
    \end{center}
-  \caption{Bin edges of the \dy{} bins in each \mtt{} range}
+  \caption{Bin edges of the \dy{} bins in each \mtt{} range in the
+    measurement at \eighttev{}.}
   \label{tab:unf:binning8tev}
 \end{table}
 
@@ -141,8 +142,8 @@ the measurements at \seventev{} and \eighttev{}, respectively.
       \bottomrule
      \end{tabular}
    \end{center}
-  \caption{Coefficient (a) and offset (b) parameters of the unfolding
-    response for measurements at \seventev{}}
+  \caption{Coefficient ($a$) and offset ($b$) parameters of the unfolding
+    response for measurements at \seventev{}.}
   \label{tab:unf:response7tev}
 \end{table}
 
@@ -163,8 +164,8 @@ the measurements at \seventev{} and \eighttev{}, respectively.
       \bottomrule
      \end{tabular}
    \end{center}
-  \caption{Coefficient (a) and offset (b) parameters of the unfolding
-    response for measurements at \eighttev{}}
+  \caption{Coefficient ($a$) and offset ($b$) parameters of the unfolding
+    response for measurements at \eighttev{}.}
   \label{tab:unf:response8tev}
 \end{table}
 
@@ -187,7 +188,7 @@ The RMS close to unity indicates the intervals are correctly estimated.
   \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/ensemble_map_dy_asymmetries1}
   \caption{
     \label{fig:app:pulls_inclu}
-    Pull distributions for inclusive \ac{} with flat prior (left) and with regularization (right).
+    Pull distributions for inclusive \ac{} at \seventev{} with flat prior (left) and with regularization (right).
   }
   \end{center}
 \end{figure}
@@ -201,7 +202,7 @@ The RMS close to unity indicates the intervals are correctly estimated.
   \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/ensemble_map_dymass_asymmetries5}
   \caption{
     \label{fig:app:pulls_vs_mass}
-    Pull distributions for \ac{} in the five \mtt{} bins.
+    Pull distributions for \ac{} at \seventev{} in the five \mtt{} bins.
   }
   \end{center}
 \end{figure}
@@ -213,7 +214,7 @@ The RMS close to unity indicates the intervals are correctly estimated.
   \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/ensemble_map_dypt_asymmetries3}
   \caption{
     \label{fig:app:pulls_vs_pt}
-    Pull distributions for \ac{} in the three \pttt{} bins.
+    Pull distributions for \ac{} at \seventev{} in the three \pttt{} bins.
   }
   \end{center}
 \end{figure}
@@ -225,23 +226,99 @@ The RMS close to unity indicates the intervals are correctly estimated.
   \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/ensemble_map_dyy_asymmetries3}
   \caption{
     \label{fig:app:pulls_vs_y}
-    Pull distributions for \ac{} in the three |\ytt{}| bins.
+    Pull distributions for \ac{} at \seventev{} in the three |\ytt{}| bins.
   }
   \end{center}
 \end{figure}
 
 \begin{figure}
   \begin{center}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/ensemble_map_dymass_asymmetries1}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/ensemble_map_dymass_asymmetries2}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/ensemble_map_dymass_asymmetries3}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/ensemble_map_dymass_asymmetries4}
-  \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/ensemble_map_dymass_asymmetries5}
+    \includegraphics[width=0.495\textwidth]{figures/appendix/fbu/pulls_bin0_mtt_6bins_asimov_combined_mtt_Pulls}
+    \includegraphics[width=0.495\textwidth]{figures/appendix/fbu/pulls_bin1_mtt_6bins_asimov_combined_mtt_Pulls}
+    \includegraphics[width=0.495\textwidth]{figures/appendix/fbu/pulls_bin2_mtt_6bins_asimov_combined_mtt_Pulls}
+    \includegraphics[width=0.495\textwidth]{figures/appendix/fbu/pulls_bin3_mtt_6bins_asimov_combined_mtt_Pulls}
+    \includegraphics[width=0.495\textwidth]{figures/appendix/fbu/pulls_bin4_mtt_6bins_asimov_combined_mtt_Pulls}
+    \includegraphics[width=0.495\textwidth]{figures/appendix/fbu/pulls_bin5_mtt_6bins_asimov_combined_mtt_Pulls}
   \caption{
     \label{fig:app:pulls_vs_mass8tev}
-    Pull distributions for \ac{} in the six \mtt{} bins.
+    Pull distributions for \ac{} at \eighttev{} in the six \mtt{} bins at \eighttev{}.
   }
   \end{center}
 \end{figure}
 
+\section{Marginalization}
+\label{app:unfolding:marginalization}
 
+\subsection{\ac{} as a function of \mtt{}}
+
+The expected precision and measured values for the nuisance parameters
+in the measurement as a function of \mtt{} at \eighttev{} is shown in
+Fig.~\ref{fig:nuisparmtt}.
+\begin{figure}[!htb]\centering
+  \includegraphics[width=0.6\textwidth]{figures/appendix/fbu/nuisparmtt}
+  \caption{Fitted nuisance parameters to pseudo--data (black) and data
+    (red) for \ac{} measurement as a function of \mtt{} at \eighttev{}. The
+    shaded regions highlight the $1\sigma$ (green) and $2\sigma$
+    intervals of the prior probability density.}
+  \label{fig:nuisparmtt}
+\end{figure}
+The \wjets{} calibration obtained in this measurement is consistent
+with the one obtained in the inclusive measurement, as shown in
+Fig.~\ref{fig:wnormincluvsmtt}. 
+\begin{figure}[!htb]\centering
+  \includegraphics[width=0.6\textwidth]{figures/appendix/fbu/wnormincluvsmtt}
+  \caption{Fitted \wjets{} scale factors $K$s to data for the inclusive
+    measurement (black) and for the measurement as a function of
+    \mtt{} (red) at \eighttev{}. The results are consistent.}
+  \label{fig:wnormincluvsmtt}
+\end{figure}
+
+\subsection{Comparison of \mujets{} and \ejets{}}
+
+The measured values for the nuisance parameters
+in the inclusive measurement at \eighttev{} are shown in
+Fig.~\ref{fig:nuisparmtt} considering only \mujets{} or \ejets{}
+events. The nuisance parameters are found to be consistent.
+\begin{figure}[!htb]\centering
+  \includegraphics[width=0.6\textwidth]{figures/appendix/fbu/nuisparmuvse}
+  \caption{Fitted nuisance parameters to \mujets{} data (black) and
+    \ejets{} data (red) for the inclusive \ac{} measurement at \eighttev{}. The
+    shaded regions highlight the $1\sigma$ (green) and $2\sigma$
+    intervals of the prior probability density.}
+  \label{fig:nuisparmtt}
+\end{figure}
+The \wjets{} calibration yields similar scale factor, as shown in
+Fig.~\ref{fig:wnormmuvse}.
+\begin{figure}[!htb]\centering
+  \includegraphics[width=0.6\textwidth]{figures/appendix/fbu/wnormmuvse}
+  \caption{Fitted $W+jets$ scale factors $K$s to \mujets{} data (black)
+    and \ejets{} data (red) for the inclusive
+    measurement at \eighttev{}. The results are consistent.}
+  \label{fig:wnormmuvse}
+\end{figure}
+
+\section{Limited Monte-Carlo statistics}
+\label{app:unfolding:mcstat}
+
+The impact of the limited Monte-Carlo statistics is evaluated with an
+ensemble of 1000 response matrices, applying fluctuations according
+to the number of Monte-Carlo event.
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{cc}                                    
+{(a)  $\mtt{} < 420$ GeV} & {(b) $420 < \mtt{} < 500$ GeV}  \\
+ \includegraphics[width=0.495\textwidth]{figures/appendix/fbu/Ac_bin0_mtt_6bins_asimov_asimov_combined_mtt_smeared} &
+ \includegraphics[width=0.495\textwidth]{figures/appendix/fbu/Ac_bin1_mtt_6bins_asimov_asimov_combined_mtt_smeared} \\
+{(c) $500 < \mtt{} < 600$ GeV} & {(d) $600 < \mtt{} < 750$ GeV}  \\
+ \includegraphics[width=0.495\textwidth]{figures/appendix/fbu/Ac_bin2_mtt_6bins_asimov_asimov_combined_mtt_smeared} &
+ \includegraphics[width=0.495\textwidth]{figures/appendix/fbu/Ac_bin3_mtt_6bins_asimov_asimov_combined_mtt_smeared} \\
+{(e) $750 < \mtt{} < 900$ GeV} & {(f) $\mtt{} > 900$ GeV}  \\
+ \includegraphics[width=0.495\textwidth]{figures/appendix/fbu/Ac_bin4_mtt_6bins_asimov_asimov_combined_mtt_smeared} &
+ \includegraphics[width=0.495\textwidth]{figures/appendix/fbu/Ac_bin5_mtt_6bins_asimov_asimov_combined_mtt_smeared} \\
+\end{tabular}\caption{Distribution of the unfolded \ac{} in the six
+  \mtt{} bins for an ensemble of 1000 response matrices. The dotted
+  vertical line shows the truth \ac{} value.}
+\label{fig:app:unf:limstatmtt}
+\end{center}
+\end{figure}
