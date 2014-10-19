@@ -168,11 +168,9 @@ measurement as a function of \mtt{}.
   $>750$          &     &         &         &         & $1$     \\
   \bottomrule
 \end{tabular}
+\caption{Correlation coefficients for the \ac{} values measured as a
+  function of \mtt{} at \seventev{}.} 
 \label{tab:corr_mtt}
-\caption{Measured \ac{} values as a function of \mtt{} at
-  \seventev{}. The uncertainties include both statistical and
-  systematic components. The SM predictions
-  are also reported.}
 \end{table}
 The corresponding tables for the other differential measurements are
 collected in App.~\ref{app:correlations}.
@@ -259,16 +257,32 @@ As discussed in Sec.~\ref{sec:wjets}, the measurements at \eighttev{}
 are performed using six sub-samples of $\ell{}+\ge4$ jets events,
 where, simultaneously, the background normalizations are fitted and
 the parton--level \dy{} distribution is
-estimated. Figure~\ref{fig:dy8tev} shows the fitted distribution used
-for the inclusive \ac{} measurement compared with the observed one.
+estimated. Figure~\ref{fig:dy8tev} shows the comparison between
+prediction and data for the 18 bins used in the inclusive \ac{}
+measurement before and after the simultaneous unfolding procedure and
+background calibration.
 \begin{figure}[!htb]\centering
-  \includegraphics[width=0.6\textwidth]{figures/results/datamcinclu8TeV_postfit} 
-  \caption{}
+  \includegraphics[width=0.6\textwidth]{figures/results/datamc_muonele_prefit} 
+  \includegraphics[width=0.6\textwidth]{figures/results/datamc_muonele_postfit} 
+  \caption{Comparison between prediction and data for the 18 bins used
+  in the inclusive \ac{} measurement before (top) and after (bottom)
+  the simultaneous unfolding procedure and background calibration. The
+  \dy{} distribution in 4 bins is considered for the
+  \ttbar{}--enriched event samples with 1 and at least 2 $b$--jets; a
+  single bin is considered for the background--enriched sample with 0
+  $b$--jets. After the calibration, the background components are
+  normalized to the measured values for the nuisance parameters, and
+  the prediction for \ttbar{} events in each bin is estimated by
+  folding the measured parton--level parameters through the response
+  matrix.}
   \label{fig:dy8tev}
 \end{figure}
 The inclusive \ac{} in \ttbar{} production at \eighttev{} is measured to be
 $\ac{}= 0.011\pm0.006(stat.+syst.)$, compatible with the SM prediction,
-$\ac{}=0.0111\pm0.0004$. 
+$\ac{}=0.0111\pm0.0004$. The improvement in precision with respect to
+the measurement at \seventev{} is due to the reduction of the
+statistical uncertainty that, with a \ttbar{} sample six times larger,
+is of $0.005$. 
 
 Since the background estimation is part of the bayesian inference
 procedure described in Sec.~\ref{sec:unfolding}, it's not possible to
@@ -285,9 +299,10 @@ $\delta{\ac{}}$ computed, for each source of uncertainty, as
 $|\ac{}(+1\sigma)-\ac{}(-1\sigma)|/2$.
 As in the measurements at \seventev{}, the precision is dominated by
 the statistical uncertainty, and the main sources of systematic
-uncertainty are the ones with a large impact on the size of the
-\wjets{} background, such as the uncertainty on the energy scale and
-resolution of lepton and jets. 
+uncertainty are the signal modeling, possibly affected by the limited
+MC statistics, and the ones with a large impact on the size of the
+\wjets{} background, such as the uncertainty on the jet energy scale
+and resolution. 
 
 \begin{table}[!htb]\centering
 \begin{tabular}{l c}
@@ -323,8 +338,10 @@ Total uncertainty                                   & $0.006$ \\
 The asymmetry spectrum as a function of \mtt{} is compared in
 Fig.~\ref{fig:8tevacvsmtt} with the theoretical SM predictions.
 As for the \seventev{} measurements, the results are compared with new
-physics predictions for color octets with low and high
-masses~\cite{Aguilar-Saavedra:2014nja}.
+physics predictions for right--handed color octets with low and high
+masses~\cite{Aguilar-Saavedra:2014nja}. The new physics models are
+tuned to be compatible with the Tevatron \afb{} measurements and the
+\ac{} measurements at \seventev{}.
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.6\textwidth]{figures/results/acvsmtt8tev}
   \caption{Measured \ac{} spectrum as a function of \mtt{} at
@@ -333,8 +350,32 @@ masses~\cite{Aguilar-Saavedra:2014nja}.
     the kinematic reach of current LHC searches (blue line).}
   \label{fig:8tevacvsmtt}
 \end{figure}
-The \ac{} values are summarized in Table~\ref{tab:results_mtt_8tev}.
+The measured \ac{} values are summarized in
+Table~\ref{tab:results_mtt_8tev} and the correlation coefficients are
+shown in Table~\ref{tab:corr_mtt8tev}.
 \input{tex/results_table8tev.tex}
+%
+\begin{table}[!htp]\centering
+\begin{tabular}{l c c c c c c}
+  \toprule
+  &\multicolumn{6}{c}{$\mtt{}~[\rm{GeV}]$}    \\
+  $\rho_{ij}$ & $0$--$420$ & $420$--$500$ & $500$--$600$ &
+  $600$--$750$ & $750$--$900$ & $>900$ \\
+  \midrule
+  $0$--$420$      & $1$ & $-0.270$ & $0.117$ & $-0.061$ & $0.008$ & $-0.002$ \\
+  $420$--$500$    &     & $1$           & $-0.596$ & $0.217$ &
+  $-0.053$ & $0.012$ \\
+  $500$--$600$    &     &                   & $1$          & $-0.590$
+  & $0.175$ & $-0.036$ \\
+  $600$--$750$    &     &         &         & $1$     & $-0.578$ & $0.132$ \\
+  $750$--$900$    &     &         &         &            & $1$ & $-0.497$ \\
+  $>900$               &     &         &         &         &   &$1$     \\
+  \bottomrule
+\end{tabular}
+\caption{Correlation coefficients for the \ac{} values measured as a
+  function of \mtt{} at \eighttev{}.}
+\label{tab:corr_mtt8tev}
+\end{table}
 
 \subsection{Comparison of ATLAS and CMS results}
 
@@ -342,7 +383,7 @@ Preliminary results at \eighttev{} from the CMS
 collaboration~\cite{CMS-PAS-TOP-12-033} include the measurement of
 \ac{}, inclusively and as a function of \mtt{}, \pttt{} and \ytt{}.
 The reported inclusive asymmetry
-$\ac{}=0.005\pm0.007(stat.)\pm0.006(syst.)$ is compatible with the SM
+\mbox{$\ac{}=0.005\pm0.007(stat.)\pm0.006(syst.)$} is compatible with the SM
 predictions and with the measurement presented in this dissertation
 with a total uncertainty about twice as large. Both
 statistical and systematic uncertainties are larger than the ones
