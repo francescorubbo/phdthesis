@@ -18,7 +18,7 @@ most likely association between reconstructed objects and \ttbar{} final state p
 two $b$ quarks, two light quarks, one lepton and one neutrino.
 The free parameters of the likelihood are the parton energies, the
 lepton transverse momentum and the three neutrino momentum components.
-The likelihood is defined as
+Fora given jet--parton association, the likelihood is defined as
 \begin{eqnarray}
 L & = & \mathcal{B}(\widetilde{E}_{\rm{p,}1}, \widetilde{E}_{\rm{p,}2} | m_W,  \Gamma_W)
       \cdot \mathcal{B}(\widetilde{E}_{\rm l}, \widetilde{E}_{\nu} | m_W, \Gamma_W) \cdot \nonumber \\
@@ -52,9 +52,10 @@ where:
 The likelihood is evaluated for all permutations of four reconstructed
 jets assigned to the four partons.
 In events where five or more jets were reconstructed, only
-the five highest-\pt{} jets are considered. The most probable
-combination, out of all the possible four-jets permutations, is
-chosen. The role of the probability term $P(b-\textrm{tag} ~|
+the five highest-\pt{} jets are considered. 
+Out of all the possible permutations, the combination giving the
+highest likelihood, after maximization over the free parameters, is chosen.
+The role of the probability term $P(b-\textrm{tag} ~|
 ~\textrm{quark flavor})$ is to favor the association of $b$--jets with
 the $b$ quarks from the top quark decays. The probability is defined,
 for a given permutation of four jets, as the product of $b$-tag
@@ -66,37 +67,37 @@ P(b-\textrm{tag}~|~\textrm{quark flavor}) = \prod_{j}
 \begin{cases}
 \epsilon_b~\text{if tagged jet associated with $b$ quark}\\
 (1-\epsilon_b)~\text{if non-tagged jet associated with $b$ quark} \\
-\epsilon_{light}~\text{if non-tagged jet associated with quark from
+\epsilon_{light}~\text{if tagged jet associated with quark from
   $W$ boson} \\
-(1-\epsilon_{light})~\text{if tagged jet associated with quark from
+(1-\epsilon_{light})~\text{if non-tagged jet associated with quark from
   $W$ boson} \\
 \end{cases}
 \end{equation} 
 The average values for $\epsilon_b$ and $\epsilon_{light}$ are $70\%$
 and $0.8\%$ respectively, even though they mildly depend on
-jet \pt{} and pseudo--rapidity. 
+jet \pt{} and $\eta$. 
 
-The transfer functions $\mathcal{W}(E_{truth}|E_{reco})$ describe the probability that the
+The transfer functions $\mathcal{W}(E_{reco}|E_{truth})$ describe the probability that the
 reconstructed energy $E_{reco}$ corresponds to a true value
 $E_{truth}$.
 The transfer functions are parametrized as double gaussians
 \begin{equation}
   \label{eq:doublegaus}
-  \mathcal{W}(E_\mathrm{truth}|E_\mathrm{reco}) = \frac{1}{\sqrt{2\pi}(p_2+p_3p_5)}\Bigg[ \exp\Bigg(-\frac{(\Delta E - p_1)^2}{2p_2^2}\Bigg) + p_3\exp\Bigg(-\frac{(\Delta E - p_4)^2}\
-  {2p_5^2}\Bigg) \Bigg]\phantom{,}
+  \mathcal{W}(E_\mathrm{reco}|E_\mathrm{truth}) = \frac{1}{\sqrt{2\pi}(p_2+p_3p_5)}\Bigg[ \exp\Bigg(-\frac{(\Delta E - p_1)^2}{2p_2^2}\Bigg) + p_3\exp\Bigg(-\frac{(\Delta E - p_4)^2}\
+  {2p_5^2}\Bigg) \Bigg],
 \end{equation}
 where $\Delta E = (E_{truth}-E_{reco})/E_{truth}$, and the $p_i$
 free parameters are estimated in different regions of $E_{truth}$ and
 $\eta$ for each particle. Figure~\ref{fig:transferfunctions} show, as
-example, the transfer functions for $b$ quarks and for electrons.  
+example, the transfer functions for electrons and for $b$ quarks.
 
 \begin{figure}[!htb]\centering
-  \includegraphics[width=0.495\textwidth]{figures/reconstruction/btf}
   \includegraphics[width=0.495\textwidth]{figures/reconstruction/eletf}
+  \includegraphics[width=0.495\textwidth]{figures/reconstruction/btf}
   \caption[Energy evolution of transfer functions]{
     Energy evolution of the transfer functions for electrons in the
     range $0.8<\eta<1.37$ (left) and for $b$ quarks in the range
-    $1.37<\eta<1.52$ (right). 
+    $0<\eta<0.8$ (right). 
     \label{fig:transferfunctions}
     }
 \end{figure}
@@ -114,15 +115,19 @@ typically occurs in three cases:
 \item {\it jets outside acceptance}: the jet originating from a given
   parton does not satisfy the reconstruction requirements, such as
   $\pt{}>25 \GeV$ or pseudo--rapidity within the $|\eta|<2.5$ range.
-  The fraction of events where all \ttbar{} final state jets are
-  reconstructed is $25-40\%$, depending on the $b$--jets requirement.
-\item {\it jets outside selection}: not all four jets corresponding to
-  the \ttbar{} decay are used in the reconstruction algorithm.
-  This occurs approximately $50\%$ of the times for events with more
-  than five jets and all matched jets within acceptance.
+  The fraction of events where all \ttbar{} final state partons are
+  reconstructed as jets is $25-40\%$, depending on the $b$--jets
+  requirement.
+\item {\it jets outside selection}: given that five jets are
+  considered, in events with more
+  than five jets, some of the jets corresponding to
+  the \ttbar{} decay are not used in the reconstruction algorithm.
+  While events with high jet multiplicity are rare, for those events
+  this occurs approximately $50\%$ of the times and all matched jets
+  within acceptance.
 \item {\it jets mis-assigned}: one or more jets are not assigned to
   the correct parton. It occurs about $15-25\%$ of the times for
-  events where the correct jets where used in the reconstruction
+  events where the correct jets were used in the reconstruction
   algorithm, depending on the $b$--jet requirement.
 \end{itemize}
 
@@ -150,7 +155,7 @@ the reconstruction performance is the efficiency of reconstructing
 correctly the \dy{} sign, defined as
 \begin{equation}
   \label{eq:dysign}
-  \epsilon = \frac{N(\dy{}_{truth}\cdot\dy{}_{reco}>0)}{N_{tot}}\phantom{.}
+  \epsilon = \frac{N(\dy{}_{truth}\cdot\dy{}_{reco}>0)}{N_{tot}}.
 \end{equation}
 Events where the \dy{} sign is measured incorrectly can occur when the top and
 antitop quarks are not reconstructed from the correct final
@@ -161,7 +166,7 @@ As a result the asymmetry of the distribution of reconstructed \dy{}
 is diluted by a factor 
 \begin{equation}
   \label{eq:dilution}
-D = 2\times{}\epsilon - 1\phantom{.}
+D = 2\times{}\epsilon - 1.
 \end{equation}  
 
 The efficiency $\epsilon$, measured in the \ttbar{} simulated sample,
@@ -215,14 +220,13 @@ rapidity \ytt{}, and velocity along the beam axis \betatt{} for the
   \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/pttt}
   \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/ytt}
   \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/betatt}
-  \caption[Control plots for reconstructed quantities at $\sqrt{s} = 7
-  \TeV{}$]{Control plots for \dy{} (top left), invariant mass \mtt{} 
-    (top right), transverse momentum \pttt{} (centre left), rapidity
-    \ytt{} (centre right) and velocity \betatt{} (bottom)
-    distributions for the \ejets{} and \mujets{} channels combined in the
-    tagged sample at $\sqrt{s} = 7 \TeV{}$. The uncertainty on the
-    total prediction includes both the statistical and the systematic
-    components.} 
+  \caption{Comparison between data and prediction for \dy{} (top
+    left), invariant mass \mtt{} (top right), transverse momentum
+    \pttt{} (centre left), absolute rapidity $|\ytt{}|$ (centre right)
+    and velocity \betatt{} (bottom) distributions for the \ejets{} and
+    \mujets{} channels combined in the tagged sample at $\sqrt{s} = 7
+    \TeV{}$. The uncertainty on the total prediction includes both the
+    statistical and the systematic components.} 
   \label{fig:datamcreco2011}
 \end{figure}
 
@@ -243,25 +247,21 @@ rapidity \ytt{}, and velocity along the beam axis \betatt{} for the
 %  \label{fig:datamcreco2012}
 %\end{figure}
 
-\subsection{Likelihood requirement}
-\label{sec:Reconstruction:lhood}
-
-For the analysis of the 2011 dataset collected at $\sqrt{s} = 8
-\TeV{}$, a requirement on reconstruction quality is applied to improve
-the resolution on reconstructed quantities.
-A 20\% reduction on the \ac{} uncertainty in the highest mass bin ($\mtt{}>750\GeV{}$)
-is achieved by requiring the logarithm of the likelihood ({\it log-likelihood}) to be $>-55$,
-as shown in Figure~\ref{fig:errvsllcut}.
-
+For the differential measurements at $\sqrt{s} = 7 \TeV{}$, a
+requirement on reconstruction quality is applied to improve the
+resolution on reconstructed quantities.
+A 20\% reduction on the \ac{} uncertainty in the highest mass bin
+($\mtt{}>750\GeV{}$) is achieved by requiring the logarithm of the
+likelihood ({\it log(L)}) to be $>-55$, as shown in Figure~\ref{fig:errvsllcut}.
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.495\textwidth]{figures/reconstruction/asymm5errVsLLcut}
   \caption{
     \label{fig:errvsllcut}
-    Scan of the statistical uncertainty on \ac{} for $\mtt{}>750\GeV{}$
-    with different requirement on log-likelihood.
+    Evolution of the statistical uncertainty on \ac{} for
+    $\mtt{}>750\GeV{}$ as a function of the minimum requirement on
+    log(L).
   }
 \end{figure}
-
 The modeling of the log-likelihood is validated by comparing its
 distribution in data with the prediction, as shown in Figure~\ref{fig:logl}.
 
