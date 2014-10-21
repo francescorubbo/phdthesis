@@ -207,7 +207,7 @@ compatible with the SM prediction. The comparison between values of
 \ac{} as measured by ATLAS and CMS, and their combination is shown in
 Fig.~\ref{fig:combineac}.
 \begin{figure}[!htb]\centering
-  \includegraphics[width=0.45\textwidth]{figures/results/combineac7tev} 
+  \includegraphics[width=0.6\textwidth]{figures/results/combineac7tev} 
   \caption{Summary of the single \ac{} measurements and the LHC
     combination compared to the theory prediction (calculated at NLO
     including electroweak corrections). The inner red error bars
@@ -217,7 +217,21 @@ Fig.~\ref{fig:combineac}.
   \label{fig:combineac}
 \end{figure}
 The combination of the differential measurements is not possible, as a
-different binning has been used in each case.
+different binning has been used in each case. A side--by--side
+comparison is shown in Fig.~\ref{fig:comparediff7tev}. 
+
+\begin{figure}[!htb]\centering
+  \includegraphics[width=0.475\textwidth]{figures/results/dy_mtt} 
+  \includegraphics[width=0.475\textwidth]{figures/results/dy_mttcms} 
+  \includegraphics[width=0.475\textwidth]{figures/results/dy_pttt} 
+  \includegraphics[width=0.475\textwidth]{figures/results/dy_ptttcms} 
+  \includegraphics[width=0.475\textwidth]{figures/results/dy_ytt} 
+  \includegraphics[width=0.475\textwidth]{figures/results/dy_yttcms} 
+  \caption{Comparison of the differential \ac{} measurements by ATLAS
+    (left) and CMS (right) as a function of \mtt{} (top), \pttt{}
+    (center) and |\ytt{}| (bottom) at \seventev{}.} 
+  \label{fig:comparediff7tev}
+\end{figure}
 
 \subsection{Interpretation}
 
@@ -262,8 +276,8 @@ prediction and data for the 18 bins used in the inclusive \ac{}
 measurement before and after the simultaneous unfolding procedure and
 background calibration.
 \begin{figure}[!htb]\centering
-  \includegraphics[width=0.6\textwidth]{figures/results/datamc_muonele_prefit} 
-  \includegraphics[width=0.6\textwidth]{figures/results/datamc_muonele_postfit} 
+  \includegraphics[width=0.475\textwidth]{figures/results/datamc_muonele_prefit} 
+  \includegraphics[width=0.475\textwidth]{figures/results/datamc_muonele_postfit} 
   \caption{Comparison between prediction and data for the 18 bins used
   in the inclusive \ac{} measurement before (top) and after (bottom)
   the simultaneous unfolding procedure and background calibration. The
@@ -352,7 +366,8 @@ tuned to be compatible with the Tevatron \afb{} measurements and the
 \end{figure}
 The measured \ac{} values are summarized in
 Table~\ref{tab:results_mtt_8tev} and the correlation coefficients are
-shown in Table~\ref{tab:corr_mtt8tev}.
+shown in Table~\ref{tab:corr_mtt8tev}. The expected breakdown of the
+systematic uncertainties is detailed in App.~\ref{app:correlations}.
 \input{tex/results_table8tev.tex}
 %
 \begin{table}[!htp]\centering
@@ -391,10 +406,13 @@ reported in this work. The statistical precision is presumably
 degraded by the use of a large number of \dy{} bins in the unfolding
 procedure, while the larger impact of all systematic components
 points to a less precise background estimation.
+Figure~\ref{fig:comparediff8tev} shows a side--by--side comparison of
+the ATLAS and CMS measurements as a function of \mtt{}.
 
-%The asymmetry values corresponding to the spectra in
-%Fig.~\ref{fig:8tevacvsmtt} are detailed in
-%App.~\ref{app:differentialresults}, together with the breakdown of the
-%systematic uncertainties (App.~\ref{app:systematics}) and the
-%correlation matrix (App.~\ref{app:correlations}).
-
+\begin{figure}[!htb]\centering
+  \includegraphics[width=0.475\textwidth]{figures/results/acvsmtt8tev}
+  \includegraphics[width=0.475\textwidth]{figures/results/acvsmtt8tevcms}
+  \caption{Comparison of the differential \ac{} measurements by ATLAS
+    (left) and CMS (right) as a function of \mtt{} at \eighttev{}.} 
+  \label{fig:comparediff8tev}
+\end{figure}
