@@ -1,12 +1,20 @@
 \chapter{Kinematic Reconstruction}
 \label{sec:reconstruction}
 
-In order to access the kinematic quantities of the \ttbar{} system, an
-event--by--event estimation of the four momenta of \ttbar{}
-pair is required. This section describes the kinematic fit performed
-to associate the reconstructed objects to the final state particles of
-the semi--leptonic \ttbar{} decay and obtain the four momenta of the
-top quark and antiquark.
+As discussed in Sec.~\ref{sec:genstrategy}, the \ac{} measurement relies on
+the event--by--event reconstruction of the four--momenta of the
+\ttbar{} pair. Inferring the four--momenta from the
+reconstructed objects presents the challenges of associating jets with
+the partons from which they originated, reconstructing the
+four--momentum of the neutrino from the missing transverse momentum
+and pairing the $b$--jets with the decay products of the correct $W$
+boson. The task is complicated by the presence of additional jets from
+initial and final state radiation and by the large uncertainty on the
+jet energy determination. 
+This section describes a likelihood fit procedure that exploits the
+kinematic and experimental handles to associate the reconstructed
+objects to the final state particles of the semi--leptonic \ttbar{}
+decay and obtain the four--momenta of the top quark and antiquark.
 
 \section{Kinematic fit}
 
@@ -18,29 +26,32 @@ most likely association between reconstructed objects and \ttbar{} final state p
 two $b$ quarks, two light quarks, one lepton and one neutrino.
 The free parameters of the likelihood are the parton energies, the
 lepton transverse momentum and the three neutrino momentum components.
-Fora given jet--parton association, the likelihood is defined as
+For a given jet--parton association, the likelihood is defined as
 \begin{eqnarray}
-L & = & \mathcal{B}(\widetilde{E}_{\rm{p,}1}, \widetilde{E}_{\rm{p,}2} | m_W,  \Gamma_W)
-      \cdot \mathcal{B}(\widetilde{E}_{\rm l}, \widetilde{E}_{\nu} | m_W, \Gamma_W) \cdot \nonumber \\
-           &   & \mathcal{B}(\widetilde{E}_{\rm{p,}1}, \widetilde{E}_{\rm{p,}2},     \widetilde{E}_{\rm{p,}3} | m_t, \Gamma_t)
-                 \cdot \mathcal{B}(\widetilde{E}_{\rm l}, \widetilde{E}_{\nu},    \widetilde{E}_{\rm{p,}4} | m_t, \Gamma_t) \cdot \nonumber \\
-           &   & \mathcal{W}( \hat{E}_{x}^{miss}| \widetilde{p}_{x, \nu})
-                 \cdot \mathcal{W}(\hat{E}_{y}^{miss} |    \widetilde{p}_{y, \nu})
-                 \cdot \mathcal{W}(\hat{E}_{\rm{lep}} | \widetilde{E}_{\rm{lep}}) \cdot \nonumber \\
-           &   & \prod_{\rm{i=1}}^4 \mathcal{W}(\hat{E}_{\rm{jet,}i} | \widetilde{E}_{\rm{p,}i})
-                 \cdot P(\textrm{$b$ tag} ~| ~\textrm{quark flavor}),
+L & = & \mathcal{B}(\hat{p}_{q_1}, \hat{p}_{q_2} | m_W,  \Gamma_W)
+      \cdot \mathcal{B}(\hat{p}_{\ell}, \hat{p}_{\nu} | m_W, \Gamma_W) \cdot \nonumber \\
+           &   & \mathcal{B}(\hat{p}_{q_1}, \hat{p}_{q_2},\hat{p}_{q_3} | m_t, \Gamma_t)
+                 \cdot \mathcal{B}(\hat{p}_{\ell}, \hat{p}_{\nu},\hat{p}_{q_4} | m_t, \Gamma_t) \cdot \nonumber \\
+           &   & \mathcal{W}( \widetilde{E}_{x}^{Miss}| \hat{p}_{x, \nu})
+                 \cdot \mathcal{W}(\widetilde{E}_{y}^{Miss} |    \hat{p}_{y, \nu})
+                 \cdot \mathcal{W}(\widetilde{E}_{\ell} | \hat{E}_{\ell}) \cdot \nonumber \\
+           &   & \prod_{i=1}^4 \mathcal{W}(\widetilde{E}_{jet_i} | \hat{E}_{q_i})
+                 \cdot P(\textrm{$b$ tag} ~| ~\textrm{flavor}),
 \label{eq:klflikelihood}
 \end{eqnarray}
 where:
 \begin{itemize}
-\item the $\widetilde{\square{}}$ are the partonic quantities to be estimated
-       and $\hat{\square{}}$ are the measured values;
-\item $\mathcal{B}(\widetilde{E}|m,\Gamma)\propto((E^2-m^2)^2+m^2\Gamma^2)^{-1}$ is
-  the Breit-Wigner parametrization of the parton energies
-  $\widetilde{E}_{\rm{p,}i}$, lepton energy $\widetilde{E}_{\rm{lep}}$
-  and neutrino energy $\widetilde{E}_{\nu}$, in the $W$ boson and top quark decays.
-\item $\mathcal{W}$ is the transfer function mapping the measured energy
-      of a reconstructed object to the energy of the corresponding final state particle.
+\item the $\hat{p}$ and $\hat{E}$ are the four--momenta and energies
+  of the final state particles to be estimated, and
+  $\widetilde{\square{}}$ are the measured values; 
+\item $\mathcal{B}(\hat{p}|m,\Gamma)\propto((\hat{p}^2-m^2)^2+m^2\Gamma^2)^{-1}$ is
+  the Breit-Wigner parametrization of the four--momenta of the quarks
+  $\hat{p}_{p_i}$, the lepton $\hat{p}_{\ell}$ and the neutrino
+  $\hat{p}_{\nu}$, in the $W$ boson and top quark decays.
+\item $\mathcal{W}$s are probability densities, referred to as {\it
+    transfer functions}, mapping the measured energy of a
+  reconstructed object to the energy of the corresponding final state
+  particle.
 \item The mass and width of the $W$ boson and of the top quark are set
   to their measured values $m_W = 80.4~\GeV{}$, $\Gamma_W = 2.1~\GeV{}$, $m_t =
        172.5~\GeV{}$, and $\Gamma_t = 1.5~\GeV{}$. 
@@ -52,7 +63,10 @@ where:
 The likelihood is evaluated for all permutations of four reconstructed
 jets assigned to the four partons.
 In events where five or more jets were reconstructed, only
-the five highest-\pt{} jets are considered. 
+the five jets are considered. In the analysis at \seventev{} the five
+highest--\pt{} jets are used, while, at \eighttev{}, the two jets with the
+highest $b$--tagging weight are always considered, in order to ensure
+a better reconstruction in the sample with at least two $b$--jets.
 Out of all the possible permutations, the combination giving the
 highest likelihood, after maximization over the free parameters, is chosen.
 The role of the probability term $P(b-\textrm{tag} ~|
@@ -65,14 +79,14 @@ associated quark:
 \begin{equation}
 P(b-\textrm{tag}~|~\textrm{quark flavor}) = \prod_{j}
 \begin{cases}
-\epsilon_b~\text{if tagged jet associated with $b$ quark}\\
-(1-\epsilon_b)~\text{if non-tagged jet associated with $b$ quark} \\
-\epsilon_{light}~\text{if tagged jet associated with quark from
-  $W$ boson} \\
-(1-\epsilon_{light})~\text{if non-tagged jet associated with quark from
-  $W$ boson} \\
+\epsilon_b~\text{\small{if tagged jet associated with $b$ quark}}\\
+(1-\epsilon_b)~\text{\small{if non-tagged jet associated with $b$ quark}} \\
+\epsilon_{light}~\text{\small{if tagged jet associated with quark from
+  $W$ boson}} \\
+(1-\epsilon_{light})~\text{\small{if non-tagged jet associated with quark from
+  $W$ boson}} \\
 \end{cases}
-\end{equation} 
+\end{equation}
 The average values for $\epsilon_b$ and $\epsilon_{light}$ are $70\%$
 and $0.8\%$ respectively, even though they mildly depend on
 jet \pt{} and $\eta$. 
@@ -162,19 +176,12 @@ antitop quarks are not reconstructed from the correct final
 state particles (mis-reconstruction). Even when the reconstruction
 algorithm associates the correct particles, small \dy{} values can be
 reconstructed with the wrong sign due to resolution effects.
-As a result the asymmetry of the distribution of reconstructed \dy{}
-is diluted by a factor 
-\begin{equation}
-  \label{eq:dilution}
-D = 2\times{}\epsilon - 1.
-\end{equation}  
-
-The efficiency $\epsilon$, measured in the \ttbar{} simulated sample,
-is $\approx75\%$ corresponding to a dilution factor
-$D=2\times0.75-1=0.5$.
 The efficiency $\epsilon$ depends on the kinematic region
 considered. As shown in Fig.~\ref{fig:dysign}, the \dy{} reconstruction performs
-better at high \mtt{}. 
+better at high \mtt{}, where the \ttbar{} pair is produced with a wide
+opening angle and large momentum. At $\mtt{}\geq1\TeV{}$, the efficiency
+starts to degrade are the top quark decay products are boosted together and
+cannot be resolved.
 
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.495\textwidth]{figures/reconstruction/signdy_eff}
@@ -185,35 +192,40 @@ better at high \mtt{}.
   }
 \end{figure}
 
-%Table~\ref{tab:actruthreco} shows the evolution of the asymmetry
-%values due to selection and reconstruction effects. 
-%
-%\begin{table}[!htb]\centering
-%  \begin{tabular}{ l c c c}
-%    \toprule
-%    sample      & true \ac{} & true \ac{} after selection & reconstructed \ac{}\\
-%    \midrule
-%    \powheg{} &                &     &    \\
-%    \mcatnlo{} &                &     &    \\
-%    \bottomrule
-%  \end{tabular}
-%  \caption{\ac{} values in simulated \ttbar{} samples at truth and
-%    reconstructed level}
-%  \label{tab:actruthreco}
-%\end{table}
+The integrated efficiency $\epsilon$, measured in the \ttbar{} simulated sample,
+is $\approx75\%$. As a consequence, the inclusive asymmetry of the distribution
+of reconstructed \dy{} is diluted by a factor 
+\begin{equation}
+  \label{eq:dilution}
+D = 2\times{}\epsilon - 1=2\times0.75-1=0.5.
+\end{equation}  
+Table~\ref{tab:actruthreco} shows the evolution of the asymmetry
+values due to selection and reconstruction effects. 
+
+\begin{table}[!htb]\centering
+  \begin{tabular}{ c c c}
+    \toprule
+    true \ac{} & true \ac{} after selection & reconstructed \ac{}\\
+    \midrule
+    0.57\% & 0.36\% &  0.25\%  \\
+    \bottomrule
+  \end{tabular}
+  \caption{\ac{} values in the simulated \ttbar{} sample at truth and
+    reconstructed level.}
+  \label{tab:actruthreco}
+\end{table}
 
 \section{Comparison between data and prediction}
 \label{sec:datamcreco}
 
 The modeling of the reconstructed quantities is validated by comparing
 the distributions as observed in data with the prediction. 
-Figure~\ref{fig:datamcreco2011} 
-%and ~\ref{fig:datamcreco2012}
+Figure~\ref{fig:datamcreco2011} and ~\ref{fig:datamcreco2012}
 shows the comparison of the distributions of
 the top quark pair invariant mass \mtt{}, transverse momentum \pttt{},
 rapidity \ytt{}, and velocity along the beam axis \betatt{} for the
-2011 dataset at $\sqrt{s} = 7 \TeV{}$.
-                                   
+datasets at \seventev{} and \eighttev{}, respectively.
+%                                   
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/dy}
   \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/mtt}
@@ -224,30 +236,31 @@ rapidity \ytt{}, and velocity along the beam axis \betatt{} for the
     left), invariant mass \mtt{} (top right), transverse momentum
     \pttt{} (centre left), absolute rapidity $|\ytt{}|$ (centre right)
     and velocity \betatt{} (bottom) distributions for the \ejets{} and
-    \mujets{} channels combined in the tagged sample at $\sqrt{s} = 7
-    \TeV{}$. The uncertainty on the total prediction includes both the
-    statistical and the systematic components.} 
+    \mujets{} channels combined in the tagged sample at
+    \seventev{}. The uncertainty on the total prediction includes both
+    the statistical and the systematic components.} 
   \label{fig:datamcreco2011}
 \end{figure}
+%
+\begin{figure}[!htb]\centering
+  \includegraphics[width=0.495\textwidth]{figures/reconstruction/8TeV/1tagex/topy}
+  \includegraphics[width=0.495\textwidth]{figures/reconstruction/8TeV/1tagex/pttt}
+  \includegraphics[width=0.495\textwidth]{figures/reconstruction/8TeV/2tagin/dy}
+  \includegraphics[width=0.495\textwidth]{figures/reconstruction/8TeV/2tagin/mtt}
+  \caption{Comparison between distributions of kinematic quantities in
+    data and prediction for the \ejets{} and \mujets{} channels
+    combined at \eighttev{}. Top: top quark rapidity $y$ (left) and
+    transverse momentum \pttt{} (right) in the sample with 1 $b$--jet.
+    Bottom: rapidity difference \dy{} (left) and invariant mass \mtt{}
+    (right) in the sample with at least 2 $b$--jets.
+    The sample composition is calibrated to data (see
+    Sec.~\ref{sec:marginalization}), and the corresponding normalization
+    uncertainty is shown.} 
+  \label{fig:datamcreco2012}
+\end{figure}
+%
 
-%\begin{figure}[!htb]\centering
-%  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/dy}
-%  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/mtt}
-%  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/pttt}
-%  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/ytt}
-%  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/betatt}
-%  \caption[Control plots for reconstructed quantities at $\sqrt{s} = 8
-%  \TeV{}$]{Control plots for \dy{} (top left), invariant mass \mtt{} 
-%    (top right), transverse momentum \pttt{} (centre left), rapidity
-%    \ytt{} (centre right) and velocity \betatt{} (bottom)
-%    distributions for the \ejets{} and \mujets{} channels combined in the
-%    tagged sample at $\sqrt{s} = 8 \TeV{}$. The uncertainty on the
-%    total prediction includes both the statistical and the systematic
-%    components. [TO BE UPDATED]} 
-%  \label{fig:datamcreco2012}
-%\end{figure}
-
-For the differential measurements at $\sqrt{s} = 7 \TeV{}$, a
+For the differential measurements at \seventev{}, a
 requirement on reconstruction quality is applied to improve the
 resolution on reconstructed quantities.
 A 20\% reduction on the \ac{} uncertainty in the highest mass bin
@@ -255,23 +268,16 @@ A 20\% reduction on the \ac{} uncertainty in the highest mass bin
 likelihood ({\it log(L)}) to be $>-55$, as shown in Figure~\ref{fig:errvsllcut}.
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.495\textwidth]{figures/reconstruction/asymm5errVsLLcut}
+  \includegraphics[width=0.495\textwidth]{figures/reconstruction/hll_muonele_7tev}
   \caption{
     \label{fig:errvsllcut}
     Evolution of the statistical uncertainty on \ac{} for
     $\mtt{}>750\GeV{}$ as a function of the minimum requirement on
-    log(L).
+    log(L) (left) and comparison of the log(L) distribution in data
+    and prediction (right) for the combined \ljets{} channel.
   }
 \end{figure}
 The modeling of the log-likelihood is validated by comparing its
-distribution in data with the prediction, as shown in Figure~\ref{fig:logl}.
+distribution in data with the prediction.
 
-\begin{figure}[!htb]\centering
-  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/ejets/hll_datamc_1taginTRF}
-  \includegraphics[width=0.495\textwidth]{figures/reconstruction/7TeV/mujets/hll_datamc_1taginTRF}                                                                            
-  \caption{
-    \label{fig:logl}
-    log-likelihood distributions for \ejets{} (left) and
-    for \mujets{} (right).
-    }
-\end{figure}
 
