@@ -2,7 +2,7 @@
   \centering
   \begin{tabular}{ l  rrr  rrr  rrr  rrr }
     \toprule
-    Channel & \multicolumn{3}{c}{$\mu$ + jets pretag} & \multicolumn{3}{c}{$\mu$ + jets tag} & \multicolumn{3}{c}{$e$ + jets pretag} & \multicolumn{3}{c}{$e$ + jets tag} \\ 
+    Channel & \multicolumn{3}{c}{$\mu$ + jets pretag} & \multicolumn{3}{c}{$\mu$ + jets $\geq1~b$--jet} & \multicolumn{3}{c}{$e$ + jets pretag} & \multicolumn{3}{c}{$e$ + jets $\geq1~b$--jet} \\ 
     \midrule
     \ttbar{}         & 34900 &$\!\!\!\pm\!\!\!$& 2200  & 30100 &$\!\!\!\pm\!\!\!$& 1900  & 21400 &$\!\!\!\pm\!\!\!$& 1300  & 18500 &$\!\!\!\pm\!\!\!$& 1100  \\ %NEW tt x-sec
     Single top       & 2460  &$\!\!\!\pm\!\!\!$& 120   & 1970  &$\!\!\!\pm\!\!\!$& 100   & 1530  &$\!\!\!\pm\!\!\!$& 80    & 1220  &$\!\!\!\pm\!\!\!$& 60   \\ 
@@ -24,7 +24,7 @@
     Observed                & \multicolumn{3}{c}{70845}  & \multicolumn{3}{c}{37568} & \multicolumn{3}{c}{40972}      & \multicolumn{3}{c}{21929} \\
     \bottomrule
   \end{tabular}
-  \caption[Event yields for the samples at $\sqrt{s} = 7 \TeV{}$]{
+  \caption{
     Numbers of expected events for the \ttbar{} signal and the various background 
     processes and observed events in data for the dataset 
     at $\sqrt{s} = 7 \TeV{}$.
@@ -36,7 +36,10 @@
 \begin{table}
   \begin{tabular}{ l  rrr  rrr  rrr  rrr }
     \toprule
-    Channel & \multicolumn{3}{c}{\mujets{} pretag} & \multicolumn{3}{c}{\mujets{} 0-tag} & \multicolumn{3}{c}{\mujets{} 1-tag} & \multicolumn{3}{c}{\mujets{} 2-tag} \\
+    Channel & \multicolumn{3}{c}{\mujets{} pretag} &
+    \multicolumn{3}{c}{\mujets{} 0 $b$--jets} &
+    \multicolumn{3}{c}{\mujets{} 1 $b$--jets} &
+    \multicolumn{3}{c}{\mujets{} $\geq2~b$--jets} \\
     \midrule      
     $t\bar{t}$                  & 203000 &$\!\!\!\pm\!\!\!$& 3000   & 21100 &$\!\!\!\pm\!\!\!$& 800   & 86100 &$\!\!\!\pm\!\!\!$& 1700 & 96100 &$\!\!\!\pm\!\!\!$& 900  \\
     Single top                  & 13300  &$\!\!\!\pm\!\!\!$& 1300   & 1950 &$\!\!\!\pm\!\!\!$& 220    & 6700 &$\!\!\!\pm\!\!\!$& 700   & 4600 &$\!\!\!\pm\!\!\!$& 400   \\
@@ -54,18 +57,20 @@
     Observed                    & \multicolumn{3}{c}{368324}        & \multicolumn{3}{c}{138490}      & \multicolumn{3}{c}{122230}     & \multicolumn{3}{c}{107604}     \\
     \bottomrule
   \end{tabular}
-  \caption[Event yields for the \mujets{} samples at $\sqrt{s} = 8 \TeV{}$]{
+  \caption{
     Numbers of expected events for the \ttbar{} signal and the various background 
     processes and observed events in data for the \mujets{} dataset
     at $\sqrt{s} = 8 \TeV{}$.
-    The calibrated yields and uncertainties are shown.}
+    The calibrated yields and total uncertainties (see~\ref{sec:marginalization}) are shown.}
   \label{tab:yields2012mu}
 \end{table}
 
 \begin{table}
   \begin{tabular}{ l  rrr  rrr  rrr  rrr }
     \toprule
-    Channel & \multicolumn{3}{c}{\ejets{} pretag} & \multicolumn{3}{c}{\ejets{} 0-tag} & \multicolumn{3}{c}{\ejets{} 1-tag} & \multicolumn{3}{c}{\ejets{} 2-tag} \\
+    Channel & \multicolumn{3}{c}{\ejets{} pretag} &
+    \multicolumn{3}{c}{\ejets{} 0 $b$--jets} &
+    \multicolumn{3}{c}{\ejets{} 1 $b$--jets} & \multicolumn{3}{c}{\ejets{} $\geq2~b$--jets} \\
     \midrule
     $t\bar{t}$            & 153100 &$\!\!\!\pm\!\!\!$& 2700   & 13900 &$\!\!\!\pm\!\!\!$& 700   & 63000 &$\!\!\!\pm\!\!\!$& 1600   & 76200 &$\!\!\!\pm\!\!\!$& 800  \\ 
     Single top            & 11300  &$\!\!\!\pm\!\!\!$& 1200   & 1540 &$\!\!\!\pm\!\!\!$& 200    & 5600 &$\!\!\!\pm\!\!\!$& 600     & 4200 &$\!\!\!\pm\!\!\!$& 400  \\
@@ -83,10 +88,10 @@
     Observed              & \multicolumn{3}{c}{283979}        & \multicolumn{3}{c}{103930}      & \multicolumn{3}{c}{94235}        & \multicolumn{3}{c}{85814}       \\
     \bottomrule
   \end{tabular}
-  \caption[Event yields for the \ejets{} samples at $\sqrt{s} = 8 \TeV{}$]{
+  \caption{
     Numbers of expected events for the \ttbar{} signal and the various background 
     processes and observed events in data for the \ejets{} dataset
     at $\sqrt{s} = 8 \TeV{}$.
-    The calibrated yields and uncertainties are shown.}
+    The calibrated yields and total uncertainties (see~\ref{sec:marginalization}) are shown.}
   \label{tab:yields2012ele}
 \end{table}

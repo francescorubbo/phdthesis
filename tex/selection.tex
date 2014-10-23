@@ -205,6 +205,8 @@ background events. This allows to achieve a suppression of the
   \label{tab:metmtwcuts}
 \end{table}
 
+\clearpage
+
 \section{Signal and background modeling}
 \label{sec:bckgmodel}
 
@@ -421,7 +423,7 @@ The three calibration factors for \wbb{}/\wcc{}, \wc{} and \wlight{}
 obtained from the inclusive \ac{} measurements are reported in
 Table~\ref{tab:wsf}. It has been checked that these factors are
 consistent between \ejets{} and \mujets{} channels (see
-App.~\ref{app:unf:svsmu}). 
+App.~\ref{app:unf:evsmu}). 
 These factors are not expected to be consistent
 with the ones shown in Table~\ref{tab:wsf}, since they represent
 calibrations of different simulation chains (\alpgen{}+\herwig{} is
@@ -467,8 +469,8 @@ determine the multijet background in the selected sample from data
 with a technique referred to as {\it matrix method}~\cite{matrixmethod}.
 
 The matrix method is based on the selection of two categories of
-events: the ones that satisfy loose lepton selection requirements, and
-the ones that satisfy tight lepton selection requirements. The tight
+events: events that satisfy loose lepton selection requirements, and
+events that satisfy tight lepton selection requirements. The tight
 requirements are the ones used in the analysis (see
 Sec.~\ref{sec:electrons} and Sec.~\ref{sec:muons}), while the loose
 selection is obtained by applying looser isolation and identification
@@ -488,19 +490,19 @@ the number of events with one tight lepton can be written as:
   N^\mathrm{tight}
   & = & N^\mathrm{tight}_\mathrm{real}
   + N^{\mathrm{tight}}_\mathrm{fake} =
-  \effReal{}N^\mathrm{loose}_\mathrm{real} + \effFake{}N^\mathrm{loose}_\mathrm{fake}
+  \effReal{}N^\mathrm{loose}_\mathrm{real} + \effFake{}N^\mathrm{loose}_\mathrm{fake},
   \label{eqn:intro-mm-Nloose}
 \end{eqnarray}
-%                                                                                             
-where $N^\mathrm{loose}_\mathrm{real}$ is the number of events with a
-real lepton satisfying loose lepton requirements,
-$N^\mathrm{loose}_\mathrm{fake}$ is the number of multijet events
-without a ``real'' lepton but still satisfying loose
-lepton requirements, and the same are $N^\mathrm{tight}_\mathrm{real}$
-and $N^\mathrm{tight}_\mathrm{fake}$ for the tight
-lepton requirements. The marginal efficiency
-$\epsilon=N^\mathrm{tight}/N^\mathrm{loose}$ is different for real
-leptons and for fake leptons. The real--lepton efficiency
+%
+where $N^\mathrm{loose}_\mathrm{real}$ and
+$N^\mathrm{tight}_\mathrm{real}$ are the number of events with a real
+lepton satisfying loose and tight lepton requirements, respectively,
+and $N^\mathrm{loose}_\mathrm{fake}$ and
+$N^\mathrm{tight}_\mathrm{fake}$ are the number of events without a ``real''
+lepton but still satisfying loose and tight lepton requirements, respectively.
+The loose lepton selection is defined so that the marginal efficiency
+$\epsilon=N^\mathrm{tight}/N^\mathrm{loose}$ is sufficiently different between real
+leptons and fake leptons. The real--lepton efficiency
 %                                                                                             
 \begin{equation}
   \effReal{}
@@ -510,7 +512,7 @@ is measured in data events with $Z$ boson decays in two leptons.
 The fake--lepton efficiency
 \begin{equation}
   \effFake{}
-  = \frac{N^\mathrm{tight}_\mathrm{fake}}{N^\mathrm{loose}_\mathrm{fake}}.
+  = \frac{N^\mathrm{tight}_\mathrm{fake}}{N^\mathrm{loose}_\mathrm{fake}}
   \label{eqn:intro-mm-real-fake}
 \end{equation}
 is measured in data control regions with small \met{} and \mtw{},
@@ -532,10 +534,12 @@ $N^\mathrm{loose}$ and $N^\mathrm{tight}$, obtaining:
   \label{eqn:intro-mm-tight_fake}
 \end{equation}
 %                                                                                             
-The sample of multijet events is therefore estimated by weighing the
-selected data events, where the weight for tight events is
-$\effFake{}(\effReal{}-1)/(\effReal{}-\effFake{})$ and the weight for
-loose-not-tight events is
+Therefore, the QCD multijet prediction is estimated by weighing the
+selected data events:
+events satisfying the tight lepton requirements are assigned a weight
+equal to $\effFake{}(\effReal{}-1)/(\effReal{}-\effFake{})$, while
+events satisfying the loose lepton requirements, but not the tight
+requirements, are assigned a weight equal to
 $(\effFake{}\cdot{}\effReal{})/(\effReal{}-\effFake{})$. This allows
 the prediction of not only the normalization, but also the shape of
 kinematic distributions for the QCD multijet background.
@@ -555,13 +559,14 @@ distributions as observed in the data samples with the corresponding
 predictions from simulation. 
 Before applying $b$--tagging requirements, the sample composition can
 be studied without biases toward a specific flavor composition. As
-shown in the yield tables, the purity of the \ttbar{} signal is about
+shown in Tables~\ref{tab:yields2011}--\ref{tab:yields2012ele}, 
+the purity of the \ttbar{} signal is about
 50\%, while the largest background comes from the \wjets{}
 process. Fig.~\ref{fig:pretagdatamc} shows that the various
 backgrounds populate different kinematic regions depending on their
 properties. For processes with real $W$ bosons, such as top quark(s)
-and \wjets{} production, the \mtw{} distribution peaks at
-$\approx80\GeV{}$, while processes without neutrinos, such as
+and \wjets{} production, the \mtw{} distribution peaks slightly below
+the mass of the $W$ boson, while processes without neutrinos, such as
 $Z(\to\ell\ell)+$jets and the multijet background, are more prominent
 at low \met{} values.
  
@@ -582,14 +587,14 @@ modeling of the kinematic quantities of the reconstructed
 objects used for selection and reconstruction, as shown in
 Fig.~\ref{fig:taggeddatamc}. Events with at least 1 $b$--jet are
 eventually used to measure the asymmetry. A total of about 50000 and
-320000 \ttbar{} events is selected in the dataset at \seventev{} and
+320000 \ttbar{} events are selected in the dataset at \seventev{} and
 \eighttev{}, respectively.
 The distributions in data of the lepton \pt{} and $\eta$, the
 leading\footnote{Jets are conventionally ordered in decreasing \pt{};
   hence the ``leading jet'' is the reconstructed jet with the highest
   \pt{}.} jet \pt{} and $\eta$ are in good agreement with the
-predictions. A complete set of comparisons for background-- and
-signal--enriched samples is shown in App.~\ref{app:selection}.
+predictions. Comparisons for analogous distributions in background-- and
+signal--enriched samples are shown in App.~\ref{app:selection}.
 
 \begin{figure}\centering
   \subfloat[][]
@@ -714,7 +719,8 @@ hard--scatter jets efficiency is scaled up by a variable amount
 between $\approx3\%$ for jets with $\pt{}=25\GeV{}$ and down to $1\%$
 for jets with $\pt{}>150\GeV{}$. The uncertainties on the scale
 factors is propagated to the predicted event yields with effects of
-$\sim2.5\%$. In the analysis at \eighttev{}, the systematic
+$\sim2.5\%$. In the analysis at \eighttev{}, no scale factors are
+applied to the simulation, and the systematic
 uncertainty is estimated by varying the requirement within the
 efficiency range corresponding to the discrepancy between data and
 simulation. The overall effect on event yields is of about 2.5\%.
@@ -836,8 +842,9 @@ the impact of the choice of the PDFs parametrization and its
 uncertainty, the measurements are repeated using \wjets{} simulations
 with variations of the CT10, MSTW, and NNPDF PDFs
 sets~\cite{pdf4lhc}. A small effect ($\sim0.001$) is seen in the
-inclusive \ac{} measurements, while the effect is negligible for all
-differential measurements.
+inclusive \ac{} measurements, while the effect is negligible for the
+differential measurements at \seventev{} and small (10--20\% of
+statistical error) at \eighttev{}.
 
 \subsubsection{Multijet}
 \label{sec:syst_qcd}
