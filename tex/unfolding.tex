@@ -2,25 +2,30 @@
 \label{sec:unfolding}
 
 In order to allow a direct comparison between the experimental results
-and the theoretical predictions, the parton level asymmetry spectra need
+and the theoretical predictions, the parton--level asymmetry spectra need
 to be estimated.
 As discussed in Sec.~\ref{sec:reconstruction}, the asymmetry computed
 from the reconstructed kinematics of the \ttbar{} system is affected
 by the efficiency of correctly reconstructing the \dy{} sign. The
 distortion induced on the \ac{} values depends on the kinematic region
-considered and it can dilute the asymmetry up to half of its original
+considered, and it can dilute the asymmetry up to half of its original
 ({\it true}) value.
 The \ttbar{} MC simulation is used to map the distortions,
 bin--dependent {\it efficiencies} and {\it migrations}, caused by
 acceptance and resolution effects. The {\it unfolding} procedure
 consists in combining this information with the distributions observed
-in data in order to estimate the parton level distributions.
+in data in order to estimate the parton--level distributions.
 In this chapter, the mathematical description of unfolding
-is introduced along with a review of the commonly used algorithm.
+is introduced, along with a review of the commonly--used algorithm, in
+Sec.~\ref{sec:unfoverview}.
 The description of the novel algorithm developed and used in this
-dissertation follows.
+dissertation follows in Sec.~\ref{sec:fbu}, along with the details
+of the treatment of the systematic uncertainties listed in
+Sec.~\ref{sec:syst} and the discussion of additional sources of
+uncertainties associated with the unfolding procedure.
 
 \section{Unfolding in particle physics}
+\label{sec:unfoverview}
 
 The problem of de--convoluting resolution effects in measured
 distributions has been studied for a long time in particle physics,
@@ -31,13 +36,13 @@ in~\cite{Cowan:2002in} and is summarized in this section.
 
 \subsection{The mathematical problem}
 
-The general problem consists in determining the distribution $f(y)$ of a
-stochastic variable using a sample of data $y_1,\cdots{},y_N$.
+The general problem consists of determining the distribution $f(y)$ of a
+stochastic variable $y$ using a sample of data $y_1,\cdots{},y_N$.
 The main complication arises from the fact that the measured values
 $x$ of the observable $y$ are affected by random fluctuations due to
-measurement errors. Therefore, each observation is characterized by a
-true value $y$ and a measured value $x$, and the distributions of $x$
-and $y$ are related by the convolution
+measurement errors. Therefore, each observation $i$ is characterized
+by a measured value $x_i$, corresponding to a true value $y_i$, and the
+distributions of $x$ and $y$ are related by the convolution
 \begin{equation}
 \label{eq:convolution}
 f_{meas}(x) = \int~\mathcal{M}(x|y)~f_{true}(y)~dy,
@@ -68,9 +73,9 @@ In order to derive \Truth{} from Eq.~\ref{eq:matrixprod}, the response
 matrix \TrasfMatrix{} has to be inverted. However, depending on the
 problem at hand, the response matrix might not be
 invertible. Unfolding algorithms typically adopt approximations in
-order to ensure invertibility. In addition, the estimator obtained from
-matrix inversion is unbiased and with maximal variance, as shown in
-\cite{Cowan:2002in}.
+order to ensure invertibility. In addition, although the estimator obtained from
+matrix inversion is unbiased, it has maximal variance, as shown in
+Ref.~\cite{Cowan:2002in}.
 Unfolding methods implement {\it regularization} procedures
 that allow for more precise estimators at expense of introducing a bias.
 
@@ -82,7 +87,7 @@ presented. In this dissertation, a different method is used, which is
 described in detail in Sec.~\ref{sec:fbu}.
 
 \paragraph{Bin--by--bin correction}
-A simple method to overcome the invertibility problem consists on
+A simple method to overcome the invertibility problem consists in
 constructing estimators for \Truth{} based on multiplicative
 correction factors from MC simulation. The estimator for bin $i$ is
 defined as
@@ -91,7 +96,7 @@ t_i = C_i~r_i,~{\rm with}~C_i=\frac{t_i^{MC}}{r_i^{MC}},
 \end{equation}
 where $C_i$ is the bin--by--bin correction factor derived from
 simulation as the ratio of true over measured number of events in bin $i$.
-It has been shown~\cite{Cowan:2002in} that this estimator, neglecting
+It has been shown~\cite{Cowan:2002in} that this estimator, which neglects
 to model off--diagonal migrations, is strongly biased towards the
 simulated model used to derive the correction factors. 
 \paragraph{Singular value decomposition}
@@ -118,7 +123,7 @@ introducing a regularization that stabilizes the result by suppressing
 non--physical fluctuations. In particular, the method implements a
 Tikhonov regularization~\cite{Tikhonov1943stability}, which suppresses
 results with high curvature (see Sec.~\ref{sec:fbuprior}).
-\paragraph{Iterative bayesian unfolding}
+\paragraph{Iterative Bayesian unfolding}
 A different approach to unfolding is taken in this
 method~\cite{dagostini1995NIMPA}, where the estimators for \Truth{}
 are constructed using Bayes' theorem:
@@ -137,9 +142,9 @@ iterations the output distribution is identical to the arbitrary
 chosen $t_i$, thus maximally biased, while the unbiased matrix
 inversion solution is obtained for infinite iterations. Typically, the
 number of iteration is set by defining a convergence criterium. While
-the methods exploits the bayesian theorem, it is not a bayesian
-inference method, as it doesn't estimate the posterior probability
-density for \Truth{}.
+the method exploits Bayes' theorem to update the conditional
+probability $p(t_i|\Reco{})$, it is not a Bayesian inference method,
+as it doesn't estimate the posterior probability density for \Truth{}.
 
 \section{Fully Bayesian Unfolding}
 \label{sec:fbu}
@@ -170,7 +175,7 @@ the probability density
 \pi{}\left(\Truth{}\right)
 \end{equation}
 where \conditionalLhood{\Data{}}{\Truth{},\TrasfMatrix{}} is the
-conditional likelihood for \Data{} given \Truth{} and \TrasfMatrix{},
+likelihood function of \Data{} given \Truth{} and \TrasfMatrix{},
 and $\pi{}$ is the prior probability density for the true spectrum
 \Truth{}.
 Each of these ingredients is described in the following.
@@ -199,7 +204,7 @@ The likelihood is then defined by comparing the observed spectrum
 prediction \Bckg{}:
 \begin{equation}
 \label{eq:lhood}
-\conditionalLhood{\Data{}}{\Truth{}} =
+\conditionalLhood{\Data{}}{\Truth{},\TrasfMatrix{},\Bckg{}} =
 \prod_{i=1}^{N_r}Poisson(d_i,r_i(\Truth{},\TrasfMatrix{})+b_i).
 \end{equation}
 
@@ -214,7 +219,7 @@ prior that assigns equal probabilities to all \Truth{} spectra within
 a wide range $\left[\Tinf{}, \Tsup{}\right]$\footnote{In the analysis,
 the range $[\tilde{\Truth{}}/5, 2\tilde{\Truth}]$ is considered, where
 $\tilde{\Truth{}}$ is the true spectrum in simulation. It has been
-checked that this range is sufficiently wide to not introduce any bias.}:
+verified that this range is sufficiently wide to not introduce any bias.}:
 \begin{equation}
 \prior{}
 \propto{}
@@ -246,10 +251,11 @@ In the analysis of the dataset at \seventev{}, a curvature prior is
 used for the unfolding of the inclusive \ac{} and of the
 differential \ac{} spectrum as a function of \pttt{}.
 In the curvature prior the regularization function $S(\Truth{})$ is
-the difference between the \emph{Thikonov} regularization functions
-$C(\Truth)$ (i.e. curvatures) for the given point \Truth{} and for the
-truth distribution in simulation. 
-The \emph{Thikonov} regularization function is defined as
+the difference between the \emph{Tikhonov}
+regularization~\cite{Tikhonov1943stability} functions $C(\Truth)$
+(i.e. curvatures) for the given point \Truth{} and for the truth
+distribution in simulation.
+The \emph{Tikhonov} regularization function is defined as
 \begin{equation}
         C(\Truth{}) =
         \sum_{t=2}^{N_t-1}\left[(T_{t+1}-T_{t})-(T_t-T_{t-1})\right]^2.
@@ -292,11 +298,12 @@ spectrum, such as \ac{}:
 \conditionalProb{\ac{}}{\Data{}} = 
 \int~
 \delta(\ac{}-\ac{}(\Truth{}))~
-\conditionalProb{\Truth{}}{\Data{}}~d\Truth{}
+\conditionalProb{\Truth{}}{\Data{}}~d\Truth{}.
 \end{equation}
 As an example, the unfolding input \dy{} distributions in simulated data and
 background are shown in Fig.~\ref{fig:unfinput}, as well as the
-response matrix.
+response matrix. The rationale behind the choice of binning for the \dy{} distribution,
+with two narrower bins at low \dy{}, is discussed in the next section.
 %
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.495\textwidth]{figures/unfolding/input}
@@ -392,7 +399,7 @@ measurement are collected in App.~\ref{app:unfolding:pulls}
   \includegraphics[width=0.495\textwidth]{figures/unfolding/linearity}
   \includegraphics[width=0.495\textwidth]{figures/unfolding/pulls}
   \caption{Unfolding response (left) and pull distribution (right) for the
-    inclusive \ac{} measurement at \eighttev{}}
+    inclusive \ac{} measurement at \eighttev{}.}
   \label{fig:pulllinearity}
 \end{figure}
 
@@ -414,14 +421,14 @@ where \thetavec{} are the nuisance parameters, and
 $\pi{}(\thetavec{})$ their prior probability densities, which are
 assumed to be Gaussian distributions $G$ with $\mu=0$ and $\sigma=1$.
 
-A nuisance parameter is associated to each of the uncertainty sources
+A nuisance parameter is associated with each of the uncertainty sources
 listed in Sec.~\ref{sec:syst_objects}. Two categories of nuisances
 are considered: the normalizations of the background processes
 ($\thetavec{}_b$), and the uncertainties associated to the objects
 identification, reconstruction and calibration ($\thetavec{}_s$).
 While the first ones only affect the background predictions, the
 latter, referred to as object systematic uncertainties, affect both the
-reconstructed distribution for \ttbar{} signal and for
+reconstructed distribution for \ttbar{} signal and
 the total background prediction, referred to as
 $\Reco{}(\Truth{};\thetavec{}_s)$ and
 $\Bckg{}(\thetavec{}_s,\thetavec{}_b)$, respectively.
@@ -448,11 +455,15 @@ b_i(\thetavec{}_s,\theta_b) =
 b_i(0) \cdot ( 1 + \theta_b\cdot\Delta b) \cdot
 (1 + \sum_k \theta_s^k\cdot\Delta b_i^k ),
 \end{equation}
-where $\Delta b$ is the uncertainty on the background normalization,
-$\Delta r_i^k$ ,$\Delta r_i^k$ are the systematic variations for
-bin $i$ corresponding to the uncertainty $k$, and the sum runs over
+where $r_i(\Truth{},\TrasfMatrix{};0)$ and $b_i(0)$ represent the
+nominal reconstructed--level \ttbar{} signal and background
+predictions, respectively; 
+$\Delta b$ is the uncertainty on the background normalization;
+$\Delta r_i^k$ and $\Delta b_i^k$ are the systematic variations for
+\ttbar{} and background, respectively, in
+bin $i$, corresponding to the uncertainty $k$, and the sum runs over
 all sources of object systematic uncertainty.
-The prior probability densities $G(\thetavec{}_b$ are truncated at
+The prior probability densities $G(\thetavec{}_b)$ are truncated at
 $\theta_{min}=-1/\Delta b$ in order to avoid negative background
 normalizations. 
 
@@ -460,10 +471,10 @@ The marginal posterior probability density for \Truth{} is computed by
 sampling the $N_t+N_{np}$ parameter space, where $N_{np}$ is the
 total number of nuisance parameters, and projecting the sample over
 the \Truth{} parameter space. The projections over each nuisance
-parameter gives the corresponding posterior probability density,
+parameter give the corresponding posterior probability density,
 which matches the Gaussian prior for unconstrained nuisance
 parameters, while it has a narrower shape for nuisance parameters
-that can be measured in the dataset (see Fig.~\ref{fig:nuispar}).
+that can be measured in the dataset (see Fig.~\ref{fig:nuisparpost}).
 The posterior probability density for \ac{} is computed as described in
 Sec.~\ref{sec:sampling} with the difference that the RMS of the
 marginal posterior represents the total uncertainty. Analogously, each
@@ -475,12 +486,17 @@ corresponding projection of the posterior probability density.
   \includegraphics[width=0.495\textwidth]{figures/unfolding/constrainednp}
   \caption{Prior and posterior probability densities for nuisance parameters
     corresponding to a the electron momentum scale (left) and a
-    component of the b-tagging efficiency (right) in the measurement
-    at \eighttev{}.}
-  \label{fig:nuispar}
+    component of the b-tagging efficiency calibration (right) in the measurement
+    at \eighttev{}. No constraint is observed for the electron
+    momentum scale, as expected, since it does not depend on the
+    channels or distributions considered, while the $b$--tagging
+    efficiency calibration is constrained and pulled because the
+    sample is divided in $b$--jet multiplicity bins (see Sec.~\ref{sec:chcomb}).}
+  \label{fig:nuisparpost}
 \end{figure}
 
 \subsection{Combination of channels}
+\label{sec:chcomb}
 
 As discussed in Sec.~\ref{sec:wjets}, the combination of
 orthogonal channels with different background compositions is crucial
@@ -502,7 +518,7 @@ where the nuisance parameters are common to all analysis channels.
 
 The measurements at \eighttev{}  are
 performed using a combination of six channels based on
-the lepton charge ($Q_l>0$ and $Q_l<0$) and the $b$--jet multiplicity
+the lepton charge ($Q_\ell>0$ and $Q_\ell<0$) and the $b$--jet multiplicity
 (0 $b$--jets, 1 $b$--jet, at least 2 $b$--jets). In addition to the
 expected number of \ttbar{} events for each bin in \Truth{}, the
 \wjets{} calibration factors $K_{\bbbar{}/\ccbar{}}$, $K_c$ and
@@ -526,20 +542,22 @@ The posterior probability density is thus
 with
 $\Bckg{}=\Bckg{}(K_{\bbbar{}/\ccbar{}},K_c,K_{light};\thetavec_s,\thetavec{}_b)$,
 and the $\pi{}$'s are uninformative priors.
-Therefore, normalization nuisance parameters are considered
-only for the remaining background processes: single top, \zjets{} and
-multijet. An independent nuisance parameters is assigned to \zjets{}
+
+A total of 53 object definition parameters $\thetavec_s$ are 
+considered, corresponding to the sources of systematic uncertainty
+discussed in Sec.~\ref{sec:syst}.
+Eleven normalization nuisance parameters $\thetavec_b$ are considered
+for the background processes other than \wjets{}: single top, \zjets{} and
+multijet. Independent nuisance parameters are assigned to \zjets{}
 and multijet normalizations for each $b$--jet multiplicity, given that
 the modeling of $b$--tagging efficiencies is not calibrated
 specifically for these processes. Independent nuisance parameters are
 considered for the multijet background estimation in \mujets{} and in
-\ejets{}. An additional nuisance parameters is
-assigned to the simulated single top and \zjets{} backgrounds,
-corresponding to uncertainty on the integrated luminosity to which the
-MC sample are normalized.
+\ejets{}. An additional normalization parameter $\theta_{Luminosity}$,
+corresponding to the uncertainty on the integrated luminosity to which
+the MC samples are normalized, is assigned to the simulated single
+top and \zjets{} backgrounds.
 
-A total of eleven normalization nuisance parameters $\thetavec_b$ is
-considered, while the object definition parameters $\thetavec_s$ are 53. 
 Figure~\ref{fig:nuispar} summarizes the expected precision and measured
 values for all nuisance parameters. The expected precision is obtained
 by evaluating the likelihood for a pseudo--data sample corresponding
@@ -549,8 +567,9 @@ uncertainty is $\delta\theta\leq1$, depending on the constraining power of
 the dataset on each parameter.
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.6\textwidth]{figures/unfolding/nuispar}
-  \caption{Fitted nuisance parameters to pseudo--data (black) and data
-    (red) for the inclusive \ac{} measurement at \eighttev{}. The
+  \caption{The mean and RMS of the posterior probability density for
+    each nuisance parameter in pseudo--data (black) and data
+    (red) are shown for the inclusive \ac{} measurement at \eighttev{}. The
     shaded regions highlight the $1\sigma$ (green) and $2\sigma$
     intervals of the prior probability density.}
   \label{fig:nuispar}
@@ -564,7 +583,7 @@ information on the $b$--tag calibration, whose largest uncertainty
 component ($b$--efficiency, break--5) is constrained. The nuisance
 parameters for the measurement as a function of \mtt{} and a
 comparison of \ejets{} and \mujets{} channels is shown in
-App.~\ref{app:unfolding:marginalization}. 
+App.~\ref{app:unfolding:marginalization}.
 
 \subsection{Additional systematic uncertainties}
 
@@ -575,17 +594,17 @@ The main potential sources of uncertainty are the statistical fluctuations due
 to the limited size of the MC sample and the modeling of the acceptance
 and reconstruction effects in the response matrix.
 
-\subsubsection{Monte Carlo statistics}
+\subsubsection{MC statistics}
 \label{sec:mcstat}
 
 The impact of statistical fluctuations is studied by repeating the
 unfolding procedure $N_{ens}=1000$ times to build an ensemble of
 pseudo--experiments. For each pseudo--experiment, the response matrix
-is smeared according to the statistical uncertainty of each bin. A
+is fluctuated according to the statistical uncertainty of each bin. A
 pseudo--data sample corresponding to the sum of background and signal
 predictions is considered. The distribution of the unfolded \ac{}
 values in the ensemble, shown in Fig.~\ref{fig:mcstat} for the
-inclusive \ac{} \eighttev{}, is gaussian--like and centered at the
+inclusive \ac{} \eighttev{}, has a gaussian shape centered at the
 true \ac{} value. The RMS of the distribution quantifies the impact
 of the limited MC statistics. In the \seventev{} analysis, a MC sample
 of 4.2M \ttbar{} events is used, corresponding to an uncertainty on the
@@ -598,8 +617,9 @@ App.~\ref{app:unfolding:mcstat}.
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.6\textwidth]{figures/unfolding/mcstat}
   \caption{Distribution of the \ac{} central values for 1000
-    pseudo--experiments where the response matrix is varied
-    according to statistical fluctuations of the MC sample.}
+    pseudo--experiments where the response matrix is fluctuated
+    according to the statistical uncertainty of each bin due to the
+    limited statistics of the MC sample.}
   \label{fig:mcstat}
 \end{figure}
 
@@ -611,12 +631,12 @@ to model acceptance and migration effects in the response matrix
 the detector and the object reconstruction, whose uncertainties are
 accounted for in the marginalization procedure described in
 Sec.~\ref{sec:marginalization}. However, the modeling of the
-$pp\to\ttbar{}$ process might affect the acceptance efficiencies
+$pp\to\ttbar{}+X$ process might affect the acceptance efficiencies
 $\epsilon_{t_j}$ and the reconstruction performance. While both these
 effects are typically large in cross measurements, they are expected
 to cancel in the difference and ratio of the asymmetry calculation.
 
-The modeling of the \ttbar{} signal is studied by comparing the
+The modeling of the \ttbar{} signal is studied by comparing different the
 measurements with MC samples corresponding different choices of generator
 (\alpgen{} or \mcatnlo{} at \seventev{} and \powheg{} or \mcatnlo{} at
 \eighttev{}) and PS (\pythia{} or \herwig{}).
@@ -627,7 +647,7 @@ small MC statistics uncertainty ($0.2\%$ for inclusive
 \ac{}), and the comparison shows negligible differences for both
 inclusive and differential measurements. 
 In the inclusive measurement at \eighttev{}, a $0.32\%$ and $0.08\%$
-difference is observed when comparing generators and PS,
+difference is observed when comparing generators and PS chains,
 respectively. The differences observed in the differential measurement
 as a function of \mtt{} is summarized in Fig.~\ref{fig:ttbarmodel}.
 These differences are large effects compared with the statistical

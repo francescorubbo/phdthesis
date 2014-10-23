@@ -1,12 +1,12 @@
-In this appendix we illustrate the details of the unfolding
-configuration and validation.
+In this appendix we provide additional details of the unfolding
+configuration used in the measurements presented in this dissertation
+and the corresponding validation studies.
 
 \section{Regularization}
 \label{app:unfolding:regularization}
 In this section we briefly summarize the details of the regularization
-used for the inclusive \ac{} measurement at \seventev{} and for the
-differential one as a function of \pttt{}.
-
+used for the measurement of the inclusive and differential \ac{} as a
+function of \pttt{} at \seventev{}.
 We use the definition of curvature
 %
 \begin{equation}
@@ -26,17 +26,16 @@ events that are used to build the response matrix:
 The main idea behind this function is that it decreases the weight of
 sampled points \Truth{} with curvature that is very different from
 the one of the simulated spectrum.
-For the differential measurement, the curvature is
-computed separately in each differential subrange and the
+For the differential measurement, the curvature of the \dy{} distribution is
+computed separately in each differential bin and the
 regularization function is the sum of the regularization functions
-computed in each subrange.  The curvature is computed
-separately within each subrange in order to skip the transition
-between one subrange and the next. 
-Fig.~\ref{fig:app:fbutestprior} shows the posterior probability
-density for the inclusive \ac{} corresponding to four different
+computed in each bin. Fig.~\ref{fig:app:fbutestprior} shows the posterior probability
+density for the inclusive \ac{} measurement corresponding to four different
 choices of the regularization parameter $\alpha{}$.
 While the width of the posterior is sensibly reduced for larger values
-of $\alpha{}$, the mean value is stable.
+of $\alpha{}$, the mean value is stable. The choice of $\alpha$ is
+based on the unfolding response as for the choice of binning discussed
+in Sec.~\ref{sec:binandbias}
 
 \begin{figure}
   \begin{center}
@@ -62,19 +61,19 @@ the same \dy{} binning, summarized in Table~\ref{tab:unf:binning7tev},
 is used for all differential measurements. 
 \begin{table}[htbp]
   \begin{center}
-    \begin{tabular}{l l r}
+    \begin{tabular}{l  r}
       \toprule
-      Variable & & Bin edges \\
+      Variable &  Bin edges \\
       \midrule
-      \dy{}         &            & $[-5.0, -0.5, 0.0, +0.5, +5.0]$ \\
-      \mtt{}        & $[\GeV{}]$ & $[0, 420, 500, 600, 750,
+      \dy{}                     & $[-5.0, -0.5, 0.0, +0.5, +5.0]$ \\
+      \mtt{} $[GeV]$ & $[0, 420, 500, 600, 750,
       +\infty{}]$ \\
-      \pttt{}       & $[\GeV{}]$ & $[0, 25, 60, +\infty{}]$ \\
-      |\ytt{}|     &            & $[0, 0.3, 0.7, +\infty{}]$ \\
+      \pttt{} $[GeV]$ & $[0, 25, 60, +\infty{}]$ \\
+      $|\ytt{}|$                 & $[0, 0.3, 0.7, +\infty{}]$ \\
       \bottomrule
      \end{tabular}
    \end{center}
-  \caption{Bin edges of the \dy{}, \mtt{}, \pttt{}, and |\ytt{}|
+  \caption{Bin edges of the \dy{}, \mtt{}, \pttt{}, and $|\ytt{}|$
   bins in the measurements at \seventev{}.}
   \label{tab:unf:binning7tev}
 \end{table}
@@ -142,7 +141,7 @@ the measurements at \seventev{} and \eighttev{}, respectively.
       \bottomrule
      \end{tabular}
    \end{center}
-  \caption{Coefficient ($a$) and offset ($b$) parameters of the unfolding
+  \caption{Slope ($a$) and offset ($b$) parameters of the unfolding
     response for measurements at \seventev{}.}
   \label{tab:unf:response7tev}
 \end{table}
@@ -164,7 +163,7 @@ the measurements at \seventev{} and \eighttev{}, respectively.
       \bottomrule
      \end{tabular}
    \end{center}
-  \caption{Coefficient ($a$) and offset ($b$) parameters of the unfolding
+  \caption{Slope ($a$) and offset ($b$) parameters of the unfolding
     response for measurements at \eighttev{}.}
   \label{tab:unf:response8tev}
 \end{table}
@@ -179,7 +178,7 @@ Figures \ref{fig:app:pulls_inclu}, \ref{fig:app:pulls_vs_mass},
 \ref{fig:app:pulls_vs_y} and \ref{fig:app:pulls_vs_pt} show the pull
 distributions for inclusive and differential measurements at \seventev{}.
 The pull distributions for the differential measurement at \eighttev{}
-are shown in Fig.~\ref{fig:app:pulls_vs_mass8tev}
+are shown in Fig.~\ref{fig:app:pulls_vs_mass8tev}.
 The RMS close to unity indicates the intervals are correctly estimated.
 
 \begin{figure}
@@ -226,7 +225,7 @@ The RMS close to unity indicates the intervals are correctly estimated.
   \includegraphics[width=0.45\textwidth]{figures/appendix/fbu/ensemble_map_dyy_asymmetries3}
   \caption{
     \label{fig:app:pulls_vs_y}
-    Pull distributions for \ac{} at \seventev{} in the three |\ytt{}| bins.
+    Pull distributions for \ac{} at \seventev{} in the three $|\ytt{}|$ bins.
   }
   \end{center}
 \end{figure}
@@ -256,8 +255,9 @@ in the measurement as a function of \mtt{} at \eighttev{} is shown in
 Fig.~\ref{fig:nuisparmtt}.
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.6\textwidth]{figures/appendix/fbu/nuisparmtt}
-  \caption{Fitted nuisance parameters to pseudo--data (black) and data
-    (red) for \ac{} measurement as a function of \mtt{} at \eighttev{}. The
+  \caption{The mean and RMS of the posterior probability density for
+    each nuisance parameters in pseudo--data (black) and data 
+    (red) are shown for \ac{} measurement as a function of \mtt{} at \eighttev{}. The
     shaded regions highlight the $1\sigma$ (green) and $2\sigma$
     intervals of the prior probability density.}
   \label{fig:nuisparmtt}
@@ -267,7 +267,8 @@ with the one obtained in the inclusive measurement, as shown in
 Fig.~\ref{fig:wnormincluvsmtt}. 
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.6\textwidth]{figures/appendix/fbu/wnormincluvsmtt}
-  \caption{Fitted \wjets{} scale factors $K$s to data for the inclusive
+  \caption{The mean and RMS of the posterior probability density for
+    each \wjets{} scale factors $K$s are shown for the inclusive
     measurement (black) and for the measurement as a function of
     \mtt{} (red) at \eighttev{}. The results are consistent.}
   \label{fig:wnormincluvsmtt}
@@ -282,8 +283,9 @@ Fig.~\ref{fig:nuisparmtt} considering only \mujets{} or \ejets{}
 events. The nuisance parameters are found to be consistent.
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.6\textwidth]{figures/appendix/fbu/nuisparmuvse}
-  \caption{Fitted nuisance parameters to \mujets{} data (black) and
-    \ejets{} data (red) for the inclusive \ac{} measurement at \eighttev{}. The
+  \caption{The mean and RMS of the posterior probability density for
+    each nuisance parameters in \mujets{} data (black) and \ejets{}
+    data (red) are shown for the inclusive \ac{} measurement at \eighttev{}. The
     shaded regions highlight the $1\sigma$ (green) and $2\sigma$
     intervals of the prior probability density.}
   \label{fig:nuisparmtt}
@@ -292,18 +294,23 @@ The \wjets{} calibration yields similar scale factor, as shown in
 Fig.~\ref{fig:wnormmuvse}.
 \begin{figure}[!htb]\centering
   \includegraphics[width=0.6\textwidth]{figures/appendix/fbu/wnormmuvse}
-  \caption{Fitted $W+jets$ scale factors $K$s to \mujets{} data (black)
-    and \ejets{} data (red) for the inclusive
+  \caption{The mean and RMS of the posterior probability density for
+    each \wjets{} scale factors $K$s in \mujets{} data (black)
+    and \ejets{} data (red) are shown for the inclusive
     measurement at \eighttev{}. The results are consistent.}
   \label{fig:wnormmuvse}
 \end{figure}
 
-\section{Limited Monte-Carlo statistics}
+\section{Limited MC statistics}
 \label{app:unfolding:mcstat}
 
-The impact of the limited Monte-Carlo statistics is evaluated with an
+The impact of the limited MC statistics is evaluated with an
 ensemble of 1000 response matrices, applying fluctuations according
-to the number of Monte-Carlo event.
+to the statistical uncertainty of each bin due to the limited
+statistics of the MC sample. The distribution of unfolding results of
+the ensemble for
+\ac{} as a function of \mtt{} at \eighttev{} is shown in
+Fig.~ref{fig:app:unf:limstatmtt}. 
 
 \begin{figure}[htbp]
 \begin{center}
